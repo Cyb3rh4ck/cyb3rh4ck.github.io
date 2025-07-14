@@ -1,0 +1,7 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - cyb3rh4ck´s dev life</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>All Posts | cyb3rh4ck´s dev life</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Jul 2025 14:05:56 -0600</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /></channel>
+</rss>
