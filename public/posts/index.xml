@@ -3,5 +3,21 @@
         <title>All Posts - Cyb3rh4ck´s dev life</title>
         <link>https://cyb3rh4ck.github.io/posts/</link>
         <description>All Posts | Cyb3rh4ck´s dev life</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Jul 2025 14:05:56 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/posts/" rel="self" type="application/rss+xml" /></channel>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 15 Jul 2025 12:49:38 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Java Core</title>
+    <link>https://cyb3rh4ck.github.io/posts/second_post/</link>
+    <pubDate>Tue, 15 Jul 2025 12:49:38 -0600</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>https://cyb3rh4ck.github.io/posts/second_post/</guid>
+    <description><![CDATA[<p>Java Core se refiere a los fundamentos del lenguaje Java y su API principal. Incluye conceptos esenciales como tipos de datos, operadores, estructuras de control, clases, objetos, herencia, interfaces, manejo de excepciones, colecciones, y el sistema de entrada/salida. Dominar Java Core es clave para desarrollar aplicaciones robustas y comprender cómo funciona la máquina virtual de Java (JVM), la gestión de memoria y el multithreading.</p>]]></description>
+</item>
+<item>
+    <title>Arquitectura hexagonal</title>
+    <link>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</link>
+    <pubDate>Tue, 15 Jul 2025 12:14:34 -0600</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</guid>
+    <description><![CDATA[<p>La arquitectura hexagonal, también conocida como &ldquo;Ports and Adapters&rdquo;, es un patrón de diseño de software que busca aislar el núcleo de la aplicación de los detalles externos, como bases de datos, interfaces de usuario o servicios externos. El núcleo contiene la lógica de negocio y se comunica con el exterior a través de puertos (interfaces) y adaptadores, lo que facilita la prueba, el mantenimiento y la evolución del sistema sin afectar la lógica principal. Este enfoque promueve la independencia y la flexibilidad en el desarrollo de aplicaciones.</p>]]></description>
+</item>
+</channel>
 </rss>

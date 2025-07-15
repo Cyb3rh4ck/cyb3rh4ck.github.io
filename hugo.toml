@@ -49,7 +49,7 @@ enableEmoji = true
 
 [params]
   # site default theme ["auto", "light", "dark"]
-  defaultTheme = "auto"
+  defaultTheme = "light"
   # public git repo url only then enableGitInfo is true
   gitRepo = ""
   # LoveIt NEW | 0.1.1 which hash function used for SRI, when empty, no SRI is used
@@ -69,7 +69,7 @@ enableEmoji = true
     name = "Cyb3rh4ck"
     email = ""
     link = ""
-    avatar = ""
+    avatar = "/images/avatar_02.png"
 
     # Header config
   [params.header]
@@ -80,9 +80,9 @@ enableEmoji = true
     # LoveIt NEW | 0.2.0 Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = ""
+      logo = "/images/logo.png"
       # title name
-      name = "Cyb3rh4ck Dev Life"
+      name = "Cyb3rh4ck D3v L1f3"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -118,6 +118,7 @@ enableEmoji = true
       social = true
       # disclaimer (HTML format is supported)
       disclaimer = ""
+    
     # Home page posts
     [params.home.posts]
       enable = true
