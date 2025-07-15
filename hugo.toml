@@ -69,6 +69,7 @@ enableEmoji = true
     name = "Cyb3rh4ck"
     email = ""
     link = ""
+    avatar = ""
 
     # Header config
   [params.header]
@@ -81,7 +82,7 @@ enableEmoji = true
       # URL of the LOGO
       logo = ""
       # title name
-      name = "Cyb3rh4ck´s dev life"
+      name = "Cyb3rh4ck Dev Life"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -95,6 +96,33 @@ enableEmoji = true
     Linkedin = "cyb3rh4ck"
     X = "@Cyb3rh4ck"
     Facebook = "codigojava"
+
+  # Home page config
+  [params.home]
+    # amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      avatarURL = "/images/avatar_02.png"
+      # title shown in home page (HTML format is supported)
+      title = "Código, Café y Caos Controlado"
+      # subtitle shown in home page (HTML format is supported)
+      subtitle = "Pensamientos de un desarrollador backend entre builds rotos y deploys exitosos"
+      # whether to use typeit animation for subtitle
+      typeit = true
+      # whether to show social links
+      social = true
+      # disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
 
 
 
