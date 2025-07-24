@@ -1,24 +1,89 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Cyb3rh4ck´s dev life</title>
-        <link>https://cyb3rh4ck.github.io/</link>
+        <link>http://localhost:1313/</link>
         <description>This is my Cyb3rh4ck-dev-life site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 15 Jul 2025 12:49:38 -0600</lastBuildDate>
-            <atom:link href="https://cyb3rh4ck.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 21 Jul 2025 17:04:02 -0600</lastBuildDate>
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Extensiones</title>
+    <link>http://localhost:1313/posts/vs-code/extensiones/</link>
+    <pubDate>Mon, 21 Jul 2025 17:04:02 -0600</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>http://localhost:1313/posts/vs-code/extensiones/</guid>
+    <description><![CDATA[<h3 id="extensiones-para-desarrollar-con-java-spring-boot-y-copilot">Extensiones para desarrollar con Java, Spring Boot y Copilot</h3>
+<ul>
+<li>Copilot</li>
+<li>Copilot Chat</li>
+</ul>
+<h3 id="java">Java</h3>
+<ul>
+<li>Languaje Support for Java by Red Hat</li>
+<li>Extension Pack for Java (Microsoft)</li>
+<li>Debugger for Java (Microsoft)</li>
+<li>Test Runner for Java (Microsoft)</li>
+<li>Project Manager for Java (Microsoft)</li>
+<li>Maven for Java (Microsoft)</li>
+</ul>
+<h3 id="spring-boot">Spring Boot</h3>
+<ul>
+<li>Spring Initalizr Java Support (Microsoft)</li>
+<li>Spring Boot Dashboard (Microsoft)</li>
+<li>Spring Boot Tools (Microsoft)</li>
+</ul>]]></description>
+</item>
+<item>
+    <title>Apis</title>
+    <link>http://localhost:1313/posts/darwin/apis/</link>
+    <pubDate>Mon, 21 Jul 2025 12:23:44 -0600</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>http://localhost:1313/posts/darwin/apis/</guid>
+    <description><![CDATA[<p>Darwin APIs</p>]]></description>
+</item>
+<item>
+    <title>VS Code - Generar un nuevo proyecto Spring Boot </title>
+    <link>http://localhost:1313/posts/vs-code/spring-boot-dev/</link>
+    <pubDate>Thu, 17 Jul 2025 11:50:57 -0600</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>http://localhost:1313/posts/vs-code/spring-boot-dev/</guid>
+    <description><![CDATA[<p>Opción 1: Con Spring Initializr (dentro de VS Code)</p>
+<ol>
+<li>
+<p>Abre VS Code.</p>
+</li>
+<li>
+<p>Presiona <code>Ctrl+Shift+P</code> y busca <code>&quot;Spring Initializr: Create a Maven Project&quot;</code>.</p>
+</li>
+<li>
+<p>Sigue los pasos:</p>
+<ul>
+<li>Language: Java</li>
+<li>Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)</li>
+<li>Group Id: com.tuempresa</li>
+<li>Artifact Id: mi-app</li>
+<li>Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.</li>
+<li>Java Version: 17</li>
+</ul>
+</li>
+<li>
+<p>Espera que se genere el proyecto.</p>
+</li>
+</ol>]]></description>
+</item>
+<item>
     <title>Java Core</title>
-    <link>https://cyb3rh4ck.github.io/posts/second_post/</link>
+    <link>http://localhost:1313/posts/second_post/</link>
     <pubDate>Tue, 15 Jul 2025 12:49:38 -0600</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/second_post/</guid>
-    <description><![CDATA[<p>Java Core se refiere a los fundamentos del lenguaje Java y su API principal. Incluye conceptos esenciales como tipos de datos, operadores, estructuras de control, clases, objetos, herencia, interfaces, manejo de excepciones, colecciones, y el sistema de entrada/salida. Dominar Java Core es clave para desarrollar aplicaciones robustas y comprender cómo funciona la máquina virtual de Java (JVM), la gestión de memoria y el multithreading.</p>]]></description>
+    <guid>http://localhost:1313/posts/second_post/</guid>
+    <description><![CDATA[<p>Java Core se refiere a los fundamentos del lenguaje Java y su API principal. Incluye conceptos esenciales como tipos de datos, operadores, estructuras de control, clases, objetos, herencia, interfaces, manejo de excepciones, colecciones, y el sistema de entrada/salida. Dominar Java Core es clave para desarrollar aplicaciones robustas y comprender cómo funciona la máquina virtual de Java (JVM), la gestión de memoria y el multithreading&hellip;..</p>]]></description>
 </item>
 <item>
     <title>Arquitectura hexagonal</title>
-    <link>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</link>
+    <link>http://localhost:1313/posts/arquitectura-hexagonal/first_post/</link>
     <pubDate>Tue, 15 Jul 2025 12:14:34 -0600</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</guid>
+    <guid>http://localhost:1313/posts/arquitectura-hexagonal/first_post/</guid>
     <description><![CDATA[<p>La arquitectura hexagonal, también conocida como &ldquo;Ports and Adapters&rdquo;, es un patrón de diseño de software que busca aislar el núcleo de la aplicación de los detalles externos, como bases de datos, interfaces de usuario o servicios externos. El núcleo contiene la lógica de negocio y se comunica con el exterior a través de puertos (interfaces) y adaptadores, lo que facilita la prueba, el mantenimiento y la evolución del sistema sin afectar la lógica principal. Este enfoque promueve la independencia y la flexibilidad en el desarrollo de aplicaciones.</p>]]></description>
 </item>
 </channel>

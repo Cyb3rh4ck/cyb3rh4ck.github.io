@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VS Code on Cyb3rh4ck´s dev life</title>
+    <link>http://localhost:1313/tags/vs-code/</link>
+    <description>Recent content in VS Code on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Jul 2025 11:50:57 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vs-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS Code - Generar un nuevo proyecto Spring Boot </title>
+      <link>http://localhost:1313/posts/vs-code/spring-boot-dev/</link>
+      <pubDate>Thu, 17 Jul 2025 11:50:57 -0600</pubDate>
+      <guid>http://localhost:1313/posts/vs-code/spring-boot-dev/</guid>
+      <description>&lt;p&gt;Opción 1: Con Spring Initializr (dentro de VS Code)&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Abre VS Code.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Presiona &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; y busca &lt;code&gt;&amp;quot;Spring Initializr: Create a Maven Project&amp;quot;&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Sigue los pasos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Language: Java&lt;/li&gt;&#xA;&lt;li&gt;Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)&lt;/li&gt;&#xA;&lt;li&gt;Group Id: com.tuempresa&lt;/li&gt;&#xA;&lt;li&gt;Artifact Id: mi-app&lt;/li&gt;&#xA;&lt;li&gt;Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.&lt;/li&gt;&#xA;&lt;li&gt;Java Version: 17&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Espera que se genere el proyecto.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

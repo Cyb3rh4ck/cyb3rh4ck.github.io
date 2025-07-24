@@ -135,3 +135,8 @@ enableEmoji = true
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
