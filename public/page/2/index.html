@@ -84,106 +84,18 @@
         alt="/images/avatar_02.png"
         title="/images/avatar_02.png" /></a></div><h1 class="home-title">Código, Café y Caos Controlado</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="@Cyb3rh4ck" rel="me"></a><a href="https://github.com/Cyb3rh4ck" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/cyb3rh4ck" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://facebook.com/codigojava" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/spring-boot/cache-caffeine/">☕ Uso de Cache Local con Caffeine</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-24">2025-07-24</time></span></div><div class="content"><h1 id="-caffeine-cache---guía-rápida">☕ Caffeine Cache - Guía Rápida</h1>
-<p><strong>Caffeine</strong> es una librería Java de alto rendimiento para caching en memoria local. Es una alternativa moderna a Ehcache y Guava, recomendada para microservicios que requieren acceso rápido a datos sin necesidad de sincronización entre instancias.</p>
-<hr>
-<h2 id="-cuándo-usar-caffeine">✅ ¿Cuándo usar Caffeine?</h2>
-<ul>
-<li>Datos que no cambian frecuentemente (ej. catálogos, configuraciones)</li>
-<li>Objetos pequeños a consultar muchas veces</li>
-<li>Cuando no necesitas compartir cache entre instancias</li>
-</ul>
-<hr>
-<h2 id="-configuración-en-spring-boot">⚙️ Configuración en Spring Boot</h2>
-<ol>
-<li><strong>Agrega la dependencia en tu <code>pom.xml</code>:</strong></li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.github.ben-manes.caffeine<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>caffeine<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span></code></pre></div><ol start="2">
-<li><strong>Habilita caching en tu aplicación:</strong></li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@EnableCaching</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyApp</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><ol start="3">
-<li><strong>Usa la anotación <code>@Cacheable</code>:</strong></li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Cacheable</span><span class="p">(</span><span class="s">&#34;clientes&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Cliente</span><span class="w"> </span><span class="nf">getClienteById</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">clienteRepository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><hr>
-<h2 id="-políticas-de-evicción">🧠 Políticas de Evicción</h2>
-<p>Puedes configurar políticas como:</p></div><div class="post-footer">
-        <a href="/posts/spring-boot/cache-caffeine/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/caching/">Caching</a>,&nbsp;<a href="/tags/caffeine/">Caffeine</a>,&nbsp;<a href="/tags/spring-boot/">Spring Boot</a>,&nbsp;<a href="/tags/performance/">Performance</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/vs-code/extensiones/">Extensiones</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-21">2025-07-21</time></span>&nbsp;<span class="post-category">included in <a href="/categories/vs-code/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>VS Code</a></span></div><div class="content"><h3 id="extensiones-para-desarrollar-con-java-spring-boot-y-copilot">Extensiones para desarrollar con Java, Spring Boot y Copilot</h3>
-<ul>
-<li>Copilot</li>
-<li>Copilot Chat</li>
-</ul>
-<h3 id="java">Java</h3>
-<ul>
-<li>Languaje Support for Java by Red Hat</li>
-<li>Extension Pack for Java (Microsoft)</li>
-<li>Debugger for Java (Microsoft)</li>
-<li>Test Runner for Java (Microsoft)</li>
-<li>Project Manager for Java (Microsoft)</li>
-<li>Maven for Java (Microsoft)</li>
-</ul>
-<h3 id="spring-boot">Spring Boot</h3>
-<ul>
-<li>Spring Initalizr Java Support (Microsoft)</li>
-<li>Spring Boot Dashboard (Microsoft)</li>
-<li>Spring Boot Tools (Microsoft)</li>
-</ul></div><div class="post-footer">
-        <a href="/posts/vs-code/extensiones/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/darwin/apis/">Apis</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-21">2025-07-21</time></span></div><div class="content"><p>Darwin APIs</p></div><div class="post-footer">
-        <a href="/posts/darwin/apis/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/vs-code/spring-boot-dev/">VS Code - Generar un nuevo proyecto Spring Boot </a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-17">2025-07-17</time></span>&nbsp;<span class="post-category">included in <a href="/categories/vs-code/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>VS Code</a></span></div><div class="content"><p>Opción 1: Con Spring Initializr (dentro de VS Code)</p>
-<ol>
-<li>
-<p>Abre VS Code.</p>
-</li>
-<li>
-<p>Presiona <code>Ctrl+Shift+P</code> y busca <code>&quot;Spring Initializr: Create a Maven Project&quot;</code>.</p>
-</li>
-<li>
-<p>Sigue los pasos:</p>
-<ul>
-<li>Language: Java</li>
-<li>Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)</li>
-<li>Group Id: com.tuempresa</li>
-<li>Artifact Id: mi-app</li>
-<li>Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.</li>
-<li>Java Version: 17</li>
-</ul>
-</li>
-<li>
-<p>Espera que se genere el proyecto.</p>
-</li>
-</ol></div><div class="post-footer">
-        <a href="/posts/vs-code/spring-boot-dev/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/spring-boot/">Spring Boot</a>,&nbsp;<a href="/tags/vs-code/">VS Code</a>,&nbsp;<a href="/tags/productividad/">Productividad</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/second_post/">Java Core</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-15">2025-07-15</time></span></div><div class="content"><p>Java Core se refiere a los fundamentos del lenguaje Java y su API principal. Incluye conceptos esenciales como tipos de datos, operadores, estructuras de control, clases, objetos, herencia, interfaces, manejo de excepciones, colecciones, y el sistema de entrada/salida. Dominar Java Core es clave para desarrollar aplicaciones robustas y comprender cómo funciona la máquina virtual de Java (JVM), la gestión de memoria y el multithreading&hellip;..</p></div><div class="post-footer">
-        <a href="/posts/second_post/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/arquitectura-hexagonal/first_post/">Arquitectura hexagonal</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-15">2025-07-15</time></span></div><div class="content"><p>La arquitectura hexagonal, también conocida como &ldquo;Ports and Adapters&rdquo;, es un patrón de diseño de software que busca aislar el núcleo de la aplicación de los detalles externos, como bases de datos, interfaces de usuario o servicios externos. El núcleo contiene la lógica de negocio y se comunica con el exterior a través de puertos (interfaces) y adaptadores, lo que facilita la prueba, el mantenimiento y la evolución del sistema sin afectar la lógica principal. Este enfoque promueve la independencia y la flexibilidad en el desarrollo de aplicaciones.</p></div><div class="post-footer">
         <a href="/posts/arquitectura-hexagonal/first_post/">Read More</a></div>
-</article></div></div>
+</article><ul class="pagination"><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/">1</a>
+                    </span>
+                </li><li class="page-item active">
+                    <span class="page-link">
+                        <a href="/page/2/">2</a>
+                    </span>
+                </li></ul></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span></div>

@@ -38,14 +38,11 @@ enableEmoji = true
     url = "/tags/"
     title = ""
 
+
   [[menu.main]]
-    weight = 3
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
+    name = "Documentación"
+    url = "/docs/"
+    weight = 1
 
 [params]
   # site default theme ["auto", "light", "dark"]
@@ -63,6 +60,10 @@ enableEmoji = true
   description = "This is my Cyb3rh4ck-dev-life site"
   # website images for Open Graph and Twitter Cards
   images = ["/content/img/avatarCyb3r.png"]
+  ##### por modulos
+  defaultContentLanguage = "es"
+  showBreadCrumbs = true
+  enableAnchorLink = true
 
   # Author config
   [params.author]

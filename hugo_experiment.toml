@@ -1,0 +1,44 @@
+
+baseURL = "https://tuusuario.github.io/"
+languageCode = "es-mx"
+title = "Guía Técnica de Microservicios"
+theme = "LoveIt"
+
+defaultContentLanguage = "es"
+enableRobotsTXT = true
+paginate = 10
+enableEmoji = true
+
+[params]
+  description = "Documentación técnica organizada por módulos"
+  author = "Efren Hernández"
+  dateFormat = "2006-01-02"
+  showBreadCrumbs = true
+  enableAnchorLink = true
+  enableShare = false
+  enableToc = true
+
+[menu]
+  [[menu.main]]
+    name = "Inicio"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Documentación"
+    url = "/docs/"
+    weight = 2
+
+[params.home]
+  layout = "custom"
+  introTitle = "Guía Técnica Modular"
+  introSubtitle = "OAuth 2.0, Spring Darwin y más..."
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params.sidebar]
+  subtitle = "Contenidos Técnicos"
+  enable = true
+  sticky = true

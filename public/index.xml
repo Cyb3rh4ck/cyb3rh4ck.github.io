@@ -3,9 +3,50 @@
         <title>Cyb3rh4ck´s dev life</title>
         <link>http://localhost:1313/</link>
         <description>This is my Cyb3rh4ck-dev-life site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 21 Jul 2025 17:04:02 -0600</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 24 Jul 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>☕ Uso de Cache Local con Caffeine</title>
+    <link>http://localhost:1313/posts/spring-boot/cache-caffeine/</link>
+    <pubDate>Thu, 24 Jul 2025 00:00:00 &#43;0000</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>http://localhost:1313/posts/spring-boot/cache-caffeine/</guid>
+    <description><![CDATA[<h1 id="-caffeine-cache---guía-rápida">☕ Caffeine Cache - Guía Rápida</h1>
+<p><strong>Caffeine</strong> es una librería Java de alto rendimiento para caching en memoria local. Es una alternativa moderna a Ehcache y Guava, recomendada para microservicios que requieren acceso rápido a datos sin necesidad de sincronización entre instancias.</p>
+<hr>
+<h2 id="-cuándo-usar-caffeine">✅ ¿Cuándo usar Caffeine?</h2>
+<ul>
+<li>Datos que no cambian frecuentemente (ej. catálogos, configuraciones)</li>
+<li>Objetos pequeños a consultar muchas veces</li>
+<li>Cuando no necesitas compartir cache entre instancias</li>
+</ul>
+<hr>
+<h2 id="-configuración-en-spring-boot">⚙️ Configuración en Spring Boot</h2>
+<ol>
+<li><strong>Agrega la dependencia en tu <code>pom.xml</code>:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.github.ben-manes.caffeine<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>caffeine<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><ol start="2">
+<li><strong>Habilita caching en tu aplicación:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@EnableCaching</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyApp</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ol start="3">
+<li><strong>Usa la anotación <code>@Cacheable</code>:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Cacheable</span><span class="p">(</span><span class="s">&#34;clientes&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Cliente</span><span class="w"> </span><span class="nf">getClienteById</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">clienteRepository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h2 id="-políticas-de-evicción">🧠 Políticas de Evicción</h2>
+<p>Puedes configurar políticas como:</p>]]></description>
+</item>
+<item>
     <title>Extensiones</title>
     <link>http://localhost:1313/posts/vs-code/extensiones/</link>
     <pubDate>Mon, 21 Jul 2025 17:04:02 -0600</pubDate>
