@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Módulo Musclify on Cyb3rh4ck´s dev life</title>
+    <link>http://localhost:1313/docs/musclify/</link>
+    <description>Recent content in Módulo Musclify on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 25 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/musclify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Musclify</title>
+      <link>http://localhost:1313/docs/musclify/planificaci%C3%B3n-y-dise%C3%B1o-del-mvp-de-musclify./</link>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/musclify/planificaci%C3%B3n-y-dise%C3%B1o-del-mvp-de-musclify./</guid>
+      <description>&lt;h1 id=&#34;planificación-y-diseño-del-mvp-de-musclify&#34;&gt;Planificación y diseño del MVP de Musclify&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-objetivo-del-proyecto&#34;&gt;1. Objetivo del proyecto&lt;/h2&gt;&#xA;&lt;p&gt;Musclify pretende ofrecer una plataforma en línea que ayude a los usuarios a mejorar su condición física y ganar masa muscular. La primera versión (MVP) debe demostrar valor rápidamente y servir como base para funcionalidades futuras.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Metas principales:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Permitir que los usuarios se registren y creen una cuenta.&lt;/li&gt;&#xA;&lt;li&gt;Mostrar programas de entrenamiento y planes de ejercicio adaptados a distintos niveles.&lt;/li&gt;&#xA;&lt;li&gt;Proporcionar un tablero donde cada usuario vea sus programas, progreso y próximas sesiones.&lt;/li&gt;&#xA;&lt;li&gt;Contar con páginas informativas (inicio, blog básico, contacto) que brinden credibilidad y expliquen el servicio.&lt;/li&gt;&#xA;&lt;li&gt;Ofrecer un mecanismo básico de pago o suscripción (puede ser un placeholder si se implementa en una versión posterior).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-definición-del-problema-y-flujo-de-trabajo&#34;&gt;2. Definición del problema y flujo de trabajo&lt;/h2&gt;&#xA;&lt;p&gt;Antes de escribir código, es fundamental definir el problema que el MVP resolverá y trazar un flujo de trabajo claro. Budibase aconseja que &lt;strong&gt;definir el problema es la guía que orienta todo el proyecto&lt;/strong&gt;. Una vez clara la propuesta de valor, se recomienda &lt;strong&gt;planificar el flujo de trabajo&lt;/strong&gt;: describir qué pasos seguirá un usuario desde su llegada al sitio hasta completar una acción.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

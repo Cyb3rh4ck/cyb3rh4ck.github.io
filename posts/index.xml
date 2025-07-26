@@ -1,0 +1,181 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/posts/</link><description>All Posts | Cyb3rh4ck´s dev life</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 24 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/posts/" rel="self" type="application/rss+xml"/><item><title>☕ Uso de Cache Local con Caffeine</title><link>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</link><pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</guid><description><![CDATA[<h1 id="-caffeine-cache---guía-rápida">☕ Caffeine Cache - Guía Rápida</h1>
+<p><strong>Caffeine</strong> es una librería Java de alto rendimiento para caching en memoria local. Es una alternativa moderna a Ehcache y Guava, recomendada para microservicios que requieren acceso rápido a datos sin necesidad de sincronización entre instancias.</p>
+<hr>
+<h2 id="-cuándo-usar-caffeine">✅ ¿Cuándo usar Caffeine?</h2>
+<ul>
+<li>Datos que no cambian frecuentemente (ej. catálogos, configuraciones)</li>
+<li>Objetos pequeños a consultar muchas veces</li>
+<li>Cuando no necesitas compartir cache entre instancias</li>
+</ul>
+<hr>
+<h2 id="-configuración-en-spring-boot">⚙️ Configuración en Spring Boot</h2>
+<ol>
+<li><strong>Agrega la dependencia en tu <code>pom.xml</code>:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.github.ben-manes.caffeine<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>caffeine<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><ol start="2">
+<li><strong>Habilita caching en tu aplicación:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@EnableCaching</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyApp</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ol start="3">
+<li><strong>Usa la anotación <code>@Cacheable</code>:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Cacheable</span><span class="p">(</span><span class="s">&#34;clientes&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Cliente</span><span class="w"> </span><span class="nf">getClienteById</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">clienteRepository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h2 id="-políticas-de-evicción">🧠 Políticas de Evicción</h2>
+<p>Puedes configurar políticas como:</p>]]></description></item><item><title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title><link>https://cyb3rh4ck.github.io/posts/oauth2/</link><pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/oauth2/</guid><description><![CDATA[<h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)</h1>
+<p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, <strong>sin compartir las credenciales del usuario</strong>.</p>
+<hr>
+<h2 id="-actores-del-protocolo">🧩 Actores del Protocolo</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Actor</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>👤 <strong>Resource Owner</strong></td>
+          <td>Usuario que posee los recursos</td>
+      </tr>
+      <tr>
+          <td>🌐 <strong>Client</strong></td>
+          <td>App que quiere acceder a recursos</td>
+      </tr>
+      <tr>
+          <td>🔐 <strong>Authorization Server</strong></td>
+          <td>Autentica usuarios y entrega tokens</td>
+      </tr>
+      <tr>
+          <td>📦 <strong>Resource Server</strong></td>
+          <td>API que expone los recursos protegidos</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-flujo-general-authorization-code">🔁 Flujo General (Authorization Code)</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[Usuario] --&gt; (Autorización) --&gt; [Authorization Server]
+</span></span><span class="line"><span class="cl">    ↓                                   ↓
+</span></span><span class="line"><span class="cl">[Client App] &lt;-- Código de Autorización -- [Authorization Server]
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">Token Exchange
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">[Client App] --&gt; Token de Acceso --&gt; [Resource Server]
+</span></span></code></pre></div><hr>
+<h2 id="-tipos-de-grants-concesiones">🧾 Tipos de &ldquo;Grants&rdquo; (Concesiones)</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Grant Type</th>
+          <th>Uso común</th>
+          <th>Seguridad</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>🔐 Authorization Code</td>
+          <td>Apps Web / Móviles</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>💳 Client Credentials</td>
+          <td>Sistemas máquina a máquina</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>⚠️ Implicit</td>
+          <td>SPAs (obsoleto)</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>🔑 Password Credentials</td>
+          <td>Legacy / Testing</td>
+          <td>❌</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-tokens">🎫 Tokens</h2>
+<ul>
+<li><strong>Access Token</strong>: Caduca rápido, limitado en alcance.</li>
+<li><strong>Refresh Token</strong>: Opcional. Renueva el Access Token sin reautenticación.</li>
+<li><strong>Formatos</strong>: Generalmente JWT o token opaco.</li>
+</ul>
+<hr>
+<h2 id="-seguridad-requerida">🔐 Seguridad Requerida</h2>
+<ul>
+<li>Uso obligatorio de <strong>HTTPS (TLS)</strong></li>
+<li>Tokens deben tratarse como <strong>credenciales sensibles</strong></li>
+<li>Revocación y expiración controladas desde el servidor</li>
+</ul>
+<hr>
+<h2 id="-arquitectura-con-oauth-20">🧱 Arquitectura con OAuth 2.0</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">     |     Resource Owner      |
+</span></span><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">                 |
+</span></span><span class="line"><span class="cl">      (autorización vía UI)
+</span></span><span class="line"><span class="cl">                 ↓
+</span></span><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">     |  Authorization Server   |----+
+</span></span><span class="line"><span class="cl">     +-------------------------+    |
+</span></span><span class="line"><span class="cl">                 ↓                 ↓
+</span></span><span class="line"><span class="cl">     Código     Token            API Call
+</span></span><span class="line"><span class="cl">     ↓           ↓                ↓
+</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
+</span></span><span class="line"><span class="cl">| Client  |-&gt;| Access    |---&gt;| Resource   |
+</span></span><span class="line"><span class="cl">| (App)   |  | Token     |    | Server     |
+</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
+</span></span></code></pre></div><hr>
+<h2 id="-extensiones-comunes">📚 Extensiones Comunes</h2>
+<table>
+  <thead>
+      <tr>
+          <th>RFC</th>
+          <th>Nombre</th>
+          <th>Propósito</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RFC 6750</td>
+          <td>Bearer Token</td>
+          <td>Define uso de tokens tipo Bearer</td>
+      </tr>
+      <tr>
+          <td>RFC 7636</td>
+          <td>PKCE</td>
+          <td>Seguridad adicional en móviles</td>
+      </tr>
+      <tr>
+          <td>RFC 7662</td>
+          <td>Token Introspection</td>
+          <td>Validación de tokens</td>
+      </tr>
+      <tr>
+          <td>RFC 9068</td>
+          <td>JWT Profile</td>
+          <td>Estandariza uso de JWT</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-buenas-prácticas">✅ Buenas Prácticas</h2>
+<ul>
+<li>Usa <strong>PKCE</strong> en apps móviles y SPAs</li>
+<li>Expira tokens en minutos</li>
+<li>Usa scopes específicos (<code>read</code>, <code>write</code>, etc.)</li>
+<li>Implementa logs, revocación y rotating refresh tokens</li>
+</ul>
+<hr>
+<h2 id="-conclusión">🧠 Conclusión</h2>
+<p>OAuth 2.0 no es solo un protocolo de autenticación, sino un <strong>marco flexible para autorización moderna</strong>.</p>]]></description></item><item><title>Arquitectura hexagonal</title><link>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</link><pubDate>Tue, 15 Jul 2025 12:14:34 -0600</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</guid><description><![CDATA[<p>La arquitectura hexagonal, también conocida como &ldquo;Ports and Adapters&rdquo;, es un patrón de diseño de software que busca aislar el núcleo de la aplicación de los detalles externos, como bases de datos, interfaces de usuario o servicios externos. El núcleo contiene la lógica de negocio y se comunica con el exterior a través de puertos (interfaces) y adaptadores, lo que facilita la prueba, el mantenimiento y la evolución del sistema sin afectar la lógica principal. Este enfoque promueve la independencia y la flexibilidad en el desarrollo de aplicaciones.</p>]]></description></item></channel></rss>
