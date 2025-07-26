@@ -45,77 +45,159 @@
 <p>Puedes configurar políticas como:</p>]]></description>
 </item>
 <item>
-    <title>Extensiones</title>
-    <link>http://localhost:1313/posts/vs-code/extensiones/</link>
-    <pubDate>Mon, 21 Jul 2025 17:04:02 -0600</pubDate>
+    <title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title>
+    <link>http://localhost:1313/posts/oauth2/</link>
+    <pubDate>Thu, 24 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/vs-code/extensiones/</guid>
-    <description><![CDATA[<h3 id="extensiones-para-desarrollar-con-java-spring-boot-y-copilot">Extensiones para desarrollar con Java, Spring Boot y Copilot</h3>
+    <guid>http://localhost:1313/posts/oauth2/</guid>
+    <description><![CDATA[<h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)</h1>
+<p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, <strong>sin compartir las credenciales del usuario</strong>.</p>
+<hr>
+<h2 id="-actores-del-protocolo">🧩 Actores del Protocolo</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Actor</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>👤 <strong>Resource Owner</strong></td>
+          <td>Usuario que posee los recursos</td>
+      </tr>
+      <tr>
+          <td>🌐 <strong>Client</strong></td>
+          <td>App que quiere acceder a recursos</td>
+      </tr>
+      <tr>
+          <td>🔐 <strong>Authorization Server</strong></td>
+          <td>Autentica usuarios y entrega tokens</td>
+      </tr>
+      <tr>
+          <td>📦 <strong>Resource Server</strong></td>
+          <td>API que expone los recursos protegidos</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-flujo-general-authorization-code">🔁 Flujo General (Authorization Code)</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[Usuario] --&gt; (Autorización) --&gt; [Authorization Server]
+</span></span><span class="line"><span class="cl">    ↓                                   ↓
+</span></span><span class="line"><span class="cl">[Client App] &lt;-- Código de Autorización -- [Authorization Server]
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">Token Exchange
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">[Client App] --&gt; Token de Acceso --&gt; [Resource Server]
+</span></span></code></pre></div><hr>
+<h2 id="-tipos-de-grants-concesiones">🧾 Tipos de &ldquo;Grants&rdquo; (Concesiones)</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Grant Type</th>
+          <th>Uso común</th>
+          <th>Seguridad</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>🔐 Authorization Code</td>
+          <td>Apps Web / Móviles</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>💳 Client Credentials</td>
+          <td>Sistemas máquina a máquina</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>⚠️ Implicit</td>
+          <td>SPAs (obsoleto)</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>🔑 Password Credentials</td>
+          <td>Legacy / Testing</td>
+          <td>❌</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-tokens">🎫 Tokens</h2>
 <ul>
-<li>Copilot</li>
-<li>Copilot Chat</li>
+<li><strong>Access Token</strong>: Caduca rápido, limitado en alcance.</li>
+<li><strong>Refresh Token</strong>: Opcional. Renueva el Access Token sin reautenticación.</li>
+<li><strong>Formatos</strong>: Generalmente JWT o token opaco.</li>
 </ul>
-<h3 id="java">Java</h3>
+<hr>
+<h2 id="-seguridad-requerida">🔐 Seguridad Requerida</h2>
 <ul>
-<li>Languaje Support for Java by Red Hat</li>
-<li>Extension Pack for Java (Microsoft)</li>
-<li>Debugger for Java (Microsoft)</li>
-<li>Test Runner for Java (Microsoft)</li>
-<li>Project Manager for Java (Microsoft)</li>
-<li>Maven for Java (Microsoft)</li>
+<li>Uso obligatorio de <strong>HTTPS (TLS)</strong></li>
+<li>Tokens deben tratarse como <strong>credenciales sensibles</strong></li>
+<li>Revocación y expiración controladas desde el servidor</li>
 </ul>
-<h3 id="spring-boot">Spring Boot</h3>
+<hr>
+<h2 id="-arquitectura-con-oauth-20">🧱 Arquitectura con OAuth 2.0</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">     |     Resource Owner      |
+</span></span><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">                 |
+</span></span><span class="line"><span class="cl">      (autorización vía UI)
+</span></span><span class="line"><span class="cl">                 ↓
+</span></span><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">     |  Authorization Server   |----+
+</span></span><span class="line"><span class="cl">     +-------------------------+    |
+</span></span><span class="line"><span class="cl">                 ↓                 ↓
+</span></span><span class="line"><span class="cl">     Código     Token            API Call
+</span></span><span class="line"><span class="cl">     ↓           ↓                ↓
+</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
+</span></span><span class="line"><span class="cl">| Client  |-&gt;| Access    |---&gt;| Resource   |
+</span></span><span class="line"><span class="cl">| (App)   |  | Token     |    | Server     |
+</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
+</span></span></code></pre></div><hr>
+<h2 id="-extensiones-comunes">📚 Extensiones Comunes</h2>
+<table>
+  <thead>
+      <tr>
+          <th>RFC</th>
+          <th>Nombre</th>
+          <th>Propósito</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RFC 6750</td>
+          <td>Bearer Token</td>
+          <td>Define uso de tokens tipo Bearer</td>
+      </tr>
+      <tr>
+          <td>RFC 7636</td>
+          <td>PKCE</td>
+          <td>Seguridad adicional en móviles</td>
+      </tr>
+      <tr>
+          <td>RFC 7662</td>
+          <td>Token Introspection</td>
+          <td>Validación de tokens</td>
+      </tr>
+      <tr>
+          <td>RFC 9068</td>
+          <td>JWT Profile</td>
+          <td>Estandariza uso de JWT</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-buenas-prácticas">✅ Buenas Prácticas</h2>
 <ul>
-<li>Spring Initalizr Java Support (Microsoft)</li>
-<li>Spring Boot Dashboard (Microsoft)</li>
-<li>Spring Boot Tools (Microsoft)</li>
-</ul>]]></description>
-</item>
-<item>
-    <title>Apis</title>
-    <link>http://localhost:1313/posts/darwin/apis/</link>
-    <pubDate>Mon, 21 Jul 2025 12:23:44 -0600</pubDate>
-    <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/darwin/apis/</guid>
-    <description><![CDATA[<p>Darwin APIs</p>]]></description>
-</item>
-<item>
-    <title>VS Code - Generar un nuevo proyecto Spring Boot </title>
-    <link>http://localhost:1313/posts/vs-code/spring-boot-dev/</link>
-    <pubDate>Thu, 17 Jul 2025 11:50:57 -0600</pubDate>
-    <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/vs-code/spring-boot-dev/</guid>
-    <description><![CDATA[<p>Opción 1: Con Spring Initializr (dentro de VS Code)</p>
-<ol>
-<li>
-<p>Abre VS Code.</p>
-</li>
-<li>
-<p>Presiona <code>Ctrl+Shift+P</code> y busca <code>&quot;Spring Initializr: Create a Maven Project&quot;</code>.</p>
-</li>
-<li>
-<p>Sigue los pasos:</p>
-<ul>
-<li>Language: Java</li>
-<li>Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)</li>
-<li>Group Id: com.tuempresa</li>
-<li>Artifact Id: mi-app</li>
-<li>Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.</li>
-<li>Java Version: 17</li>
+<li>Usa <strong>PKCE</strong> en apps móviles y SPAs</li>
+<li>Expira tokens en minutos</li>
+<li>Usa scopes específicos (<code>read</code>, <code>write</code>, etc.)</li>
+<li>Implementa logs, revocación y rotating refresh tokens</li>
 </ul>
-</li>
-<li>
-<p>Espera que se genere el proyecto.</p>
-</li>
-</ol>]]></description>
-</item>
-<item>
-    <title>Java Core</title>
-    <link>http://localhost:1313/posts/second_post/</link>
-    <pubDate>Tue, 15 Jul 2025 12:49:38 -0600</pubDate>
-    <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/second_post/</guid>
-    <description><![CDATA[<p>Java Core se refiere a los fundamentos del lenguaje Java y su API principal. Incluye conceptos esenciales como tipos de datos, operadores, estructuras de control, clases, objetos, herencia, interfaces, manejo de excepciones, colecciones, y el sistema de entrada/salida. Dominar Java Core es clave para desarrollar aplicaciones robustas y comprender cómo funciona la máquina virtual de Java (JVM), la gestión de memoria y el multithreading&hellip;..</p>]]></description>
+<hr>
+<h2 id="-conclusión">🧠 Conclusión</h2>
+<p>OAuth 2.0 no es solo un protocolo de autenticación, sino un <strong>marco flexible para autorización moderna</strong>.</p>]]></description>
 </item>
 <item>
     <title>Arquitectura hexagonal</title>

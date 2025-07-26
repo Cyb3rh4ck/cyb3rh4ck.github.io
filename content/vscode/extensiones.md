@@ -1,9 +1,8 @@
-+++
-date = '2025-07-21T17:04:02-06:00'
-draft = false
-title = 'Extensiones'
-categories = ["VS Code"]
-+++
+---
+title: "Extensiones"
+date: 2025-07-25
+weight: 1
+---
 
 
 ### Extensiones para desarrollar con Java, Spring Boot y Copilot

@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jul 2025 09:04:57 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Api</title>
@@ -65,7 +65,7 @@
       <description></description>
     </item>
     <item>
-      <title>Spring Boot</title>
+      <title>Spring-Boot</title>
       <link>http://localhost:1313/tags/spring-boot/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/spring-boot/</guid>
@@ -76,20 +76,6 @@
       <link>http://localhost:1313/tags/visual/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/visual/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Productividad</title>
-      <link>http://localhost:1313/tags/productividad/</link>
-      <pubDate>Thu, 17 Jul 2025 11:50:57 -0600</pubDate>
-      <guid>http://localhost:1313/tags/productividad/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VS Code</title>
-      <link>http://localhost:1313/tags/vs-code/</link>
-      <pubDate>Thu, 17 Jul 2025 11:50:57 -0600</pubDate>
-      <guid>http://localhost:1313/tags/vs-code/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,10 +1,10 @@
-+++
-date = '2025-07-17T11:50:57-06:00'
-draft = false
-title = 'VS Code - Generar un nuevo proyecto Spring Boot '
-categories = ["VS Code"]
-tags = ["spring boot", "VS Code", "productividad"]
-+++
+---
+title: "VS Code - Generar un nuevo proyecto Spring Boot"
+date: 2025-07-25
+weight: 2
+---
+
+
 
 Opción 1: Con Spring Initializr (dentro de VS Code)
 
