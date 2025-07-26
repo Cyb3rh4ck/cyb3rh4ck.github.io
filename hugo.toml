@@ -52,6 +52,11 @@ enableGitInfo = true
     weight = 2
     title = "🚀 Bienvenido al módulo de **VS Code**"
 
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 3
+
 
 [params]
   # site default theme ["auto", "light", "dark"]
