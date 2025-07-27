@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VS Code on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/vscode/</link>
+    <link>https://cyb3rh4ck.github.io/vscode/</link>
     <description>Recent content in VS Code on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 25 Jul 2025 20:34:10 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cyb3rh4ck.github.io/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extensiones</title>
-      <link>http://localhost:1313/vscode/extensiones/</link>
+      <link>https://cyb3rh4ck.github.io/vscode/extensiones/</link>
       <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/extensiones/</guid>
+      <guid>https://cyb3rh4ck.github.io/vscode/extensiones/</guid>
       <description>&lt;h3 id=&#34;extensiones-para-desarrollar-con-java-spring-boot-y-copilot&#34;&gt;Extensiones para desarrollar con Java, Spring Boot y Copilot&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Copilot&lt;/li&gt;&#xA;&lt;li&gt;Copilot Chat&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;java&#34;&gt;Java&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Languaje Support for Java by Red Hat&lt;/li&gt;&#xA;&lt;li&gt;Extension Pack for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Debugger for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Test Runner for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Project Manager for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Maven for Java (Microsoft)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;spring-boot&#34;&gt;Spring Boot&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Spring Initalizr Java Support (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Spring Boot Dashboard (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Spring Boot Tools (Microsoft)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>VS Code - Generar un nuevo proyecto Spring Boot</title>
-      <link>http://localhost:1313/vscode/spring-boot-dev/</link>
+      <link>https://cyb3rh4ck.github.io/vscode/spring-boot-dev/</link>
       <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/spring-boot-dev/</guid>
+      <guid>https://cyb3rh4ck.github.io/vscode/spring-boot-dev/</guid>
       <description>&lt;p&gt;Opción 1: Con Spring Initializr (dentro de VS Code)&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Abre VS Code.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Presiona &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; y busca &lt;code&gt;&amp;quot;Spring Initializr: Create a Maven Project&amp;quot;&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Sigue los pasos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Language: Java&lt;/li&gt;&#xA;&lt;li&gt;Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)&lt;/li&gt;&#xA;&lt;li&gt;Group Id: com.tuempresa&lt;/li&gt;&#xA;&lt;li&gt;Artifact Id: mi-app&lt;/li&gt;&#xA;&lt;li&gt;Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.&lt;/li&gt;&#xA;&lt;li&gt;Java Version: 17&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Espera que se genere el proyecto.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>

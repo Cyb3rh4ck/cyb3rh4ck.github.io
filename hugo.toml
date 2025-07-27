@@ -29,33 +29,34 @@ enableGitInfo = true
 
 # Menu config
 [menu]
+ 
+    [[menu.main]]
+    name = "VS Code"
+    url = "/vscode/"
+    weight = 2
+    title = "🚀 Bienvenido al módulo de **VS Code**"
+    pre = "<i class='fas fa-folder'></i>"
+
   [[menu.main]]
+    name = "CV"
+    url = "/cv/"
     weight = 3
+    pre = "<i class='fas fa-file-alt'></i>"
+
+  [[menu.main]]
+    weight = 4
     identifier = "posts"
     # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
     name = "Posts"
     url = "/posts/"
     # title will be shown when you hover on this menu link
     title = "all posts"
+    pre = "<i class='fas fa-folder-open'></i>"
 
-  [[menu.main]]
-    name = "Musclify"
-    url = "/musclify/"
-    weight = 1
   
-    [[menu.main]]
-    name = "VS Code"
-    url = "/vscode/"
-    weight = 2
-    title = "🚀 Bienvenido al módulo de **VS Code**"
 
-  [[menu.main]]
-    name = "CV"
-    url = "/cv/"
-    weight = 3
 
 
 [params]

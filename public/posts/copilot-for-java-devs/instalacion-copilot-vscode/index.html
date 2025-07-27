@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Instalación de GitHub Copilot en VS Code - Cyb3rh4ck´s dev life</title><meta name="Description" content="Guía paso a paso para instalar y configurar GitHub Copilot en Visual Studio Code"><meta property="og:url" content="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/">
+  <meta property="og:site_name" content="Cyb3rh4ck´s dev life">
+  <meta property="og:title" content="Instalación de GitHub Copilot en VS Code">
+  <meta property="og:description" content="Guía paso a paso para instalar y configurar GitHub Copilot en Visual Studio Code">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-26T00:00:00+00:00">
+    <meta property="og:image" content="https://cyb3rh4ck.github.io/content/img/avatarCyb3r.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cyb3rh4ck.github.io/content/img/avatarCyb3r.png">
+  <meta name="twitter:title" content="Instalación de GitHub Copilot en VS Code">
+  <meta name="twitter:description" content="Guía paso a paso para instalar y configurar GitHub Copilot en Visual Studio Code">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/" /><link rel="prev" href="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-shortcuts-vscode/" /><link rel="next" href="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/how-copilot-works/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Instalación de GitHub Copilot en VS Code",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/cyb3rh4ck.github.io\/posts\/copilot-for-java-devs\/instalacion-copilot-vscode\/"
+        },"genre": "posts","wordcount":  299 ,
+        "url": "https:\/\/cyb3rh4ck.github.io\/posts\/copilot-for-java-devs\/instalacion-copilot-vscode\/","datePublished": "2025-07-26T00:00:00+00:00","dateModified": "2025-07-26T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Cyb3rh4ck"
+            },"description": "Guía paso a paso para instalar y configurar GitHub Copilot en Visual Studio Code"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fas fa-folder'></i> VS Code </a><a class="menu-item" href="/cv/"><i class='fas fa-file-alt'></i> CV </a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fas fa-folder'></i>VS Code</a><a class="menu-item" href="/cv/" title=""><i class='fas fa-file-alt'></i>CV</a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i>Posts</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Instalación de GitHub Copilot en VS Code</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-07-26">2025-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;299 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#requisitos-previos">Requisitos Previos</a></li>
+    <li><a href="#pasos-para-instalar-github-copilot">Pasos para Instalar GitHub Copilot</a>
+      <ul>
+        <li><a href="#1-abre-vs-code">1. Abre VS Code</a></li>
+        <li><a href="#2-ve-a-la-pestaña-de-extensiones">2. Ve a la pestaña de extensiones</a></li>
+        <li><a href="#3-busca-github-copilot">3. Busca &ldquo;GitHub Copilot&rdquo;</a></li>
+        <li><a href="#4-instala-la-extensión">4. Instala la extensión</a></li>
+      </ul>
+    </li>
+    <li><a href="#iniciar-sesión-en-github">Iniciar sesión en GitHub</a>
+      <ul>
+        <li><a href="#5-autenticación">5. Autenticación</a></li>
+        <li><a href="#6-confirmación">6. Confirmación</a></li>
+      </ul>
+    </li>
+    <li><a href="#verifica-que-funciona">Verifica que funciona</a></li>
+    <li><a href="#consejos">Consejos</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introducción">Introducción</h2>
+<p>GitHub Copilot puede integrarse fácilmente con Visual Studio Code (VS Code), proporcionando sugerencias de código en tiempo real mientras escribes. Esta sección te guiará por el proceso de instalación del plugin y la autenticación con tu cuenta de GitHub.</p>
+<h2 id="requisitos-previos">Requisitos Previos</h2>
+<ul>
+<li>Tener instalado <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Code</a></li>
+<li>Contar con una cuenta de GitHub</li>
+<li>Acceso a internet para descargar extensiones y autenticar</li>
+</ul>
+<h2 id="pasos-para-instalar-github-copilot">Pasos para Instalar GitHub Copilot</h2>
+<h3 id="1-abre-vs-code">1. Abre VS Code</h3>
+<p>Abre Visual Studio Code desde tu equipo.</p>
+<h3 id="2-ve-a-la-pestaña-de-extensiones">2. Ve a la pestaña de extensiones</h3>
+<p>Haz clic en el ícono de extensiones (cuadro con cuatro bloques) en la barra lateral izquierda o presiona <code>Ctrl+Shift+X</code>.</p>
+<h3 id="3-busca-github-copilot">3. Busca &ldquo;GitHub Copilot&rdquo;</h3>
+<p>En la barra de búsqueda escribe <code>GitHub Copilot</code>. Asegúrate de que sea la extensión oficial desarrollada por GitHub.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://docs.github.com/assets/images/help/copilot/vs-code-copilot-extension.png"
+        data-srcset="https://docs.github.com/assets/images/help/copilot/vs-code-copilot-extension.png, https://docs.github.com/assets/images/help/copilot/vs-code-copilot-extension.png 1.5x, https://docs.github.com/assets/images/help/copilot/vs-code-copilot-extension.png 2x"
+        data-sizes="auto"
+        alt="https://docs.github.com/assets/images/help/copilot/vs-code-copilot-extension.png"
+        title="Búsqueda de la extensión" /></p>
+<h3 id="4-instala-la-extensión">4. Instala la extensión</h3>
+<p>Haz clic en <strong>Install</strong> para agregar GitHub Copilot a tu editor.</p>
+<h2 id="iniciar-sesión-en-github">Iniciar sesión en GitHub</h2>
+<h3 id="5-autenticación">5. Autenticación</h3>
+<p>Después de instalar la extensión, aparecerá una ventana emergente pidiéndote iniciar sesión.</p>
+<ol>
+<li>Haz clic en &ldquo;Sign in to GitHub&rdquo;.</li>
+<li>Se abrirá tu navegador predeterminado con una URL especial de autorización.</li>
+<li>Inicia sesión con tus credenciales de GitHub y acepta los permisos solicitados.</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://docs.github.com/assets/images/help/copilot/copilot-signin.png"
+        data-srcset="https://docs.github.com/assets/images/help/copilot/copilot-signin.png, https://docs.github.com/assets/images/help/copilot/copilot-signin.png 1.5x, https://docs.github.com/assets/images/help/copilot/copilot-signin.png 2x"
+        data-sizes="auto"
+        alt="https://docs.github.com/assets/images/help/copilot/copilot-signin.png"
+        title="Login con GitHub" /></p>
+<h3 id="6-confirmación">6. Confirmación</h3>
+<p>Una vez autenticado, regresa a VS Code. Verás una notificación de que has iniciado sesión exitosamente y Copilot está listo para usarse.</p>
+<h2 id="verifica-que-funciona">Verifica que funciona</h2>
+<p>Escribe en un archivo <code>.java</code>, por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Calculate the factorial of a number</span><span class="w">
+</span></span></span></code></pre></div><p>Copilot debería sugerirte automáticamente una función en base a tu comentario.</p>
+<h2 id="consejos">Consejos</h2>
+<ul>
+<li>Puedes activar o desactivar Copilot por archivo o lenguaje desde la configuración de VS Code (<code>Ctrl + ,</code>).</li>
+<li>Usa <code>Ctrl + Enter</code> para abrir el panel de sugerencias alternas de Copilot.</li>
+</ul>
+<h2 id="conclusión">Conclusión</h2>
+<p>Con estos pasos, ya tienes GitHub Copilot instalado y funcionando en VS Code. Ahora puedes aprovechar su poder para aumentar tu productividad al programar en Java.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-07-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/" data-title="Instalación de GitHub Copilot en VS Code"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/" data-title="Instalación de GitHub Copilot en VS Code"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/" data-title="Instalación de GitHub Copilot en VS Code"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/" data-title="Instalación de GitHub Copilot en VS Code"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/copilot-for-java-devs/copilot-shortcuts-vscode/" class="prev" rel="prev" title="Shortcuts de GitHub Copilot en VS Code"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Shortcuts de GitHub Copilot en VS Code</a>
+            <a href="/posts/copilot-for-java-devs/how-copilot-works/" class="next" rel="next" title="Cómo trabaja Copilot">Cómo trabaja Copilot<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

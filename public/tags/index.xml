@@ -2,80 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://cyb3rh4ck.github.io/tags/</link>
     <description>Recent content in Tags on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Jul 2025 20:34:10 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Api</title>
-      <link>http://localhost:1313/tags/api/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/api/</guid>
+      <title>Atajos</title>
+      <link>https://cyb3rh4ck.github.io/tags/atajos/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/atajos/</guid>
       <description></description>
     </item>
     <item>
-      <title>Autenticación</title>
-      <link>http://localhost:1313/tags/autenticaci%C3%B3n/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/autenticaci%C3%B3n/</guid>
+      <title>Copilot</title>
+      <link>https://cyb3rh4ck.github.io/tags/copilot/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/copilot/</guid>
       <description></description>
     </item>
     <item>
-      <title>Caching</title>
-      <link>http://localhost:1313/tags/caching/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/caching/</guid>
+      <title>Java</title>
+      <link>https://cyb3rh4ck.github.io/tags/java/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/java/</guid>
       <description></description>
     </item>
     <item>
-      <title>Caffeine</title>
-      <link>http://localhost:1313/tags/caffeine/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/caffeine/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Diagramas</title>
-      <link>http://localhost:1313/tags/diagramas/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/diagramas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Oauth2</title>
-      <link>http://localhost:1313/tags/oauth2/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/oauth2/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Performance</title>
-      <link>http://localhost:1313/tags/performance/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/performance/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Seguridad</title>
-      <link>http://localhost:1313/tags/seguridad/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/seguridad/</guid>
+      <title>Productividad</title>
+      <link>https://cyb3rh4ck.github.io/tags/productividad/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/productividad/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring-Boot</title>
-      <link>http://localhost:1313/tags/spring-boot/</link>
+      <link>https://cyb3rh4ck.github.io/tags/spring-boot/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VS Code</title>
+      <link>https://cyb3rh4ck.github.io/tags/vs-code/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/vs-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GitHub</title>
+      <link>https://cyb3rh4ck.github.io/tags/github/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shortcuts</title>
+      <link>https://cyb3rh4ck.github.io/tags/shortcuts/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/shortcuts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Api</title>
+      <link>https://cyb3rh4ck.github.io/tags/api/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spring-boot/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Autenticación</title>
+      <link>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Caching</title>
+      <link>https://cyb3rh4ck.github.io/tags/caching/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/caching/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Caffeine</title>
+      <link>https://cyb3rh4ck.github.io/tags/caffeine/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/caffeine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Diagramas</title>
+      <link>https://cyb3rh4ck.github.io/tags/diagramas/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/diagramas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oauth2</title>
+      <link>https://cyb3rh4ck.github.io/tags/oauth2/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/oauth2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Performance</title>
+      <link>https://cyb3rh4ck.github.io/tags/performance/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/performance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seguridad</title>
+      <link>https://cyb3rh4ck.github.io/tags/seguridad/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/seguridad/</guid>
       <description></description>
     </item>
     <item>
       <title>Visual</title>
-      <link>http://localhost:1313/tags/visual/</link>
+      <link>https://cyb3rh4ck.github.io/tags/visual/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/visual/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/visual/</guid>
       <description></description>
     </item>
   </channel>
