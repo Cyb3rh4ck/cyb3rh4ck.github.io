@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - Cyb3rh4ck´s dev life</title>
-        <link>https://cyb3rh4ck.github.io/posts/</link>
+        <link>http://localhost:1313/posts/</link>
         <description>All Posts | Cyb3rh4ck´s dev life</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 27 Jul 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 27 Jul 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Instalación de Oracle DB en Docker Desktop (desde cero)</title>
-    <link>https://cyb3rh4ck.github.io/posts/docker/instalacion_oracle_db_docker_hugo/</link>
+    <link>http://localhost:1313/posts/docker/instalacion_oracle_db_docker_hugo/</link>
     <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/docker/instalacion_oracle_db_docker_hugo/</guid>
+    <guid>http://localhost:1313/posts/docker/instalacion_oracle_db_docker_hugo/</guid>
     <description><![CDATA[<h1 id="-instalación-de-oracle-database-en-docker-desktop">🐳 Instalación de Oracle Database en Docker Desktop</h1>
 <p>Esta guía te explica cómo instalar <strong>Oracle Database Enterprise Edition</strong> usando Docker Desktop en Windows o Linux, <strong>utilizando la imagen oficial desde el Oracle Container Registry</strong>.</p>
 <hr>
@@ -39,10 +39,10 @@
 </item>
 <item>
     <title>Frases y prompts útiles para Copilot en VS Code (Java &#43; Spring Boot)</title>
-    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</link>
+    <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</link>
     <pubDate>Sun, 27 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</guid>
+    <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</guid>
     <description><![CDATA[<blockquote>
 <p>🎯 Usa estos comentarios dentro de tu código en VS Code para que <strong>Copilot entienda lo que necesitas</strong> y te sugiera código útil, limpio y contextualizado.</p></blockquote>
 <hr>
@@ -109,10 +109,10 @@
 </item>
 <item>
     <title>Guía de atajos de teclado en VS Code para desarrolladores Java</title>
-    <link>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</link>
+    <link>http://localhost:1313/posts/vscode/vscode-shortcuts/</link>
     <pubDate>Sun, 27 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</guid>
+    <guid>http://localhost:1313/posts/vscode/vscode-shortcuts/</guid>
     <description><![CDATA[<blockquote>
 <p>⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).</p></blockquote>
 <hr>
@@ -331,10 +331,10 @@
 </item>
 <item>
     <title>Automatiza tu código con Copilot en VS Code</title>
-    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</link>
+    <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</link>
     <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
+    <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
     <description><![CDATA[<h2 id="-introducción">🧠 Introducción</h2>
 <p>GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.</p>
 <hr>
@@ -377,10 +377,10 @@
 </item>
 <item>
     <title>Cómo trabaja Copilot</title>
-    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/how-copilot-works/</link>
+    <link>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</link>
     <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/how-copilot-works/</guid>
+    <guid>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</guid>
     <description><![CDATA[<h2 id="introducción">Introducción</h2>
 <p>GitHub Copilot funciona como un asistente de programación basado en inteligencia artificial que se integra directamente con tu editor de código. Gracias a su modelo de lenguaje entrenado con millones de líneas de código, Copilot es capaz de sugerir líneas completas, bloques de código o incluso funciones enteras a partir del contexto en el que estás trabajando.</p>
 <h2 id="arquitectura-general">Arquitectura General</h2>
@@ -388,10 +388,10 @@
 </item>
 <item>
     <title>Instalación de GitHub Copilot en VS Code</title>
-    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/</link>
+    <link>http://localhost:1313/posts/copilot-for-java-devs/instalacion-copilot-vscode/</link>
     <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/instalacion-copilot-vscode/</guid>
+    <guid>http://localhost:1313/posts/copilot-for-java-devs/instalacion-copilot-vscode/</guid>
     <description><![CDATA[<h2 id="introducción">Introducción</h2>
 <p>GitHub Copilot puede integrarse fácilmente con Visual Studio Code (VS Code), proporcionando sugerencias de código en tiempo real mientras escribes. Esta sección te guiará por el proceso de instalación del plugin y la autenticación con tu cuenta de GitHub.</p>
 <h2 id="requisitos-previos">Requisitos Previos</h2>
@@ -406,10 +406,10 @@
 </item>
 <item>
     <title>Shortcuts de GitHub Copilot en VS Code</title>
-    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link>
+    <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link>
     <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid>
+    <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid>
     <description><![CDATA[<p>GitHub Copilot mejora tu productividad como desarrollador, pero combinarlo con <strong>shortcuts</strong> y <strong>comandos de chat</strong> en VS Code lleva la experiencia a otro nivel. Aquí te dejamos los más esenciales.</p>
 <hr>
 <h2 id="-shortcuts-esenciales-de-copilot">⌨️ Shortcuts esenciales de Copilot</h2>
@@ -470,10 +470,10 @@
 </item>
 <item>
     <title>☕ Uso de Cache Local con Caffeine</title>
-    <link>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</link>
+    <link>http://localhost:1313/posts/spring-boot/cache-caffeine/</link>
     <pubDate>Thu, 24 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</guid>
+    <guid>http://localhost:1313/posts/spring-boot/cache-caffeine/</guid>
     <description><![CDATA[<h1 id="-caffeine-cache---guía-rápida">☕ Caffeine Cache - Guía Rápida</h1>
 <p><strong>Caffeine</strong> es una librería Java de alto rendimiento para caching en memoria local. Es una alternativa moderna a Ehcache y Guava, recomendada para microservicios que requieren acceso rápido a datos sin necesidad de sincronización entre instancias.</p>
 <hr>
@@ -511,10 +511,10 @@
 </item>
 <item>
     <title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title>
-    <link>https://cyb3rh4ck.github.io/posts/oauth2/</link>
+    <link>http://localhost:1313/posts/oauth2/</link>
     <pubDate>Thu, 24 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/oauth2/</guid>
+    <guid>http://localhost:1313/posts/oauth2/</guid>
     <description><![CDATA[<h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)</h1>
 <p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, <strong>sin compartir las credenciales del usuario</strong>.</p>
 <hr>
@@ -666,10 +666,10 @@
 </item>
 <item>
     <title>Arquitectura hexagonal</title>
-    <link>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</link>
+    <link>http://localhost:1313/posts/arquitectura-hexagonal/first_post/</link>
     <pubDate>Tue, 15 Jul 2025 12:14:34 -0600</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/arquitectura-hexagonal/first_post/</guid>
+    <guid>http://localhost:1313/posts/arquitectura-hexagonal/first_post/</guid>
     <description><![CDATA[<p>La arquitectura hexagonal, también conocida como &ldquo;Ports and Adapters&rdquo;, es un patrón de diseño de software que busca aislar el núcleo de la aplicación de los detalles externos, como bases de datos, interfaces de usuario o servicios externos. El núcleo contiene la lógica de negocio y se comunica con el exterior a través de puertos (interfaces) y adaptadores, lo que facilita la prueba, el mantenimiento y la evolución del sistema sin afectar la lógica principal. Este enfoque promueve la independencia y la flexibilidad en el desarrollo de aplicaciones.</p>]]></description>
 </item>
 </channel>

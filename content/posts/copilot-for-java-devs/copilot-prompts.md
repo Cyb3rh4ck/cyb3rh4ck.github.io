@@ -5,6 +5,7 @@ description: "Lista profesional de comentarios para usar con GitHub Copilot en V
 tags: ["Copilot", "Java", "VS Code", "Productividad", "Spring Boot"]
 categories: ["IA para desarrolladores"]
 toc: true
+images: ["/images/post/banner-copilot-prompts.png"]
 ---
 
 > 🎯 Usa estos comentarios dentro de tu código en VS Code para que **Copilot entienda lo que necesitas** y te sugiera código útil, limpio y contextualizado.

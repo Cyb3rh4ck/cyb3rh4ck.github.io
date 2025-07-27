@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://cyb3rh4ck.github.io/sitemap.xml
+Sitemap: http://localhost:1313/sitemap.xml
