@@ -119,13 +119,15 @@
 <li><strong>Respuesta en el editor</strong>: Se presenta la mejor predicción directamente en tu editor para que la aceptes, modifiques o rechaces.</li>
 </ol>
 <h2 id="ciclo-de-trabajo-de-copilot">Ciclo de trabajo de Copilot</h2>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD
-    A[Escribes código] --&gt; B[El editor captura el contexto]
-    B --&gt; C[El contexto se envía a Codex en GitHub]
-    C --&gt; D[Codex genera sugerencias]
-    D --&gt; E[La sugerencia aparece en tu editor]
-    E --&gt; F[Decides: aceptar, editar o rechazar]
-</code></pre><h2 id="consideraciones-de-privacidad">Consideraciones de Privacidad</h2>
+<div class="mermaid" style="text-align: center;">
+  graph TD
+      A[Escribes código] --> B[El editor captura el contexto]
+      B --> C[El contexto se envía a Codex en GitHub]
+      C --> D[Codex genera sugerencias]
+      D --> E[La sugerencia aparece en tu editor]
+      E --> F[Decides: aceptar, editar o rechazar]
+</div>
+<h2 id="consideraciones-de-privacidad">Consideraciones de Privacidad</h2>
 <p>Aunque Copilot puede ser extremadamente útil, es importante saber que tu código puede ser enviado a los servidores de GitHub para generar las sugerencias. Las empresas pueden optar por configurar entornos que minimicen esta exposición o usar políticas específicas de privacidad.</p>
 <h2 id="limitaciones">Limitaciones</h2>
 <ul>
@@ -135,6 +137,10 @@
 </ul>
 <h2 id="conclusión">Conclusión</h2>
 <p>GitHub Copilot es una poderosa herramienta de productividad para desarrolladores Java. Saber cómo funciona te permite sacarle mayor provecho, ser más crítico con sus sugerencias y usarlo como complemento en lugar de reemplazo de tu experiencia como programador.</p>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -165,7 +171,11 @@
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
-    </footer></div>
+    </footer><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
                 <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>

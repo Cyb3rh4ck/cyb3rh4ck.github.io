@@ -3,7 +3,7 @@ title: "Instalación de Oracle DB en Docker Desktop (desde cero)"
 date: 2025-07-26
 #type: "docs"
 draft: false
-weight: 1
+#weight: 1
 description: "Guía paso a paso para instalar Oracle Database en Docker Desktop usando la imagen oficial del Oracle Container Registry."
 ---
 

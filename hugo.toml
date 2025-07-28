@@ -1,24 +1,10 @@
 baseURL = "https://cyb3rh4ck.github.io/"
-
-# Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
-
-# website title
 title = "Cyb3rh4ck´s dev life"
-
-# language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
-
-# language name ["English", "简体中文", "Français", "Polski", ...]
 languageName = "English"
-
-# whether to use emoji code
 enableEmoji = true
-
-# whether to use robots.txt
 enableRobotsTXT = true
-
-# whether to use git commit log
 enableGitInfo = true
 
 # Pagination config
@@ -29,8 +15,7 @@ enableGitInfo = true
 
 # Menu config
 [menu]
- 
-    [[menu.main]]
+  [[menu.main]]
     name = "VS Code"
     url = "/vscode/"
     weight = 2
@@ -46,141 +31,83 @@ enableGitInfo = true
   [[menu.main]]
     weight = 4
     identifier = "posts"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    # you can add extra information after the name (HTML format is supported), such as icons
-    post = ""
     name = "Posts"
     url = "/posts/"
-    # title will be shown when you hover on this menu link
     title = "all posts"
     pre = "<i class='fas fa-folder-open'></i>"
 
-  
-
-
-
 [params]
-  # site default theme ["auto", "light", "dark"]
   defaultTheme = "light"
-
-  # public git repo url only then enableGitInfo is true
   gitRepo = "https://github.com/Cyb3rh4ck/cyb3rh4ck.github.io"
-
-  # LoveIt NEW | 0.1.1 which hash function used for SRI, when empty, no SRI is used
-  # ["sha256", "sha384", "sha512", "md5"]
   fingerprint = ""
-
-  # LoveIt NEW | 0.2.0 date format
   dateFormat = "2006-01-02"
-
-  # website title for Open Graph and Twitter Cards
   title = "Cyb3rh4ck D3v L1f3"
-
-  # website description for RSS, SEO, Open Graph and Twitter Cards
   description = "Bitácora de IA, Java y desarrollo ágil"
-
-  # website images for Open Graph and Twitter Cards
   images = ["/content/img/avatarCyb3r.png"]
-
-
-  ##### por modulos
   defaultContentLanguage = "es"
   showBreadCrumbs = true
   enableAnchorLink = true
+  enableMermaid = true
 
-  # Author config
   [params.author]
     name = "Cyb3rh4ck"
     email = ""
     link = ""
     avatar = "/images/avatar_02.png"
 
-    # Header config
   [params.header]
-    # desktop header mode ["fixed", "normal", "auto"]
     desktopMode = "fixed"
-    # mobile header mode ["fixed", "normal", "auto"]
     mobileMode = "auto"
-    # LoveIt NEW | 0.2.0 Header title config
     [params.header.title]
-      # URL of the LOGO
       logo = "/images/logo.png"
-      # title name
       name = "Cyb3rh4ck D3v L1f3"
-      # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
-      # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
-      # LoveIt NEW | 0.2.5 whether to use typeit animation for title name
       typeit = false
 
-# Social config about the author
   [params.social]
     GitHub = "Cyb3rh4ck"
     Linkedin = "cyb3rh4ck"
     X = "@Cyb3rh4ck"
     Facebook = "codigojava"
 
-  # Home page config
   [params.home]
-    # amount of RSS pages
     rss = 10
-    # Home page profile
     [params.home.profile]
       enable = true
-      # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
-      # URL of avatar shown in home page
       avatarURL = "/images/avatar_02.png"
-      # title shown in home page (HTML format is supported)
       title = "Código, Café y Caos Controlado"
-      # subtitle shown in home page (HTML format is supported)
       subtitle = "Pensamientos de un desarrollador backend entre builds rotos y deploys exitosos"
-      # whether to use typeit animation for subtitle
       typeit = true
-      # whether to show social links
       social = true
-      # disclaimer (HTML format is supported)
       disclaimer = ""
-    
-    # Home page posts
     [params.home.posts]
       enable = true
-      # special amount of posts in each home posts page
       paginate = 6
 
-# Footer config
   [params.footer]
     enable = true
-    # LoveIt NEW | 0.2.0 Custom content (HTML format is supported)
     custom = ''
-    # LoveIt NEW | 0.2.0 whether to show Hugo and theme info
     hugo = true
-    # LoveIt NEW | 0.2.0 whether to show copyright info
     copyright = true
-    # LoveIt NEW | 0.2.0 whether to show the author
     author = true
-    # Site creation time
     since = 2025
-    # ICP info only in China (HTML format is supported)
     icp = ""
-    # license info (HTML format is supported)
     license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
+  [params.page]
+    mermaid = true
 
 # Markup related configuration in Hugo
-
 [markup]
-  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
-
   [markup.highlight]
-    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [taxonomies]
   category = "categories"
   tag = "tags"
-
-
-
-
