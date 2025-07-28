@@ -3,26 +3,33 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
             <loc>http://localhost:1313/cv/</loc><lastmod>2025-07-26T06:19:37-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/docker/instalacion_oracle_db_docker_hugo/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/extensiones/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/musclify/</loc><lastmod>2025-07-26T06:19:37-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/spring-boot-dev/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/angular/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/api-rest/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/arquitectura-hexagonal/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/desarrollo-web/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/categories/frontend/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/frontend/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/java/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/spring-boot/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-07-28T00:00:00&#43;00:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/atajos/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/copilot/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/copilot/</loc><lastmod>2025-07-27T09:59:29-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</loc><lastmod>2025-07-27T09:59:29-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/vscode/vscode-shortcuts/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/java/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/productividad/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/spring-boot/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/vs-code/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/productividad/</loc><lastmod>2025-07-27T09:59:29-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/vs-code/</loc><lastmod>2025-07-27T09:59:29-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/github/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/instalacion-copilot-vscode/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/docker/instalacion_oracle_db_docker_hugo/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/shortcuts/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/spring-boot/cache-caffeine/</loc><lastmod>2025-07-25T09:04:57-06:00</lastmod></url><url>

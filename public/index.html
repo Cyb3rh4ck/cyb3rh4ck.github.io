@@ -84,35 +84,26 @@
         alt="/images/avatar_02.png"
         title="/images/avatar_02.png" /></a></div><h1 class="home-title">Código, Café y Caos Controlado</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="@Cyb3rh4ck" rel="me"></a><a href="https://github.com/Cyb3rh4ck" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/cyb3rh4ck" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://facebook.com/codigojava" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/docker/instalacion_oracle_db_docker_hugo/">Instalación de Oracle DB en Docker Desktop (desde cero)</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-26">2025-07-26</time></span></div><div class="content"><h1 id="-instalación-de-oracle-database-en-docker-desktop">🐳 Instalación de Oracle Database en Docker Desktop</h1>
-<p>Esta guía te explica cómo instalar <strong>Oracle Database Enterprise Edition</strong> usando Docker Desktop en Windows o Linux, <strong>utilizando la imagen oficial desde el Oracle Container Registry</strong>.</p>
+        <a href="/posts/angular/crud-angular-vscode-copilot/">Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-28">2025-07-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/frontend/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Frontend</a></span></div><div class="content"><h2 id="-introducción">🧠 Introducción</h2>
+<p>Crear una aplicación Angular (versión recomendada: <strong>18.x</strong>) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: <code>Cliente</code> o <code>Producto</code>). Se aplicará una estructura inspirada en <strong>arquitectura hexagonal</strong> para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.</p>
 <hr>
-<h2 id="-prerrequisitos">✅ Prerrequisitos</h2>
+<h2 id="-requisitos-del-entorno">🔧 Requisitos del entorno</h2>
 <ul>
-<li>Tener instalado <strong>Docker Desktop</strong></li>
-<li>Contar con una cuenta activa en <a href="https://profile.oracle.com" target="_blank" rel="noopener noreffer ">https://profile.oracle.com</a></li>
+<li>Node.js v20.19 o superior (<code>node -v</code>)</li>
+<li>Angular CLI (<code>npm install -g @angular/cli</code>)</li>
+<li>Angular v18.x (<code>ng version</code>)</li>
+<li>Un backend REST disponible (puerto, endpoints y CORS habilitado)</li>
+<li>Editor recomendado: <strong>Visual Studio Code</strong> con extensión GitHub Copilot</li>
 </ul>
 <hr>
-<h2 id="-paso-1-aceptar-los-términos-de-la-imagen">🔐 Paso 1: Aceptar los términos de la imagen</h2>
-<ol>
-<li>Ir al sitio: <a href="https://container-registry.oracle.com" target="_blank" rel="noopener noreffer ">https://container-registry.oracle.com</a></li>
-<li>Iniciar sesión con tu cuenta Oracle</li>
-<li>Buscar: <code>database/enterprise</code></li>
-<li>Entrar al resultado y <strong>aceptar los términos de licencia</strong></li>
-</ol>
-<hr>
-<h2 id="-paso-2-generar-un-auth-token-opcional-pero-recomendado">🔑 Paso 2: Generar un Auth Token (opcional pero recomendado)</h2>
-<ol>
-<li>Ve a: <a href="https://profile.oracle.com" target="_blank" rel="noopener noreffer ">https://profile.oracle.com</a></li>
-<li>En el menú izquierdo, selecciona <strong>&ldquo;Security&rdquo; → &ldquo;Auth Tokens&rdquo;</strong></li>
-<li>Crea un nuevo token con nombre <code>docker-token</code></li>
-<li>Guarda el token (se muestra solo una vez)</li>
-</ol>
-<hr>
-<h2 id="-paso-3-login-en-oracle-container-registry">🔐 Paso 3: Login en Oracle Container Registry</h2>
-<p>Abre una terminal o PowerShell y ejecuta:</p></div><div class="post-footer">
-        <a href="/posts/docker/instalacion_oracle_db_docker_hugo/">Read More</a></div>
+<h2 id="-paso-1-crear-la-aplicación-angular">🏁 Paso 1: Crear la aplicación Angular</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ng new frontend-crud-app
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> frontend-crud-app
+</span></span><span class="line"><span class="cl">ng serve --open
+</span></span></code></pre></div><p>Selecciona <strong>Routing = Yes</strong>, <strong>Estilo = CSS o SCSS</strong> según tu preferencia.</p></div><div class="post-footer">
+        <a href="/posts/angular/crud-angular-vscode-copilot/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/angular/">Angular</a>,&nbsp;<a href="/tags/frontend/">Frontend</a>,&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a>,&nbsp;<a href="/tags/api-rest/">API REST</a>,&nbsp;<a href="/tags/arquitectura-hexagonal/">Arquitectura Hexagonal</a>,&nbsp;<a href="/tags/desarrollo-web/">Desarrollo Web</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/copilot-for-java-devs/copilot-prompts/">Frases y prompts útiles para Copilot en VS Code (Java + Spring Boot)</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-27">2025-07-27</time></span>&nbsp;<span class="post-category">included in <a href="/categories/ia-para-desarrolladores/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>IA para desarrolladores</a></span></div><div class="content"><blockquote>
@@ -476,7 +467,11 @@
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
-    </footer></div>
+    </footer><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
                 <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>

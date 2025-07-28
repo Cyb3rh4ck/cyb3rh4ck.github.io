@@ -22,14 +22,14 @@ Copilot se basa en el modelo Codex de OpenAI, que ha sido entrenado con reposito
 
 ## Ciclo de trabajo de Copilot
 
-```mermaid
-graph TD
-    A[Escribes código] --> B[El editor captura el contexto]
-    B --> C[El contexto se envía a Codex en GitHub]
-    C --> D[Codex genera sugerencias]
-    D --> E[La sugerencia aparece en tu editor]
-    E --> F[Decides: aceptar, editar o rechazar]
-```
+<div class="mermaid" style="text-align: center;">
+  graph TD
+      A[Escribes código] --> B[El editor captura el contexto]
+      B --> C[El contexto se envía a Codex en GitHub]
+      C --> D[Codex genera sugerencias]
+      D --> E[La sugerencia aparece en tu editor]
+      E --> F[Decides: aceptar, editar o rechazar]
+</div>
 
 ## Consideraciones de Privacidad
 
@@ -44,3 +44,9 @@ Aunque Copilot puede ser extremadamente útil, es importante saber que tu códig
 ## Conclusión
 
 GitHub Copilot es una poderosa herramienta de productividad para desarrolladores Java. Saber cómo funciona te permite sacarle mayor provecho, ser más crítico con sus sugerencias y usarlo como complemento en lugar de reemplazo de tu experiencia como programador.
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
