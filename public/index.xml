@@ -3,9 +3,43 @@
         <title>Cyb3rh4ck´s dev life</title>
         <link>http://localhost:1313/</link>
         <description>Bitácora de IA, Java y desarrollo ágil</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 28 Jul 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 28 Jul 2025 17:20:00 -0600</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title>
+    <link>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>
+    <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
+    <description><![CDATA[<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>💡 TL;DR<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?</strong> Esta guía te enseña cómo usar <strong>GitHub Copilot efectivamente</strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.</div>
+        </div>
+    </div>
+<h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)</h2>
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>❌ Escenario Típico con Copilot<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li><strong>Le pides a Copilot</strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)</li>
+<li><strong>Copilot genera todo de una vez</strong> - 50+ archivos, configuraciones, dependencias</li>
+<li><strong>Aparecen 78 errores</strong> de compilación porque las piezas no encajan 😱</li>
+<li><strong>No entiendes el código generado</strong> para poder arreglarlo</li>
+<li><strong>Dependes completamente de Copilot</strong> para cada fix, creando más problemas</li>
+<li><strong>Frustración total</strong> - el &ldquo;asistente inteligente&rdquo; se volvió tu enemigo</li>
+</ol>
+</div>
+        </div>
+    </div>
+<blockquote>
+<p>💭 <strong>Mi experiencia usando Copilot</strong>: <em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.</em></p>]]></description>
+</item>
+<item>
     <title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title>
     <link>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</link>
     <pubDate>Mon, 28 Jul 2025 00:00:00 &#43;0000</pubDate>
@@ -535,161 +569,6 @@
 </span></span></span></code></pre></div><hr>
 <h2 id="-políticas-de-evicción">🧠 Políticas de Evicción</h2>
 <p>Puedes configurar políticas como:</p>]]></description>
-</item>
-<item>
-    <title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title>
-    <link>http://localhost:1313/posts/oauth2/</link>
-    <pubDate>Thu, 24 Jul 2025 00:00:00 &#43;0000</pubDate>
-    <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/oauth2/</guid>
-    <description><![CDATA[<h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)</h1>
-<p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, <strong>sin compartir las credenciales del usuario</strong>.</p>
-<hr>
-<h2 id="-actores-del-protocolo">🧩 Actores del Protocolo</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Actor</th>
-          <th>Descripción</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>👤 <strong>Resource Owner</strong></td>
-          <td>Usuario que posee los recursos</td>
-      </tr>
-      <tr>
-          <td>🌐 <strong>Client</strong></td>
-          <td>App que quiere acceder a recursos</td>
-      </tr>
-      <tr>
-          <td>🔐 <strong>Authorization Server</strong></td>
-          <td>Autentica usuarios y entrega tokens</td>
-      </tr>
-      <tr>
-          <td>📦 <strong>Resource Server</strong></td>
-          <td>API que expone los recursos protegidos</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-flujo-general-authorization-code">🔁 Flujo General (Authorization Code)</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[Usuario] --&gt; (Autorización) --&gt; [Authorization Server]
-</span></span><span class="line"><span class="cl">    ↓                                   ↓
-</span></span><span class="line"><span class="cl">[Client App] &lt;-- Código de Autorización -- [Authorization Server]
-</span></span><span class="line"><span class="cl">    ↓
-</span></span><span class="line"><span class="cl">Token Exchange
-</span></span><span class="line"><span class="cl">    ↓
-</span></span><span class="line"><span class="cl">[Client App] --&gt; Token de Acceso --&gt; [Resource Server]
-</span></span></code></pre></div><hr>
-<h2 id="-tipos-de-grants-concesiones">🧾 Tipos de &ldquo;Grants&rdquo; (Concesiones)</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Grant Type</th>
-          <th>Uso común</th>
-          <th>Seguridad</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>🔐 Authorization Code</td>
-          <td>Apps Web / Móviles</td>
-          <td>⭐⭐⭐⭐⭐</td>
-      </tr>
-      <tr>
-          <td>💳 Client Credentials</td>
-          <td>Sistemas máquina a máquina</td>
-          <td>⭐⭐⭐⭐</td>
-      </tr>
-      <tr>
-          <td>⚠️ Implicit</td>
-          <td>SPAs (obsoleto)</td>
-          <td>❌</td>
-      </tr>
-      <tr>
-          <td>🔑 Password Credentials</td>
-          <td>Legacy / Testing</td>
-          <td>❌</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-tokens">🎫 Tokens</h2>
-<ul>
-<li><strong>Access Token</strong>: Caduca rápido, limitado en alcance.</li>
-<li><strong>Refresh Token</strong>: Opcional. Renueva el Access Token sin reautenticación.</li>
-<li><strong>Formatos</strong>: Generalmente JWT o token opaco.</li>
-</ul>
-<hr>
-<h2 id="-seguridad-requerida">🔐 Seguridad Requerida</h2>
-<ul>
-<li>Uso obligatorio de <strong>HTTPS (TLS)</strong></li>
-<li>Tokens deben tratarse como <strong>credenciales sensibles</strong></li>
-<li>Revocación y expiración controladas desde el servidor</li>
-</ul>
-<hr>
-<h2 id="-arquitectura-con-oauth-20">🧱 Arquitectura con OAuth 2.0</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">     +-------------------------+
-</span></span><span class="line"><span class="cl">     |     Resource Owner      |
-</span></span><span class="line"><span class="cl">     +-------------------------+
-</span></span><span class="line"><span class="cl">                 |
-</span></span><span class="line"><span class="cl">      (autorización vía UI)
-</span></span><span class="line"><span class="cl">                 ↓
-</span></span><span class="line"><span class="cl">     +-------------------------+
-</span></span><span class="line"><span class="cl">     |  Authorization Server   |----+
-</span></span><span class="line"><span class="cl">     +-------------------------+    |
-</span></span><span class="line"><span class="cl">                 ↓                 ↓
-</span></span><span class="line"><span class="cl">     Código     Token            API Call
-</span></span><span class="line"><span class="cl">     ↓           ↓                ↓
-</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
-</span></span><span class="line"><span class="cl">| Client  |-&gt;| Access    |---&gt;| Resource   |
-</span></span><span class="line"><span class="cl">| (App)   |  | Token     |    | Server     |
-</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
-</span></span></code></pre></div><hr>
-<h2 id="-extensiones-comunes">📚 Extensiones Comunes</h2>
-<table>
-  <thead>
-      <tr>
-          <th>RFC</th>
-          <th>Nombre</th>
-          <th>Propósito</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>RFC 6750</td>
-          <td>Bearer Token</td>
-          <td>Define uso de tokens tipo Bearer</td>
-      </tr>
-      <tr>
-          <td>RFC 7636</td>
-          <td>PKCE</td>
-          <td>Seguridad adicional en móviles</td>
-      </tr>
-      <tr>
-          <td>RFC 7662</td>
-          <td>Token Introspection</td>
-          <td>Validación de tokens</td>
-      </tr>
-      <tr>
-          <td>RFC 9068</td>
-          <td>JWT Profile</td>
-          <td>Estandariza uso de JWT</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-buenas-prácticas">✅ Buenas Prácticas</h2>
-<ul>
-<li>Usa <strong>PKCE</strong> en apps móviles y SPAs</li>
-<li>Expira tokens en minutos</li>
-<li>Usa scopes específicos (<code>read</code>, <code>write</code>, etc.)</li>
-<li>Implementa logs, revocación y rotating refresh tokens</li>
-</ul>
-<hr>
-<h2 id="-conclusión">🧠 Conclusión</h2>
-<p>OAuth 2.0 no es solo un protocolo de autenticación, sino un <strong>marco flexible para autorización moderna</strong>.</p>]]></description>
 </item>
 </channel>
 </rss>

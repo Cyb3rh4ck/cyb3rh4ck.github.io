@@ -84,6 +84,37 @@
         alt="/images/avatar_02.png"
         title="/images/avatar_02.png" /></a></div><h1 class="home-title">Código, Café y Caos Controlado</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="@Cyb3rh4ck" rel="me"></a><a href="https://github.com/Cyb3rh4ck" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/cyb3rh4ck" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://facebook.com/codigojava" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/copilot-for-java-devs/desarrollo-incremental-guia/">🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/Cyb3rh4ck" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-28">2025-07-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/ia-para-desarrolladores/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>IA para desarrolladores</a>&nbsp;<a href="/categories/mejores-pr%C3%A1cticas/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Mejores Prácticas</a></span></div><div class="content"><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>💡 TL;DR<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?</strong> Esta guía te enseña cómo usar <strong>GitHub Copilot efectivamente</strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.</div>
+        </div>
+    </div>
+<h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)</h2>
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>❌ Escenario Típico con Copilot<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li><strong>Le pides a Copilot</strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)</li>
+<li><strong>Copilot genera todo de una vez</strong> - 50+ archivos, configuraciones, dependencias</li>
+<li><strong>Aparecen 78 errores</strong> de compilación porque las piezas no encajan 😱</li>
+<li><strong>No entiendes el código generado</strong> para poder arreglarlo</li>
+<li><strong>Dependes completamente de Copilot</strong> para cada fix, creando más problemas</li>
+<li><strong>Frustración total</strong> - el &ldquo;asistente inteligente&rdquo; se volvió tu enemigo</li>
+</ol>
+</div>
+        </div>
+    </div>
+<blockquote>
+<p>💭 <strong>Mi experiencia usando Copilot</strong>: <em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.</em></p></div><div class="post-footer">
+        <a href="/posts/copilot-for-java-devs/desarrollo-incremental-guia/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/desarrollo/">Desarrollo</a>,&nbsp;<a href="/tags/arquitectura/">Arquitectura</a>,&nbsp;<a href="/tags/metodolog%C3%ADa/">Metodología</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a>,&nbsp;<a href="/tags/oauth2/">Oauth2</a>,&nbsp;<a href="/tags/hexagonal/">Hexagonal</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/angular/crud-angular-vscode-copilot/">Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-28">2025-07-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/frontend/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Frontend</a></span></div><div class="content"><h2 id="-introducción">🧠 Introducción</h2>
 <p>Crear una aplicación Angular (versión recomendada: <strong>18.x</strong>) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: <code>Cliente</code> o <code>Producto</code>). Se aplicará una estructura inspirada en <strong>arquitectura hexagonal</strong> para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.</p>
@@ -448,20 +479,6 @@
 <h2 id="arquitectura-general">Arquitectura General</h2>
 <p>Copilot se basa en el modelo Codex de OpenAI, que ha sido entrenado con repositorios públicos disponibles en GitHub. Cuando escribes código, el complemento de Copilot en tu editor envía el contexto del archivo (y líneas recientes de código) a los servidores de GitHub, donde Codex genera sugerencias y las retorna para que el desarrollador las acepte o descarte.</p></div><div class="post-footer">
         <a href="/posts/copilot-for-java-devs/how-copilot-works/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/copilot-for-java-devs/instalacion-copilot-vscode/">Instalación de GitHub Copilot en VS Code</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-26">2025-07-26</time></span></div><div class="content"><h2 id="introducción">Introducción</h2>
-<p>GitHub Copilot puede integrarse fácilmente con Visual Studio Code (VS Code), proporcionando sugerencias de código en tiempo real mientras escribes. Esta sección te guiará por el proceso de instalación del plugin y la autenticación con tu cuenta de GitHub.</p>
-<h2 id="requisitos-previos">Requisitos Previos</h2>
-<ul>
-<li>Tener instalado <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Code</a></li>
-<li>Contar con una cuenta de GitHub</li>
-<li>Acceso a internet para descargar extensiones y autenticar</li>
-</ul>
-<h2 id="pasos-para-instalar-github-copilot">Pasos para Instalar GitHub Copilot</h2>
-<h3 id="1-abre-vs-code">1. Abre VS Code</h3>
-<p>Abre Visual Studio Code desde tu equipo.</p></div><div class="post-footer">
-        <a href="/posts/copilot-for-java-devs/instalacion-copilot-vscode/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>

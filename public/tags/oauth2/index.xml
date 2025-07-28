@@ -6,8 +6,15 @@
     <description>Recent content in Oauth2 on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Jul 2025 20:34:10 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 28 Jul 2025 17:20:00 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🚀 Desarrollo Incremental: Cómo Construir Proyectos Complejos Sin Errores</title>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>
+      <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
+      <description>&lt;div class=&#34;details admonition tip open&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xD;&#xA;            &lt;i class=&#34;icon fas fa-lightbulb fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;💡 TL;DR&lt;i class=&#34;details-icon fas fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;        &lt;div class=&#34;details-content&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;admonition-content&#34;&gt;&lt;strong&gt;¿Generas proyectos complejos y aparecen muchos errores?&lt;/strong&gt; Esta guía te enseña la &lt;strong&gt;metodología incremental&lt;/strong&gt; que usan los desarrolladores senior para construir aplicaciones robustas sin dolor de cabeza.&lt;/div&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;    &lt;/div&gt;&#xA;&lt;h2 id=&#34;-el-problema-que-todos-hemos-vivido&#34;&gt;🎯 El Problema que Todos Hemos Vivido&lt;/h2&gt;&#xA;&lt;div class=&#34;details admonition failure open&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xD;&#xA;            &lt;i class=&#34;icon fas fa-times-circle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;❌ Escenario Típico&lt;i class=&#34;details-icon fas fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;        &lt;div class=&#34;details-content&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;admonition-content&#34;&gt;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Decides crear&lt;/strong&gt; un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Generas todo de una vez&lt;/strong&gt; - 50+ archivos, configuraciones, dependencias&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Aparecen 78 errores&lt;/strong&gt; de compilación 😱&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No sabes por dónde empezar&lt;/strong&gt; a arreglar&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Frustración total&lt;/strong&gt; y quieres tirar todo a la basura&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;    &lt;/div&gt;&#xA;&lt;p&gt;¿Te suena familiar? &lt;strong&gt;No eres el único&lt;/strong&gt;. Incluso los desarrolladores experimentados caen en esta trampa.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title>
       <link>http://localhost:1313/posts/oauth2/</link>
