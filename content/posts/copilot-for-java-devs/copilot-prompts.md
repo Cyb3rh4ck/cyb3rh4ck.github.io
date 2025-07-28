@@ -4,9 +4,10 @@ date: 2025-07-27
 description: "Lista profesional de comentarios para usar con GitHub Copilot en VS Code, con enfoque en Java, Spring Boot y arquitectura limpia."
 tags: ["Copilot", "Java", "VS Code", "Productividad", "Spring Boot"]
 categories: ["IA para desarrolladores"]
-toc: true
-images: ["/images/post/banner-copilot-prompts.png"]
+
 ---
+
+![Copilot Prompts](/images/post/banner-copilot-prompts.png)
 
 > 🎯 Usa estos comentarios dentro de tu código en VS Code para que **Copilot entienda lo que necesitas** y te sugiera código útil, limpio y contextualizado.
 
