@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mermaid on Cyb3rh4ck´s dev life</title>
+    <link>http://localhost:1313/tags/mermaid/</link>
+    <description>Recent content in Mermaid on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mermaid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Cómo funciona GitHub Copilot? (Java &#43; VS Code)</title>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/como-funciona-copilot/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/como-funciona-copilot/</guid>
+      <description>&lt;h2 id=&#34;-cómo-funciona-github-copilot&#34;&gt;🤖 ¿Cómo funciona GitHub Copilot?&lt;/h2&gt;&#xA;&lt;p&gt;GitHub Copilot analiza el código que escribes y el contexto cercano en tu archivo o proyecto. Utiliza un modelo llamado Codex (basado en GPT) para generar sugerencias que aparecen justo en tu editor.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-flujo-general-de-funcionamiento&#34;&gt;🧠 Flujo general de funcionamiento&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph TD&#xA;    A[🧑‍💻 Escribes código] --&amp;gt; B[🧠 El editor analiza el contexto]&#xA;    B --&amp;gt; C[☁️ Se envía el contexto a Codex en GitHub]&#xA;    C --&amp;gt; D[⚙️ Codex genera sugerencias relevantes]&#xA;    D --&amp;gt; E[💡 Aparecen sugerencias en VS Code]&#xA;    E --&amp;gt; F{Aceptar, editar o ignorar}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;Este diagrama representa cómo GitHub Copilot transforma el contexto del editor en sugerencias en tiempo real.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

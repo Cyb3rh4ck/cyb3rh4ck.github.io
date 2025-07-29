@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749) - Cyb3rh4ck´s dev life</title><meta name="Description" content="Resumen técnico visual y profesional del estándar OAuth 2.0 (RFC 6749) enfocado en aprendizaje visual y arquitectura de seguridad moderna."><meta property="og:url" content="http://localhost:1313/docs/oauth2/">
+  <meta property="og:site_name" content="Cyb3rh4ck´s dev life">
+  <meta property="og:title" content="🔐 OAuth 2.0: Resumen Profesional (RFC 6749)">
+  <meta property="og:description" content="Resumen técnico visual y profesional del estándar OAuth 2.0 (RFC 6749) enfocado en aprendizaje visual y arquitectura de seguridad moderna.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2025-07-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-24T00:00:00+00:00">
+    <meta property="article:tag" content="Oauth2">
+    <meta property="article:tag" content="Seguridad">
+    <meta property="article:tag" content="Autenticación">
+    <meta property="article:tag" content="Api">
+    <meta property="article:tag" content="Diagramas">
+    <meta property="article:tag" content="Visual">
+    <meta property="og:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+  <meta name="twitter:title" content="🔐 OAuth 2.0: Resumen Profesional (RFC 6749)">
+  <meta name="twitter:description" content="Resumen técnico visual y profesional del estándar OAuth 2.0 (RFC 6749) enfocado en aprendizaje visual y arquitectura de seguridad moderna.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/docs/oauth2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "🔐 OAuth 2.0: Resumen Profesional (RFC 6749)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/docs\/oauth2\/"
+        },"genre": "docs","keywords": "oauth2, seguridad, autenticación, api, diagramas, visual","wordcount":  362 ,
+        "url": "http:\/\/localhost:1313\/docs\/oauth2\/","datePublished": "2025-07-24T00:00:00+00:00","dateModified": "2025-07-24T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Cyb3rh4ck"
+            },"description": "Resumen técnico visual y profesional del estándar OAuth 2.0 (RFC 6749) enfocado en aprendizaje visual y arquitectura de seguridad moderna."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/musclify/"> Musclify </a><a class="menu-item" href="/docs/"> Documentación </a><a class="menu-item" href="/posts/" title="all posts"> Posts </a><a class="menu-item" href="/vscode/"> VS Code </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/musclify/" title="">Musclify</a><a class="menu-item" href="/docs/" title="">Documentación</a><a class="menu-item" href="/posts/" title="all posts">Posts</a><a class="menu-item" href="/vscode/" title="">VS Code</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</h1><div class="content" id="content"><h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)</h1>
+<p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, <strong>sin compartir las credenciales del usuario</strong>.</p>
+<hr>
+<h2 id="-actores-del-protocolo">🧩 Actores del Protocolo</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Actor</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>👤 <strong>Resource Owner</strong></td>
+          <td>Usuario que posee los recursos</td>
+      </tr>
+      <tr>
+          <td>🌐 <strong>Client</strong></td>
+          <td>App que quiere acceder a recursos</td>
+      </tr>
+      <tr>
+          <td>🔐 <strong>Authorization Server</strong></td>
+          <td>Autentica usuarios y entrega tokens</td>
+      </tr>
+      <tr>
+          <td>📦 <strong>Resource Server</strong></td>
+          <td>API que expone los recursos protegidos</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-flujo-general-authorization-code">🔁 Flujo General (Authorization Code)</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[Usuario] --&gt; (Autorización) --&gt; [Authorization Server]
+</span></span><span class="line"><span class="cl">    ↓                                   ↓
+</span></span><span class="line"><span class="cl">[Client App] &lt;-- Código de Autorización -- [Authorization Server]
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">Token Exchange
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">[Client App] --&gt; Token de Acceso --&gt; [Resource Server]
+</span></span></code></pre></div><hr>
+<h2 id="-tipos-de-grants-concesiones">🧾 Tipos de &ldquo;Grants&rdquo; (Concesiones)</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Grant Type</th>
+          <th>Uso común</th>
+          <th>Seguridad</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>🔐 Authorization Code</td>
+          <td>Apps Web / Móviles</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>💳 Client Credentials</td>
+          <td>Sistemas máquina a máquina</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>⚠️ Implicit</td>
+          <td>SPAs (obsoleto)</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>🔑 Password Credentials</td>
+          <td>Legacy / Testing</td>
+          <td>❌</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-tokens">🎫 Tokens</h2>
+<ul>
+<li><strong>Access Token</strong>: Caduca rápido, limitado en alcance.</li>
+<li><strong>Refresh Token</strong>: Opcional. Renueva el Access Token sin reautenticación.</li>
+<li><strong>Formatos</strong>: Generalmente JWT o token opaco.</li>
+</ul>
+<hr>
+<h2 id="-seguridad-requerida">🔐 Seguridad Requerida</h2>
+<ul>
+<li>Uso obligatorio de <strong>HTTPS (TLS)</strong></li>
+<li>Tokens deben tratarse como <strong>credenciales sensibles</strong></li>
+<li>Revocación y expiración controladas desde el servidor</li>
+</ul>
+<hr>
+<h2 id="-arquitectura-con-oauth-20">🧱 Arquitectura con OAuth 2.0</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">     |     Resource Owner      |
+</span></span><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">                 |
+</span></span><span class="line"><span class="cl">      (autorización vía UI)
+</span></span><span class="line"><span class="cl">                 ↓
+</span></span><span class="line"><span class="cl">     +-------------------------+
+</span></span><span class="line"><span class="cl">     |  Authorization Server   |----+
+</span></span><span class="line"><span class="cl">     +-------------------------+    |
+</span></span><span class="line"><span class="cl">                 ↓                 ↓
+</span></span><span class="line"><span class="cl">     Código     Token            API Call
+</span></span><span class="line"><span class="cl">     ↓           ↓                ↓
+</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
+</span></span><span class="line"><span class="cl">| Client  |-&gt;| Access    |---&gt;| Resource   |
+</span></span><span class="line"><span class="cl">| (App)   |  | Token     |    | Server     |
+</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
+</span></span></code></pre></div><hr>
+<h2 id="-extensiones-comunes">📚 Extensiones Comunes</h2>
+<table>
+  <thead>
+      <tr>
+          <th>RFC</th>
+          <th>Nombre</th>
+          <th>Propósito</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RFC 6750</td>
+          <td>Bearer Token</td>
+          <td>Define uso de tokens tipo Bearer</td>
+      </tr>
+      <tr>
+          <td>RFC 7636</td>
+          <td>PKCE</td>
+          <td>Seguridad adicional en móviles</td>
+      </tr>
+      <tr>
+          <td>RFC 7662</td>
+          <td>Token Introspection</td>
+          <td>Validación de tokens</td>
+      </tr>
+      <tr>
+          <td>RFC 9068</td>
+          <td>JWT Profile</td>
+          <td>Estandariza uso de JWT</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-buenas-prácticas">✅ Buenas Prácticas</h2>
+<ul>
+<li>Usa <strong>PKCE</strong> en apps móviles y SPAs</li>
+<li>Expira tokens en minutos</li>
+<li>Usa scopes específicos (<code>read</code>, <code>write</code>, etc.)</li>
+<li>Implementa logs, revocación y rotating refresh tokens</li>
+</ul>
+<hr>
+<h2 id="-conclusión">🧠 Conclusión</h2>
+<p>OAuth 2.0 no es solo un protocolo de autenticación, sino un <strong>marco flexible para autorización moderna</strong>.</p>
+<p>Contribuye a:</p>
+<ul>
+<li>🔒 Separación entre usuario y recursos</li>
+<li>🛡️ Control de acceso granular</li>
+<li>🧭 Trazabilidad y auditoría</li>
+</ul>
+<p>Es la base de soluciones modernas como <strong>OpenID Connect</strong>, <strong>API Gateway Security</strong>, <strong>SSO empresarial</strong>, etc.</p>
+<hr>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
