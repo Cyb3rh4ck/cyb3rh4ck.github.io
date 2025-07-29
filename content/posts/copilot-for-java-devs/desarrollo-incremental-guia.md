@@ -13,9 +13,6 @@ images: []
 tags: ["copilot", "desarrollo", "arquitectura", "metodología", "spring-boot", "oauth2", "hexagonal"]
 categories: ["IA para desarrolladores", "Mejores Prácticas"]
 
-featuredImage: ""
-featuredImagePreview: ""
-
 hiddenFromHomePage: false
 hiddenFromSearch: false
 twemoji: true

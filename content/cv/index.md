@@ -74,7 +74,7 @@ Currently expanding full stack expertise with Angular. Passionate about clean co
 - **English:** B2 – Intermediate/Advanced (technical fluency and written communication)
 
 ---
-## 📘 Coursera Certifications
+## 📘 Certifications
 
 ### 🧠 Completed Courses and Projects
 
@@ -90,7 +90,11 @@ Currently expanding full stack expertise with Angular. Passionate about clean co
   Credential: [Verify Certificate](https://www.coursera.org/account/accomplishments/verify/F9MN1NLKQDG9)  
   Topics included SDLC, programming constructs in Python, software design patterns, deployment strategies, and career paths in software engineering.
 
+- **AI with GitHub Copilot for Java & Spring Boot Developers** *(Udemy)*  
+  Credential: [Verify Certificate](https://www.udemy.com/certificate/UC-eea8b4a6-8339-4b37-b0f8-90fcb167d66e)  
+  Enhanced skills in using GitHub Copilot as a coding assistant for Java development. Covered Copilot suggestions, smart refactoring, incremental implementation, Spring Boot integration with AI-powered tooling, and automating tests while reducing boilerplate code.
+
 ---
 
-*Issuer:* Coursera | Oracle | IBM  
-*Platform:* [coursera.org](https://www.coursera.org)
+*Issuer:* Coursera | Oracle | IBM | Udemy  
+*Platform:* [coursera.org](https://www.coursera.org) | [udemy.com](https://www.udemy.com)
