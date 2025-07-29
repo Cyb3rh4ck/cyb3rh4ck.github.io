@@ -4,36 +4,38 @@
         <link>http://localhost:1313/posts/</link>
         <description>All Posts | Cyb3rh4ck´s dev life</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 28 Jul 2025 17:20:00 -0600</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>🚀 Desarrollo Incremental: Cómo Construir Proyectos Complejos Sin Errores</title>
+    <title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title>
     <link>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>
     <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-    <author>John Doe</author>
+    <author>Cyb3rh4ck</author>
     <guid>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
     <description><![CDATA[<div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>💡 TL;DR<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><strong>¿Generas proyectos complejos y aparecen muchos errores?</strong> Esta guía te enseña la <strong>metodología incremental</strong> que usan los desarrolladores senior para construir aplicaciones robustas sin dolor de cabeza.</div>
+            <div class="admonition-content"><strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?</strong> Esta guía te enseña cómo usar <strong>GitHub Copilot efectivamente</strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.</div>
         </div>
     </div>
-<h2 id="-el-problema-que-todos-hemos-vivido">🎯 El Problema que Todos Hemos Vivido</h2>
+<h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)</h2>
 <div class="details admonition failure open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>❌ Escenario Típico<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>❌ Escenario Típico con Copilot<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><ol>
-<li><strong>Decides crear</strong> un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)</li>
-<li><strong>Generas todo de una vez</strong> - 50+ archivos, configuraciones, dependencias</li>
-<li><strong>Aparecen 78 errores</strong> de compilación 😱</li>
-<li><strong>No sabes por dónde empezar</strong> a arreglar</li>
-<li><strong>Frustración total</strong> y quieres tirar todo a la basura</li>
+<li><strong>Le pides a Copilot</strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)</li>
+<li><strong>Copilot genera todo de una vez</strong> - 50+ archivos, configuraciones, dependencias</li>
+<li><strong>Aparecen 78 errores</strong> de compilación porque las piezas no encajan 😱</li>
+<li><strong>No entiendes el código generado</strong> para poder arreglarlo</li>
+<li><strong>Dependes completamente de Copilot</strong> para cada fix, creando más problemas</li>
+<li><strong>Frustración total</strong> - el &ldquo;asistente inteligente&rdquo; se volvió tu enemigo</li>
 </ol>
 </div>
         </div>
     </div>
-<p>¿Te suena familiar? <strong>No eres el único</strong>. Incluso los desarrolladores experimentados caen en esta trampa.</p>]]></description>
+<blockquote>
+<p>💭 <strong>Mi experiencia usando Copilot</strong>: <em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.</em></p>]]></description>
 </item>
 <item>
     <title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title>

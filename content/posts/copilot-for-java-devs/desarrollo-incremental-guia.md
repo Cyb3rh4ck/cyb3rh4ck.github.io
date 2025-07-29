@@ -471,8 +471,8 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
 
 **Sígueme para más contenido sobre desarrollo con IA:**
 - [GitHub](https://github.com/Cyb3rh4ck) - Proyectos y experimentos
-- [LinkedIn](https://linkedin.com/in/tu-perfil) - Reflexiones profesionales  
-- [Twitter](https://twitter.com/tu-usuario) - Updates rápidos y tips
+- [LinkedIn](https://linkedin.com/in/cyb3rh4ck) - Reflexiones profesionales  
+- [Twitter](https://twitter.com/cyb3rh4ck) - Updates rápidos y tips
 {{< /admonition >}}
 
 ---
