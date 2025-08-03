@@ -84,6 +84,56 @@
         alt="/images/avatar_02.png"
         title="/images/avatar_02.png" /></a></div><h1 class="home-title">Código, Café y Caos Controlado</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="@Cyb3rh4ck" rel="me"></a><a href="https://github.com/Cyb3rh4ck" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/cyb3rh4ck" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://facebook.com/codigojava" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/copilot-for-java-devs/copilot-en-vscode/">Automatiza tu código con Copilot en VS Code</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-26">2025-07-26</time></span>&nbsp;<span class="post-category">included in <a href="/categories/ia-para-desarrolladores/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>IA para desarrolladores</a></span></div><div class="content"><h2 id="-introducción">🧠 Introducción</h2>
+<p>GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.</p>
+<hr>
+<h2 id="-requisitos-previos">🛠️ Requisitos previos</h2>
+<ul>
+<li>Tener una cuenta de GitHub</li>
+<li>Tener instalado <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Code</a></li>
+<li>Tener instalado <a href="https://adoptium.net/" target="_blank" rel="noopener noreffer ">Java 17</a></li>
+<li>Conexión a internet</li>
+<li>Git instalado</li>
+</ul>
+<hr>
+<h2 id="-instalación-de-copilot-en-vs-code">🔌 Instalación de Copilot en VS Code</h2>
+<ol>
+<li>Abre VS Code</li>
+<li>Ve a la extensión &ldquo;GitHub Copilot&rdquo;</li>
+<li>Haz clic en instalar o usa el siguiente comando:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">code --install-extension GitHub.copilot</span></span></code></pre></div>
+<ol start="4">
+<li>Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.</li>
+<li>Acepta los permisos y espera la confirmación.</li>
+</ol>
+<hr>
+<h2 id="-configuración-básica">⚙️ Configuración básica</h2>
+<ul>
+<li>Asegúrate de que Copilot esté activado en la barra de estado.</li>
+<li>Configura el comportamiento de sugerencias:
+<ul>
+<li>Aceptar: <code>Tab</code></li>
+<li>Siguiente sugerencia: <code>Ctrl + ]</code></li>
+<li>Anterior sugerencia: <code>Ctrl + [</code></li>
+</ul>
+</li>
+<li>Puedes desactivar Copilot por archivo o carpeta desde la configuración.</li>
+</ul>
+<hr>
+<h2 id="-cómo-utilizarlo-primeros-ejemplos">🤖 Cómo utilizarlo: primeros ejemplos</h2>
+<p>Crea un archivo <code>Main.java</code> y escribe:</p></div><div class="post-footer">
+        <a href="/posts/copilot-for-java-devs/copilot-en-vscode/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/vs-code/">VS Code</a>,&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/productividad/">Productividad</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/copilot-for-java-devs/how-copilot-works/">Cómo trabaja Copilot</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-26">2025-07-26</time></span></div><div class="content"><h2 id="introducción">Introducción</h2>
+<p>GitHub Copilot funciona como un asistente de programación basado en inteligencia artificial que se integra directamente con tu editor de código. Gracias a su modelo de lenguaje entrenado con millones de líneas de código, Copilot es capaz de sugerir líneas completas, bloques de código o incluso funciones enteras a partir del contexto en el que estás trabajando.</p>
+<h2 id="arquitectura-general">Arquitectura General</h2>
+<p>Copilot se basa en el modelo Codex de OpenAI, que ha sido entrenado con repositorios públicos disponibles en GitHub. Cuando escribes código, el complemento de Copilot en tu editor envía el contexto del archivo (y líneas recientes de código) a los servidores de GitHub, donde Codex genera sugerencias y las retorna para que el desarrollador las acepte o descarte.</p></div><div class="post-footer">
+        <a href="/posts/copilot-for-java-devs/how-copilot-works/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/copilot-for-java-devs/instalacion-copilot-vscode/">Instalación de GitHub Copilot en VS Code</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-26">2025-07-26</time></span></div><div class="content"><h2 id="introducción">Introducción</h2>
 <p>GitHub Copilot puede integrarse fácilmente con Visual Studio Code (VS Code), proporcionando sugerencias de código en tiempo real mientras escribes. Esta sección te guiará por el proceso de instalación del plugin y la autenticación con tu cuenta de GitHub.</p>
@@ -226,162 +276,6 @@
 <p>Puedes configurar políticas como:</p></div><div class="post-footer">
         <a href="/posts/spring-boot/cache-caffeine/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/caching/">Caching</a>,&nbsp;<a href="/tags/caffeine/">Caffeine</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a>,&nbsp;<a href="/tags/performance/">Performance</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/oauth2/">🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-24">2025-07-24</time></span></div><div class="content"><h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)</h1>
-<p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, <strong>sin compartir las credenciales del usuario</strong>.</p>
-<hr>
-<h2 id="-actores-del-protocolo">🧩 Actores del Protocolo</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Actor</th>
-          <th>Descripción</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>👤 <strong>Resource Owner</strong></td>
-          <td>Usuario que posee los recursos</td>
-      </tr>
-      <tr>
-          <td>🌐 <strong>Client</strong></td>
-          <td>App que quiere acceder a recursos</td>
-      </tr>
-      <tr>
-          <td>🔐 <strong>Authorization Server</strong></td>
-          <td>Autentica usuarios y entrega tokens</td>
-      </tr>
-      <tr>
-          <td>📦 <strong>Resource Server</strong></td>
-          <td>API que expone los recursos protegidos</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-flujo-general-authorization-code">🔁 Flujo General (Authorization Code)</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[Usuario] --&gt; (Autorización) --&gt; [Authorization Server]
-</span></span><span class="line"><span class="cl">    ↓                                   ↓
-</span></span><span class="line"><span class="cl">[Client App] &lt;-- Código de Autorización -- [Authorization Server]
-</span></span><span class="line"><span class="cl">    ↓
-</span></span><span class="line"><span class="cl">Token Exchange
-</span></span><span class="line"><span class="cl">    ↓
-</span></span><span class="line"><span class="cl">[Client App] --&gt; Token de Acceso --&gt; [Resource Server]
-</span></span></code></pre></div><hr>
-<h2 id="-tipos-de-grants-concesiones">🧾 Tipos de &ldquo;Grants&rdquo; (Concesiones)</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Grant Type</th>
-          <th>Uso común</th>
-          <th>Seguridad</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>🔐 Authorization Code</td>
-          <td>Apps Web / Móviles</td>
-          <td>⭐⭐⭐⭐⭐</td>
-      </tr>
-      <tr>
-          <td>💳 Client Credentials</td>
-          <td>Sistemas máquina a máquina</td>
-          <td>⭐⭐⭐⭐</td>
-      </tr>
-      <tr>
-          <td>⚠️ Implicit</td>
-          <td>SPAs (obsoleto)</td>
-          <td>❌</td>
-      </tr>
-      <tr>
-          <td>🔑 Password Credentials</td>
-          <td>Legacy / Testing</td>
-          <td>❌</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-tokens">🎫 Tokens</h2>
-<ul>
-<li><strong>Access Token</strong>: Caduca rápido, limitado en alcance.</li>
-<li><strong>Refresh Token</strong>: Opcional. Renueva el Access Token sin reautenticación.</li>
-<li><strong>Formatos</strong>: Generalmente JWT o token opaco.</li>
-</ul>
-<hr>
-<h2 id="-seguridad-requerida">🔐 Seguridad Requerida</h2>
-<ul>
-<li>Uso obligatorio de <strong>HTTPS (TLS)</strong></li>
-<li>Tokens deben tratarse como <strong>credenciales sensibles</strong></li>
-<li>Revocación y expiración controladas desde el servidor</li>
-</ul>
-<hr>
-<h2 id="-arquitectura-con-oauth-20">🧱 Arquitectura con OAuth 2.0</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">     +-------------------------+
-</span></span><span class="line"><span class="cl">     |     Resource Owner      |
-</span></span><span class="line"><span class="cl">     +-------------------------+
-</span></span><span class="line"><span class="cl">                 |
-</span></span><span class="line"><span class="cl">      (autorización vía UI)
-</span></span><span class="line"><span class="cl">                 ↓
-</span></span><span class="line"><span class="cl">     +-------------------------+
-</span></span><span class="line"><span class="cl">     |  Authorization Server   |----+
-</span></span><span class="line"><span class="cl">     +-------------------------+    |
-</span></span><span class="line"><span class="cl">                 ↓                 ↓
-</span></span><span class="line"><span class="cl">     Código     Token            API Call
-</span></span><span class="line"><span class="cl">     ↓           ↓                ↓
-</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
-</span></span><span class="line"><span class="cl">| Client  |-&gt;| Access    |---&gt;| Resource   |
-</span></span><span class="line"><span class="cl">| (App)   |  | Token     |    | Server     |
-</span></span><span class="line"><span class="cl">+---------+  +-----------+    +------------+
-</span></span></code></pre></div><hr>
-<h2 id="-extensiones-comunes">📚 Extensiones Comunes</h2>
-<table>
-  <thead>
-      <tr>
-          <th>RFC</th>
-          <th>Nombre</th>
-          <th>Propósito</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>RFC 6750</td>
-          <td>Bearer Token</td>
-          <td>Define uso de tokens tipo Bearer</td>
-      </tr>
-      <tr>
-          <td>RFC 7636</td>
-          <td>PKCE</td>
-          <td>Seguridad adicional en móviles</td>
-      </tr>
-      <tr>
-          <td>RFC 7662</td>
-          <td>Token Introspection</td>
-          <td>Validación de tokens</td>
-      </tr>
-      <tr>
-          <td>RFC 9068</td>
-          <td>JWT Profile</td>
-          <td>Estandariza uso de JWT</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-buenas-prácticas">✅ Buenas Prácticas</h2>
-<ul>
-<li>Usa <strong>PKCE</strong> en apps móviles y SPAs</li>
-<li>Expira tokens en minutos</li>
-<li>Usa scopes específicos (<code>read</code>, <code>write</code>, etc.)</li>
-<li>Implementa logs, revocación y rotating refresh tokens</li>
-</ul>
-<hr>
-<h2 id="-conclusión">🧠 Conclusión</h2>
-<p>OAuth 2.0 no es solo un protocolo de autenticación, sino un <strong>marco flexible para autorización moderna</strong>.</p></div><div class="post-footer">
-        <a href="/posts/oauth2/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/oauth2/">Oauth2</a>,&nbsp;<a href="/tags/seguridad/">Seguridad</a>,&nbsp;<a href="/tags/autenticaci%C3%B3n/">Autenticación</a>,&nbsp;<a href="/tags/api/">Api</a>,&nbsp;<a href="/tags/diagramas/">Diagramas</a>,&nbsp;<a href="/tags/visual/">Visual</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/arquitectura-hexagonal/first_post/">Arquitectura hexagonal</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-15">2025-07-15</time></span></div><div class="content"><p>La arquitectura hexagonal, también conocida como &ldquo;Ports and Adapters&rdquo;, es un patrón de diseño de software que busca aislar el núcleo de la aplicación de los detalles externos, como bases de datos, interfaces de usuario o servicios externos. El núcleo contiene la lógica de negocio y se comunica con el exterior a través de puertos (interfaces) y adaptadores, lo que facilita la prueba, el mantenimiento y la evolución del sistema sin afectar la lógica principal. Este enfoque promueve la independencia y la flexibilidad en el desarrollo de aplicaciones.</p></div><div class="post-footer">
-        <a href="/posts/arquitectura-hexagonal/first_post/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -389,6 +283,10 @@
                 </li><li class="page-item active">
                     <span class="page-link">
                         <a href="/page/2/">2</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/page/3/">3</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

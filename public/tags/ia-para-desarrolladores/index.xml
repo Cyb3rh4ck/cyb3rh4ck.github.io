@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IA Para Desarrolladores on Cyb3rh4ck´s dev life</title>
+    <link>http://localhost:1313/tags/ia-para-desarrolladores/</link>
+    <description>Recent content in IA Para Desarrolladores on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 29 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ia-para-desarrolladores/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Workflow Copilot &#43; ChatGPT: Conviértete en una Bestia Ágil en VS Code</title>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link>
+      <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid>
+      <description>&lt;h1 id=&#34;-workflow-copilot--chatgpt-para-vs-code&#34;&gt;🚀 Workflow Copilot + ChatGPT para VS Code&lt;/h1&gt;&#xA;&lt;p&gt;Combinar &lt;strong&gt;GitHub Copilot&lt;/strong&gt; con &lt;strong&gt;ChatGPT&lt;/strong&gt; es como tener un par de superpoderes para tu día a día como desarrollador.&lt;br&gt;&#xA;Con este workflow podrás:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Escribir código &lt;strong&gt;3x más rápido&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Refactorizar y documentar&lt;/strong&gt; sin esfuerzo.&lt;/li&gt;&#xA;&lt;li&gt;Resolver bloqueos de manera &lt;strong&gt;interactiva y creativa&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-setup-inicial&#34;&gt;1️⃣ Setup Inicial&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Instala GitHub Copilot&lt;/strong&gt; en VS Code.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Abre ChatGPT&lt;/strong&gt; (o la extensión ChatGPT para VS Code).&lt;/li&gt;&#xA;&lt;li&gt;Configura &lt;strong&gt;atajos de teclado&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;Alt+\&lt;/code&gt; → Activar Copilot suggestion&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;Ctrl+I&lt;/code&gt; → Prompt a ChatGPT sobre la selección&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;💡 &lt;em&gt;Tip:&lt;/em&gt; Si usas &lt;strong&gt;Agent Mode&lt;/strong&gt; en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

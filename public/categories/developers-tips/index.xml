@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developers Tips on Cyb3rh4ck´s dev life</title>
+    <link>http://localhost:1313/categories/developers-tips/</link>
+    <description>Recent content in Developers Tips on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/developers-tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Strategy to Solve HackerRank Java Problems</title>
+      <link>http://localhost:1313/posts/random/hackerrank_java_strategy/</link>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/random/hackerrank_java_strategy/</guid>
+      <description>&lt;h1 id=&#34;-strategy-to-solve-hackerrank-java-problems&#34;&gt;🏆 Strategy to Solve HackerRank Java Problems&lt;/h1&gt;&#xA;&lt;p&gt;This guide provides a &lt;strong&gt;step-by-step strategy&lt;/strong&gt; to solve Java coding challenges on &lt;strong&gt;HackerRank&lt;/strong&gt; effectively.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-read--understand-the-problem-statement&#34;&gt;1️⃣ Read &amp;amp; Understand the Problem Statement&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Know exactly what the problem is asking.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tips:&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Identify &lt;strong&gt;input format&lt;/strong&gt;, &lt;strong&gt;output format&lt;/strong&gt;, and &lt;strong&gt;constraints&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Pay attention to &lt;strong&gt;edge cases&lt;/strong&gt; mentioned in the description.&lt;/li&gt;&#xA;&lt;li&gt;Read &lt;strong&gt;sample inputs and outputs&lt;/strong&gt; to clarify the logic.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-analyze-constraints&#34;&gt;2️⃣ Analyze Constraints&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Why:&lt;/strong&gt; Constraints determine:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Which &lt;strong&gt;data types&lt;/strong&gt; to use (&lt;code&gt;int&lt;/code&gt;, &lt;code&gt;long&lt;/code&gt;, &lt;code&gt;BigInteger&lt;/code&gt; for very large numbers).&lt;/li&gt;&#xA;&lt;li&gt;Whether your &lt;strong&gt;algorithm needs optimization&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
