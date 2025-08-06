@@ -84,6 +84,44 @@
         alt="/images/avatar_02.png"
         title="/images/avatar_02.png" /></a></div><h1 class="home-title">Código, Café y Caos Controlado</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="@Cyb3rh4ck" rel="me"></a><a href="https://github.com/Cyb3rh4ck" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/cyb3rh4ck" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://facebook.com/codigojava" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/spring-boot/cache-caffeine/">☕ Uso de Cache Local con Caffeine</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-24">2025-07-24</time></span></div><div class="content"><h1 id="-caffeine-cache---guía-rápida">☕ Caffeine Cache - Guía Rápida</h1>
+<p><strong>Caffeine</strong> es una librería Java de alto rendimiento para caching en memoria local. Es una alternativa moderna a Ehcache y Guava, recomendada para microservicios que requieren acceso rápido a datos sin necesidad de sincronización entre instancias.</p>
+<hr>
+<h2 id="-cuándo-usar-caffeine">✅ ¿Cuándo usar Caffeine?</h2>
+<ul>
+<li>Datos que no cambian frecuentemente (ej. catálogos, configuraciones)</li>
+<li>Objetos pequeños a consultar muchas veces</li>
+<li>Cuando no necesitas compartir cache entre instancias</li>
+</ul>
+<hr>
+<h2 id="-configuración-en-spring-boot">⚙️ Configuración en Spring Boot</h2>
+<ol>
+<li><strong>Agrega la dependencia en tu <code>pom.xml</code>:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.github.ben-manes.caffeine<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>caffeine<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><ol start="2">
+<li><strong>Habilita caching en tu aplicación:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@EnableCaching</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyApp</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ol start="3">
+<li><strong>Usa la anotación <code>@Cacheable</code>:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Cacheable</span><span class="p">(</span><span class="s">&#34;clientes&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Cliente</span><span class="w"> </span><span class="nf">getClienteById</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">clienteRepository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h2 id="-políticas-de-evicción">🧠 Políticas de Evicción</h2>
+<p>Puedes configurar políticas como:</p></div><div class="post-footer">
+        <a href="/posts/spring-boot/cache-caffeine/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/caching/">Caching</a>,&nbsp;<a href="/tags/caffeine/">Caffeine</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a>,&nbsp;<a href="/tags/performance/">Performance</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/oauth2/">🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-24">2025-07-24</time></span></div><div class="content"><h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)</h1>
 <p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, <strong>sin compartir las credenciales del usuario</strong>.</p>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>🌿 Convenciones de Ramas en Proyectos Limpios - Cyb3rh4ck´s dev life</title><meta name="Description" content="Bitácora de IA, Java y desarrollo ágil"><meta property="og:url" content="http://localhost:1313/posts/github/branching-conventions/">
+  <meta property="og:site_name" content="Cyb3rh4ck´s dev life">
+  <meta property="og:title" content="🌿 Convenciones de Ramas en Proyectos Limpios">
+  <meta property="og:description" content="🌿 Convenciones de Ramas en Proyectos Limpios Cuando inicias un proyecto nuevo (clean project), tener un flujo de ramas claro facilita la colaboración y mantiene la historia del repositorio organizada y profesional.
+A continuación te muestro las convenciones más utilizadas en la industria para nombrar ramas:
+📌 1. Tipos de ramas y su uso Tipo de rama Uso principal Ejemplo feature/ Nueva funcionalidad feature/register-user bugfix/ Corrección de errores menores bugfix/fix-login-nullpointer hotfix/ Corrección urgente en producción hotfix/jwt-expired-issue chore/ Configuración, refactor, CI/CD, sin cambiar lógica chore/add-ci-cd release/ Preparación de una nueva versión release/v1.0.0 📊 2. Flujo visual de ramas (Branch Flow)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-06T00:00:00+00:00">
+    <meta property="article:tag" content="Git">
+    <meta property="article:tag" content="Github">
+    <meta property="article:tag" content="Best Practices">
+    <meta property="article:tag" content="Branching">
+    <meta property="og:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+  <meta name="twitter:title" content="🌿 Convenciones de Ramas en Proyectos Limpios">
+  <meta name="twitter:description" content="🌿 Convenciones de Ramas en Proyectos Limpios Cuando inicias un proyecto nuevo (clean project), tener un flujo de ramas claro facilita la colaboración y mantiene la historia del repositorio organizada y profesional.
+A continuación te muestro las convenciones más utilizadas en la industria para nombrar ramas:
+📌 1. Tipos de ramas y su uso Tipo de rama Uso principal Ejemplo feature/ Nueva funcionalidad feature/register-user bugfix/ Corrección de errores menores bugfix/fix-login-nullpointer hotfix/ Corrección urgente en producción hotfix/jwt-expired-issue chore/ Configuración, refactor, CI/CD, sin cambiar lógica chore/add-ci-cd release/ Preparación de una nueva versión release/v1.0.0 📊 2. Flujo visual de ramas (Branch Flow)">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/github/branching-conventions/" /><link rel="prev" href="http://localhost:1313/posts/random/hackerrank_java_strategy/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "🌿 Convenciones de Ramas en Proyectos Limpios",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/github\/branching-conventions\/"
+        },"genre": "posts","keywords": "git, github, best practices, branching","wordcount":  322 ,
+        "url": "http:\/\/localhost:1313\/posts\/github\/branching-conventions\/","datePublished": "2025-08-06T00:00:00+00:00","dateModified": "2025-08-06T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Cyb3rh4ck"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i> VS Code </a><a class="menu-item" href="/cv/"><i class='fas fa-file-alt'></i> CV </a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i>VS Code</a><a class="menu-item" href="/cv/" title=""><i class='fas fa-file-alt'></i>CV</a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i>Posts</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">🌿 Convenciones de Ramas en Proyectos Limpios</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-category">included in <a href="/categories/devops/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>DevOps</a>&nbsp;<a href="/categories/workflows/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Workflows</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-06">2025-08-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;322 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-1-tipos-de-ramas-y-su-uso"><strong>📌 1. Tipos de ramas y su uso</strong></a></li>
+    <li><a href="#-2-flujo-visual-de-ramas-branch-flow"><strong>📊 2. Flujo visual de ramas (Branch Flow)</strong></a></li>
+    <li><a href="#-recomendaciones-profesionales"><strong>💡 Recomendaciones profesionales</strong></a></li>
+    <li><a href="#-ejemplo-de-inicio-de-proyecto-limpio"><strong>🚀 Ejemplo de inicio de proyecto limpio</strong></a></li>
+    <li><a href="#-beneficios-de-seguir-esta-convención"><strong>🎯 Beneficios de seguir esta convención</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="-convenciones-de-ramas-en-proyectos-limpios">🌿 Convenciones de Ramas en Proyectos Limpios</h1>
+<p>Cuando inicias un <strong>proyecto nuevo</strong> (clean project), tener un <strong>flujo de ramas claro</strong> facilita la colaboración y mantiene la historia del repositorio <strong>organizada y profesional</strong>.</p>
+<p>A continuación te muestro las <strong>convenciones más utilizadas</strong> en la industria para nombrar ramas:</p>
+<hr>
+<h2 id="-1-tipos-de-ramas-y-su-uso"><strong>📌 1. Tipos de ramas y su uso</strong></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Tipo de rama</th>
+          <th>Uso principal</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>feature/</code></td>
+          <td>Nueva funcionalidad</td>
+          <td><code>feature/register-user</code></td>
+      </tr>
+      <tr>
+          <td><code>bugfix/</code></td>
+          <td>Corrección de errores menores</td>
+          <td><code>bugfix/fix-login-nullpointer</code></td>
+      </tr>
+      <tr>
+          <td><code>hotfix/</code></td>
+          <td>Corrección <strong>urgente</strong> en producción</td>
+          <td><code>hotfix/jwt-expired-issue</code></td>
+      </tr>
+      <tr>
+          <td><code>chore/</code></td>
+          <td>Configuración, refactor, CI/CD, sin cambiar lógica</td>
+          <td><code>chore/add-ci-cd</code></td>
+      </tr>
+      <tr>
+          <td><code>release/</code></td>
+          <td>Preparación de una nueva versión</td>
+          <td><code>release/v1.0.0</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-2-flujo-visual-de-ramas-branch-flow"><strong>📊 2. Flujo visual de ramas (Branch Flow)</strong></h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png"
+        data-srcset="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 1.5x, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png"
+        title="Branch Flow" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">         main
+</span></span><span class="line"><span class="cl">          │
+</span></span><span class="line"><span class="cl">          ├── chore/project-setup
+</span></span><span class="line"><span class="cl">          │
+</span></span><span class="line"><span class="cl">          ├── feature/register-user
+</span></span><span class="line"><span class="cl">          │        \
+</span></span><span class="line"><span class="cl">          │         └── bugfix/fix-email-validation
+</span></span><span class="line"><span class="cl">          │
+</span></span><span class="line"><span class="cl">          └── release/v1.0.0
+</span></span><span class="line"><span class="cl">                   \
+</span></span><span class="line"><span class="cl">                    └── hotfix/jwt-expired-issue
+</span></span></code></pre></div><p><strong>Explicación del diagrama:</strong></p>
+<ol>
+<li><strong><code>main</code></strong> → rama principal siempre estable</li>
+<li><strong><code>chore/*</code></strong> → tareas iniciales de setup o refactor</li>
+<li><strong><code>feature/*</code></strong> → desarrollo de nuevas funcionalidades</li>
+<li><strong><code>bugfix/*</code></strong> → pequeñas correcciones sobre features</li>
+<li><strong><code>release/*</code></strong> → preparación de versiones estables</li>
+<li><strong><code>hotfix/*</code></strong> → correcciones críticas directamente a producción</li>
+</ol>
+<hr>
+<h2 id="-recomendaciones-profesionales"><strong>💡 Recomendaciones profesionales</strong></h2>
+<ol>
+<li>
+<p><strong>Usa nombres descriptivos:</strong><br>
+Evita <code>feature1</code> o <code>fix2</code>. Mejor:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">feature/user-authentication
+</span></span><span class="line"><span class="cl">bugfix/handle-null-tokens
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Mantén ramas cortas y claras:</strong><br>
+Cada rama debe atacar <strong>un único objetivo</strong>.</p>
+<ul>
+<li>✅ <code>feature/upload-profile-picture</code></li>
+<li>❌ <code>feature/upload-picture-and-fix-login</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usa commits claros y consistentes:</strong><br>
+Ejemplo de primer commit en un proyecto limpio:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">chore: initial project setup with hexagonal structure
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h2 id="-ejemplo-de-inicio-de-proyecto-limpio"><strong>🚀 Ejemplo de inicio de proyecto limpio</strong></h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/github/explore/main/topics/spring-boot/spring-boot.png"
+        data-srcset="https://raw.githubusercontent.com/github/explore/main/topics/spring-boot/spring-boot.png, https://raw.githubusercontent.com/github/explore/main/topics/spring-boot/spring-boot.png 1.5x, https://raw.githubusercontent.com/github/explore/main/topics/spring-boot/spring-boot.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/github/explore/main/topics/spring-boot/spring-boot.png"
+        title="Hexagonal Structure" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">seguro360/
+</span></span><span class="line"><span class="cl"> └─ src/
+</span></span><span class="line"><span class="cl">     └─ main/
+</span></span><span class="line"><span class="cl">         ├─ java/io/cyb3rh4ck/github/seguros360/
+</span></span><span class="line"><span class="cl">         │         ├─ application/
+</span></span><span class="line"><span class="cl">         │         ├─ domain/
+</span></span><span class="line"><span class="cl">         │         └─ infrastructure/
+</span></span><span class="line"><span class="cl">         └─ resources/
+</span></span><span class="line"><span class="cl">             ├─ application.yml
+</span></span><span class="line"><span class="cl">             └─ logback-spring.xml
+</span></span></code></pre></div><ul>
+<li>
+<p>Primer branch recomendado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout -b chore/project-setup
+</span></span><span class="line"><span class="cl">git push -u origin chore/project-setup
+</span></span></code></pre></div></li>
+<li>
+<p>Primer commit recomendado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">chore: initial project setup with hexagonal structure
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="-beneficios-de-seguir-esta-convención"><strong>🎯 Beneficios de seguir esta convención</strong></h2>
+<ul>
+<li><strong>Historia clara:</strong> cualquiera entiende qué hace cada rama</li>
+<li><strong>Facilita PRs y code reviews</strong></li>
+<li><strong>Previene conflictos</strong> al tener ramas separadas por tipo</li>
+<li><strong>Alineado con Git Flow y GitHub Flow</strong></li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>Tip extra:</strong><br>
+Si usas <strong>GitHub Projects</strong> o <strong>Jira</strong>, nombra las ramas con el ID de la tarea:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">feature/SEGUROS360-12-register-user
+</span></span></code></pre></div><p>Así podrás trazar commits directamente con issues o historias de usuario.</p></blockquote>
+<hr>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-08-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/github/branching-conventions/" data-title="🌿 Convenciones de Ramas en Proyectos Limpios" data-hashtags="git,github,best practices,branching"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/github/branching-conventions/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/github/branching-conventions/" data-title="🌿 Convenciones de Ramas en Proyectos Limpios"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/github/branching-conventions/" data-title="🌿 Convenciones de Ramas en Proyectos Limpios"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/github/branching-conventions/" data-title="🌿 Convenciones de Ramas en Proyectos Limpios"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/github/">Github</a>,&nbsp;<a href="/tags/best-practices/">Best Practices</a>,&nbsp;<a href="/tags/branching/">Branching</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/random/hackerrank_java_strategy/" class="prev" rel="prev" title="Strategy to Solve HackerRank Java Problems"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Strategy to Solve HackerRank Java Problems</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

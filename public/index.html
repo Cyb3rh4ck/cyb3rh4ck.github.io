@@ -84,6 +84,61 @@
         alt="/images/avatar_02.png"
         title="/images/avatar_02.png" /></a></div><h1 class="home-title">Código, Café y Caos Controlado</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="@Cyb3rh4ck" rel="me"></a><a href="https://github.com/Cyb3rh4ck" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/cyb3rh4ck" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://facebook.com/codigojava" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/github/branching-conventions/">🌿 Convenciones de Ramas en Proyectos Limpios</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-08-06">2025-08-06</time></span>&nbsp;<span class="post-category">included in <a href="/categories/devops/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>DevOps</a>&nbsp;<a href="/categories/workflows/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Workflows</a></span></div><div class="content"><h1 id="-convenciones-de-ramas-en-proyectos-limpios">🌿 Convenciones de Ramas en Proyectos Limpios</h1>
+<p>Cuando inicias un <strong>proyecto nuevo</strong> (clean project), tener un <strong>flujo de ramas claro</strong> facilita la colaboración y mantiene la historia del repositorio <strong>organizada y profesional</strong>.</p>
+<p>A continuación te muestro las <strong>convenciones más utilizadas</strong> en la industria para nombrar ramas:</p>
+<hr>
+<h2 id="-1-tipos-de-ramas-y-su-uso"><strong>📌 1. Tipos de ramas y su uso</strong></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Tipo de rama</th>
+          <th>Uso principal</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>feature/</code></td>
+          <td>Nueva funcionalidad</td>
+          <td><code>feature/register-user</code></td>
+      </tr>
+      <tr>
+          <td><code>bugfix/</code></td>
+          <td>Corrección de errores menores</td>
+          <td><code>bugfix/fix-login-nullpointer</code></td>
+      </tr>
+      <tr>
+          <td><code>hotfix/</code></td>
+          <td>Corrección <strong>urgente</strong> en producción</td>
+          <td><code>hotfix/jwt-expired-issue</code></td>
+      </tr>
+      <tr>
+          <td><code>chore/</code></td>
+          <td>Configuración, refactor, CI/CD, sin cambiar lógica</td>
+          <td><code>chore/add-ci-cd</code></td>
+      </tr>
+      <tr>
+          <td><code>release/</code></td>
+          <td>Preparación de una nueva versión</td>
+          <td><code>release/v1.0.0</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-2-flujo-visual-de-ramas-branch-flow"><strong>📊 2. Flujo visual de ramas (Branch Flow)</strong></h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png"
+        data-srcset="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 1.5x, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png"
+        title="Branch Flow" /></p></div><div class="post-footer">
+        <a href="/posts/github/branching-conventions/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/github/">Github</a>,&nbsp;<a href="/tags/best-practices/">Best Practices</a>,&nbsp;<a href="/tags/branching/">Branching</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/random/hackerrank_java_strategy/">Strategy to Solve HackerRank Java Problems</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-08-02">2025-08-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/developers-tips/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Developers Tips</a></span></div><div class="content"><h1 id="-strategy-to-solve-hackerrank-java-problems">🏆 Strategy to Solve HackerRank Java Problems</h1>
 <p>This guide provides a <strong>step-by-step strategy</strong> to solve Java coding challenges on <strong>HackerRank</strong> effectively.</p>
@@ -264,225 +319,6 @@ Con este workflow podrás:</p>
 </span></span></span></code></pre></div><hr></div><div class="post-footer">
         <a href="/posts/copilot-for-java-devs/copilot-prompts/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/vs-code/">VS Code</a>,&nbsp;<a href="/tags/productividad/">Productividad</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/vscode/vscode-shortcuts/">Guía de atajos de teclado en VS Code para desarrolladores Java</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-27">2025-07-27</time></span>&nbsp;<span class="post-category">included in <a href="/categories/ia-para-desarrolladores/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>IA para desarrolladores</a></span></div><div class="content"><blockquote>
-<p>⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).</p></blockquote>
-<hr>
-<h2 id="-comentarios">🧩 Comentarios</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Atajo Windows/Linux</th>
-          <th>macOS</th>
-          <th>Resultado</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Comentar o descomentar una línea</td>
-          <td><code>Ctrl + /</code></td>
-          <td><code>Cmd + /</code></td>
-          <td>Añade o quita <code>//</code></td>
-      </tr>
-      <tr>
-          <td>Comentar varias líneas seleccionadas</td>
-          <td><code>Ctrl + /</code></td>
-          <td><code>Cmd + /</code></td>
-          <td>Comenta cada línea con <code>//</code></td>
-      </tr>
-      <tr>
-          <td>Comentario multilínea</td>
-          <td>Manual</td>
-          <td>Manual</td>
-          <td><code>/* ... */</code></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-navegación-y-edición-rápida">🚀 Navegación y edición rápida</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Atajo Windows/Linux</th>
-          <th>macOS</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Ir a archivo</td>
-          <td><code>Ctrl + P</code></td>
-          <td><code>Cmd + P</code></td>
-      </tr>
-      <tr>
-          <td>Ir a definición</td>
-          <td><code>F12</code></td>
-          <td><code>F12</code></td>
-      </tr>
-      <tr>
-          <td>Ir a símbolo</td>
-          <td><code>Ctrl + Shift + O</code></td>
-          <td><code>Cmd + Shift + O</code></td>
-      </tr>
-      <tr>
-          <td>Ir a línea específica</td>
-          <td><code>Ctrl + G</code></td>
-          <td><code>Cmd + G</code></td>
-      </tr>
-      <tr>
-          <td>Ir a la declaración</td>
-          <td><code>Ctrl + Click</code></td>
-          <td><code>Cmd + Click</code></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-refactorización-y-edición">🛠️ Refactorización y edición</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Atajo Windows/Linux</th>
-          <th>macOS</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Renombrar símbolo</td>
-          <td><code>F2</code></td>
-          <td><code>F2</code></td>
-      </tr>
-      <tr>
-          <td>Mostrar acciones rápidas</td>
-          <td><code>Ctrl + .</code></td>
-          <td><code>Cmd + .</code></td>
-      </tr>
-      <tr>
-          <td>Copiar línea abajo</td>
-          <td><code>Shift + Alt + ↓</code></td>
-          <td><code>Option + Shift + ↓</code></td>
-      </tr>
-      <tr>
-          <td>Copiar línea arriba</td>
-          <td><code>Shift + Alt + ↑</code></td>
-          <td><code>Option + Shift + ↑</code></td>
-      </tr>
-      <tr>
-          <td>Mover línea abajo</td>
-          <td><code>Alt + ↓</code></td>
-          <td><code>Option + ↓</code></td>
-      </tr>
-      <tr>
-          <td>Mover línea arriba</td>
-          <td><code>Alt + ↑</code></td>
-          <td><code>Option + ↑</code></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-terminal-y-ejecución">🧪 Terminal y ejecución</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Atajo Windows/Linux</th>
-          <th>macOS</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Abrir terminal integrada</td>
-          <td><code>Ctrl + ñ</code> o <code>Ctrl + `</code></td>
-          <td><code>Cmd + `</code></td>
-      </tr>
-      <tr>
-          <td>Ejecutar archivo</td>
-          <td><code>Ctrl + F5</code></td>
-          <td><code>Cmd + F5</code></td>
-      </tr>
-      <tr>
-          <td>Ejecutar con depuración</td>
-          <td><code>F5</code></td>
-          <td><code>F5</code></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-productividad-y-vistas">🌈 Productividad y vistas</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Atajo Windows/Linux</th>
-          <th>macOS</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Abrir paleta de comandos</td>
-          <td><code>Ctrl + Shift + P</code></td>
-          <td><code>Cmd + Shift + P</code></td>
-      </tr>
-      <tr>
-          <td>Alternar panel lateral</td>
-          <td><code>Ctrl + B</code></td>
-          <td><code>Cmd + B</code></td>
-      </tr>
-      <tr>
-          <td>Buscar archivos</td>
-          <td><code>Ctrl + Shift + F</code></td>
-          <td><code>Cmd + Shift + F</code></td>
-      </tr>
-      <tr>
-          <td>Buscar en archivo actual</td>
-          <td><code>Ctrl + F</code></td>
-          <td><code>Cmd + F</code></td>
-      </tr>
-      <tr>
-          <td>Reemplazar en archivo</td>
-          <td><code>Ctrl + H</code></td>
-          <td><code>Cmd + H</code></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-copilot-específico">🤖 Copilot específico</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Atajo Windows/Linux</th>
-          <th>macOS</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Aceptar sugerencia</td>
-          <td><code>Tab</code></td>
-          <td><code>Tab</code></td>
-      </tr>
-      <tr>
-          <td>Siguiente sugerencia</td>
-          <td><code>Alt + ]</code></td>
-          <td><code>Option + ]</code></td>
-      </tr>
-      <tr>
-          <td>Sugerencia anterior</td>
-          <td><code>Alt + [</code></td>
-          <td><code>Option + [</code></td>
-      </tr>
-      <tr>
-          <td>Abrir ventana Copilot</td>
-          <td><code>Ctrl + Enter</code></td>
-          <td><code>Cmd + Enter</code></td>
-      </tr>
-  </tbody>
-</table>
-<hr></div><div class="post-footer">
-        <a href="/posts/vscode/vscode-shortcuts/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/vs-code/">VS Code</a>,&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/productividad/">Productividad</a>,&nbsp;<a href="/tags/atajos/">Atajos</a>,&nbsp;<a href="/tags/copilot/">Copilot</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
