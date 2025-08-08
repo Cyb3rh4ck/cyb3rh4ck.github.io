@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenID Connect on Cyb3rh4ck´s dev life</title>
+    <link>https://cyb3rh4ck.github.io/tags/openid-connect/</link>
+    <description>Recent content in OpenID Connect on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/openid-connect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo1/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo1/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-1--principios-de-autenticación-moderna-y-gestión-de-identidades&#34;&gt;📚 Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/h1&gt;&#xA;&lt;h2 id=&#34;11-evolución-de-la-autenticación-y-autorización&#34;&gt;1.1 Evolución de la Autenticación y Autorización&lt;/h2&gt;&#xA;&lt;p&gt;En sus inicios, la autenticación consistía simplemente en verificar un &lt;strong&gt;nombre de usuario&lt;/strong&gt; y &lt;strong&gt;contraseña&lt;/strong&gt; contra una base de datos local.&lt;br&gt;&#xA;A medida que las aplicaciones comenzaron a distribuirse y los usuarios accedieron desde diferentes ubicaciones y dispositivos, surgió la necesidad de &lt;strong&gt;protocolos más seguros y escalables&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;La &lt;strong&gt;autorización&lt;/strong&gt; —el proceso de determinar qué puede hacer un usuario una vez autenticado— también evolucionó.&lt;br&gt;&#xA;Se pasó de &lt;strong&gt;listas de control de acceso estáticas&lt;/strong&gt; a modelos más dinámicos como:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo2/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo2/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-2--análisis-profundo-de-la-arquitectura-de-keycloak&#34;&gt;🛠️ Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak&lt;/h1&gt;&#xA;&lt;h2 id=&#34;21-arquitectura-del-sistema-keycloak&#34;&gt;2.1 Arquitectura del Sistema Keycloak&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak es una solución de &lt;strong&gt;gestión de identidades y accesos (IAM)&lt;/strong&gt; de código abierto que soporta &lt;strong&gt;SSO&lt;/strong&gt;, &lt;strong&gt;MFA&lt;/strong&gt;, integración con &lt;strong&gt;LDAP/AD&lt;/strong&gt;, y protocolos como &lt;strong&gt;OAuth 2.0&lt;/strong&gt;, &lt;strong&gt;OpenID Connect&lt;/strong&gt; y &lt;strong&gt;SAML&lt;/strong&gt;.&lt;br&gt;&#xA;Su arquitectura está basada en:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Core Server:&lt;/strong&gt; motor que maneja autenticación, autorización y federación de identidades.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Admin Console:&lt;/strong&gt; interfaz web para configuración y administración.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Account Console:&lt;/strong&gt; portal de autoservicio para usuarios finales.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Base de datos persistente:&lt;/strong&gt; almacena configuraciones, usuarios, sesiones y tokens.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;22-modelos-de-realm-cliente-y-usuario&#34;&gt;2.2 Modelos de Realm, Cliente y Usuario&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Realm:&lt;/strong&gt; entorno de seguridad aislado; cada realm administra usuarios, credenciales, roles y grupos de forma independiente.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cliente:&lt;/strong&gt; aplicación o servicio registrado en Keycloak para autenticación/autorización.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Usuario:&lt;/strong&gt; identidad gestionada dentro de un realm.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Un realm puede contener múltiples clientes, y un cliente puede acceder a varios flujos de autenticación configurados.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

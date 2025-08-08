@@ -6,8 +6,22 @@
     <description>Recent content in Autenticación on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Jul 2025 20:34:10 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo1/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo1/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-1--principios-de-autenticación-moderna-y-gestión-de-identidades&#34;&gt;📚 Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/h1&gt;&#xA;&lt;h2 id=&#34;11-evolución-de-la-autenticación-y-autorización&#34;&gt;1.1 Evolución de la Autenticación y Autorización&lt;/h2&gt;&#xA;&lt;p&gt;En sus inicios, la autenticación consistía simplemente en verificar un &lt;strong&gt;nombre de usuario&lt;/strong&gt; y &lt;strong&gt;contraseña&lt;/strong&gt; contra una base de datos local.&lt;br&gt;&#xA;A medida que las aplicaciones comenzaron a distribuirse y los usuarios accedieron desde diferentes ubicaciones y dispositivos, surgió la necesidad de &lt;strong&gt;protocolos más seguros y escalables&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;La &lt;strong&gt;autorización&lt;/strong&gt; —el proceso de determinar qué puede hacer un usuario una vez autenticado— también evolucionó.&lt;br&gt;&#xA;Se pasó de &lt;strong&gt;listas de control de acceso estáticas&lt;/strong&gt; a modelos más dinámicos como:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Guía Completa de Keycloak – Índice de Capítulos</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/indice_keycloak/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/indice_keycloak/</guid>
+      <description>&lt;h1 id=&#34;-guía-completa-de-keycloak--índice-de-capítulos&#34;&gt;📖 Guía Completa de Keycloak – Índice de Capítulos&lt;/h1&gt;&#xA;&lt;p&gt;Esta serie cubre de forma detallada el uso de &lt;strong&gt;Keycloak&lt;/strong&gt; para sistemas modernos de autenticación y gestión de identidades, desde los fundamentos hasta estrategias avanzadas y tendencias futuras.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-capítulos&#34;&gt;📚 Capítulos&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo1&#34; rel=&#34;&#34;&gt;Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo2&#34; rel=&#34;&#34;&gt;Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo3&#34; rel=&#34;&#34;&gt;Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo4&#34; rel=&#34;&#34;&gt;Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo5&#34; rel=&#34;&#34;&gt;Capítulo 5 – Patrones de Integración de Keycloak&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo6&#34; rel=&#34;&#34;&gt;Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo7&#34; rel=&#34;&#34;&gt;Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo8&#34; rel=&#34;&#34;&gt;Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo9&#34; rel=&#34;&#34;&gt;Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;</description>
+    </item>
     <item>
       <title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title>
       <link>https://cyb3rh4ck.github.io/posts/oauth2/</link>

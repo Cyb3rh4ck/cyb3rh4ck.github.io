@@ -3,9 +3,22 @@
         <title>Cyb3rh4ck´s dev life</title>
         <link>https://cyb3rh4ck.github.io/</link>
         <description>Bitácora de IA, Java y desarrollo ágil</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 07 Aug 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://cyb3rh4ck.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</title>
+    <link>https://cyb3rh4ck.github.io/posts/gpt/chatgpt-en-accion/</link>
+    <pubDate>Fri, 08 Aug 2025 00:00:00 &#43;0000</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>https://cyb3rh4ck.github.io/posts/gpt/chatgpt-en-accion/</guid>
+    <description><![CDATA[<h1 id="-chatgpt-para-innovación-empresarial-guía-práctica-con-prompts">🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts</h1>
+<p>Aprende a usar <strong>ChatGPT como socio estratégico</strong> para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.</p>
+<p>En este post encontrarás <strong>5 fórmulas probadas</strong> con prompts específicos que puedes implementar inmediatamente en diferentes áreas de tu negocio.</p>
+<hr>
+<h2 id="-uso-de-la-estructura-formulaica">🛠️ Uso de la Estructura Formulaica</h2>
+<p>Las fórmulas utilizan estructuras de oración con <strong>variables entre corchetes</strong> que deben ser reemplazadas con tu información específica.</p>]]></description>
+</item>
+<item>
     <title>🚀 Novedades de ChatGPT-5</title>
     <link>https://cyb3rh4ck.github.io/posts/gpt/chatgpt5-overview/</link>
     <pubDate>Thu, 07 Aug 2025 00:00:00 &#43;0000</pubDate>
@@ -597,17 +610,6 @@ Con este workflow podrás:</p>
 <hr>
 <h2 id="-cómo-utilizarlo-primeros-ejemplos">🤖 Cómo utilizarlo: primeros ejemplos</h2>
 <p>Crea un archivo <code>Main.java</code> y escribe:</p>]]></description>
-</item>
-<item>
-    <title>Cómo trabaja Copilot</title>
-    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/how-copilot-works/</link>
-    <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
-    <author>Cyb3rh4ck</author>
-    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/how-copilot-works/</guid>
-    <description><![CDATA[<h2 id="introducción">Introducción</h2>
-<p>GitHub Copilot funciona como un asistente de programación basado en inteligencia artificial que se integra directamente con tu editor de código. Gracias a su modelo de lenguaje entrenado con millones de líneas de código, Copilot es capaz de sugerir líneas completas, bloques de código o incluso funciones enteras a partir del contexto en el que estás trabajando.</p>
-<h2 id="arquitectura-general">Arquitectura General</h2>
-<p>Copilot se basa en el modelo Codex de OpenAI, que ha sido entrenado con repositorios públicos disponibles en GitHub. Cuando escribes código, el complemento de Copilot en tu editor envía el contexto del archivo (y líneas recientes de código) a los servidores de GitHub, donde Codex genera sugerencias y las retorna para que el desarrollador las acepte o descarte.</p>]]></description>
 </item>
 </channel>
 </rss>

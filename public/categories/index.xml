@@ -8,10 +8,38 @@
     <language>en</language>
     <atom:link href="https://cyb3rh4ck.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Arquitectura De Software</title>
+      <link>https://cyb3rh4ck.github.io/categories/arquitectura-de-software/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/arquitectura-de-software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://cyb3rh4ck.github.io/categories/devops/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estrategia Empresarial</title>
+      <link>https://cyb3rh4ck.github.io/categories/estrategia-empresarial/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/estrategia-empresarial/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Inteligencia Artificial</title>
       <link>https://cyb3rh4ck.github.io/categories/inteligencia-artificial/</link>
-      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/categories/inteligencia-artificial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seguridad</title>
+      <link>https://cyb3rh4ck.github.io/categories/seguridad/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/seguridad/</guid>
       <description></description>
     </item>
     <item>
@@ -19,13 +47,6 @@
       <link>https://cyb3rh4ck.github.io/categories/tecnolog%C3%ADa/</link>
       <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/categories/tecnolog%C3%ADa/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DevOps</title>
-      <link>https://cyb3rh4ck.github.io/categories/devops/</link>
-      <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/categories/devops/</guid>
       <description></description>
     </item>
     <item>

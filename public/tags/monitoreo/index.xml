@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Monitoreo on Cyb3rh4ck´s dev life</title>
+    <link>https://cyb3rh4ck.github.io/tags/monitoreo/</link>
+    <description>Recent content in Monitoreo on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/monitoreo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo8/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo8/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-8--observabilidad-monitoreo-y-respuesta-a-incidentes&#34;&gt;📊 Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes&lt;/h1&gt;&#xA;&lt;h2 id=&#34;81-fundamentos-de-la-observabilidad-en-keycloak&#34;&gt;8.1 Fundamentos de la Observabilidad en Keycloak&lt;/h2&gt;&#xA;&lt;p&gt;La &lt;strong&gt;observabilidad&lt;/strong&gt; en Keycloak implica la capacidad de recopilar, correlacionar y analizar métricas, registros y eventos para entender el estado del sistema.&lt;br&gt;&#xA;Componentes clave:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Métricas&lt;/strong&gt; para monitorear rendimiento y uso de recursos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Logs&lt;/strong&gt; para diagnosticar problemas y auditoría.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Trazas&lt;/strong&gt; para seguir el recorrido de las solicitudes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;82-monitoreo-de-métricas&#34;&gt;8.2 Monitoreo de Métricas&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak puede exponer métricas en formato &lt;strong&gt;Prometheus&lt;/strong&gt;, lo que permite:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

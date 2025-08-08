@@ -6,8 +6,22 @@
     <description>Recent content in DevOps on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Aug 2025 16:41:04 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cyb3rh4ck.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capítulo 3 – Patrones de Despliegue e Infraestructura</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo3/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo3/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-3--patrones-de-despliegue-e-infraestructura&#34;&gt;☁️ Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/h1&gt;&#xA;&lt;h2 id=&#34;31-modelos-de-despliegue-on-premises-cloud-e-híbrido&#34;&gt;3.1 Modelos de Despliegue: On-Premises, Cloud e Híbrido&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak puede desplegarse en varios modelos de infraestructura:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;On-Premises:&lt;/strong&gt;&lt;br&gt;&#xA;Instalación en servidores físicos o virtuales gestionados internamente.&lt;br&gt;&#xA;Proporciona control total sobre el entorno y los datos, pero requiere más gestión operativa.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cloud:&lt;/strong&gt;&lt;br&gt;&#xA;Ejecución de Keycloak en plataformas de nube pública o privada.&lt;br&gt;&#xA;Facilita la escalabilidad y reduce la carga de mantenimiento, pero implica dependencia de proveedores externos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo8/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo8/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-8--observabilidad-monitoreo-y-respuesta-a-incidentes&#34;&gt;📊 Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes&lt;/h1&gt;&#xA;&lt;h2 id=&#34;81-fundamentos-de-la-observabilidad-en-keycloak&#34;&gt;8.1 Fundamentos de la Observabilidad en Keycloak&lt;/h2&gt;&#xA;&lt;p&gt;La &lt;strong&gt;observabilidad&lt;/strong&gt; en Keycloak implica la capacidad de recopilar, correlacionar y analizar métricas, registros y eventos para entender el estado del sistema.&lt;br&gt;&#xA;Componentes clave:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Métricas&lt;/strong&gt; para monitorear rendimiento y uso de recursos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Logs&lt;/strong&gt; para diagnosticar problemas y auditoría.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Trazas&lt;/strong&gt; para seguir el recorrido de las solicitudes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;82-monitoreo-de-métricas&#34;&gt;8.2 Monitoreo de Métricas&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak puede exponer métricas en formato &lt;strong&gt;Prometheus&lt;/strong&gt;, lo que permite:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>🌿 Convenciones de Ramas en Proyectos Limpios</title>
       <link>https://cyb3rh4ck.github.io/posts/github/branching-conventions/</link>

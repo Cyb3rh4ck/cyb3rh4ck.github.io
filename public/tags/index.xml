@@ -6,8 +6,253 @@
     <description>Recent content in Tags on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Aug 2025 18:17:07 -0600</lastBuildDate>
     <atom:link href="https://cyb3rh4ck.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ABAC</title>
+      <link>https://cyb3rh4ck.github.io/tags/abac/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/abac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API Security</title>
+      <link>https://cyb3rh4ck.github.io/tags/api-security/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/api-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arquitectura</title>
+      <link>https://cyb3rh4ck.github.io/tags/arquitectura/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/arquitectura/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Auditoría</title>
+      <link>https://cyb3rh4ck.github.io/tags/auditor%C3%ADa/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/auditor%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Autenticación</title>
+      <link>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automatización</title>
+      <link>https://cyb3rh4ck.github.io/tags/automatizaci%C3%B3n/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/automatizaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ChatGPT</title>
+      <link>https://cyb3rh4ck.github.io/tags/chatgpt/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/chatgpt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud</title>
+      <link>https://cyb3rh4ck.github.io/tags/cloud/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Despliegue</title>
+      <link>https://cyb3rh4ck.github.io/tags/despliegue/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/despliegue/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://cyb3rh4ck.github.io/tags/devops/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Futuro</title>
+      <link>https://cyb3rh4ck.github.io/tags/futuro/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/futuro/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grupos</title>
+      <link>https://cyb3rh4ck.github.io/tags/grupos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/grupos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IA</title>
+      <link>https://cyb3rh4ck.github.io/tags/ia/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/ia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Identidad</title>
+      <link>https://cyb3rh4ck.github.io/tags/identidad/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/identidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infraestructura</title>
+      <link>https://cyb3rh4ck.github.io/tags/infraestructura/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/infraestructura/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Innovación</title>
+      <link>https://cyb3rh4ck.github.io/tags/innovaci%C3%B3n/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/innovaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Keycloak</title>
+      <link>https://cyb3rh4ck.github.io/tags/keycloak/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/keycloak/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://cyb3rh4ck.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MFA</title>
+      <link>https://cyb3rh4ck.github.io/tags/mfa/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/mfa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitoreo</title>
+      <link>https://cyb3rh4ck.github.io/tags/monitoreo/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/monitoreo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MultiTenancy</title>
+      <link>https://cyb3rh4ck.github.io/tags/multitenancy/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/multitenancy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Negocios</title>
+      <link>https://cyb3rh4ck.github.io/tags/negocios/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/negocios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oauth2</title>
+      <link>https://cyb3rh4ck.github.io/tags/oauth2/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/oauth2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Observabilidad</title>
+      <link>https://cyb3rh4ck.github.io/tags/observabilidad/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/observabilidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OIDC</title>
+      <link>https://cyb3rh4ck.github.io/tags/oidc/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/oidc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenID Connect</title>
+      <link>https://cyb3rh4ck.github.io/tags/openid-connect/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/openid-connect/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RBAC</title>
+      <link>https://cyb3rh4ck.github.io/tags/rbac/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/rbac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Realm</title>
+      <link>https://cyb3rh4ck.github.io/tags/realm/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/realm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Roles</title>
+      <link>https://cyb3rh4ck.github.io/tags/roles/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/roles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SAML</title>
+      <link>https://cyb3rh4ck.github.io/tags/saml/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/saml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seguridad</title>
+      <link>https://cyb3rh4ck.github.io/tags/seguridad/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/seguridad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSO</title>
+      <link>https://cyb3rh4ck.github.io/tags/sso/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/sso/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tecnología</title>
+      <link>https://cyb3rh4ck.github.io/tags/tecnolog%C3%ADa/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/tecnolog%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tendencias</title>
+      <link>https://cyb3rh4ck.github.io/tags/tendencias/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/tendencias/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Usuarios</title>
+      <link>https://cyb3rh4ck.github.io/tags/usuarios/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/usuarios/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI</title>
       <link>https://cyb3rh4ck.github.io/tags/ai/</link>
@@ -100,24 +345,10 @@
       <description></description>
     </item>
     <item>
-      <title>ChatGPT</title>
-      <link>https://cyb3rh4ck.github.io/tags/chatgpt/</link>
-      <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/tags/chatgpt/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>IA Para Desarrolladores</title>
       <link>https://cyb3rh4ck.github.io/tags/ia-para-desarrolladores/</link>
       <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/ia-para-desarrolladores/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Arquitectura</title>
-      <link>https://cyb3rh4ck.github.io/tags/arquitectura/</link>
-      <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>https://cyb3rh4ck.github.io/tags/arquitectura/</guid>
       <description></description>
     </item>
     <item>
@@ -139,13 +370,6 @@
       <link>https://cyb3rh4ck.github.io/tags/metodolog%C3%ADa/</link>
       <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/metodolog%C3%ADa/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Oauth2</title>
-      <link>https://cyb3rh4ck.github.io/tags/oauth2/</link>
-      <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>https://cyb3rh4ck.github.io/tags/oauth2/</guid>
       <description></description>
     </item>
     <item>
@@ -205,13 +429,6 @@
       <description></description>
     </item>
     <item>
-      <title>Autenticación</title>
-      <link>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Caching</title>
       <link>https://cyb3rh4ck.github.io/tags/caching/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
@@ -237,13 +454,6 @@
       <link>https://cyb3rh4ck.github.io/tags/performance/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/performance/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Seguridad</title>
-      <link>https://cyb3rh4ck.github.io/tags/seguridad/</link>
-      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/tags/seguridad/</guid>
       <description></description>
     </item>
     <item>

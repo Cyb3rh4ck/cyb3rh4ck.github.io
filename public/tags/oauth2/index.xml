@@ -6,8 +6,22 @@
     <description>Recent content in Oauth2 on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Jul 2025 23:28:53 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cyb3rh4ck.github.io/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo1/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo1/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-1--principios-de-autenticación-moderna-y-gestión-de-identidades&#34;&gt;📚 Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/h1&gt;&#xA;&lt;h2 id=&#34;11-evolución-de-la-autenticación-y-autorización&#34;&gt;1.1 Evolución de la Autenticación y Autorización&lt;/h2&gt;&#xA;&lt;p&gt;En sus inicios, la autenticación consistía simplemente en verificar un &lt;strong&gt;nombre de usuario&lt;/strong&gt; y &lt;strong&gt;contraseña&lt;/strong&gt; contra una base de datos local.&lt;br&gt;&#xA;A medida que las aplicaciones comenzaron a distribuirse y los usuarios accedieron desde diferentes ubicaciones y dispositivos, surgió la necesidad de &lt;strong&gt;protocolos más seguros y escalables&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;La &lt;strong&gt;autorización&lt;/strong&gt; —el proceso de determinar qué puede hacer un usuario una vez autenticado— también evolucionó.&lt;br&gt;&#xA;Se pasó de &lt;strong&gt;listas de control de acceso estáticas&lt;/strong&gt; a modelos más dinámicos como:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Capítulo 5 – Patrones de Integración de Keycloak</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo5/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo5/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-5--patrones-de-integración-de-keycloak&#34;&gt;🔗 Capítulo 5 – Patrones de Integración de Keycloak&lt;/h1&gt;&#xA;&lt;h2 id=&#34;51-configuración-de-clientes-oauth2-y-mejores-prácticas&#34;&gt;5.1 Configuración de Clientes OAuth2 y Mejores Prácticas&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak permite registrar aplicaciones como &lt;strong&gt;clientes OAuth2&lt;/strong&gt; para manejar autorización de forma segura.&lt;br&gt;&#xA;Buenas prácticas:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Utilizar &lt;strong&gt;confidenciales de cliente&lt;/strong&gt; (client secrets) robustos.&lt;/li&gt;&#xA;&lt;li&gt;Configurar &lt;strong&gt;redirecciones&lt;/strong&gt; únicamente a URLs de confianza.&lt;/li&gt;&#xA;&lt;li&gt;Definir &lt;strong&gt;alcances (scopes)&lt;/strong&gt; mínimos necesarios para cada cliente.&lt;/li&gt;&#xA;&lt;li&gt;Habilitar &lt;strong&gt;rotación periódica de credenciales&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;52-adaptación-a-openid-connect-oidc&#34;&gt;5.2 Adaptación a OpenID Connect (OIDC)&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;OpenID Connect&lt;/strong&gt; extiende OAuth2 añadiendo autenticación de usuario.&lt;br&gt;&#xA;Keycloak actúa como &lt;strong&gt;Proveedor de Identidad (IdP)&lt;/strong&gt; emitiendo:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title>
       <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>

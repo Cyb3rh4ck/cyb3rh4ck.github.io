@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Despliegue on Cyb3rh4ck´s dev life</title>
+    <link>https://cyb3rh4ck.github.io/tags/despliegue/</link>
+    <description>Recent content in Despliegue on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/despliegue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capítulo 3 – Patrones de Despliegue e Infraestructura</title>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo3/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo3/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-3--patrones-de-despliegue-e-infraestructura&#34;&gt;☁️ Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/h1&gt;&#xA;&lt;h2 id=&#34;31-modelos-de-despliegue-on-premises-cloud-e-híbrido&#34;&gt;3.1 Modelos de Despliegue: On-Premises, Cloud e Híbrido&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak puede desplegarse en varios modelos de infraestructura:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;On-Premises:&lt;/strong&gt;&lt;br&gt;&#xA;Instalación en servidores físicos o virtuales gestionados internamente.&lt;br&gt;&#xA;Proporciona control total sobre el entorno y los datos, pero requiere más gestión operativa.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cloud:&lt;/strong&gt;&lt;br&gt;&#xA;Ejecución de Keycloak en plataformas de nube pública o privada.&lt;br&gt;&#xA;Facilita la escalabilidad y reduce la carga de mantenimiento, pero implica dependencia de proveedores externos.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak - Cyb3rh4ck´s dev life</title><meta name="Description" content="Bitácora de IA, Java y desarrollo ágil"><meta property="og:url" content="https://cyb3rh4ck.github.io/keycloak/capitulo2/">
+  <meta property="og:site_name" content="Cyb3rh4ck´s dev life">
+  <meta property="og:title" content="Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak">
+  <meta property="og:description" content="🛠️ Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak 2.1 Arquitectura del Sistema Keycloak Keycloak es una solución de gestión de identidades y accesos (IAM) de código abierto que soporta SSO, MFA, integración con LDAP/AD, y protocolos como OAuth 2.0, OpenID Connect y SAML.
+Su arquitectura está basada en:
+Core Server: motor que maneja autenticación, autorización y federación de identidades. Admin Console: interfaz web para configuración y administración. Account Console: portal de autoservicio para usuarios finales. Base de datos persistente: almacena configuraciones, usuarios, sesiones y tokens. 2.2 Modelos de Realm, Cliente y Usuario Realm: entorno de seguridad aislado; cada realm administra usuarios, credenciales, roles y grupos de forma independiente. Cliente: aplicación o servicio registrado en Keycloak para autenticación/autorización. Usuario: identidad gestionada dentro de un realm. Un realm puede contener múltiples clientes, y un cliente puede acceder a varios flujos de autenticación configurados.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="keycloak">
+    <meta property="article:published_time" content="2025-08-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-08T00:00:00+00:00">
+    <meta property="article:tag" content="Keycloak">
+    <meta property="article:tag" content="Arquitectura">
+    <meta property="article:tag" content="Seguridad">
+    <meta property="article:tag" content="SSO">
+    <meta property="article:tag" content="OpenID Connect">
+    <meta property="og:image" content="https://cyb3rh4ck.github.io/content/img/avatarCyb3r.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cyb3rh4ck.github.io/content/img/avatarCyb3r.png">
+  <meta name="twitter:title" content="Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak">
+  <meta name="twitter:description" content="🛠️ Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak 2.1 Arquitectura del Sistema Keycloak Keycloak es una solución de gestión de identidades y accesos (IAM) de código abierto que soporta SSO, MFA, integración con LDAP/AD, y protocolos como OAuth 2.0, OpenID Connect y SAML.
+Su arquitectura está basada en:
+Core Server: motor que maneja autenticación, autorización y federación de identidades. Admin Console: interfaz web para configuración y administración. Account Console: portal de autoservicio para usuarios finales. Base de datos persistente: almacena configuraciones, usuarios, sesiones y tokens. 2.2 Modelos de Realm, Cliente y Usuario Realm: entorno de seguridad aislado; cada realm administra usuarios, credenciales, roles y grupos de forma independiente. Cliente: aplicación o servicio registrado en Keycloak para autenticación/autorización. Usuario: identidad gestionada dentro de un realm. Un realm puede contener múltiples clientes, y un cliente puede acceder a varios flujos de autenticación configurados.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cyb3rh4ck.github.io/keycloak/capitulo2/" /><link rel="prev" href="https://cyb3rh4ck.github.io/keycloak/capitulo3/" /><link rel="next" href="https://cyb3rh4ck.github.io/keycloak/capitulo1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/cyb3rh4ck.github.io\/keycloak\/capitulo2\/"
+        },"genre": "keycloak","keywords": "Keycloak, Arquitectura, Seguridad, SSO, OpenID Connect","wordcount":  339 ,
+        "url": "https:\/\/cyb3rh4ck.github.io\/keycloak\/capitulo2\/","datePublished": "2025-08-08T00:00:00+00:00","dateModified": "2025-08-08T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Cyb3rh4ck"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i> VS Code </a><a class="menu-item" href="/cv/"><i class='fas fa-file-alt'></i> CV </a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i> Posts </a><a class="menu-item" href="/keycloak/" title="keycloak"><i class='fas fa-folder-open'></i> Keycloak </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i>VS Code</a><a class="menu-item" href="/cv/" title=""><i class='fas fa-file-alt'></i>CV</a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i>Posts</a><a class="menu-item" href="/keycloak/" title="keycloak"><i class='fas fa-folder-open'></i>Keycloak</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak</h1><div class="content" id="content"><h1 id="-capítulo-2--análisis-profundo-de-la-arquitectura-de-keycloak">🛠️ Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak</h1>
+<h2 id="21-arquitectura-del-sistema-keycloak">2.1 Arquitectura del Sistema Keycloak</h2>
+<p>Keycloak es una solución de <strong>gestión de identidades y accesos (IAM)</strong> de código abierto que soporta <strong>SSO</strong>, <strong>MFA</strong>, integración con <strong>LDAP/AD</strong>, y protocolos como <strong>OAuth 2.0</strong>, <strong>OpenID Connect</strong> y <strong>SAML</strong>.<br>
+Su arquitectura está basada en:</p>
+<ul>
+<li><strong>Core Server:</strong> motor que maneja autenticación, autorización y federación de identidades.</li>
+<li><strong>Admin Console:</strong> interfaz web para configuración y administración.</li>
+<li><strong>Account Console:</strong> portal de autoservicio para usuarios finales.</li>
+<li><strong>Base de datos persistente:</strong> almacena configuraciones, usuarios, sesiones y tokens.</li>
+</ul>
+<hr>
+<h2 id="22-modelos-de-realm-cliente-y-usuario">2.2 Modelos de Realm, Cliente y Usuario</h2>
+<ul>
+<li><strong>Realm:</strong> entorno de seguridad aislado; cada realm administra usuarios, credenciales, roles y grupos de forma independiente.</li>
+<li><strong>Cliente:</strong> aplicación o servicio registrado en Keycloak para autenticación/autorización.</li>
+<li><strong>Usuario:</strong> identidad gestionada dentro de un realm.</li>
+</ul>
+<p>Un realm puede contener múltiples clientes, y un cliente puede acceder a varios flujos de autenticación configurados.</p>
+<hr>
+<h2 id="23-estrategias-de-persistencia-y-almacenamiento">2.3 Estrategias de Persistencia y Almacenamiento</h2>
+<p>Keycloak utiliza una base de datos relacional (PostgreSQL, MySQL, etc.) para almacenar:</p>
+<ul>
+<li>Configuraciones de realm.</li>
+<li>Credenciales de usuario (hashes seguros).</li>
+<li>Tokens activos y sesiones.</li>
+</ul>
+<p>La persistencia sigue un modelo transaccional que asegura consistencia, incluso en entornos distribuidos.</p>
+<hr>
+<h2 id="24-alta-disponibilidad-y-escalabilidad-horizontal">2.4 Alta Disponibilidad y Escalabilidad Horizontal</h2>
+<p>Para entornos críticos, Keycloak puede desplegarse en <strong>clústeres</strong>, con balanceadores de carga y replicación de base de datos.<br>
+Prácticas recomendadas:</p>
+<ul>
+<li>Uso de <strong>Kubernetes</strong> para orquestación.</li>
+<li>Configuración de cachés distribuidas (Infinispan, Redis).</li>
+<li>Sincronización de nodos para sesiones y tokens.</li>
+</ul>
+<hr>
+<h2 id="25-arquitectura-spi-y-puntos-de-personalización">2.5 Arquitectura SPI y Puntos de Personalización</h2>
+<p>Keycloak expone <strong>Service Provider Interfaces (SPI)</strong> para personalización:</p>
+<ul>
+<li><strong>Autenticadores personalizados.</strong></li>
+<li><strong>Mappers de tokens.</strong></li>
+<li><strong>Flujos de autenticación adaptados.</strong></li>
+</ul>
+<p>Esto permite integrar lógica de negocio específica sin modificar el núcleo del producto.</p>
+<hr>
+<h2 id="26-fundamentos-de-seguridad-en-keycloak">2.6 Fundamentos de Seguridad en Keycloak</h2>
+<p>Medidas integradas:</p>
+<ul>
+<li>Hashing fuerte de contraseñas (PBKDF2, bcrypt, etc.).</li>
+<li>Firmado y cifrado de tokens.</li>
+<li>Soporte para certificados X.509.</li>
+<li>Integración con herramientas de auditoría y monitoreo.</li>
+</ul>
+<hr>
+<p>💡 <strong>Conclusión:</strong><br>
+La arquitectura modular de Keycloak lo convierte en una herramienta flexible para escenarios corporativos y de alta seguridad. Su soporte nativo para estándares y personalización permite adaptarlo a cualquier ecosistema, desde aplicaciones monolíticas hasta microservicios en la nube.</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
