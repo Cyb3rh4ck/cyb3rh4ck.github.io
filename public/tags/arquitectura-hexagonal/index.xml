@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Arquitectura Hexagonal on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/tags/arquitectura-hexagonal/</link>
+    <link>https://cyb3rh4ck.github.io/tags/arquitectura-hexagonal/</link>
     <description>Recent content in Arquitectura Hexagonal on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 28 Jul 2025 08:34:44 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/arquitectura-hexagonal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cyb3rh4ck.github.io/tags/arquitectura-hexagonal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title>
-      <link>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</link>
+      <link>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</guid>
+      <guid>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</guid>
       <description>&lt;h2 id=&#34;-introducción&#34;&gt;🧠 Introducción&lt;/h2&gt;&#xA;&lt;p&gt;Crear una aplicación Angular (versión recomendada: &lt;strong&gt;18.x&lt;/strong&gt;) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: &lt;code&gt;Cliente&lt;/code&gt; o &lt;code&gt;Producto&lt;/code&gt;). Se aplicará una estructura inspirada en &lt;strong&gt;arquitectura hexagonal&lt;/strong&gt; para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-requisitos-del-entorno&#34;&gt;🔧 Requisitos del entorno&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Node.js v20.19 o superior (&lt;code&gt;node -v&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Angular CLI (&lt;code&gt;npm install -g @angular/cli&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Angular v18.x (&lt;code&gt;ng version&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Un backend REST disponible (puerto, endpoints y CORS habilitado)&lt;/li&gt;&#xA;&lt;li&gt;Editor recomendado: &lt;strong&gt;Visual Studio Code&lt;/strong&gt; con extensión GitHub Copilot&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-paso-1-crear-la-aplicación-angular&#34;&gt;🏁 Paso 1: Crear la aplicación Angular&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ng new frontend-crud-app&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; frontend-crud-app&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ng serve --open&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Selecciona &lt;strong&gt;Routing = Yes&lt;/strong&gt;, &lt;strong&gt;Estilo = CSS o SCSS&lt;/strong&gt; según tu preferencia.&lt;/p&gt;</description>
     </item>
   </channel>

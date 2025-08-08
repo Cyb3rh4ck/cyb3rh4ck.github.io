@@ -1,16 +1,101 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Cyb3rh4ck´s dev life</title>
-        <link>http://localhost:1313/</link>
+        <link>https://cyb3rh4ck.github.io/</link>
         <description>Bitácora de IA, Java y desarrollo ágil</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 06 Aug 2025 00:00:00 &#43;0000</lastBuildDate>
-            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 07 Aug 2025 00:00:00 &#43;0000</lastBuildDate>
+            <atom:link href="https://cyb3rh4ck.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>🚀 Novedades de ChatGPT-5</title>
+    <link>https://cyb3rh4ck.github.io/posts/gpt/chatgpt5-overview/</link>
+    <pubDate>Thu, 07 Aug 2025 00:00:00 &#43;0000</pubDate>
+    <author>Cyb3rh4ck</author>
+    <guid>https://cyb3rh4ck.github.io/posts/gpt/chatgpt5-overview/</guid>
+    <description><![CDATA[<h1 id="-chatgpt-5-la-nueva-generación-de-ia-conversacional">🤖 ChatGPT-5: La nueva generación de IA conversacional</h1>
+<p>OpenAI ha lanzado <strong>ChatGPT-5</strong>, un modelo más avanzado, preciso y versátil que su predecesor <strong>GPT-4</strong>.<br>
+Este artículo te mostrará sus mejoras clave, un cuadro comparativo y diagramas para entender sus capacidades.</p>
+<hr>
+<h2 id="-mejoras-clave-en-gpt-5">📌 Mejoras Clave en GPT-5</h2>
+<ul>
+<li><strong>Razonamiento Avanzado</strong> 🧠: Mejor comprensión y resolución de problemas complejos.</li>
+<li><strong>Memoria Extendida</strong> 📚: Capacidad de recordar interacciones pasadas por más tiempo.</li>
+<li><strong>Respuestas Multimodales</strong> 🎨: Procesa texto, imágenes, audio y video en una misma conversación.</li>
+<li><strong>Velocidad de Respuesta</strong> ⚡: Latencia reducida gracias a optimizaciones de inferencia.</li>
+<li><strong>Personalización</strong> 🎯: Ajusta el tono y estilo de las respuestas según el usuario.</li>
+</ul>
+<hr>
+<h2 id="-comparativa-gpt-4-vs-gpt-5">📊 Comparativa GPT-4 vs GPT-5</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Característica</th>
+          <th style="text-align: center">GPT-4</th>
+          <th style="text-align: center">GPT-5</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Comprensión Contextual</td>
+          <td style="text-align: center">⭐⭐⭐⭐</td>
+          <td style="text-align: center">⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>Razonamiento Lógico</td>
+          <td style="text-align: center">⭐⭐⭐⭐</td>
+          <td style="text-align: center">⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>Memoria de Conversación</td>
+          <td style="text-align: center">8K tokens</td>
+          <td style="text-align: center">128K tokens</td>
+      </tr>
+      <tr>
+          <td>Multimodalidad</td>
+          <td style="text-align: center">Limitada</td>
+          <td style="text-align: center">Texto, Imagen, Audio, Video</td>
+      </tr>
+      <tr>
+          <td>Velocidad de Respuesta</td>
+          <td style="text-align: center">Media</td>
+          <td style="text-align: center">Alta</td>
+      </tr>
+      <tr>
+          <td>Personalización</td>
+          <td style="text-align: center">Básica</td>
+          <td style="text-align: center">Avanzada</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-diagrama-de-arquitectura-gpt-5">📈 Diagrama de Arquitectura GPT-5</h2>
+<div class="mermaid" style="text-align: center;">
+graph TD
+    A[Entrada del Usuario] --> B[Procesamiento Multimodal]
+    B --> C[Módulo de Comprensión Contextual]
+    C --> D[Motor de Razonamiento Avanzado]
+    D --> E[Generación de Respuesta]
+    E --> F[Salida Personalizada]
+</div>
+<hr>
+<h2 id="-íconos-representativos">🖼 Íconos Representativos</h2>
+<ul>
+<li>🧠 Inteligencia</li>
+<li>📚 Conocimiento</li>
+<li>🎨 Creatividad</li>
+<li>⚡ Velocidad</li>
+<li>🤝 Interacción</li>
+</ul>
+<hr>
+<h2 id="-conclusión">💡 Conclusión</h2>
+<p><strong>ChatGPT-5</strong> no solo es más rápido y preciso, sino que también es <strong>más humano</strong> en sus interacciones.<br>
+Con una mejor memoria, capacidad multimodal y personalización avanzada, redefine la experiencia conversacional.</p>]]></description>
+</item>
+<item>
     <title>🌿 Convenciones de Ramas en Proyectos Limpios</title>
-    <link>http://localhost:1313/posts/github/branching-conventions/</link>
+    <link>https://cyb3rh4ck.github.io/posts/github/branching-conventions/</link>
     <pubDate>Wed, 06 Aug 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/github/branching-conventions/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/github/branching-conventions/</guid>
     <description><![CDATA[<h1 id="-convenciones-de-ramas-en-proyectos-limpios">🌿 Convenciones de Ramas en Proyectos Limpios</h1>
 <p>Cuando inicias un <strong>proyecto nuevo</strong> (clean project), tener un <strong>flujo de ramas claro</strong> facilita la colaboración y mantiene la historia del repositorio <strong>organizada y profesional</strong>.</p>
 <p>A continuación te muestro las <strong>convenciones más utilizadas</strong> en la industria para nombrar ramas:</p>
@@ -58,10 +143,10 @@
 </item>
 <item>
     <title>Strategy to Solve HackerRank Java Problems</title>
-    <link>http://localhost:1313/posts/random/hackerrank_java_strategy/</link>
+    <link>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</link>
     <pubDate>Sat, 02 Aug 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/random/hackerrank_java_strategy/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</guid>
     <description><![CDATA[<h1 id="-strategy-to-solve-hackerrank-java-problems">🏆 Strategy to Solve HackerRank Java Problems</h1>
 <p>This guide provides a <strong>step-by-step strategy</strong> to solve Java coding challenges on <strong>HackerRank</strong> effectively.</p>
 <hr>
@@ -90,10 +175,10 @@
 </item>
 <item>
     <title>Workflow Copilot &#43; ChatGPT: Conviértete en una Bestia Ágil en VS Code</title>
-    <link>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link>
+    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link>
     <pubDate>Tue, 29 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid>
     <description><![CDATA[<h1 id="-workflow-copilot--chatgpt-para-vs-code">🚀 Workflow Copilot + ChatGPT para VS Code</h1>
 <p>Combinar <strong>GitHub Copilot</strong> con <strong>ChatGPT</strong> es como tener un par de superpoderes para tu día a día como desarrollador.<br>
 Con este workflow podrás:</p>
@@ -118,10 +203,10 @@ Con este workflow podrás:</p>
 </item>
 <item>
     <title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title>
-    <link>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>
+    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>
     <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
     <description><![CDATA[<div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>💡 TL;DR<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -152,10 +237,10 @@ Con este workflow podrás:</p>
 </item>
 <item>
     <title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title>
-    <link>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</link>
+    <link>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</link>
     <pubDate>Mon, 28 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</guid>
     <description><![CDATA[<h2 id="-introducción">🧠 Introducción</h2>
 <p>Crear una aplicación Angular (versión recomendada: <strong>18.x</strong>) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: <code>Cliente</code> o <code>Producto</code>). Se aplicará una estructura inspirada en <strong>arquitectura hexagonal</strong> para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.</p>
 <hr>
@@ -176,10 +261,10 @@ Con este workflow podrás:</p>
 </item>
 <item>
     <title>Frases y prompts útiles para Copilot en VS Code (Java &#43; Spring Boot)</title>
-    <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</link>
+    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</link>
     <pubDate>Sun, 27 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</guid>
     <description><![CDATA[<p></p>
 <blockquote>
 <p>🎯 Usa estos comentarios dentro de tu código en VS Code para que <strong>Copilot entienda lo que necesitas</strong> y te sugiera código útil, limpio y contextualizado.</p></blockquote>
@@ -247,10 +332,10 @@ Con este workflow podrás:</p>
 </item>
 <item>
     <title>Guía de atajos de teclado en VS Code para desarrolladores Java</title>
-    <link>http://localhost:1313/posts/vscode/vscode-shortcuts/</link>
+    <link>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</link>
     <pubDate>Sun, 27 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/vscode/vscode-shortcuts/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</guid>
     <description><![CDATA[<blockquote>
 <p>⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).</p></blockquote>
 <hr>
@@ -469,10 +554,10 @@ Con este workflow podrás:</p>
 </item>
 <item>
     <title>Automatiza tu código con Copilot en VS Code</title>
-    <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</link>
+    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</link>
     <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
     <description><![CDATA[<h2 id="-introducción">🧠 Introducción</h2>
 <p>GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.</p>
 <hr>
@@ -515,32 +600,14 @@ Con este workflow podrás:</p>
 </item>
 <item>
     <title>Cómo trabaja Copilot</title>
-    <link>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</link>
+    <link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/how-copilot-works/</link>
     <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
     <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</guid>
+    <guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/how-copilot-works/</guid>
     <description><![CDATA[<h2 id="introducción">Introducción</h2>
 <p>GitHub Copilot funciona como un asistente de programación basado en inteligencia artificial que se integra directamente con tu editor de código. Gracias a su modelo de lenguaje entrenado con millones de líneas de código, Copilot es capaz de sugerir líneas completas, bloques de código o incluso funciones enteras a partir del contexto en el que estás trabajando.</p>
 <h2 id="arquitectura-general">Arquitectura General</h2>
 <p>Copilot se basa en el modelo Codex de OpenAI, que ha sido entrenado con repositorios públicos disponibles en GitHub. Cuando escribes código, el complemento de Copilot en tu editor envía el contexto del archivo (y líneas recientes de código) a los servidores de GitHub, donde Codex genera sugerencias y las retorna para que el desarrollador las acepte o descarte.</p>]]></description>
-</item>
-<item>
-    <title>Instalación de GitHub Copilot en VS Code</title>
-    <link>http://localhost:1313/posts/copilot-for-java-devs/instalacion-copilot-vscode/</link>
-    <pubDate>Sat, 26 Jul 2025 00:00:00 &#43;0000</pubDate>
-    <author>Cyb3rh4ck</author>
-    <guid>http://localhost:1313/posts/copilot-for-java-devs/instalacion-copilot-vscode/</guid>
-    <description><![CDATA[<h2 id="introducción">Introducción</h2>
-<p>GitHub Copilot puede integrarse fácilmente con Visual Studio Code (VS Code), proporcionando sugerencias de código en tiempo real mientras escribes. Esta sección te guiará por el proceso de instalación del plugin y la autenticación con tu cuenta de GitHub.</p>
-<h2 id="requisitos-previos">Requisitos Previos</h2>
-<ul>
-<li>Tener instalado <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Code</a></li>
-<li>Contar con una cuenta de GitHub</li>
-<li>Acceso a internet para descargar extensiones y autenticar</li>
-</ul>
-<h2 id="pasos-para-instalar-github-copilot">Pasos para Instalar GitHub Copilot</h2>
-<h3 id="1-abre-vs-code">1. Abre VS Code</h3>
-<p>Abre Visual Studio Code desde tu equipo.</p>]]></description>
 </item>
 </channel>
 </rss>

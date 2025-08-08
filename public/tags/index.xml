@@ -2,227 +2,255 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://cyb3rh4ck.github.io/tags/</link>
     <description>Recent content in Tags on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://cyb3rh4ck.github.io/tags/ai/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ChatGPT-5</title>
+      <link>https://cyb3rh4ck.github.io/tags/chatgpt-5/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/chatgpt-5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comparativa</title>
+      <link>https://cyb3rh4ck.github.io/tags/comparativa/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/comparativa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenAI</title>
+      <link>https://cyb3rh4ck.github.io/tags/openai/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/openai/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Best Practices</title>
-      <link>http://localhost:1313/tags/best-practices/</link>
+      <link>https://cyb3rh4ck.github.io/tags/best-practices/</link>
       <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/best-practices/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/best-practices/</guid>
       <description></description>
     </item>
     <item>
       <title>Branching</title>
-      <link>http://localhost:1313/tags/branching/</link>
+      <link>https://cyb3rh4ck.github.io/tags/branching/</link>
       <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/branching/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/branching/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://cyb3rh4ck.github.io/tags/git/</link>
       <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Github</title>
-      <link>http://localhost:1313/tags/github/</link>
+      <link>https://cyb3rh4ck.github.io/tags/github/</link>
       <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Copilot</title>
-      <link>http://localhost:1313/tags/copilot/</link>
+      <link>https://cyb3rh4ck.github.io/tags/copilot/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/copilot/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/copilot/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
+      <link>https://cyb3rh4ck.github.io/tags/java/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Productividad</title>
-      <link>http://localhost:1313/tags/productividad/</link>
+      <link>https://cyb3rh4ck.github.io/tags/productividad/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/productividad/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/productividad/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring-Boot</title>
-      <link>http://localhost:1313/tags/spring-boot/</link>
+      <link>https://cyb3rh4ck.github.io/tags/spring-boot/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spring-boot/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/spring-boot/</guid>
       <description></description>
     </item>
     <item>
       <title>VS Code</title>
-      <link>http://localhost:1313/tags/vs-code/</link>
+      <link>https://cyb3rh4ck.github.io/tags/vs-code/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vs-code/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/vs-code/</guid>
       <description></description>
     </item>
     <item>
       <title>ChatGPT</title>
-      <link>http://localhost:1313/tags/chatgpt/</link>
+      <link>https://cyb3rh4ck.github.io/tags/chatgpt/</link>
       <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/chatgpt/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/chatgpt/</guid>
       <description></description>
     </item>
     <item>
       <title>IA Para Desarrolladores</title>
-      <link>http://localhost:1313/tags/ia-para-desarrolladores/</link>
+      <link>https://cyb3rh4ck.github.io/tags/ia-para-desarrolladores/</link>
       <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ia-para-desarrolladores/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/ia-para-desarrolladores/</guid>
       <description></description>
     </item>
     <item>
       <title>Arquitectura</title>
-      <link>http://localhost:1313/tags/arquitectura/</link>
+      <link>https://cyb3rh4ck.github.io/tags/arquitectura/</link>
       <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>http://localhost:1313/tags/arquitectura/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/arquitectura/</guid>
       <description></description>
     </item>
     <item>
       <title>Desarrollo</title>
-      <link>http://localhost:1313/tags/desarrollo/</link>
+      <link>https://cyb3rh4ck.github.io/tags/desarrollo/</link>
       <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>http://localhost:1313/tags/desarrollo/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/desarrollo/</guid>
       <description></description>
     </item>
     <item>
       <title>Hexagonal</title>
-      <link>http://localhost:1313/tags/hexagonal/</link>
+      <link>https://cyb3rh4ck.github.io/tags/hexagonal/</link>
       <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>http://localhost:1313/tags/hexagonal/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/hexagonal/</guid>
       <description></description>
     </item>
     <item>
       <title>Metodología</title>
-      <link>http://localhost:1313/tags/metodolog%C3%ADa/</link>
+      <link>https://cyb3rh4ck.github.io/tags/metodolog%C3%ADa/</link>
       <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>http://localhost:1313/tags/metodolog%C3%ADa/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/metodolog%C3%ADa/</guid>
       <description></description>
     </item>
     <item>
       <title>Oauth2</title>
-      <link>http://localhost:1313/tags/oauth2/</link>
+      <link>https://cyb3rh4ck.github.io/tags/oauth2/</link>
       <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>http://localhost:1313/tags/oauth2/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/oauth2/</guid>
       <description></description>
     </item>
     <item>
       <title>Angular</title>
-      <link>http://localhost:1313/tags/angular/</link>
+      <link>https://cyb3rh4ck.github.io/tags/angular/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/angular/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/angular/</guid>
       <description></description>
     </item>
     <item>
       <title>API REST</title>
-      <link>http://localhost:1313/tags/api-rest/</link>
+      <link>https://cyb3rh4ck.github.io/tags/api-rest/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/api-rest/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/api-rest/</guid>
       <description></description>
     </item>
     <item>
       <title>Arquitectura Hexagonal</title>
-      <link>http://localhost:1313/tags/arquitectura-hexagonal/</link>
+      <link>https://cyb3rh4ck.github.io/tags/arquitectura-hexagonal/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/arquitectura-hexagonal/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/arquitectura-hexagonal/</guid>
       <description></description>
     </item>
     <item>
       <title>Desarrollo Web</title>
-      <link>http://localhost:1313/tags/desarrollo-web/</link>
+      <link>https://cyb3rh4ck.github.io/tags/desarrollo-web/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/desarrollo-web/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/desarrollo-web/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontend</title>
-      <link>http://localhost:1313/tags/frontend/</link>
+      <link>https://cyb3rh4ck.github.io/tags/frontend/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/frontend/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/frontend/</guid>
       <description></description>
     </item>
     <item>
       <title>Atajos</title>
-      <link>http://localhost:1313/tags/atajos/</link>
+      <link>https://cyb3rh4ck.github.io/tags/atajos/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/atajos/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/atajos/</guid>
       <description></description>
     </item>
     <item>
       <title>Shortcuts</title>
-      <link>http://localhost:1313/tags/shortcuts/</link>
+      <link>https://cyb3rh4ck.github.io/tags/shortcuts/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/shortcuts/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/shortcuts/</guid>
       <description></description>
     </item>
     <item>
       <title>Api</title>
-      <link>http://localhost:1313/tags/api/</link>
+      <link>https://cyb3rh4ck.github.io/tags/api/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/api/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>Autenticación</title>
-      <link>http://localhost:1313/tags/autenticaci%C3%B3n/</link>
+      <link>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/autenticaci%C3%B3n/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/autenticaci%C3%B3n/</guid>
       <description></description>
     </item>
     <item>
       <title>Caching</title>
-      <link>http://localhost:1313/tags/caching/</link>
+      <link>https://cyb3rh4ck.github.io/tags/caching/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/caching/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/caching/</guid>
       <description></description>
     </item>
     <item>
       <title>Caffeine</title>
-      <link>http://localhost:1313/tags/caffeine/</link>
+      <link>https://cyb3rh4ck.github.io/tags/caffeine/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/caffeine/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/caffeine/</guid>
       <description></description>
     </item>
     <item>
       <title>Diagramas</title>
-      <link>http://localhost:1313/tags/diagramas/</link>
+      <link>https://cyb3rh4ck.github.io/tags/diagramas/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/diagramas/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/diagramas/</guid>
       <description></description>
     </item>
     <item>
       <title>Performance</title>
-      <link>http://localhost:1313/tags/performance/</link>
+      <link>https://cyb3rh4ck.github.io/tags/performance/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/performance/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/performance/</guid>
       <description></description>
     </item>
     <item>
       <title>Seguridad</title>
-      <link>http://localhost:1313/tags/seguridad/</link>
+      <link>https://cyb3rh4ck.github.io/tags/seguridad/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/seguridad/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/seguridad/</guid>
       <description></description>
     </item>
     <item>
       <title>Visual</title>
-      <link>http://localhost:1313/tags/visual/</link>
+      <link>https://cyb3rh4ck.github.io/tags/visual/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/visual/</guid>
+      <guid>https://cyb3rh4ck.github.io/tags/visual/</guid>
       <description></description>
     </item>
   </channel>
