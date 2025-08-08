@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/ai/</link><description>Recent content in AI on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>🚀 Novedades de ChatGPT-5</title><link>https://cyb3rh4ck.github.io/posts/gpt/chatgpt5-overview/</link><pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/gpt/chatgpt5-overview/</guid><description>&lt;h1 id="-chatgpt-5-la-nueva-generación-de-ia-conversacional">🤖 ChatGPT-5: La nueva generación de IA conversacional&lt;/h1>
+&lt;p>OpenAI ha lanzado &lt;strong>ChatGPT-5&lt;/strong>, un modelo más avanzado, preciso y versátil que su predecesor &lt;strong>GPT-4&lt;/strong>.&lt;br>
+Este artículo te mostrará sus mejoras clave, un cuadro comparativo y diagramas para entender sus capacidades.&lt;/p>
+&lt;hr>
+&lt;h2 id="-mejoras-clave-en-gpt-5">📌 Mejoras Clave en GPT-5&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Razonamiento Avanzado&lt;/strong> 🧠: Mejor comprensión y resolución de problemas complejos.&lt;/li>
+&lt;li>&lt;strong>Memoria Extendida&lt;/strong> 📚: Capacidad de recordar interacciones pasadas por más tiempo.&lt;/li>
+&lt;li>&lt;strong>Respuestas Multimodales&lt;/strong> 🎨: Procesa texto, imágenes, audio y video en una misma conversación.&lt;/li>
+&lt;li>&lt;strong>Velocidad de Respuesta&lt;/strong> ⚡: Latencia reducida gracias a optimizaciones de inferencia.&lt;/li>
+&lt;li>&lt;strong>Personalización&lt;/strong> 🎯: Ajusta el tono y estilo de las respuestas según el usuario.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-comparativa-gpt-4-vs-gpt-5">📊 Comparativa GPT-4 vs GPT-5&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Característica&lt;/th>
+ &lt;th style="text-align: center">GPT-4&lt;/th>
+ &lt;th style="text-align: center">GPT-5&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Comprensión Contextual&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐⭐&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Razonamiento Lógico&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐⭐&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Memoria de Conversación&lt;/td>
+ &lt;td style="text-align: center">8K tokens&lt;/td>
+ &lt;td style="text-align: center">128K tokens&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Multimodalidad&lt;/td>
+ &lt;td style="text-align: center">Limitada&lt;/td>
+ &lt;td style="text-align: center">Texto, Imagen, Audio, Video&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Velocidad de Respuesta&lt;/td>
+ &lt;td style="text-align: center">Media&lt;/td>
+ &lt;td style="text-align: center">Alta&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Personalización&lt;/td>
+ &lt;td style="text-align: center">Básica&lt;/td>
+ &lt;td style="text-align: center">Avanzada&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-diagrama-de-arquitectura-gpt-5">📈 Diagrama de Arquitectura GPT-5&lt;/h2>
+&lt;div class="mermaid" style="text-align: center;">
+graph TD
+ A[Entrada del Usuario] --> B[Procesamiento Multimodal]
+ B --> C[Módulo de Comprensión Contextual]
+ C --> D[Motor de Razonamiento Avanzado]
+ D --> E[Generación de Respuesta]
+ E --> F[Salida Personalizada]
+&lt;/div>
+&lt;hr>
+&lt;h2 id="-íconos-representativos">🖼 Íconos Representativos&lt;/h2>
+&lt;ul>
+&lt;li>🧠 Inteligencia&lt;/li>
+&lt;li>📚 Conocimiento&lt;/li>
+&lt;li>🎨 Creatividad&lt;/li>
+&lt;li>⚡ Velocidad&lt;/li>
+&lt;li>🤝 Interacción&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-conclusión">💡 Conclusión&lt;/h2>
+&lt;p>&lt;strong>ChatGPT-5&lt;/strong> no solo es más rápido y preciso, sino que también es &lt;strong>más humano&lt;/strong> en sus interacciones.&lt;br>
+Con una mejor memoria, capacidad multimodal y personalización avanzada, redefine la experiencia conversacional.&lt;/p></description></item></channel></rss>

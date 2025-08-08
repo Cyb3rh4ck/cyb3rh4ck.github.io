@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arquitectura on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/arquitectura/</link><description>Recent content in Arquitectura on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/arquitectura/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo2/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo2/</guid><description>&lt;h1 id="-capítulo-2--análisis-profundo-de-la-arquitectura-de-keycloak">🛠️ Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak&lt;/h1>
+&lt;h2 id="21-arquitectura-del-sistema-keycloak">2.1 Arquitectura del Sistema Keycloak&lt;/h2>
+&lt;p>Keycloak es una solución de &lt;strong>gestión de identidades y accesos (IAM)&lt;/strong> de código abierto que soporta &lt;strong>SSO&lt;/strong>, &lt;strong>MFA&lt;/strong>, integración con &lt;strong>LDAP/AD&lt;/strong>, y protocolos como &lt;strong>OAuth 2.0&lt;/strong>, &lt;strong>OpenID Connect&lt;/strong> y &lt;strong>SAML&lt;/strong>.&lt;br>
+Su arquitectura está basada en:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Core Server:&lt;/strong> motor que maneja autenticación, autorización y federación de identidades.&lt;/li>
+&lt;li>&lt;strong>Admin Console:&lt;/strong> interfaz web para configuración y administración.&lt;/li>
+&lt;li>&lt;strong>Account Console:&lt;/strong> portal de autoservicio para usuarios finales.&lt;/li>
+&lt;li>&lt;strong>Base de datos persistente:&lt;/strong> almacena configuraciones, usuarios, sesiones y tokens.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="22-modelos-de-realm-cliente-y-usuario">2.2 Modelos de Realm, Cliente y Usuario&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Realm:&lt;/strong> entorno de seguridad aislado; cada realm administra usuarios, credenciales, roles y grupos de forma independiente.&lt;/li>
+&lt;li>&lt;strong>Cliente:&lt;/strong> aplicación o servicio registrado en Keycloak para autenticación/autorización.&lt;/li>
+&lt;li>&lt;strong>Usuario:&lt;/strong> identidad gestionada dentro de un realm.&lt;/li>
+&lt;/ul>
+&lt;p>Un realm puede contener múltiples clientes, y un cliente puede acceder a varios flujos de autenticación configurados.&lt;/p></description></item><item><title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link><pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid><description>&lt;div class="details admonition tip open">
+ &lt;div class="details-summary admonition-title">
+ &lt;i class="icon fas fa-lightbulb fa-fw" aria-hidden="true">&lt;/i>💡 TL;DR&lt;i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true">&lt;/i>
+ &lt;/div>
+ &lt;div class="details-content">
+ &lt;div class="admonition-content">&lt;strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?&lt;/strong> Esta guía te enseña cómo usar &lt;strong>GitHub Copilot efectivamente&lt;/strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.&lt;/div>
+ &lt;/div>
+ &lt;/div>
+&lt;h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)&lt;/h2>
+&lt;div class="details admonition failure open">
+ &lt;div class="details-summary admonition-title">
+ &lt;i class="icon fas fa-times-circle fa-fw" aria-hidden="true">&lt;/i>❌ Escenario Típico con Copilot&lt;i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true">&lt;/i>
+ &lt;/div>
+ &lt;div class="details-content">
+ &lt;div class="admonition-content">&lt;ol>
+&lt;li>&lt;strong>Le pides a Copilot&lt;/strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)&lt;/li>
+&lt;li>&lt;strong>Copilot genera todo de una vez&lt;/strong> - 50+ archivos, configuraciones, dependencias&lt;/li>
+&lt;li>&lt;strong>Aparecen 78 errores&lt;/strong> de compilación porque las piezas no encajan 😱&lt;/li>
+&lt;li>&lt;strong>No entiendes el código generado&lt;/strong> para poder arreglarlo&lt;/li>
+&lt;li>&lt;strong>Dependes completamente de Copilot&lt;/strong> para cada fix, creando más problemas&lt;/li>
+&lt;li>&lt;strong>Frustración total&lt;/strong> - el &amp;ldquo;asistente inteligente&amp;rdquo; se volvió tu enemigo&lt;/li>
+&lt;/ol>
+&lt;/div>
+ &lt;/div>
+ &lt;/div>
+&lt;blockquote>
+&lt;p>💭 &lt;strong>Mi experiencia usando Copilot&lt;/strong>: &lt;em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.&lt;/em>&lt;/p></description></item></channel></rss>

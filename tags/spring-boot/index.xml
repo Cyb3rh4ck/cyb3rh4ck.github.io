@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring-Boot on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/spring-boot/</link><description>Recent content in Spring-Boot on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml"/><item><title>🚪 Spring Cloud Gateway: API Gateway Reactivo Completo</title><link>https://cyb3rh4ck.github.io/posts/spring-boot/spring-cloud-gateway/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/spring-boot/spring-cloud-gateway/</guid><description>&lt;h1 id="spring-cloud-gateway-demo">Spring Cloud Gateway Demo&lt;/h1>
+&lt;p>Este proyecto demuestra el uso de &lt;strong>Spring Cloud Gateway&lt;/strong> como un API Gateway reactivo usando WebFlux.&lt;/p>
+&lt;h2 id="-arquitectura">🏗️ Arquitectura&lt;/h2>
+&lt;pre tabindex="0">&lt;code>Cliente/Navegador
+ ↓
+Spring Cloud Gateway (Puerto 8080)
+ ↓
+httpbin.org (Servicio destino)
+&lt;/code>&lt;/pre>&lt;h2 id="-cómo-ejecutar">🚀 Cómo ejecutar&lt;/h2>
+&lt;h3 id="prerrequisitos">Prerrequisitos&lt;/h3>
+&lt;ul>
+&lt;li>Java 17+&lt;/li>
+&lt;li>Maven 3.6+&lt;/li>
+&lt;/ul>
+&lt;h3 id="ejecutar-la-aplicación">Ejecutar la aplicación&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Usando Maven Wrapper (recomendado)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./mvnw spring-boot:run
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># En Windows&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mvnw.cmd spring-boot:run
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># O ejecutando el JAR&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mvn clean package
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">java -jar target/spring-cloud-gateway-0.0.1-SNAPSHOT.jar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>La aplicación se ejecutará en &lt;code>http://localhost:8080&lt;/code>&lt;/p></description></item><item><title>Strategy to Solve HackerRank Java Problems</title><link>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</link><pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</guid><description>&lt;h1 id="-strategy-to-solve-hackerrank-java-problems">🏆 Strategy to Solve HackerRank Java Problems&lt;/h1>
+&lt;p>This guide provides a &lt;strong>step-by-step strategy&lt;/strong> to solve Java coding challenges on &lt;strong>HackerRank&lt;/strong> effectively.&lt;/p>
+&lt;hr>
+&lt;h2 id="1-read--understand-the-problem-statement">1️⃣ Read &amp;amp; Understand the Problem Statement&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Goal:&lt;/strong> Know exactly what the problem is asking.&lt;/li>
+&lt;li>&lt;strong>Tips:&lt;/strong>
+&lt;ul>
+&lt;li>Identify &lt;strong>input format&lt;/strong>, &lt;strong>output format&lt;/strong>, and &lt;strong>constraints&lt;/strong>.&lt;/li>
+&lt;li>Pay attention to &lt;strong>edge cases&lt;/strong> mentioned in the description.&lt;/li>
+&lt;li>Read &lt;strong>sample inputs and outputs&lt;/strong> to clarify the logic.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="2-analyze-constraints">2️⃣ Analyze Constraints&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Why:&lt;/strong> Constraints determine:
+&lt;ul>
+&lt;li>Which &lt;strong>data types&lt;/strong> to use (&lt;code>int&lt;/code>, &lt;code>long&lt;/code>, &lt;code>BigInteger&lt;/code> for very large numbers).&lt;/li>
+&lt;li>Whether your &lt;strong>algorithm needs optimization&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p></description></item><item><title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link><pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid><description>&lt;div class="details admonition tip open">
+ &lt;div class="details-summary admonition-title">
+ &lt;i class="icon fas fa-lightbulb fa-fw" aria-hidden="true">&lt;/i>💡 TL;DR&lt;i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true">&lt;/i>
+ &lt;/div>
+ &lt;div class="details-content">
+ &lt;div class="admonition-content">&lt;strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?&lt;/strong> Esta guía te enseña cómo usar &lt;strong>GitHub Copilot efectivamente&lt;/strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.&lt;/div>
+ &lt;/div>
+ &lt;/div>
+&lt;h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)&lt;/h2>
+&lt;div class="details admonition failure open">
+ &lt;div class="details-summary admonition-title">
+ &lt;i class="icon fas fa-times-circle fa-fw" aria-hidden="true">&lt;/i>❌ Escenario Típico con Copilot&lt;i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true">&lt;/i>
+ &lt;/div>
+ &lt;div class="details-content">
+ &lt;div class="admonition-content">&lt;ol>
+&lt;li>&lt;strong>Le pides a Copilot&lt;/strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)&lt;/li>
+&lt;li>&lt;strong>Copilot genera todo de una vez&lt;/strong> - 50+ archivos, configuraciones, dependencias&lt;/li>
+&lt;li>&lt;strong>Aparecen 78 errores&lt;/strong> de compilación porque las piezas no encajan 😱&lt;/li>
+&lt;li>&lt;strong>No entiendes el código generado&lt;/strong> para poder arreglarlo&lt;/li>
+&lt;li>&lt;strong>Dependes completamente de Copilot&lt;/strong> para cada fix, creando más problemas&lt;/li>
+&lt;li>&lt;strong>Frustración total&lt;/strong> - el &amp;ldquo;asistente inteligente&amp;rdquo; se volvió tu enemigo&lt;/li>
+&lt;/ol>
+&lt;/div>
+ &lt;/div>
+ &lt;/div>
+&lt;blockquote>
+&lt;p>💭 &lt;strong>Mi experiencia usando Copilot&lt;/strong>: &lt;em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.&lt;/em>&lt;/p></description></item><item><title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title><link>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</link><pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</guid><description>&lt;h2 id="-introducción">🧠 Introducción&lt;/h2>
+&lt;p>Crear una aplicación Angular (versión recomendada: &lt;strong>18.x&lt;/strong>) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: &lt;code>Cliente&lt;/code> o &lt;code>Producto&lt;/code>). Se aplicará una estructura inspirada en &lt;strong>arquitectura hexagonal&lt;/strong> para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.&lt;/p>
+&lt;hr>
+&lt;h2 id="-requisitos-del-entorno">🔧 Requisitos del entorno&lt;/h2>
+&lt;ul>
+&lt;li>Node.js v20.19 o superior (&lt;code>node -v&lt;/code>)&lt;/li>
+&lt;li>Angular CLI (&lt;code>npm install -g @angular/cli&lt;/code>)&lt;/li>
+&lt;li>Angular v18.x (&lt;code>ng version&lt;/code>)&lt;/li>
+&lt;li>Un backend REST disponible (puerto, endpoints y CORS habilitado)&lt;/li>
+&lt;li>Editor recomendado: &lt;strong>Visual Studio Code&lt;/strong> con extensión GitHub Copilot&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-paso-1-crear-la-aplicación-angular">🏁 Paso 1: Crear la aplicación Angular&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ng new frontend-crud-app
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> frontend-crud-app
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ng serve --open
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Selecciona &lt;strong>Routing = Yes&lt;/strong>, &lt;strong>Estilo = CSS o SCSS&lt;/strong> según tu preferencia.&lt;/p></description></item><item><title>Frases y prompts útiles para Copilot en VS Code (Java + Spring Boot)</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</guid><description>&lt;p>&lt;img
+ class="lazyload"
+ src="https://cyb3rh4ck.github.io/svg/loading.min.svg"
+ data-src="https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png"
+ data-srcset="https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png, https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png 1.5x, https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png 2x"
+ data-sizes="auto"
+ alt="/images/post/banner-copilot-prompts.png"
+ title="Copilot Prompts" />&lt;/p>
+&lt;blockquote>
+&lt;p>🎯 Usa estos comentarios dentro de tu código en VS Code para que &lt;strong>Copilot entienda lo que necesitas&lt;/strong> y te sugiera código útil, limpio y contextualizado.&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-frases-ideales-para-copilot-en-vs-code-como-">📌 Frases ideales para Copilot en VS Code (como &lt;code>//&lt;/code>)&lt;/h2>
+&lt;h3 id="-generación-de-código-básico">🔹 Generación de código básico&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Create a method to calculate the total price with tax&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement a REST controller for customer registration&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Generate a model class for CreditCard with fields: number, holderName, limit&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Write a unit test for this service method&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-limpieza-y-refactorización">🔹 Limpieza y refactorización&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Refactor this method to reduce complexity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Replace System.out with Lombok logger (@Slf4j)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Convert this logic to use Java 8 streams&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Extract this logic into a separate utility class&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-lógica-de-negocio">🔹 Lógica de negocio&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Validate customer age is over 18 before approving the card&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Check if the credit card limit is sufficient before proceeding&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement retry logic if the external API fails&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Add audit trail when user updates personal data&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-arquitectura-hexagonal--ddd">🔹 Arquitectura hexagonal / DDD&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Create a use case to handle credit card application&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Define a port interface for customer repository&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement an adapter for Oracle database using JdbcTemplate&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Map domain entity to DTO for external API&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-test-y-tdd">🔹 Test y TDD&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Write a JUnit test for CreditCardService&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Mock the customer repository and return a fake customer&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Verify that the audit event is sent when data is updated&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-desempeño-y-calidad">🔹 Desempeño y calidad&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Optimize this loop for performance&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Add null checks and input validation&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Suggest improvements for readability&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Handle edge cases for this validation&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="-ejemplos-prácticos-con-copilot">💡 Ejemplos prácticos con Copilot&lt;/h2>
+&lt;h3 id="-antes">🧪 Antes:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Cliente aprobado&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-comentario-copilot">✨ Comentario Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Replace System.out with Lombok logger&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-resultado-sugerido-por-copilot">✅ Resultado sugerido por Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Slf4j&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">ClienteService&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">void&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">notificarAprobacion&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Cliente aprobado&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-antes-1">🧪 Antes:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// lógica mezclada en un método gigante&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-comentario-copilot-1">✨ Comentario Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Refactor this method to reduce complexity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-resultado-sugerido-por-copilot-1">✅ Resultado sugerido por Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">calcularTotal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Pedido&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">subtotal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">calcularSubtotal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">impuestos&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">calcularImpuestos&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">subtotal&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">impuestos&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr></description></item><item><title>Automatiza tu código con Copilot en VS Code</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</link><pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</guid><description>&lt;h2 id="-introducción">🧠 Introducción&lt;/h2>
+&lt;p>GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.&lt;/p>
+&lt;hr>
+&lt;h2 id="-requisitos-previos">🛠️ Requisitos previos&lt;/h2>
+&lt;ul>
+&lt;li>Tener una cuenta de GitHub&lt;/li>
+&lt;li>Tener instalado &lt;a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Code&lt;/a>&lt;/li>
+&lt;li>Tener instalado &lt;a href="https://adoptium.net/" target="_blank" rel="noopener noreffer ">Java 17&lt;/a>&lt;/li>
+&lt;li>Conexión a internet&lt;/li>
+&lt;li>Git instalado&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-instalación-de-copilot-en-vs-code">🔌 Instalación de Copilot en VS Code&lt;/h2>
+&lt;ol>
+&lt;li>Abre VS Code&lt;/li>
+&lt;li>Ve a la extensión &amp;ldquo;GitHub Copilot&amp;rdquo;&lt;/li>
+&lt;li>Haz clic en instalar o usa el siguiente comando:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">code --install-extension GitHub.copilot&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;ol start="4">
+&lt;li>Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.&lt;/li>
+&lt;li>Acepta los permisos y espera la confirmación.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="-configuración-básica">⚙️ Configuración básica&lt;/h2>
+&lt;ul>
+&lt;li>Asegúrate de que Copilot esté activado en la barra de estado.&lt;/li>
+&lt;li>Configura el comportamiento de sugerencias:
+&lt;ul>
+&lt;li>Aceptar: &lt;code>Tab&lt;/code>&lt;/li>
+&lt;li>Siguiente sugerencia: &lt;code>Ctrl + ]&lt;/code>&lt;/li>
+&lt;li>Anterior sugerencia: &lt;code>Ctrl + [&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Puedes desactivar Copilot por archivo o carpeta desde la configuración.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-cómo-utilizarlo-primeros-ejemplos">🤖 Cómo utilizarlo: primeros ejemplos&lt;/h2>
+&lt;p>Crea un archivo &lt;code>Main.java&lt;/code> y escribe:&lt;/p></description></item><item><title>☕ Uso de Cache Local con Caffeine</title><link>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</link><pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</guid><description>&lt;h1 id="-caffeine-cache---guía-rápida">☕ Caffeine Cache - Guía Rápida&lt;/h1>
+&lt;p>&lt;strong>Caffeine&lt;/strong> es una librería Java de alto rendimiento para caching en memoria local. Es una alternativa moderna a Ehcache y Guava, recomendada para microservicios que requieren acceso rápido a datos sin necesidad de sincronización entre instancias.&lt;/p>
+&lt;hr>
+&lt;h2 id="-cuándo-usar-caffeine">✅ ¿Cuándo usar Caffeine?&lt;/h2>
+&lt;ul>
+&lt;li>Datos que no cambian frecuentemente (ej. catálogos, configuraciones)&lt;/li>
+&lt;li>Objetos pequeños a consultar muchas veces&lt;/li>
+&lt;li>Cuando no necesitas compartir cache entre instancias&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-configuración-en-spring-boot">⚙️ Configuración en Spring Boot&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Agrega la dependencia en tu &lt;code>pom.xml&lt;/code>:&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.github.ben-manes.caffeine&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>caffeine&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>&lt;strong>Habilita caching en tu aplicación:&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@SpringBootApplication&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@EnableCaching&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyApp&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">...&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>&lt;strong>Usa la anotación &lt;code>@Cacheable&lt;/code>:&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Cacheable&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;clientes&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Cliente&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">getClienteById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">clienteRepository&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">findById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="-políticas-de-evicción">🧠 Políticas de Evicción&lt;/h2>
+&lt;p>Puedes configurar políticas como:&lt;/p></description></item></channel></rss>

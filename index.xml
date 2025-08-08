@@ -1,0 +1,513 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/</link><description>Bitácora de IA, Java y desarrollo ágil</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>🚪 Spring Cloud Gateway: API Gateway Reactivo Completo</title><link>https://cyb3rh4ck.github.io/posts/spring-boot/spring-cloud-gateway/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/spring-boot/spring-cloud-gateway/</guid><description><![CDATA[<h1 id="spring-cloud-gateway-demo">Spring Cloud Gateway Demo</h1>
+<p>Este proyecto demuestra el uso de <strong>Spring Cloud Gateway</strong> como un API Gateway reactivo usando WebFlux.</p>
+<h2 id="-arquitectura">🏗️ Arquitectura</h2>
+<pre tabindex="0"><code>Cliente/Navegador
+       ↓
+Spring Cloud Gateway (Puerto 8080)
+       ↓
+httpbin.org (Servicio destino)
+</code></pre><h2 id="-cómo-ejecutar">🚀 Cómo ejecutar</h2>
+<h3 id="prerrequisitos">Prerrequisitos</h3>
+<ul>
+<li>Java 17+</li>
+<li>Maven 3.6+</li>
+</ul>
+<h3 id="ejecutar-la-aplicación">Ejecutar la aplicación</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Usando Maven Wrapper (recomendado)</span>
+</span></span><span class="line"><span class="cl">./mvnw spring-boot:run
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># En Windows</span>
+</span></span><span class="line"><span class="cl">mvnw.cmd spring-boot:run
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># O ejecutando el JAR</span>
+</span></span><span class="line"><span class="cl">mvn clean package
+</span></span><span class="line"><span class="cl">java -jar target/spring-cloud-gateway-0.0.1-SNAPSHOT.jar
+</span></span></code></pre></div><p>La aplicación se ejecutará en <code>http://localhost:8080</code></p>]]></description></item><item><title>ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</title><link>https://cyb3rh4ck.github.io/posts/gpt/chatgpt-en-accion/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/gpt/chatgpt-en-accion/</guid><description><![CDATA[<h1 id="-chatgpt-para-innovación-empresarial-guía-práctica-con-prompts">🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts</h1>
+<p>Aprende a usar <strong>ChatGPT como socio estratégico</strong> para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.</p>
+<p>En este post encontrarás <strong>5 fórmulas probadas</strong> con prompts específicos que puedes implementar inmediatamente en diferentes áreas de tu negocio.</p>
+<hr>
+<h2 id="-uso-de-la-estructura-formulaica">🛠️ Uso de la Estructura Formulaica</h2>
+<p>Las fórmulas utilizan estructuras de oración con <strong>variables entre corchetes</strong> que deben ser reemplazadas con tu información específica.</p>]]></description></item><item><title>🚀 Novedades de ChatGPT-5</title><link>https://cyb3rh4ck.github.io/posts/gpt/chatgpt5-overview/</link><pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/gpt/chatgpt5-overview/</guid><description><![CDATA[<h1 id="-chatgpt-5-la-nueva-generación-de-ia-conversacional">🤖 ChatGPT-5: La nueva generación de IA conversacional</h1>
+<p>OpenAI ha lanzado <strong>ChatGPT-5</strong>, un modelo más avanzado, preciso y versátil que su predecesor <strong>GPT-4</strong>.<br>
+Este artículo te mostrará sus mejoras clave, un cuadro comparativo y diagramas para entender sus capacidades.</p>
+<hr>
+<h2 id="-mejoras-clave-en-gpt-5">📌 Mejoras Clave en GPT-5</h2>
+<ul>
+<li><strong>Razonamiento Avanzado</strong> 🧠: Mejor comprensión y resolución de problemas complejos.</li>
+<li><strong>Memoria Extendida</strong> 📚: Capacidad de recordar interacciones pasadas por más tiempo.</li>
+<li><strong>Respuestas Multimodales</strong> 🎨: Procesa texto, imágenes, audio y video en una misma conversación.</li>
+<li><strong>Velocidad de Respuesta</strong> ⚡: Latencia reducida gracias a optimizaciones de inferencia.</li>
+<li><strong>Personalización</strong> 🎯: Ajusta el tono y estilo de las respuestas según el usuario.</li>
+</ul>
+<hr>
+<h2 id="-comparativa-gpt-4-vs-gpt-5">📊 Comparativa GPT-4 vs GPT-5</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Característica</th>
+          <th style="text-align: center">GPT-4</th>
+          <th style="text-align: center">GPT-5</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Comprensión Contextual</td>
+          <td style="text-align: center">⭐⭐⭐⭐</td>
+          <td style="text-align: center">⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>Razonamiento Lógico</td>
+          <td style="text-align: center">⭐⭐⭐⭐</td>
+          <td style="text-align: center">⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>Memoria de Conversación</td>
+          <td style="text-align: center">8K tokens</td>
+          <td style="text-align: center">128K tokens</td>
+      </tr>
+      <tr>
+          <td>Multimodalidad</td>
+          <td style="text-align: center">Limitada</td>
+          <td style="text-align: center">Texto, Imagen, Audio, Video</td>
+      </tr>
+      <tr>
+          <td>Velocidad de Respuesta</td>
+          <td style="text-align: center">Media</td>
+          <td style="text-align: center">Alta</td>
+      </tr>
+      <tr>
+          <td>Personalización</td>
+          <td style="text-align: center">Básica</td>
+          <td style="text-align: center">Avanzada</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-diagrama-de-arquitectura-gpt-5">📈 Diagrama de Arquitectura GPT-5</h2>
+<div class="mermaid" style="text-align: center;">
+graph TD
+    A[Entrada del Usuario] --> B[Procesamiento Multimodal]
+    B --> C[Módulo de Comprensión Contextual]
+    C --> D[Motor de Razonamiento Avanzado]
+    D --> E[Generación de Respuesta]
+    E --> F[Salida Personalizada]
+</div>
+<hr>
+<h2 id="-íconos-representativos">🖼 Íconos Representativos</h2>
+<ul>
+<li>🧠 Inteligencia</li>
+<li>📚 Conocimiento</li>
+<li>🎨 Creatividad</li>
+<li>⚡ Velocidad</li>
+<li>🤝 Interacción</li>
+</ul>
+<hr>
+<h2 id="-conclusión">💡 Conclusión</h2>
+<p><strong>ChatGPT-5</strong> no solo es más rápido y preciso, sino que también es <strong>más humano</strong> en sus interacciones.<br>
+Con una mejor memoria, capacidad multimodal y personalización avanzada, redefine la experiencia conversacional.</p>]]></description></item><item><title>🌿 Convenciones de Ramas en Proyectos Limpios</title><link>https://cyb3rh4ck.github.io/posts/github/branching-conventions/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/github/branching-conventions/</guid><description><![CDATA[<h1 id="-convenciones-de-ramas-en-proyectos-limpios">🌿 Convenciones de Ramas en Proyectos Limpios</h1>
+<p>Cuando inicias un <strong>proyecto nuevo</strong> (clean project), tener un <strong>flujo de ramas claro</strong> facilita la colaboración y mantiene la historia del repositorio <strong>organizada y profesional</strong>.</p>
+<p>A continuación te muestro las <strong>convenciones más utilizadas</strong> en la industria para nombrar ramas:</p>
+<hr>
+<h2 id="-1-tipos-de-ramas-y-su-uso"><strong>📌 1. Tipos de ramas y su uso</strong></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Tipo de rama</th>
+          <th>Uso principal</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>feature/</code></td>
+          <td>Nueva funcionalidad</td>
+          <td><code>feature/register-user</code></td>
+      </tr>
+      <tr>
+          <td><code>bugfix/</code></td>
+          <td>Corrección de errores menores</td>
+          <td><code>bugfix/fix-login-nullpointer</code></td>
+      </tr>
+      <tr>
+          <td><code>hotfix/</code></td>
+          <td>Corrección <strong>urgente</strong> en producción</td>
+          <td><code>hotfix/jwt-expired-issue</code></td>
+      </tr>
+      <tr>
+          <td><code>chore/</code></td>
+          <td>Configuración, refactor, CI/CD, sin cambiar lógica</td>
+          <td><code>chore/add-ci-cd</code></td>
+      </tr>
+      <tr>
+          <td><code>release/</code></td>
+          <td>Preparación de una nueva versión</td>
+          <td><code>release/v1.0.0</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-2-flujo-visual-de-ramas-branch-flow"><strong>📊 2. Flujo visual de ramas (Branch Flow)</strong></h2>
+<p></p>]]></description></item><item><title>Strategy to Solve HackerRank Java Problems</title><link>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</link><pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</guid><description><![CDATA[<h1 id="-strategy-to-solve-hackerrank-java-problems">🏆 Strategy to Solve HackerRank Java Problems</h1>
+<p>This guide provides a <strong>step-by-step strategy</strong> to solve Java coding challenges on <strong>HackerRank</strong> effectively.</p>
+<hr>
+<h2 id="1-read--understand-the-problem-statement">1️⃣ Read &amp; Understand the Problem Statement</h2>
+<ul>
+<li><strong>Goal:</strong> Know exactly what the problem is asking.</li>
+<li><strong>Tips:</strong>
+<ul>
+<li>Identify <strong>input format</strong>, <strong>output format</strong>, and <strong>constraints</strong>.</li>
+<li>Pay attention to <strong>edge cases</strong> mentioned in the description.</li>
+<li>Read <strong>sample inputs and outputs</strong> to clarify the logic.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-analyze-constraints">2️⃣ Analyze Constraints</h2>
+<ul>
+<li><strong>Why:</strong> Constraints determine:
+<ul>
+<li>Which <strong>data types</strong> to use (<code>int</code>, <code>long</code>, <code>BigInteger</code> for very large numbers).</li>
+<li>Whether your <strong>algorithm needs optimization</strong>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>]]></description></item><item><title>Workflow Copilot + ChatGPT: Conviértete en una Bestia Ágil en VS Code</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link><pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid><description><![CDATA[<h1 id="-workflow-copilot--chatgpt-para-vs-code">🚀 Workflow Copilot + ChatGPT para VS Code</h1>
+<p>Combinar <strong>GitHub Copilot</strong> con <strong>ChatGPT</strong> es como tener un par de superpoderes para tu día a día como desarrollador.<br>
+Con este workflow podrás:</p>
+<ul>
+<li>Escribir código <strong>3x más rápido</strong>.</li>
+<li><strong>Refactorizar y documentar</strong> sin esfuerzo.</li>
+<li>Resolver bloqueos de manera <strong>interactiva y creativa</strong>.</li>
+</ul>
+<hr>
+<h2 id="1-setup-inicial">1️⃣ Setup Inicial</h2>
+<ol>
+<li><strong>Instala GitHub Copilot</strong> en VS Code.</li>
+<li><strong>Abre ChatGPT</strong> (o la extensión ChatGPT para VS Code).</li>
+<li>Configura <strong>atajos de teclado</strong>:
+<ul>
+<li><code>Alt+\</code> → Activar Copilot suggestion</li>
+<li><code>Ctrl+I</code> → Prompt a ChatGPT sobre la selección</li>
+</ul>
+</li>
+</ol>
+<p>💡 <em>Tip:</em> Si usas <strong>Agent Mode</strong> en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.</p>]]></description></item><item><title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link><pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid><description><![CDATA[<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>💡 TL;DR<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?</strong> Esta guía te enseña cómo usar <strong>GitHub Copilot efectivamente</strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.</div>
+        </div>
+    </div>
+<h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)</h2>
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>❌ Escenario Típico con Copilot<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li><strong>Le pides a Copilot</strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)</li>
+<li><strong>Copilot genera todo de una vez</strong> - 50+ archivos, configuraciones, dependencias</li>
+<li><strong>Aparecen 78 errores</strong> de compilación porque las piezas no encajan 😱</li>
+<li><strong>No entiendes el código generado</strong> para poder arreglarlo</li>
+<li><strong>Dependes completamente de Copilot</strong> para cada fix, creando más problemas</li>
+<li><strong>Frustración total</strong> - el &ldquo;asistente inteligente&rdquo; se volvió tu enemigo</li>
+</ol>
+</div>
+        </div>
+    </div>
+<blockquote>
+<p>💭 <strong>Mi experiencia usando Copilot</strong>: <em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.</em></p>]]></description></item><item><title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title><link>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</link><pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</guid><description><![CDATA[<h2 id="-introducción">🧠 Introducción</h2>
+<p>Crear una aplicación Angular (versión recomendada: <strong>18.x</strong>) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: <code>Cliente</code> o <code>Producto</code>). Se aplicará una estructura inspirada en <strong>arquitectura hexagonal</strong> para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.</p>
+<hr>
+<h2 id="-requisitos-del-entorno">🔧 Requisitos del entorno</h2>
+<ul>
+<li>Node.js v20.19 o superior (<code>node -v</code>)</li>
+<li>Angular CLI (<code>npm install -g @angular/cli</code>)</li>
+<li>Angular v18.x (<code>ng version</code>)</li>
+<li>Un backend REST disponible (puerto, endpoints y CORS habilitado)</li>
+<li>Editor recomendado: <strong>Visual Studio Code</strong> con extensión GitHub Copilot</li>
+</ul>
+<hr>
+<h2 id="-paso-1-crear-la-aplicación-angular">🏁 Paso 1: Crear la aplicación Angular</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ng new frontend-crud-app
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> frontend-crud-app
+</span></span><span class="line"><span class="cl">ng serve --open
+</span></span></code></pre></div><p>Selecciona <strong>Routing = Yes</strong>, <strong>Estilo = CSS o SCSS</strong> según tu preferencia.</p>]]></description></item><item><title>Frases y prompts útiles para Copilot en VS Code (Java + Spring Boot)</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</guid><description><![CDATA[<p></p>
+<blockquote>
+<p>🎯 Usa estos comentarios dentro de tu código en VS Code para que <strong>Copilot entienda lo que necesitas</strong> y te sugiera código útil, limpio y contextualizado.</p></blockquote>
+<hr>
+<h2 id="-frases-ideales-para-copilot-en-vs-code-como-">📌 Frases ideales para Copilot en VS Code (como <code>//</code>)</h2>
+<h3 id="-generación-de-código-básico">🔹 Generación de código básico</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Create a method to calculate the total price with tax</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Implement a REST controller for customer registration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Generate a model class for CreditCard with fields: number, holderName, limit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Write a unit test for this service method</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="-limpieza-y-refactorización">🔹 Limpieza y refactorización</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Refactor this method to reduce complexity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Replace System.out with Lombok logger (@Slf4j)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Convert this logic to use Java 8 streams</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Extract this logic into a separate utility class</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="-lógica-de-negocio">🔹 Lógica de negocio</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Validate customer age is over 18 before approving the card</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Check if the credit card limit is sufficient before proceeding</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Implement retry logic if the external API fails</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Add audit trail when user updates personal data</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="-arquitectura-hexagonal--ddd">🔹 Arquitectura hexagonal / DDD</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Create a use case to handle credit card application</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Define a port interface for customer repository</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Implement an adapter for Oracle database using JdbcTemplate</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Map domain entity to DTO for external API</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="-test-y-tdd">🔹 Test y TDD</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Write a JUnit test for CreditCardService</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Mock the customer repository and return a fake customer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Verify that the audit event is sent when data is updated</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="-desempeño-y-calidad">🔹 Desempeño y calidad</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Optimize this loop for performance</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Add null checks and input validation</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Suggest improvements for readability</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Handle edge cases for this validation</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h2 id="-ejemplos-prácticos-con-copilot">💡 Ejemplos prácticos con Copilot</h2>
+<h3 id="-antes">🧪 Antes:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Cliente aprobado&#34;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><h3 id="-comentario-copilot">✨ Comentario Copilot:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Replace System.out with Lombok logger</span><span class="w">
+</span></span></span></code></pre></div><h3 id="-resultado-sugerido-por-copilot">✅ Resultado sugerido por Copilot:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClienteService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">notificarAprobacion</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Cliente aprobado&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="-antes-1">🧪 Antes:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// lógica mezclada en un método gigante</span><span class="w">
+</span></span></span></code></pre></div><h3 id="-comentario-copilot-1">✨ Comentario Copilot:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Refactor this method to reduce complexity</span><span class="w">
+</span></span></span></code></pre></div><h3 id="-resultado-sugerido-por-copilot-1">✅ Resultado sugerido por Copilot:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="nf">calcularTotal</span><span class="p">(</span><span class="n">Pedido</span><span class="w"> </span><span class="n">pedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">subtotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calcularSubtotal</span><span class="p">(</span><span class="n">pedido</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">impuestos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calcularImpuestos</span><span class="p">(</span><span class="n">pedido</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">subtotal</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">impuestos</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>]]></description></item><item><title>Guía de atajos de teclado en VS Code para desarrolladores Java</title><link>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><author>Cyb3rh4ck</author><guid>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</guid><description><![CDATA[<blockquote>
+<p>⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).</p></blockquote>
+<hr>
+<h2 id="-comentarios">🧩 Comentarios</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Acción</th>
+          <th>Atajo Windows/Linux</th>
+          <th>macOS</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Comentar o descomentar una línea</td>
+          <td><code>Ctrl + /</code></td>
+          <td><code>Cmd + /</code></td>
+          <td>Añade o quita <code>//</code></td>
+      </tr>
+      <tr>
+          <td>Comentar varias líneas seleccionadas</td>
+          <td><code>Ctrl + /</code></td>
+          <td><code>Cmd + /</code></td>
+          <td>Comenta cada línea con <code>//</code></td>
+      </tr>
+      <tr>
+          <td>Comentario multilínea</td>
+          <td>Manual</td>
+          <td>Manual</td>
+          <td><code>/* ... */</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-navegación-y-edición-rápida">🚀 Navegación y edición rápida</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Acción</th>
+          <th>Atajo Windows/Linux</th>
+          <th>macOS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Ir a archivo</td>
+          <td><code>Ctrl + P</code></td>
+          <td><code>Cmd + P</code></td>
+      </tr>
+      <tr>
+          <td>Ir a definición</td>
+          <td><code>F12</code></td>
+          <td><code>F12</code></td>
+      </tr>
+      <tr>
+          <td>Ir a símbolo</td>
+          <td><code>Ctrl + Shift + O</code></td>
+          <td><code>Cmd + Shift + O</code></td>
+      </tr>
+      <tr>
+          <td>Ir a línea específica</td>
+          <td><code>Ctrl + G</code></td>
+          <td><code>Cmd + G</code></td>
+      </tr>
+      <tr>
+          <td>Ir a la declaración</td>
+          <td><code>Ctrl + Click</code></td>
+          <td><code>Cmd + Click</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-refactorización-y-edición">🛠️ Refactorización y edición</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Acción</th>
+          <th>Atajo Windows/Linux</th>
+          <th>macOS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Renombrar símbolo</td>
+          <td><code>F2</code></td>
+          <td><code>F2</code></td>
+      </tr>
+      <tr>
+          <td>Mostrar acciones rápidas</td>
+          <td><code>Ctrl + .</code></td>
+          <td><code>Cmd + .</code></td>
+      </tr>
+      <tr>
+          <td>Copiar línea abajo</td>
+          <td><code>Shift + Alt + ↓</code></td>
+          <td><code>Option + Shift + ↓</code></td>
+      </tr>
+      <tr>
+          <td>Copiar línea arriba</td>
+          <td><code>Shift + Alt + ↑</code></td>
+          <td><code>Option + Shift + ↑</code></td>
+      </tr>
+      <tr>
+          <td>Mover línea abajo</td>
+          <td><code>Alt + ↓</code></td>
+          <td><code>Option + ↓</code></td>
+      </tr>
+      <tr>
+          <td>Mover línea arriba</td>
+          <td><code>Alt + ↑</code></td>
+          <td><code>Option + ↑</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-terminal-y-ejecución">🧪 Terminal y ejecución</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Acción</th>
+          <th>Atajo Windows/Linux</th>
+          <th>macOS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Abrir terminal integrada</td>
+          <td><code>Ctrl + ñ</code> o <code>Ctrl + `</code></td>
+          <td><code>Cmd + `</code></td>
+      </tr>
+      <tr>
+          <td>Ejecutar archivo</td>
+          <td><code>Ctrl + F5</code></td>
+          <td><code>Cmd + F5</code></td>
+      </tr>
+      <tr>
+          <td>Ejecutar con depuración</td>
+          <td><code>F5</code></td>
+          <td><code>F5</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-productividad-y-vistas">🌈 Productividad y vistas</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Acción</th>
+          <th>Atajo Windows/Linux</th>
+          <th>macOS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Abrir paleta de comandos</td>
+          <td><code>Ctrl + Shift + P</code></td>
+          <td><code>Cmd + Shift + P</code></td>
+      </tr>
+      <tr>
+          <td>Alternar panel lateral</td>
+          <td><code>Ctrl + B</code></td>
+          <td><code>Cmd + B</code></td>
+      </tr>
+      <tr>
+          <td>Buscar archivos</td>
+          <td><code>Ctrl + Shift + F</code></td>
+          <td><code>Cmd + Shift + F</code></td>
+      </tr>
+      <tr>
+          <td>Buscar en archivo actual</td>
+          <td><code>Ctrl + F</code></td>
+          <td><code>Cmd + F</code></td>
+      </tr>
+      <tr>
+          <td>Reemplazar en archivo</td>
+          <td><code>Ctrl + H</code></td>
+          <td><code>Cmd + H</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-copilot-específico">🤖 Copilot específico</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Acción</th>
+          <th>Atajo Windows/Linux</th>
+          <th>macOS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Aceptar sugerencia</td>
+          <td><code>Tab</code></td>
+          <td><code>Tab</code></td>
+      </tr>
+      <tr>
+          <td>Siguiente sugerencia</td>
+          <td><code>Alt + ]</code></td>
+          <td><code>Option + ]</code></td>
+      </tr>
+      <tr>
+          <td>Sugerencia anterior</td>
+          <td><code>Alt + [</code></td>
+          <td><code>Option + [</code></td>
+      </tr>
+      <tr>
+          <td>Abrir ventana Copilot</td>
+          <td><code>Ctrl + Enter</code></td>
+          <td><code>Cmd + Enter</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>]]></description></item></channel></rss>

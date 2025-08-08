@@ -1,0 +1,72 @@
+---
+title: "Instalación de GitHub Copilot en VS Code"
+date: 2025-07-26
+draft: false
+weight: 2
+description: "Guía paso a paso para instalar y configurar GitHub Copilot en Visual Studio Code"
+---
+
+## Introducción
+
+GitHub Copilot puede integrarse fácilmente con Visual Studio Code (VS Code), proporcionando sugerencias de código en tiempo real mientras escribes. Esta sección te guiará por el proceso de instalación del plugin y la autenticación con tu cuenta de GitHub.
+
+## Requisitos Previos
+
+- Tener instalado [Visual Studio Code](https://code.visualstudio.com/)
+- Contar con una cuenta de GitHub
+- Acceso a internet para descargar extensiones y autenticar
+
+## Pasos para Instalar GitHub Copilot
+
+### 1. Abre VS Code
+
+Abre Visual Studio Code desde tu equipo.
+
+### 2. Ve a la pestaña de extensiones
+
+Haz clic en el ícono de extensiones (cuadro con cuatro bloques) en la barra lateral izquierda o presiona `Ctrl+Shift+X`.
+
+### 3. Busca "GitHub Copilot"
+
+En la barra de búsqueda escribe `GitHub Copilot`. Asegúrate de que sea la extensión oficial desarrollada por GitHub.
+
+![Búsqueda de la extensión](https://docs.github.com/assets/images/help/copilot/vs-code-copilot-extension.png)
+
+### 4. Instala la extensión
+
+Haz clic en **Install** para agregar GitHub Copilot a tu editor.
+
+## Iniciar sesión en GitHub
+
+### 5. Autenticación
+
+Después de instalar la extensión, aparecerá una ventana emergente pidiéndote iniciar sesión.
+
+1. Haz clic en "Sign in to GitHub".
+2. Se abrirá tu navegador predeterminado con una URL especial de autorización.
+3. Inicia sesión con tus credenciales de GitHub y acepta los permisos solicitados.
+
+![Login con GitHub](https://docs.github.com/assets/images/help/copilot/copilot-signin.png)
+
+### 6. Confirmación
+
+Una vez autenticado, regresa a VS Code. Verás una notificación de que has iniciado sesión exitosamente y Copilot está listo para usarse.
+
+## Verifica que funciona
+
+Escribe en un archivo `.java`, por ejemplo:
+
+```java
+// Calculate the factorial of a number
+```
+
+Copilot debería sugerirte automáticamente una función en base a tu comentario.
+
+## Consejos
+
+- Puedes activar o desactivar Copilot por archivo o lenguaje desde la configuración de VS Code (`Ctrl + ,`).
+- Usa `Ctrl + Enter` para abrir el panel de sugerencias alternas de Copilot.
+
+## Conclusión
+
+Con estos pasos, ya tienes GitHub Copilot instalado y funcionando en VS Code. Ahora puedes aprovechar su poder para aumentar tu productividad al programar en Java.

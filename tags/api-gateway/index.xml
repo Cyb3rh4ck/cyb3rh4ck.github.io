@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Api-Gateway on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/api-gateway/</link><description>Recent content in Api-Gateway on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/api-gateway/index.xml" rel="self" type="application/rss+xml"/><item><title>🚪 Spring Cloud Gateway: API Gateway Reactivo Completo</title><link>https://cyb3rh4ck.github.io/posts/spring-boot/spring-cloud-gateway/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/spring-boot/spring-cloud-gateway/</guid><description>&lt;h1 id="spring-cloud-gateway-demo">Spring Cloud Gateway Demo&lt;/h1>
+&lt;p>Este proyecto demuestra el uso de &lt;strong>Spring Cloud Gateway&lt;/strong> como un API Gateway reactivo usando WebFlux.&lt;/p>
+&lt;h2 id="-arquitectura">🏗️ Arquitectura&lt;/h2>
+&lt;pre tabindex="0">&lt;code>Cliente/Navegador
+ ↓
+Spring Cloud Gateway (Puerto 8080)
+ ↓
+httpbin.org (Servicio destino)
+&lt;/code>&lt;/pre>&lt;h2 id="-cómo-ejecutar">🚀 Cómo ejecutar&lt;/h2>
+&lt;h3 id="prerrequisitos">Prerrequisitos&lt;/h3>
+&lt;ul>
+&lt;li>Java 17+&lt;/li>
+&lt;li>Maven 3.6+&lt;/li>
+&lt;/ul>
+&lt;h3 id="ejecutar-la-aplicación">Ejecutar la aplicación&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Usando Maven Wrapper (recomendado)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./mvnw spring-boot:run
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># En Windows&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mvnw.cmd spring-boot:run
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># O ejecutando el JAR&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mvn clean package
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">java -jar target/spring-cloud-gateway-0.0.1-SNAPSHOT.jar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>La aplicación se ejecutará en &lt;code>http://localhost:8080&lt;/code>&lt;/p></description></item></channel></rss>

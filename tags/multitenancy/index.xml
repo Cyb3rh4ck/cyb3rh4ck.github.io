@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MultiTenancy on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/multitenancy/</link><description>Recent content in MultiTenancy on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/multitenancy/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo4/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo4/</guid><description>&lt;h1 id="-capítulo-4--diseño-de-realms-aislamiento-de-inquilinos-y-multi-tenancy">🏛️ Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/h1>
+&lt;h2 id="41-diseño-de-realms-para-aislamiento">4.1 Diseño de Realms para Aislamiento&lt;/h2>
+&lt;p>Un &lt;strong>realm&lt;/strong> en Keycloak es un espacio de nombres de seguridad que contiene usuarios, credenciales, roles y grupos.&lt;br>
+El diseño correcto de realms es esencial para garantizar el aislamiento de datos y políticas de seguridad entre diferentes aplicaciones o clientes.&lt;/p>
+&lt;p>Buenas prácticas para el diseño de realms:&lt;/p>
+&lt;ul>
+&lt;li>Separar entornos (desarrollo, pruebas, producción) en realms distintos.&lt;/li>
+&lt;li>Evitar mezclar aplicaciones con diferentes requisitos regulatorios en un mismo realm.&lt;/li>
+&lt;li>Usar nombres descriptivos y consistentes.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="42-gestión-de-múltiples-realms-e-inquilinos">4.2 Gestión de Múltiples Realms e Inquilinos&lt;/h2>
+&lt;p>Keycloak soporta &lt;strong>multi-tenancy&lt;/strong>, lo que permite gestionar múltiples clientes o inquilinos dentro de una misma instancia:&lt;/p></description></item></channel></rss>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Futuro on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/futuro/</link><description>Recent content in Futuro on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/futuro/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo9/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo9/</guid><description>&lt;h1 id="-capítulo-9--evolución-de-despliegues-de-keycloak-y-direcciones-futuras">🚀 Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras&lt;/h1>
+&lt;h2 id="91-evolución-de-despliegues-de-keycloak">9.1 Evolución de Despliegues de Keycloak&lt;/h2>
+&lt;p>A lo largo de los años, Keycloak ha pasado de ser una herramienta de autenticación y autorización básica a una plataforma completa de gestión de identidades.&lt;br>
+Tendencias observadas en despliegues:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>De monolíticos a contenedorizados&lt;/strong>: migración hacia Docker y Kubernetes.&lt;/li>
+&lt;li>&lt;strong>De on-premises a cloud&lt;/strong>: adopción creciente de nubes públicas y privadas.&lt;/li>
+&lt;li>&lt;strong>De configuraciones manuales a automatizadas&lt;/strong>: uso de Infrastructure as Code y GitOps.&lt;/li>
+&lt;li>&lt;strong>De autenticación simple a multifactor adaptativa&lt;/strong>: integración de biometría y análisis de riesgo.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="92-innovaciones-técnicas-recientes">9.2 Innovaciones Técnicas Recientes&lt;/h2>
+&lt;p>Entre las mejoras recientes de Keycloak se incluyen:&lt;/p></description></item></channel></rss>

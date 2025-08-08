@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IA para desarrolladores on Cyb3rh4ck´s dev life</title>
+    <link>http://localhost:1313/categories/ia-para-desarrolladores/</link>
+    <description>Recent content in IA para desarrolladores on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/ia-para-desarrolladores/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatiza tu código con Copilot en VS Code</title>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
+      <description>&lt;h2 id=&#34;-introducción&#34;&gt;🧠 Introducción&lt;/h2&gt;&#xA;&lt;p&gt;GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-requisitos-previos&#34;&gt;🛠️ Requisitos previos&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tener una cuenta de GitHub&lt;/li&gt;&#xA;&lt;li&gt;Tener instalado &lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Tener instalado &lt;a href=&#34;https://adoptium.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Java 17&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Conexión a internet&lt;/li&gt;&#xA;&lt;li&gt;Git instalado&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-instalación-de-copilot-en-vs-code&#34;&gt;🔌 Instalación de Copilot en VS Code&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Abre VS Code&lt;/li&gt;&#xA;&lt;li&gt;Ve a la extensión &amp;ldquo;GitHub Copilot&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;Haz clic en instalar o usa el siguiente comando:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;code --install-extension GitHub.copilot&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;ol start=&#34;4&#34;&gt;&#xA;&lt;li&gt;Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.&lt;/li&gt;&#xA;&lt;li&gt;Acepta los permisos y espera la confirmación.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-configuración-básica&#34;&gt;⚙️ Configuración básica&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Asegúrate de que Copilot esté activado en la barra de estado.&lt;/li&gt;&#xA;&lt;li&gt;Configura el comportamiento de sugerencias:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Aceptar: &lt;code&gt;Tab&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Siguiente sugerencia: &lt;code&gt;Ctrl + ]&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Anterior sugerencia: &lt;code&gt;Ctrl + [&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Puedes desactivar Copilot por archivo o carpeta desde la configuración.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-cómo-utilizarlo-primeros-ejemplos&#34;&gt;🤖 Cómo utilizarlo: primeros ejemplos&lt;/h2&gt;&#xA;&lt;p&gt;Crea un archivo &lt;code&gt;Main.java&lt;/code&gt; y escribe:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

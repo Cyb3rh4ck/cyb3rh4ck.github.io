@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Copilot on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/copilot/</link><description>Recent content in Copilot on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/copilot/index.xml" rel="self" type="application/rss+xml"/><item><title>Strategy to Solve HackerRank Java Problems</title><link>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</link><pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/random/hackerrank_java_strategy/</guid><description>&lt;h1 id="-strategy-to-solve-hackerrank-java-problems">🏆 Strategy to Solve HackerRank Java Problems&lt;/h1>
+&lt;p>This guide provides a &lt;strong>step-by-step strategy&lt;/strong> to solve Java coding challenges on &lt;strong>HackerRank&lt;/strong> effectively.&lt;/p>
+&lt;hr>
+&lt;h2 id="1-read--understand-the-problem-statement">1️⃣ Read &amp;amp; Understand the Problem Statement&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Goal:&lt;/strong> Know exactly what the problem is asking.&lt;/li>
+&lt;li>&lt;strong>Tips:&lt;/strong>
+&lt;ul>
+&lt;li>Identify &lt;strong>input format&lt;/strong>, &lt;strong>output format&lt;/strong>, and &lt;strong>constraints&lt;/strong>.&lt;/li>
+&lt;li>Pay attention to &lt;strong>edge cases&lt;/strong> mentioned in the description.&lt;/li>
+&lt;li>Read &lt;strong>sample inputs and outputs&lt;/strong> to clarify the logic.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="2-analyze-constraints">2️⃣ Analyze Constraints&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Why:&lt;/strong> Constraints determine:
+&lt;ul>
+&lt;li>Which &lt;strong>data types&lt;/strong> to use (&lt;code>int&lt;/code>, &lt;code>long&lt;/code>, &lt;code>BigInteger&lt;/code> for very large numbers).&lt;/li>
+&lt;li>Whether your &lt;strong>algorithm needs optimization&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p></description></item><item><title>Workflow Copilot + ChatGPT: Conviértete en una Bestia Ágil en VS Code</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link><pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid><description>&lt;h1 id="-workflow-copilot--chatgpt-para-vs-code">🚀 Workflow Copilot + ChatGPT para VS Code&lt;/h1>
+&lt;p>Combinar &lt;strong>GitHub Copilot&lt;/strong> con &lt;strong>ChatGPT&lt;/strong> es como tener un par de superpoderes para tu día a día como desarrollador.&lt;br>
+Con este workflow podrás:&lt;/p>
+&lt;ul>
+&lt;li>Escribir código &lt;strong>3x más rápido&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Refactorizar y documentar&lt;/strong> sin esfuerzo.&lt;/li>
+&lt;li>Resolver bloqueos de manera &lt;strong>interactiva y creativa&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="1-setup-inicial">1️⃣ Setup Inicial&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Instala GitHub Copilot&lt;/strong> en VS Code.&lt;/li>
+&lt;li>&lt;strong>Abre ChatGPT&lt;/strong> (o la extensión ChatGPT para VS Code).&lt;/li>
+&lt;li>Configura &lt;strong>atajos de teclado&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;code>Alt+\&lt;/code> → Activar Copilot suggestion&lt;/li>
+&lt;li>&lt;code>Ctrl+I&lt;/code> → Prompt a ChatGPT sobre la selección&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>💡 &lt;em>Tip:&lt;/em> Si usas &lt;strong>Agent Mode&lt;/strong> en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.&lt;/p></description></item><item><title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link><pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid><description>&lt;div class="details admonition tip open">
+ &lt;div class="details-summary admonition-title">
+ &lt;i class="icon fas fa-lightbulb fa-fw" aria-hidden="true">&lt;/i>💡 TL;DR&lt;i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true">&lt;/i>
+ &lt;/div>
+ &lt;div class="details-content">
+ &lt;div class="admonition-content">&lt;strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?&lt;/strong> Esta guía te enseña cómo usar &lt;strong>GitHub Copilot efectivamente&lt;/strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.&lt;/div>
+ &lt;/div>
+ &lt;/div>
+&lt;h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)&lt;/h2>
+&lt;div class="details admonition failure open">
+ &lt;div class="details-summary admonition-title">
+ &lt;i class="icon fas fa-times-circle fa-fw" aria-hidden="true">&lt;/i>❌ Escenario Típico con Copilot&lt;i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true">&lt;/i>
+ &lt;/div>
+ &lt;div class="details-content">
+ &lt;div class="admonition-content">&lt;ol>
+&lt;li>&lt;strong>Le pides a Copilot&lt;/strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)&lt;/li>
+&lt;li>&lt;strong>Copilot genera todo de una vez&lt;/strong> - 50+ archivos, configuraciones, dependencias&lt;/li>
+&lt;li>&lt;strong>Aparecen 78 errores&lt;/strong> de compilación porque las piezas no encajan 😱&lt;/li>
+&lt;li>&lt;strong>No entiendes el código generado&lt;/strong> para poder arreglarlo&lt;/li>
+&lt;li>&lt;strong>Dependes completamente de Copilot&lt;/strong> para cada fix, creando más problemas&lt;/li>
+&lt;li>&lt;strong>Frustración total&lt;/strong> - el &amp;ldquo;asistente inteligente&amp;rdquo; se volvió tu enemigo&lt;/li>
+&lt;/ol>
+&lt;/div>
+ &lt;/div>
+ &lt;/div>
+&lt;blockquote>
+&lt;p>💭 &lt;strong>Mi experiencia usando Copilot&lt;/strong>: &lt;em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.&lt;/em>&lt;/p></description></item><item><title>Frases y prompts útiles para Copilot en VS Code (Java + Spring Boot)</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-prompts/</guid><description>&lt;p>&lt;img
+ class="lazyload"
+ src="https://cyb3rh4ck.github.io/svg/loading.min.svg"
+ data-src="https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png"
+ data-srcset="https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png, https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png 1.5x, https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png 2x"
+ data-sizes="auto"
+ alt="/images/post/banner-copilot-prompts.png"
+ title="Copilot Prompts" />&lt;/p>
+&lt;blockquote>
+&lt;p>🎯 Usa estos comentarios dentro de tu código en VS Code para que &lt;strong>Copilot entienda lo que necesitas&lt;/strong> y te sugiera código útil, limpio y contextualizado.&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-frases-ideales-para-copilot-en-vs-code-como-">📌 Frases ideales para Copilot en VS Code (como &lt;code>//&lt;/code>)&lt;/h2>
+&lt;h3 id="-generación-de-código-básico">🔹 Generación de código básico&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Create a method to calculate the total price with tax&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement a REST controller for customer registration&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Generate a model class for CreditCard with fields: number, holderName, limit&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Write a unit test for this service method&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-limpieza-y-refactorización">🔹 Limpieza y refactorización&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Refactor this method to reduce complexity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Replace System.out with Lombok logger (@Slf4j)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Convert this logic to use Java 8 streams&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Extract this logic into a separate utility class&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-lógica-de-negocio">🔹 Lógica de negocio&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Validate customer age is over 18 before approving the card&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Check if the credit card limit is sufficient before proceeding&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement retry logic if the external API fails&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Add audit trail when user updates personal data&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-arquitectura-hexagonal--ddd">🔹 Arquitectura hexagonal / DDD&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Create a use case to handle credit card application&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Define a port interface for customer repository&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement an adapter for Oracle database using JdbcTemplate&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Map domain entity to DTO for external API&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-test-y-tdd">🔹 Test y TDD&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Write a JUnit test for CreditCardService&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Mock the customer repository and return a fake customer&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Verify that the audit event is sent when data is updated&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-desempeño-y-calidad">🔹 Desempeño y calidad&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Optimize this loop for performance&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Add null checks and input validation&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Suggest improvements for readability&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Handle edge cases for this validation&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="-ejemplos-prácticos-con-copilot">💡 Ejemplos prácticos con Copilot&lt;/h2>
+&lt;h3 id="-antes">🧪 Antes:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Cliente aprobado&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-comentario-copilot">✨ Comentario Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Replace System.out with Lombok logger&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-resultado-sugerido-por-copilot">✅ Resultado sugerido por Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Slf4j&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">ClienteService&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">void&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">notificarAprobacion&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Cliente aprobado&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-antes-1">🧪 Antes:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// lógica mezclada en un método gigante&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-comentario-copilot-1">✨ Comentario Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Refactor this method to reduce complexity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-resultado-sugerido-por-copilot-1">✅ Resultado sugerido por Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">calcularTotal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Pedido&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">subtotal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">calcularSubtotal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">impuestos&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">calcularImpuestos&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">subtotal&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">impuestos&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr></description></item><item><title>Guía de atajos de teclado en VS Code para desarrolladores Java</title><link>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/vscode/vscode-shortcuts/</guid><description>&lt;blockquote>
+&lt;p>⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-comentarios">🧩 Comentarios&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;th>Resultado&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Comentar o descomentar una línea&lt;/td>
+ &lt;td>&lt;code>Ctrl + /&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + /&lt;/code>&lt;/td>
+ &lt;td>Añade o quita &lt;code>//&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Comentar varias líneas seleccionadas&lt;/td>
+ &lt;td>&lt;code>Ctrl + /&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + /&lt;/code>&lt;/td>
+ &lt;td>Comenta cada línea con &lt;code>//&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Comentario multilínea&lt;/td>
+ &lt;td>Manual&lt;/td>
+ &lt;td>Manual&lt;/td>
+ &lt;td>&lt;code>/* ... */&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-navegación-y-edición-rápida">🚀 Navegación y edición rápida&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Ir a archivo&lt;/td>
+ &lt;td>&lt;code>Ctrl + P&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + P&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a definición&lt;/td>
+ &lt;td>&lt;code>F12&lt;/code>&lt;/td>
+ &lt;td>&lt;code>F12&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a símbolo&lt;/td>
+ &lt;td>&lt;code>Ctrl + Shift + O&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Shift + O&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a línea específica&lt;/td>
+ &lt;td>&lt;code>Ctrl + G&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + G&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a la declaración&lt;/td>
+ &lt;td>&lt;code>Ctrl + Click&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Click&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-refactorización-y-edición">🛠️ Refactorización y edición&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Renombrar símbolo&lt;/td>
+ &lt;td>&lt;code>F2&lt;/code>&lt;/td>
+ &lt;td>&lt;code>F2&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mostrar acciones rápidas&lt;/td>
+ &lt;td>&lt;code>Ctrl + .&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + .&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Copiar línea abajo&lt;/td>
+ &lt;td>&lt;code>Shift + Alt + ↓&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + Shift + ↓&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Copiar línea arriba&lt;/td>
+ &lt;td>&lt;code>Shift + Alt + ↑&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + Shift + ↑&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mover línea abajo&lt;/td>
+ &lt;td>&lt;code>Alt + ↓&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + ↓&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mover línea arriba&lt;/td>
+ &lt;td>&lt;code>Alt + ↑&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + ↑&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-terminal-y-ejecución">🧪 Terminal y ejecución&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Abrir terminal integrada&lt;/td>
+ &lt;td>&lt;code>Ctrl + ñ&lt;/code> o &lt;code>Ctrl + `&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + `&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ejecutar archivo&lt;/td>
+ &lt;td>&lt;code>Ctrl + F5&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + F5&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ejecutar con depuración&lt;/td>
+ &lt;td>&lt;code>F5&lt;/code>&lt;/td>
+ &lt;td>&lt;code>F5&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-productividad-y-vistas">🌈 Productividad y vistas&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Abrir paleta de comandos&lt;/td>
+ &lt;td>&lt;code>Ctrl + Shift + P&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Shift + P&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Alternar panel lateral&lt;/td>
+ &lt;td>&lt;code>Ctrl + B&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + B&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Buscar archivos&lt;/td>
+ &lt;td>&lt;code>Ctrl + Shift + F&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Shift + F&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Buscar en archivo actual&lt;/td>
+ &lt;td>&lt;code>Ctrl + F&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + F&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Reemplazar en archivo&lt;/td>
+ &lt;td>&lt;code>Ctrl + H&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + H&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-copilot-específico">🤖 Copilot específico&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Aceptar sugerencia&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Siguiente sugerencia&lt;/td>
+ &lt;td>&lt;code>Alt + ]&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + ]&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Sugerencia anterior&lt;/td>
+ &lt;td>&lt;code>Alt + [&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + [&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Abrir ventana Copilot&lt;/td>
+ &lt;td>&lt;code>Ctrl + Enter&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Enter&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr></description></item><item><title>Automatiza tu código con Copilot en VS Code</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</link><pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-en-vscode/</guid><description>&lt;h2 id="-introducción">🧠 Introducción&lt;/h2>
+&lt;p>GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.&lt;/p>
+&lt;hr>
+&lt;h2 id="-requisitos-previos">🛠️ Requisitos previos&lt;/h2>
+&lt;ul>
+&lt;li>Tener una cuenta de GitHub&lt;/li>
+&lt;li>Tener instalado &lt;a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Code&lt;/a>&lt;/li>
+&lt;li>Tener instalado &lt;a href="https://adoptium.net/" target="_blank" rel="noopener noreffer ">Java 17&lt;/a>&lt;/li>
+&lt;li>Conexión a internet&lt;/li>
+&lt;li>Git instalado&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-instalación-de-copilot-en-vs-code">🔌 Instalación de Copilot en VS Code&lt;/h2>
+&lt;ol>
+&lt;li>Abre VS Code&lt;/li>
+&lt;li>Ve a la extensión &amp;ldquo;GitHub Copilot&amp;rdquo;&lt;/li>
+&lt;li>Haz clic en instalar o usa el siguiente comando:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">code --install-extension GitHub.copilot&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;ol start="4">
+&lt;li>Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.&lt;/li>
+&lt;li>Acepta los permisos y espera la confirmación.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="-configuración-básica">⚙️ Configuración básica&lt;/h2>
+&lt;ul>
+&lt;li>Asegúrate de que Copilot esté activado en la barra de estado.&lt;/li>
+&lt;li>Configura el comportamiento de sugerencias:
+&lt;ul>
+&lt;li>Aceptar: &lt;code>Tab&lt;/code>&lt;/li>
+&lt;li>Siguiente sugerencia: &lt;code>Ctrl + ]&lt;/code>&lt;/li>
+&lt;li>Anterior sugerencia: &lt;code>Ctrl + [&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Puedes desactivar Copilot por archivo o carpeta desde la configuración.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-cómo-utilizarlo-primeros-ejemplos">🤖 Cómo utilizarlo: primeros ejemplos&lt;/h2>
+&lt;p>Crea un archivo &lt;code>Main.java&lt;/code> y escribe:&lt;/p></description></item><item><title>Shortcuts de GitHub Copilot en VS Code</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link><pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid><description>&lt;p>GitHub Copilot mejora tu productividad como desarrollador, pero combinarlo con &lt;strong>shortcuts&lt;/strong> y &lt;strong>comandos de chat&lt;/strong> en VS Code lleva la experiencia a otro nivel. Aquí te dejamos los más esenciales.&lt;/p>
+&lt;hr>
+&lt;h2 id="-shortcuts-esenciales-de-copilot">⌨️ Shortcuts esenciales de Copilot&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Windows / Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Aceptar sugerencia&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Aceptar la palabra siguiente&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>→&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌃&lt;/code> + &lt;code>→&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Aceptar la línea siguiente&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>↓&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌃&lt;/code> + &lt;code>↓&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Ver siguiente sugerencia&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Alt&lt;/code> + &lt;code>]&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌥&lt;/code> + &lt;code>]&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Ver sugerencia anterior&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Alt&lt;/code> + &lt;code>[&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌥&lt;/code> + &lt;code>[&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Abrir panel de sugerencias (Copilot)&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>Enter&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌘&lt;/code> + &lt;code>Enter&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Descartar sugerencia actual&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Esc&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Esc&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Forzar una nueva sugerencia&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>Alt&lt;/code> + &lt;code>\&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌘&lt;/code> + &lt;code>⌥&lt;/code> + &lt;code>\&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-comandos-del-chat-de-copilot">💬 Comandos del chat de Copilot&lt;/h2>
+&lt;p>Estos comandos pueden usarse dentro del panel de &lt;strong>Copilot Chat&lt;/strong> (&lt;code>Ctrl+I&lt;/code> o ícono del robot en la barra lateral) para interactuar con el código de forma contextual:&lt;/p></description></item></channel></rss>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Security on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/api-security/</link><description>Recent content in API Security on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/api-security/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 5 – Patrones de Integración de Keycloak</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo5/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo5/</guid><description>&lt;h1 id="-capítulo-5--patrones-de-integración-de-keycloak">🔗 Capítulo 5 – Patrones de Integración de Keycloak&lt;/h1>
+&lt;h2 id="51-configuración-de-clientes-oauth2-y-mejores-prácticas">5.1 Configuración de Clientes OAuth2 y Mejores Prácticas&lt;/h2>
+&lt;p>Keycloak permite registrar aplicaciones como &lt;strong>clientes OAuth2&lt;/strong> para manejar autorización de forma segura.&lt;br>
+Buenas prácticas:&lt;/p>
+&lt;ul>
+&lt;li>Utilizar &lt;strong>confidenciales de cliente&lt;/strong> (client secrets) robustos.&lt;/li>
+&lt;li>Configurar &lt;strong>redirecciones&lt;/strong> únicamente a URLs de confianza.&lt;/li>
+&lt;li>Definir &lt;strong>alcances (scopes)&lt;/strong> mínimos necesarios para cada cliente.&lt;/li>
+&lt;li>Habilitar &lt;strong>rotación periódica de credenciales&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="52-adaptación-a-openid-connect-oidc">5.2 Adaptación a OpenID Connect (OIDC)&lt;/h2>
+&lt;p>&lt;strong>OpenID Connect&lt;/strong> extiende OAuth2 añadiendo autenticación de usuario.&lt;br>
+Keycloak actúa como &lt;strong>Proveedor de Identidad (IdP)&lt;/strong> emitiendo:&lt;/p></description></item></channel></rss>

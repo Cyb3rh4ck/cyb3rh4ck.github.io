@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Observabilidad on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/observabilidad/</link><description>Recent content in Observabilidad on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/observabilidad/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo8/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo8/</guid><description>&lt;h1 id="-capítulo-8--observabilidad-monitoreo-y-respuesta-a-incidentes">📊 Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes&lt;/h1>
+&lt;h2 id="81-fundamentos-de-la-observabilidad-en-keycloak">8.1 Fundamentos de la Observabilidad en Keycloak&lt;/h2>
+&lt;p>La &lt;strong>observabilidad&lt;/strong> en Keycloak implica la capacidad de recopilar, correlacionar y analizar métricas, registros y eventos para entender el estado del sistema.&lt;br>
+Componentes clave:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Métricas&lt;/strong> para monitorear rendimiento y uso de recursos.&lt;/li>
+&lt;li>&lt;strong>Logs&lt;/strong> para diagnosticar problemas y auditoría.&lt;/li>
+&lt;li>&lt;strong>Trazas&lt;/strong> para seguir el recorrido de las solicitudes.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="82-monitoreo-de-métricas">8.2 Monitoreo de Métricas&lt;/h2>
+&lt;p>Keycloak puede exponer métricas en formato &lt;strong>Prometheus&lt;/strong>, lo que permite:&lt;/p></description></item></channel></rss>

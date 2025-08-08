@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/github/</link><description>Recent content in Github on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>🌿 Convenciones de Ramas en Proyectos Limpios</title><link>https://cyb3rh4ck.github.io/posts/github/branching-conventions/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/github/branching-conventions/</guid><description>&lt;h1 id="-convenciones-de-ramas-en-proyectos-limpios">🌿 Convenciones de Ramas en Proyectos Limpios&lt;/h1>
+&lt;p>Cuando inicias un &lt;strong>proyecto nuevo&lt;/strong> (clean project), tener un &lt;strong>flujo de ramas claro&lt;/strong> facilita la colaboración y mantiene la historia del repositorio &lt;strong>organizada y profesional&lt;/strong>.&lt;/p>
+&lt;p>A continuación te muestro las &lt;strong>convenciones más utilizadas&lt;/strong> en la industria para nombrar ramas:&lt;/p>
+&lt;hr>
+&lt;h2 id="-1-tipos-de-ramas-y-su-uso">&lt;strong>📌 1. Tipos de ramas y su uso&lt;/strong>&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Tipo de rama&lt;/th>
+ &lt;th>Uso principal&lt;/th>
+ &lt;th>Ejemplo&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>feature/&lt;/code>&lt;/td>
+ &lt;td>Nueva funcionalidad&lt;/td>
+ &lt;td>&lt;code>feature/register-user&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>bugfix/&lt;/code>&lt;/td>
+ &lt;td>Corrección de errores menores&lt;/td>
+ &lt;td>&lt;code>bugfix/fix-login-nullpointer&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>hotfix/&lt;/code>&lt;/td>
+ &lt;td>Corrección &lt;strong>urgente&lt;/strong> en producción&lt;/td>
+ &lt;td>&lt;code>hotfix/jwt-expired-issue&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>chore/&lt;/code>&lt;/td>
+ &lt;td>Configuración, refactor, CI/CD, sin cambiar lógica&lt;/td>
+ &lt;td>&lt;code>chore/add-ci-cd&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>release/&lt;/code>&lt;/td>
+ &lt;td>Preparación de una nueva versión&lt;/td>
+ &lt;td>&lt;code>release/v1.0.0&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-2-flujo-visual-de-ramas-branch-flow">&lt;strong>📊 2. Flujo visual de ramas (Branch Flow)&lt;/strong>&lt;/h2>
+&lt;p>&lt;img
+ class="lazyload"
+ src="https://cyb3rh4ck.github.io/svg/loading.min.svg"
+ data-src="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png"
+ data-srcset="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 1.5x, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 2x"
+ data-sizes="auto"
+ alt="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png"
+ title="Branch Flow" />&lt;/p></description></item><item><title>Shortcuts de GitHub Copilot en VS Code</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link><pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid><description>&lt;p>GitHub Copilot mejora tu productividad como desarrollador, pero combinarlo con &lt;strong>shortcuts&lt;/strong> y &lt;strong>comandos de chat&lt;/strong> en VS Code lleva la experiencia a otro nivel. Aquí te dejamos los más esenciales.&lt;/p>
+&lt;hr>
+&lt;h2 id="-shortcuts-esenciales-de-copilot">⌨️ Shortcuts esenciales de Copilot&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Windows / Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Aceptar sugerencia&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Aceptar la palabra siguiente&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>→&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌃&lt;/code> + &lt;code>→&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Aceptar la línea siguiente&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>↓&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌃&lt;/code> + &lt;code>↓&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Ver siguiente sugerencia&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Alt&lt;/code> + &lt;code>]&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌥&lt;/code> + &lt;code>]&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Ver sugerencia anterior&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Alt&lt;/code> + &lt;code>[&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌥&lt;/code> + &lt;code>[&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Abrir panel de sugerencias (Copilot)&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>Enter&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌘&lt;/code> + &lt;code>Enter&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Descartar sugerencia actual&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Esc&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Esc&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Forzar una nueva sugerencia&lt;/strong>&lt;/td>
+ &lt;td>&lt;code>Ctrl&lt;/code> + &lt;code>Alt&lt;/code> + &lt;code>\&lt;/code>&lt;/td>
+ &lt;td>&lt;code>⌘&lt;/code> + &lt;code>⌥&lt;/code> + &lt;code>\&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-comandos-del-chat-de-copilot">💬 Comandos del chat de Copilot&lt;/h2>
+&lt;p>Estos comandos pueden usarse dentro del panel de &lt;strong>Copilot Chat&lt;/strong> (&lt;code>Ctrl+I&lt;/code> o ícono del robot en la barra lateral) para interactuar con el código de forma contextual:&lt;/p></description></item></channel></rss>

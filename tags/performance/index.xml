@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Performance on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/performance/</link><description>Recent content in Performance on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml"/><item><title>☕ Uso de Cache Local con Caffeine</title><link>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</link><pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/spring-boot/cache-caffeine/</guid><description>&lt;h1 id="-caffeine-cache---guía-rápida">☕ Caffeine Cache - Guía Rápida&lt;/h1>
+&lt;p>&lt;strong>Caffeine&lt;/strong> es una librería Java de alto rendimiento para caching en memoria local. Es una alternativa moderna a Ehcache y Guava, recomendada para microservicios que requieren acceso rápido a datos sin necesidad de sincronización entre instancias.&lt;/p>
+&lt;hr>
+&lt;h2 id="-cuándo-usar-caffeine">✅ ¿Cuándo usar Caffeine?&lt;/h2>
+&lt;ul>
+&lt;li>Datos que no cambian frecuentemente (ej. catálogos, configuraciones)&lt;/li>
+&lt;li>Objetos pequeños a consultar muchas veces&lt;/li>
+&lt;li>Cuando no necesitas compartir cache entre instancias&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-configuración-en-spring-boot">⚙️ Configuración en Spring Boot&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Agrega la dependencia en tu &lt;code>pom.xml&lt;/code>:&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.github.ben-manes.caffeine&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>caffeine&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>&lt;strong>Habilita caching en tu aplicación:&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@SpringBootApplication&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@EnableCaching&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">MyApp&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">...&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>&lt;strong>Usa la anotación &lt;code>@Cacheable&lt;/code>:&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Cacheable&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;clientes&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Cliente&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">getClienteById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">clienteRepository&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">findById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="-políticas-de-evicción">🧠 Políticas de Evicción&lt;/h2>
+&lt;p>Puedes configurar políticas como:&lt;/p></description></item></channel></rss>

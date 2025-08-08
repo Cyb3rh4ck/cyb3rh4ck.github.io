@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/vscode/</link><description>Recent content in VS Code on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/vscode/index.xml" rel="self" type="application/rss+xml"/><item><title>Extensiones</title><link>https://cyb3rh4ck.github.io/vscode/extensiones/</link><pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/extensiones/</guid><description>&lt;h3 id="extensiones-para-desarrollar-con-java-spring-boot-y-copilot">Extensiones para desarrollar con Java, Spring Boot y Copilot&lt;/h3>
+&lt;ul>
+&lt;li>Copilot&lt;/li>
+&lt;li>Copilot Chat&lt;/li>
+&lt;/ul>
+&lt;h3 id="java">Java&lt;/h3>
+&lt;ul>
+&lt;li>Languaje Support for Java by Red Hat&lt;/li>
+&lt;li>Extension Pack for Java (Microsoft)&lt;/li>
+&lt;li>Debugger for Java (Microsoft)&lt;/li>
+&lt;li>Test Runner for Java (Microsoft)&lt;/li>
+&lt;li>Project Manager for Java (Microsoft)&lt;/li>
+&lt;li>Maven for Java (Microsoft)&lt;/li>
+&lt;/ul>
+&lt;h3 id="spring-boot">Spring Boot&lt;/h3>
+&lt;ul>
+&lt;li>Spring Initalizr Java Support (Microsoft)&lt;/li>
+&lt;li>Spring Boot Dashboard (Microsoft)&lt;/li>
+&lt;li>Spring Boot Tools (Microsoft)&lt;/li>
+&lt;/ul></description></item><item><title>VS Code - Generar un nuevo proyecto Spring Boot</title><link>https://cyb3rh4ck.github.io/vscode/spring-boot-dev/</link><pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/spring-boot-dev/</guid><description>&lt;p>Opción 1: Con Spring Initializr (dentro de VS Code)&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Abre VS Code.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Presiona &lt;code>Ctrl+Shift+P&lt;/code> y busca &lt;code>&amp;quot;Spring Initializr: Create a Maven Project&amp;quot;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Sigue los pasos:&lt;/p>
+&lt;ul>
+&lt;li>Language: Java&lt;/li>
+&lt;li>Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)&lt;/li>
+&lt;li>Group Id: com.tuempresa&lt;/li>
+&lt;li>Artifact Id: mi-app&lt;/li>
+&lt;li>Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.&lt;/li>
+&lt;li>Java Version: 17&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Espera que se genere el proyecto.&lt;/p>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

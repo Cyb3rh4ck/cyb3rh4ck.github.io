@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Diagramas on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/diagramas/</link><description>Recent content in Diagramas on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/diagramas/index.xml" rel="self" type="application/rss+xml"/><item><title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title><link>https://cyb3rh4ck.github.io/posts/oauth2/</link><pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/oauth2/</guid><description>&lt;h1 id="-oauth-20---resumen-visual-rfc-6749">🔐 OAuth 2.0 - Resumen Visual (RFC 6749)&lt;/h1>
+&lt;p>OAuth 2.0 es un marco de autorización que permite a aplicaciones de terceros acceder de forma limitada y segura a recursos protegidos, &lt;strong>sin compartir las credenciales del usuario&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;h2 id="-actores-del-protocolo">🧩 Actores del Protocolo&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Actor&lt;/th>
+ &lt;th>Descripción&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>👤 &lt;strong>Resource Owner&lt;/strong>&lt;/td>
+ &lt;td>Usuario que posee los recursos&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>🌐 &lt;strong>Client&lt;/strong>&lt;/td>
+ &lt;td>App que quiere acceder a recursos&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>🔐 &lt;strong>Authorization Server&lt;/strong>&lt;/td>
+ &lt;td>Autentica usuarios y entrega tokens&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>📦 &lt;strong>Resource Server&lt;/strong>&lt;/td>
+ &lt;td>API que expone los recursos protegidos&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-flujo-general-authorization-code">🔁 Flujo General (Authorization Code)&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">[Usuario] --&amp;gt; (Autorización) --&amp;gt; [Authorization Server]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓ ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[Client App] &amp;lt;-- Código de Autorización -- [Authorization Server]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Token Exchange
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[Client App] --&amp;gt; Token de Acceso --&amp;gt; [Resource Server]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="-tipos-de-grants-concesiones">🧾 Tipos de &amp;ldquo;Grants&amp;rdquo; (Concesiones)&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Grant Type&lt;/th>
+ &lt;th>Uso común&lt;/th>
+ &lt;th>Seguridad&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>🔐 Authorization Code&lt;/td>
+ &lt;td>Apps Web / Móviles&lt;/td>
+ &lt;td>⭐⭐⭐⭐⭐&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>💳 Client Credentials&lt;/td>
+ &lt;td>Sistemas máquina a máquina&lt;/td>
+ &lt;td>⭐⭐⭐⭐&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>⚠️ Implicit&lt;/td>
+ &lt;td>SPAs (obsoleto)&lt;/td>
+ &lt;td>❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>🔑 Password Credentials&lt;/td>
+ &lt;td>Legacy / Testing&lt;/td>
+ &lt;td>❌&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-tokens">🎫 Tokens&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Access Token&lt;/strong>: Caduca rápido, limitado en alcance.&lt;/li>
+&lt;li>&lt;strong>Refresh Token&lt;/strong>: Opcional. Renueva el Access Token sin reautenticación.&lt;/li>
+&lt;li>&lt;strong>Formatos&lt;/strong>: Generalmente JWT o token opaco.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-seguridad-requerida">🔐 Seguridad Requerida&lt;/h2>
+&lt;ul>
+&lt;li>Uso obligatorio de &lt;strong>HTTPS (TLS)&lt;/strong>&lt;/li>
+&lt;li>Tokens deben tratarse como &lt;strong>credenciales sensibles&lt;/strong>&lt;/li>
+&lt;li>Revocación y expiración controladas desde el servidor&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-arquitectura-con-oauth-20">🧱 Arquitectura con OAuth 2.0&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl"> +-------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Resource Owner |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> (autorización vía UI)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Authorization Server |----+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-------------------------+ |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓ ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Código Token API Call
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓ ↓ ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">+---------+ +-----------+ +------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Client |-&amp;gt;| Access |---&amp;gt;| Resource |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| (App) | | Token | | Server |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">+---------+ +-----------+ +------------+
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="-extensiones-comunes">📚 Extensiones Comunes&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>RFC&lt;/th>
+ &lt;th>Nombre&lt;/th>
+ &lt;th>Propósito&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>RFC 6750&lt;/td>
+ &lt;td>Bearer Token&lt;/td>
+ &lt;td>Define uso de tokens tipo Bearer&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>RFC 7636&lt;/td>
+ &lt;td>PKCE&lt;/td>
+ &lt;td>Seguridad adicional en móviles&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>RFC 7662&lt;/td>
+ &lt;td>Token Introspection&lt;/td>
+ &lt;td>Validación de tokens&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>RFC 9068&lt;/td>
+ &lt;td>JWT Profile&lt;/td>
+ &lt;td>Estandariza uso de JWT&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-buenas-prácticas">✅ Buenas Prácticas&lt;/h2>
+&lt;ul>
+&lt;li>Usa &lt;strong>PKCE&lt;/strong> en apps móviles y SPAs&lt;/li>
+&lt;li>Expira tokens en minutos&lt;/li>
+&lt;li>Usa scopes específicos (&lt;code>read&lt;/code>, &lt;code>write&lt;/code>, etc.)&lt;/li>
+&lt;li>Implementa logs, revocación y rotating refresh tokens&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-conclusión">🧠 Conclusión&lt;/h2>
+&lt;p>OAuth 2.0 no es solo un protocolo de autenticación, sino un &lt;strong>marco flexible para autorización moderna&lt;/strong>.&lt;/p></description></item></channel></rss>

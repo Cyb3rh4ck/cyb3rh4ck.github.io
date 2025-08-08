@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ABAC on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/abac/</link><description>Recent content in ABAC on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/abac/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo6/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo6/</guid><description>&lt;h1 id="-capítulo-6--flujos-de-autenticación-avanzados-y-personalizaciones-de-seguridad">🔐 Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/h1>
+&lt;h2 id="61-flujos-de-autenticación-personalizados-y-acciones-requeridas">6.1 Flujos de Autenticación Personalizados y Acciones Requeridas&lt;/h2>
+&lt;p>Keycloak permite definir &lt;strong>flujos de autenticación personalizados&lt;/strong> para adaptarse a requisitos específicos.&lt;br>
+Esto se logra configurando pasos como:&lt;/p>
+&lt;ul>
+&lt;li>Validación de credenciales.&lt;/li>
+&lt;li>Factores adicionales de autenticación.&lt;/li>
+&lt;li>Ejecución de verificaciones externas.&lt;/li>
+&lt;/ul>
+&lt;p>Las &lt;strong>acciones requeridas&lt;/strong> (Required Actions) son tareas que el usuario debe completar, como cambiar contraseña o aceptar términos antes de acceder.&lt;/p></description></item></channel></rss>

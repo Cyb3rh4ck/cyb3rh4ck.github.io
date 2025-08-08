@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API REST on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/api-rest/</link><description>Recent content in API REST on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/api-rest/index.xml" rel="self" type="application/rss+xml"/><item><title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title><link>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</link><pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/angular/crud-angular-vscode-copilot/</guid><description>&lt;h2 id="-introducción">🧠 Introducción&lt;/h2>
+&lt;p>Crear una aplicación Angular (versión recomendada: &lt;strong>18.x&lt;/strong>) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: &lt;code>Cliente&lt;/code> o &lt;code>Producto&lt;/code>). Se aplicará una estructura inspirada en &lt;strong>arquitectura hexagonal&lt;/strong> para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.&lt;/p>
+&lt;hr>
+&lt;h2 id="-requisitos-del-entorno">🔧 Requisitos del entorno&lt;/h2>
+&lt;ul>
+&lt;li>Node.js v20.19 o superior (&lt;code>node -v&lt;/code>)&lt;/li>
+&lt;li>Angular CLI (&lt;code>npm install -g @angular/cli&lt;/code>)&lt;/li>
+&lt;li>Angular v18.x (&lt;code>ng version&lt;/code>)&lt;/li>
+&lt;li>Un backend REST disponible (puerto, endpoints y CORS habilitado)&lt;/li>
+&lt;li>Editor recomendado: &lt;strong>Visual Studio Code&lt;/strong> con extensión GitHub Copilot&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-paso-1-crear-la-aplicación-angular">🏁 Paso 1: Crear la aplicación Angular&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ng new frontend-crud-app
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> frontend-crud-app
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ng serve --open
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Selecciona &lt;strong>Routing = Yes&lt;/strong>, &lt;strong>Estilo = CSS o SCSS&lt;/strong> según tu preferencia.&lt;/p></description></item></channel></rss>

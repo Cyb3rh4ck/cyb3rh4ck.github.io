@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChatGPT on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/chatgpt/</link><description>Recent content in ChatGPT on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/chatgpt/index.xml" rel="self" type="application/rss+xml"/><item><title>ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</title><link>https://cyb3rh4ck.github.io/posts/gpt/chatgpt-en-accion/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/gpt/chatgpt-en-accion/</guid><description>&lt;h1 id="-chatgpt-para-innovación-empresarial-guía-práctica-con-prompts">🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts&lt;/h1>
+&lt;p>Aprende a usar &lt;strong>ChatGPT como socio estratégico&lt;/strong> para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.&lt;/p>
+&lt;p>En este post encontrarás &lt;strong>5 fórmulas probadas&lt;/strong> con prompts específicos que puedes implementar inmediatamente en diferentes áreas de tu negocio.&lt;/p>
+&lt;hr>
+&lt;h2 id="-uso-de-la-estructura-formulaica">🛠️ Uso de la Estructura Formulaica&lt;/h2>
+&lt;p>Las fórmulas utilizan estructuras de oración con &lt;strong>variables entre corchetes&lt;/strong> que deben ser reemplazadas con tu información específica.&lt;/p></description></item><item><title>Workflow Copilot + ChatGPT: Conviértete en una Bestia Ágil en VS Code</title><link>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link><pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid><description>&lt;h1 id="-workflow-copilot--chatgpt-para-vs-code">🚀 Workflow Copilot + ChatGPT para VS Code&lt;/h1>
+&lt;p>Combinar &lt;strong>GitHub Copilot&lt;/strong> con &lt;strong>ChatGPT&lt;/strong> es como tener un par de superpoderes para tu día a día como desarrollador.&lt;br>
+Con este workflow podrás:&lt;/p>
+&lt;ul>
+&lt;li>Escribir código &lt;strong>3x más rápido&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Refactorizar y documentar&lt;/strong> sin esfuerzo.&lt;/li>
+&lt;li>Resolver bloqueos de manera &lt;strong>interactiva y creativa&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="1-setup-inicial">1️⃣ Setup Inicial&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Instala GitHub Copilot&lt;/strong> en VS Code.&lt;/li>
+&lt;li>&lt;strong>Abre ChatGPT&lt;/strong> (o la extensión ChatGPT para VS Code).&lt;/li>
+&lt;li>Configura &lt;strong>atajos de teclado&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;code>Alt+\&lt;/code> → Activar Copilot suggestion&lt;/li>
+&lt;li>&lt;code>Ctrl+I&lt;/code> → Prompt a ChatGPT sobre la selección&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>💡 &lt;em>Tip:&lt;/em> Si usas &lt;strong>Agent Mode&lt;/strong> en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.&lt;/p></description></item></channel></rss>

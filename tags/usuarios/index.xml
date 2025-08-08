@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Usuarios on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/usuarios/</link><description>Recent content in Usuarios on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/usuarios/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo7/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo7/</guid><description>&lt;h1 id="-capítulo-7--gestión-de-usuarios-grupos-y-roles-a-gran-escala">👥 Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala&lt;/h1>
+&lt;h2 id="71-aprovisionamiento-de-usuarios-y-automatización-del-ciclo-de-vida">7.1 Aprovisionamiento de Usuarios y Automatización del Ciclo de Vida&lt;/h2>
+&lt;p>El &lt;strong>aprovisionamiento de usuarios&lt;/strong> es el proceso de creación, actualización y desactivación de cuentas de manera controlada.&lt;br>
+Keycloak soporta:&lt;/p>
+&lt;ul>
+&lt;li>Creación manual de usuarios desde la consola de administración.&lt;/li>
+&lt;li>Aprovisionamiento automático mediante API REST.&lt;/li>
+&lt;li>Sincronización desde directorios LDAP/AD.&lt;/li>
+&lt;li>Automatización con herramientas de gestión de identidades externas.&lt;/li>
+&lt;/ul>
+&lt;p>La &lt;strong>automatización del ciclo de vida&lt;/strong> asegura que las cuentas se actualicen o desactiven cuando cambien las condiciones (por ejemplo, baja de un empleado).&lt;/p></description></item></channel></rss>

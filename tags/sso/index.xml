@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SSO on Cyb3rh4ck´s dev life</title><link>https://cyb3rh4ck.github.io/tags/sso/</link><description>Recent content in SSO on Cyb3rh4ck´s dev life</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Aug 2025 11:45:21 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/sso/index.xml" rel="self" type="application/rss+xml"/><item><title>Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo2/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo2/</guid><description>&lt;h1 id="-capítulo-2--análisis-profundo-de-la-arquitectura-de-keycloak">🛠️ Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak&lt;/h1>
+&lt;h2 id="21-arquitectura-del-sistema-keycloak">2.1 Arquitectura del Sistema Keycloak&lt;/h2>
+&lt;p>Keycloak es una solución de &lt;strong>gestión de identidades y accesos (IAM)&lt;/strong> de código abierto que soporta &lt;strong>SSO&lt;/strong>, &lt;strong>MFA&lt;/strong>, integración con &lt;strong>LDAP/AD&lt;/strong>, y protocolos como &lt;strong>OAuth 2.0&lt;/strong>, &lt;strong>OpenID Connect&lt;/strong> y &lt;strong>SAML&lt;/strong>.&lt;br>
+Su arquitectura está basada en:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Core Server:&lt;/strong> motor que maneja autenticación, autorización y federación de identidades.&lt;/li>
+&lt;li>&lt;strong>Admin Console:&lt;/strong> interfaz web para configuración y administración.&lt;/li>
+&lt;li>&lt;strong>Account Console:&lt;/strong> portal de autoservicio para usuarios finales.&lt;/li>
+&lt;li>&lt;strong>Base de datos persistente:&lt;/strong> almacena configuraciones, usuarios, sesiones y tokens.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="22-modelos-de-realm-cliente-y-usuario">2.2 Modelos de Realm, Cliente y Usuario&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Realm:&lt;/strong> entorno de seguridad aislado; cada realm administra usuarios, credenciales, roles y grupos de forma independiente.&lt;/li>
+&lt;li>&lt;strong>Cliente:&lt;/strong> aplicación o servicio registrado en Keycloak para autenticación/autorización.&lt;/li>
+&lt;li>&lt;strong>Usuario:&lt;/strong> identidad gestionada dentro de un realm.&lt;/li>
+&lt;/ul>
+&lt;p>Un realm puede contener múltiples clientes, y un cliente puede acceder a varios flujos de autenticación configurados.&lt;/p></description></item><item><title>Capítulo 5 – Patrones de Integración de Keycloak</title><link>https://cyb3rh4ck.github.io/keycloak/capitulo5/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/capitulo5/</guid><description>&lt;h1 id="-capítulo-5--patrones-de-integración-de-keycloak">🔗 Capítulo 5 – Patrones de Integración de Keycloak&lt;/h1>
+&lt;h2 id="51-configuración-de-clientes-oauth2-y-mejores-prácticas">5.1 Configuración de Clientes OAuth2 y Mejores Prácticas&lt;/h2>
+&lt;p>Keycloak permite registrar aplicaciones como &lt;strong>clientes OAuth2&lt;/strong> para manejar autorización de forma segura.&lt;br>
+Buenas prácticas:&lt;/p>
+&lt;ul>
+&lt;li>Utilizar &lt;strong>confidenciales de cliente&lt;/strong> (client secrets) robustos.&lt;/li>
+&lt;li>Configurar &lt;strong>redirecciones&lt;/strong> únicamente a URLs de confianza.&lt;/li>
+&lt;li>Definir &lt;strong>alcances (scopes)&lt;/strong> mínimos necesarios para cada cliente.&lt;/li>
+&lt;li>Habilitar &lt;strong>rotación periódica de credenciales&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="52-adaptación-a-openid-connect-oidc">5.2 Adaptación a OpenID Connect (OIDC)&lt;/h2>
+&lt;p>&lt;strong>OpenID Connect&lt;/strong> extiende OAuth2 añadiendo autenticación de usuario.&lt;br>
+Keycloak actúa como &lt;strong>Proveedor de Identidad (IdP)&lt;/strong> emitiendo:&lt;/p></description></item><item><title>Guía Completa de Keycloak – Índice de Capítulos</title><link>https://cyb3rh4ck.github.io/keycloak/indice_keycloak/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/keycloak/indice_keycloak/</guid><description>&lt;h1 id="-guía-completa-de-keycloak--índice-de-capítulos">📖 Guía Completa de Keycloak – Índice de Capítulos&lt;/h1>
+&lt;p>Esta serie cubre de forma detallada el uso de &lt;strong>Keycloak&lt;/strong> para sistemas modernos de autenticación y gestión de identidades, desde los fundamentos hasta estrategias avanzadas y tendencias futuras.&lt;/p>
+&lt;hr>
+&lt;h2 id="-capítulos">📚 Capítulos&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo1" rel="">Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo2" rel="">Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo3" rel="">Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo4" rel="">Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo5" rel="">Capítulo 5 – Patrones de Integración de Keycloak&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo6" rel="">Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo7" rel="">Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo8" rel="">Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cyb3rh4ck.github.io/keycloak/capitulo9" rel="">Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;hr></description></item></channel></rss>
