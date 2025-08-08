@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Aug 2025 18:17:07 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 08 Aug 2025 07:16:41 -0600</lastBuildDate>
     <atom:link href="https://cyb3rh4ck.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ABAC</title>
@@ -20,6 +20,13 @@
       <link>https://cyb3rh4ck.github.io/tags/api-security/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/api-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Api-Gateway</title>
+      <link>https://cyb3rh4ck.github.io/tags/api-gateway/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/api-gateway/</guid>
       <description></description>
     </item>
     <item>
@@ -135,10 +142,24 @@
       <description></description>
     </item>
     <item>
+      <title>Load-Balancer</title>
+      <link>https://cyb3rh4ck.github.io/tags/load-balancer/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/load-balancer/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>MFA</title>
       <link>https://cyb3rh4ck.github.io/tags/mfa/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/mfa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Microservicios</title>
+      <link>https://cyb3rh4ck.github.io/tags/microservicios/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/microservicios/</guid>
       <description></description>
     </item>
     <item>
@@ -191,10 +212,24 @@
       <description></description>
     </item>
     <item>
+      <title>Proxy</title>
+      <link>https://cyb3rh4ck.github.io/tags/proxy/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>RBAC</title>
       <link>https://cyb3rh4ck.github.io/tags/rbac/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/rbac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reactive</title>
+      <link>https://cyb3rh4ck.github.io/tags/reactive/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/reactive/</guid>
       <description></description>
     </item>
     <item>
@@ -226,6 +261,20 @@
       <description></description>
     </item>
     <item>
+      <title>Spring-Boot</title>
+      <link>https://cyb3rh4ck.github.io/tags/spring-boot/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring-Cloud-Gateway</title>
+      <link>https://cyb3rh4ck.github.io/tags/spring-cloud-gateway/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/spring-cloud-gateway/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>SSO</title>
       <link>https://cyb3rh4ck.github.io/tags/sso/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
@@ -251,6 +300,13 @@
       <link>https://cyb3rh4ck.github.io/tags/usuarios/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/usuarios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Webflux</title>
+      <link>https://cyb3rh4ck.github.io/tags/webflux/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/tags/webflux/</guid>
       <description></description>
     </item>
     <item>
@@ -328,13 +384,6 @@
       <link>https://cyb3rh4ck.github.io/tags/productividad/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://cyb3rh4ck.github.io/tags/productividad/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Spring-Boot</title>
-      <link>https://cyb3rh4ck.github.io/tags/spring-boot/</link>
-      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/tags/spring-boot/</guid>
       <description></description>
     </item>
     <item>

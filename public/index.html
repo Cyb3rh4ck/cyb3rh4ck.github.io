@@ -84,6 +84,35 @@
         alt="/images/avatar_02.png"
         title="/images/avatar_02.png" /></a></div><h1 class="home-title">Código, Café y Caos Controlado</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="@Cyb3rh4ck" rel="me"></a><a href="https://github.com/Cyb3rh4ck" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/cyb3rh4ck" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://facebook.com/codigojava" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/spring-boot/spring-cloud-gateway/">🚪 Spring Cloud Gateway: API Gateway Reactivo Completo</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-08-08">2025-08-08</time></span></div><div class="content"><h1 id="spring-cloud-gateway-demo">Spring Cloud Gateway Demo</h1>
+<p>Este proyecto demuestra el uso de <strong>Spring Cloud Gateway</strong> como un API Gateway reactivo usando WebFlux.</p>
+<h2 id="-arquitectura">🏗️ Arquitectura</h2>
+<pre tabindex="0"><code>Cliente/Navegador
+       ↓
+Spring Cloud Gateway (Puerto 8080)
+       ↓
+httpbin.org (Servicio destino)
+</code></pre><h2 id="-cómo-ejecutar">🚀 Cómo ejecutar</h2>
+<h3 id="prerrequisitos">Prerrequisitos</h3>
+<ul>
+<li>Java 17+</li>
+<li>Maven 3.6+</li>
+</ul>
+<h3 id="ejecutar-la-aplicación">Ejecutar la aplicación</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Usando Maven Wrapper (recomendado)</span>
+</span></span><span class="line"><span class="cl">./mvnw spring-boot:run
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># En Windows</span>
+</span></span><span class="line"><span class="cl">mvnw.cmd spring-boot:run
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># O ejecutando el JAR</span>
+</span></span><span class="line"><span class="cl">mvn clean package
+</span></span><span class="line"><span class="cl">java -jar target/spring-cloud-gateway-0.0.1-SNAPSHOT.jar
+</span></span></code></pre></div><p>La aplicación se ejecutará en <code>http://localhost:8080</code></p></div><div class="post-footer">
+        <a href="/posts/spring-boot/spring-cloud-gateway/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/spring-cloud-gateway/">Spring-Cloud-Gateway</a>,&nbsp;<a href="/tags/api-gateway/">Api-Gateway</a>,&nbsp;<a href="/tags/webflux/">Webflux</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a>,&nbsp;<a href="/tags/microservicios/">Microservicios</a>,&nbsp;<a href="/tags/reactive/">Reactive</a>,&nbsp;<a href="/tags/proxy/">Proxy</a>,&nbsp;<a href="/tags/load-balancer/">Load-Balancer</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/gpt/chatgpt-en-accion/">ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-08-08">2025-08-08</time></span>&nbsp;<span class="post-category">included in <a href="/categories/inteligencia-artificial/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Inteligencia Artificial</a>&nbsp;<a href="/categories/estrategia-empresarial/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Estrategia Empresarial</a></span></div><div class="content"><h1 id="-chatgpt-para-innovación-empresarial-guía-práctica-con-prompts">🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts</h1>
 <p>Aprende a usar <strong>ChatGPT como socio estratégico</strong> para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.</p>
@@ -284,37 +313,6 @@ Con este workflow podrás:</p>
 <p>💡 <em>Tip:</em> Si usas <strong>Agent Mode</strong> en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.</p></div><div class="post-footer">
         <a href="/posts/copilot-for-java-devs/workflow-copilot-chatgpt/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/chatgpt/">ChatGPT</a>,&nbsp;<a href="/tags/vs-code/">VS Code</a>,&nbsp;<a href="/tags/productividad/">Productividad</a>,&nbsp;<a href="/tags/ia-para-desarrolladores/">IA Para Desarrolladores</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/copilot-for-java-devs/desarrollo-incremental-guia/">🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/Cyb3rh4ck" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-28">2025-07-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/ia-para-desarrolladores/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>IA para desarrolladores</a>&nbsp;<a href="/categories/mejores-pr%C3%A1cticas/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Mejores Prácticas</a></span></div><div class="content"><div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>💡 TL;DR<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><strong>¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?</strong> Esta guía te enseña cómo usar <strong>GitHub Copilot efectivamente</strong> con metodología incremental para construir aplicaciones robustas que realmente comprendas.</div>
-        </div>
-    </div>
-<h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)</h2>
-<div class="details admonition failure open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>❌ Escenario Típico con Copilot<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ol>
-<li><strong>Le pides a Copilot</strong> que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)</li>
-<li><strong>Copilot genera todo de una vez</strong> - 50+ archivos, configuraciones, dependencias</li>
-<li><strong>Aparecen 78 errores</strong> de compilación porque las piezas no encajan 😱</li>
-<li><strong>No entiendes el código generado</strong> para poder arreglarlo</li>
-<li><strong>Dependes completamente de Copilot</strong> para cada fix, creando más problemas</li>
-<li><strong>Frustración total</strong> - el &ldquo;asistente inteligente&rdquo; se volvió tu enemigo</li>
-</ol>
-</div>
-        </div>
-    </div>
-<blockquote>
-<p>💭 <strong>Mi experiencia usando Copilot</strong>: <em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.</em></p></div><div class="post-footer">
-        <a href="/posts/copilot-for-java-devs/desarrollo-incremental-guia/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/desarrollo/">Desarrollo</a>,&nbsp;<a href="/tags/arquitectura/">Arquitectura</a>,&nbsp;<a href="/tags/metodolog%C3%ADa/">Metodología</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a>,&nbsp;<a href="/tags/oauth2/">Oauth2</a>,&nbsp;<a href="/tags/hexagonal/">Hexagonal</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
