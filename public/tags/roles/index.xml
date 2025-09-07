@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Roles on Cyb3rh4ck´s dev life</title>
-    <link>https://cyb3rh4ck.github.io/tags/roles/</link>
+    <link>http://localhost:1313/tags/roles/</link>
     <description>Recent content in Roles on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Aug 2025 07:16:41 -0600</lastBuildDate>
-    <atom:link href="https://cyb3rh4ck.github.io/tags/roles/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/roles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/capitulo7/</link>
+      <link>http://localhost:1313/keycloak/capitulo7/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo7/</guid>
+      <guid>http://localhost:1313/keycloak/capitulo7/</guid>
       <description>&lt;h1 id=&#34;-capítulo-7--gestión-de-usuarios-grupos-y-roles-a-gran-escala&#34;&gt;👥 Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala&lt;/h1&gt;&#xA;&lt;h2 id=&#34;71-aprovisionamiento-de-usuarios-y-automatización-del-ciclo-de-vida&#34;&gt;7.1 Aprovisionamiento de Usuarios y Automatización del Ciclo de Vida&lt;/h2&gt;&#xA;&lt;p&gt;El &lt;strong&gt;aprovisionamiento de usuarios&lt;/strong&gt; es el proceso de creación, actualización y desactivación de cuentas de manera controlada.&lt;br&gt;&#xA;Keycloak soporta:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Creación manual de usuarios desde la consola de administración.&lt;/li&gt;&#xA;&lt;li&gt;Aprovisionamiento automático mediante API REST.&lt;/li&gt;&#xA;&lt;li&gt;Sincronización desde directorios LDAP/AD.&lt;/li&gt;&#xA;&lt;li&gt;Automatización con herramientas de gestión de identidades externas.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La &lt;strong&gt;automatización del ciclo de vida&lt;/strong&gt; asegura que las cuentas se actualicen o desactiven cuando cambien las condiciones (por ejemplo, baja de un empleado).&lt;/p&gt;</description>
     </item>
   </channel>

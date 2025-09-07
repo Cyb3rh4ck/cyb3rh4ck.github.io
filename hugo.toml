@@ -44,6 +44,14 @@ enableGitInfo = true
     title = "keycloak"
     pre = "<i class='fas fa-folder-open'></i>"
 
+  [[menu.main]]
+    weight = 6
+    identifier = "Auth"
+    name = "Auth"
+    url = "/arquitectura-auth/"
+    title = "Auth"
+    pre = "<i class='fas fa-folder-open'></i>"
+
 [params]
   defaultTheme = "light"
   gitRepo = "https://github.com/Cyb3rh4ck/cyb3rh4ck.github.io"

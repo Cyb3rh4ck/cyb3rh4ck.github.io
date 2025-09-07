@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SAML on Cyb3rh4ck´s dev life</title>
-    <link>https://cyb3rh4ck.github.io/tags/saml/</link>
+    <link>http://localhost:1313/tags/saml/</link>
     <description>Recent content in SAML on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Aug 2025 07:16:41 -0600</lastBuildDate>
-    <atom:link href="https://cyb3rh4ck.github.io/tags/saml/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/saml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 5 – Patrones de Integración de Keycloak</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/capitulo5/</link>
+      <link>http://localhost:1313/keycloak/capitulo5/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo5/</guid>
+      <guid>http://localhost:1313/keycloak/capitulo5/</guid>
       <description>&lt;h1 id=&#34;-capítulo-5--patrones-de-integración-de-keycloak&#34;&gt;🔗 Capítulo 5 – Patrones de Integración de Keycloak&lt;/h1&gt;&#xA;&lt;h2 id=&#34;51-configuración-de-clientes-oauth2-y-mejores-prácticas&#34;&gt;5.1 Configuración de Clientes OAuth2 y Mejores Prácticas&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak permite registrar aplicaciones como &lt;strong&gt;clientes OAuth2&lt;/strong&gt; para manejar autorización de forma segura.&lt;br&gt;&#xA;Buenas prácticas:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Utilizar &lt;strong&gt;confidenciales de cliente&lt;/strong&gt; (client secrets) robustos.&lt;/li&gt;&#xA;&lt;li&gt;Configurar &lt;strong&gt;redirecciones&lt;/strong&gt; únicamente a URLs de confianza.&lt;/li&gt;&#xA;&lt;li&gt;Definir &lt;strong&gt;alcances (scopes)&lt;/strong&gt; mínimos necesarios para cada cliente.&lt;/li&gt;&#xA;&lt;li&gt;Habilitar &lt;strong&gt;rotación periódica de credenciales&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;52-adaptación-a-openid-connect-oidc&#34;&gt;5.2 Adaptación a OpenID Connect (OIDC)&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;OpenID Connect&lt;/strong&gt; extiende OAuth2 añadiendo autenticación de usuario.&lt;br&gt;&#xA;Keycloak actúa como &lt;strong&gt;Proveedor de Identidad (IdP)&lt;/strong&gt; emitiendo:&lt;/p&gt;</description>
     </item>
   </channel>

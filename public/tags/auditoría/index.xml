@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Auditoría on Cyb3rh4ck´s dev life</title>
-    <link>https://cyb3rh4ck.github.io/tags/auditor%C3%ADa/</link>
+    <link>http://localhost:1313/tags/auditor%C3%ADa/</link>
     <description>Recent content in Auditoría on Cyb3rh4ck´s dev life</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Aug 2025 07:16:41 -0600</lastBuildDate>
-    <atom:link href="https://cyb3rh4ck.github.io/tags/auditor%C3%ADa/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/auditor%C3%ADa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/capitulo6/</link>
+      <link>http://localhost:1313/keycloak/capitulo6/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo6/</guid>
+      <guid>http://localhost:1313/keycloak/capitulo6/</guid>
       <description>&lt;h1 id=&#34;-capítulo-6--flujos-de-autenticación-avanzados-y-personalizaciones-de-seguridad&#34;&gt;🔐 Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/h1&gt;&#xA;&lt;h2 id=&#34;61-flujos-de-autenticación-personalizados-y-acciones-requeridas&#34;&gt;6.1 Flujos de Autenticación Personalizados y Acciones Requeridas&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak permite definir &lt;strong&gt;flujos de autenticación personalizados&lt;/strong&gt; para adaptarse a requisitos específicos.&lt;br&gt;&#xA;Esto se logra configurando pasos como:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Validación de credenciales.&lt;/li&gt;&#xA;&lt;li&gt;Factores adicionales de autenticación.&lt;/li&gt;&#xA;&lt;li&gt;Ejecución de verificaciones externas.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Las &lt;strong&gt;acciones requeridas&lt;/strong&gt; (Required Actions) son tareas que el usuario debe completar, como cambiar contraseña o aceptar términos antes de acceder.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Automatiza tu código con Copilot en IntelliJ - Cyb3rh4ck´s dev life</title><meta name="Description" content="Guía paso a paso para instalar, configurar y usar GitHub Copilot en Intellij"><meta property="og:url" content="http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/">
+  <meta property="og:site_name" content="Cyb3rh4ck´s dev life">
+  <meta property="og:title" content="Automatiza tu código con Copilot en IntelliJ">
+  <meta property="og:description" content="Guía paso a paso para instalar, configurar y usar GitHub Copilot en Intellij">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-06T00:00:00+00:00">
+    <meta property="article:tag" content="Copilot">
+    <meta property="article:tag" content="Intellij">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Productividad">
+    <meta property="article:tag" content="Spring-Boot">
+    <meta property="og:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+  <meta name="twitter:title" content="Automatiza tu código con Copilot en IntelliJ">
+  <meta name="twitter:description" content="Guía paso a paso para instalar, configurar y usar GitHub Copilot en Intellij">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/" /><link rel="prev" href="http://localhost:1313/posts/lambdas/lambdas/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Automatiza tu código con Copilot en IntelliJ",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/copilot-for-java-devs\/copilot-en-intellij\/"
+        },"genre": "posts","keywords": "Copilot, Intellij, Java, Productividad, Spring Boot","wordcount":  622 ,
+        "url": "http:\/\/localhost:1313\/posts\/copilot-for-java-devs\/copilot-en-intellij\/","datePublished": "2025-09-06T00:00:00+00:00","dateModified": "2025-09-06T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Cyb3rh4ck"
+            },"description": "Guía paso a paso para instalar, configurar y usar GitHub Copilot en Intellij"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i> VS Code </a><a class="menu-item" href="/cv/"><i class='fas fa-file-alt'></i> CV </a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i> Posts </a><a class="menu-item" href="/keycloak/" title="keycloak"><i class='fas fa-folder-open'></i> Keycloak </a><a class="menu-item" href="/arquitectura-auth/" title="Auth"><i class='fas fa-folder-open'></i> Auth </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i>VS Code</a><a class="menu-item" href="/cv/" title=""><i class='fas fa-file-alt'></i>CV</a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i>Posts</a><a class="menu-item" href="/keycloak/" title="keycloak"><i class='fas fa-folder-open'></i>Keycloak</a><a class="menu-item" href="/arquitectura-auth/" title="Auth"><i class='fas fa-folder-open'></i>Auth</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Automatiza tu código con Copilot en IntelliJ</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ia-para-desarrolladores/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>IA para desarrolladores</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-06">2025-09-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;622 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>Aquí tienes cómo exprimir <strong>IntelliJ IDEA Community</strong> con <strong>GitHub Copilot</strong> para Java/Spring/Kafka como un pro 👇</p>
+<h1 id="1-deja-fino-el-setup">1) Deja fino el setup</h1>
+<ul>
+<li>
+<p><strong>Plugins</strong>: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.</p>
+</li>
+<li>
+<p><strong>Keymap</strong>: ve a <em>Settings → Keymap → GitHub Copilot</em> y asigna atajos cómodos para:</p>
+<ul>
+<li><em>Trigger Inline Suggestion</em> (invocar propuesta)</li>
+<li><em>Next/Previous Suggestion</em> (ciclar)</li>
+<li><em>Open Chat</em> (abrir chat lateral)</li>
+<li><em>Accept Word/Line</em> (aceptar por partes)</li>
+</ul>
+</li>
+<li>
+<p><strong>Scope</strong>: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.</p>
+</li>
+</ul>
+<h1 id="2-flujo-de-trabajo-que-rinde">2) Flujo de trabajo que rinde</h1>
+<ol>
+<li>
+<p><strong>Comentario → código</strong>
+Escribe el comentario exacto de lo que quieres y luego invoca Copilot:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Spring Boot 3: POST /v1/policies {policy} -&gt; valida, guarda, produce evento Kafka &#34;audit.customer.updated&#34;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>TDD rápido</strong>
+Pide primero las <em>pruebas</em> (JUnit 5 + Mockito) y luego genera la implementación. Copilot entiende muy bien los métodos esperados.</p>
+</li>
+<li>
+<p><strong>Itera en línea</strong>
+Acepta por palabra o por línea, y cicla hasta ver una variante con buenas firmas y excepciones.</p>
+</li>
+<li>
+<p><strong>Chat &gt; inline</strong> cuando:</p>
+<ul>
+<li>Quieres <em>explicación</em> de código legado.</li>
+<li>Necesitas <em>refactor</em> guiado (“extrae puerto hexagonal”, “aplica DTO y mapper”).</li>
+<li>Pides <em>tests de borde</em> y <em>propiedad parametrizada</em> (ParameterizedTest).</li>
+</ul>
+</li>
+</ol>
+<h1 id="3-prompts-cirujanos-para-tu-stack">3) Prompts “cirujanos” para tu stack</h1>
+<p>Pégalos como comentario encima del método/clase o en Copilot Chat.</p>
+<p><strong>Hexagonal + Kafka (Seguros360)</strong></p>
+<ul>
+<li>“Crea puerto <code>PolicyAuditPort</code> y adaptador Kafka con <code>spring-kafka</code>. Produce evento <code>AuditCustomerUpdated</code> con headers <code>correlationId</code>, <code>actor</code>, <code>reason</code>. Retrys idempotentes y DLQ.”</li>
+<li>“Valida JWT con <code>kid</code> firmado por AWS KMS (clave RSA). Extrae claims y roles. Maneja expiración y clockSkew.”</li>
+</ul>
+<p><strong>Endpoints y validación</strong></p>
+<ul>
+<li>“Controller <code>PolicyController</code> POST <code>/v1/policies</code> con Bean Validation (campos obligatorios), <code>@ControllerAdvice</code> para errores 400/422 con payload estándar.”</li>
+</ul>
+<p><strong>Persistencia</strong></p>
+<ul>
+<li>“Repositorio JPA para <code>Policy</code> con índice compuesto (customerId, productCode). Método <code>findActiveByCustomerId</code> paginado.”</li>
+</ul>
+<p><strong>Observabilidad</strong></p>
+<ul>
+<li>“Integra <code>micrometer-tracing</code> y logs estructurados JSON (traceId, spanId, userId, route, latencyMs).”</li>
+</ul>
+<p><strong>Resiliencia</strong></p>
+<ul>
+<li>“Configura Resilience4j para el cliente externo: retry exponencial (maxAttempts=3), timeout=2s, circuit breaker.”</li>
+</ul>
+<h1 id="4-chat-rápido-atajos-útiles">4) Chat rápido (atajos útiles)</h1>
+<p>En Copilot Chat, pide acciones claras:</p>
+<ul>
+<li>“Explain this file in Spanish and list risky parts.”</li>
+<li>“Generate edge-case tests for <code>PolicyService#update</code>.”</li>
+<li>“Refactor to hex architecture: extract ports, move infra into adapters.”</li>
+<li>“Add MapStruct mapper + tests.”</li>
+<li>“Create .http requests for the controller with sample bodies.”</li>
+</ul>
+<h1 id="5-yml-regex-sql-y-http-oro-con-community">5) YML, Regex, SQL y .http: oro con Community</h1>
+<ul>
+<li><strong>application.yml</strong>: “Genera config para <code>spring-kafka</code> con SSL, timeouts y serializers.”</li>
+<li><strong>Regex</strong>: “Escribe regex para validar RFC mexicano y prueba 5 casos.”</li>
+<li><strong>SQL</strong>: “Crea migración Flyway para tabla policies con índices y <code>created_at</code>/<code>updated_at</code>.”</li>
+<li><strong>HTTP Client</strong>: crea <code>requests.http</code> y pide a Copilot ejemplos con <code>GET/POST</code> (ideal para probar APIs sin salir de IntelliJ).</li>
+</ul>
+<h1 id="6-plantillas-y-live-templates-turbo">6) Plantillas y Live Templates (turbo)</h1>
+<ul>
+<li>
+<p>Define <strong>File Templates</strong> para:</p>
+<ul>
+<li><code>Controller</code>, <code>Service</code>, <code>Port</code>, <code>Adapter</code>, <code>Record DTO</code>, <code>ErrorResponse</code>.</li>
+</ul>
+</li>
+<li>
+<p>Crea <strong>Live Templates</strong> tipo <code>hexport</code>, <code>hexadapter</code>, <code>dto</code>, <code>err</code> y deja comentarios instructivos; Copilot completará el resto.</p>
+</li>
+</ul>
+<h1 id="7-calidad-y-seguridad-sin-fricción">7) Calidad y seguridad sin fricción</h1>
+<ul>
+<li><strong>SonarLint</strong> en modo <em>Connected</em> si puedes; si no, local. Pídele a Copilot:
+“Fix issues Sonar: S2095, S112, S1452 in this class.”</li>
+<li><strong>Format &amp; Inspections</strong>: guarda con <em>Reformat + Optimize imports</em> para que Copilot “aprenda” tu estilo.</li>
+</ul>
+<h1 id="8-estrategia-para-respuestas-mejores">8) Estrategia para respuestas mejores</h1>
+<ul>
+<li>Contexto primero: di el <em>qué</em> + <em>restricciones</em> (versiones, librerías, patrones).</li>
+<li>Pide <em>arquitectura previa</em> (interfaces, excepciones, DTOs) antes que la implementación.</li>
+<li>Da <strong>ejemplos de entrada/salida</strong> concretos (payload JSON y respuesta esperada).</li>
+<li>“No uses librerías X” o “Debes usar Y” para forzar el stack correcto.</li>
+<li>Repite <em>nombres exactos</em> (paquetes, topics, endpoints). Evita ambigüedad.</li>
+</ul>
+<h1 id="9-recetas-express-lista-corta">9) Recetas express (lista corta)</h1>
+<ul>
+<li>“Create unit tests with Mockito and parameterized inputs for null/invalid cases.”</li>
+<li>“Document public methods with Javadoc including examples.”</li>
+<li>“Generate mapping between <code>Policy</code> and <code>PolicyDTO</code> with MapStruct and test it.”</li>
+<li>“Produce/consume Kafka with headers and error handler to DLQ.”</li>
+<li>“Write an exception hierarchy: domain, application, infra with <code>@ControllerAdvice</code> mapping.”</li>
+</ul>
+<h1 id="10-qué-no-delegar-ciegamente">10) Qué NO delegar ciegamente</h1>
+<ul>
+<li>Seguridad (JWT/KMS), transacciones y concurrencia: usa Copilot para <em>borradores</em>, valida tú las decisiones.</li>
+<li>Config sensible en YAML: revísala siempre y añade tests de integración.</li>
+</ul>
+<hr>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-09-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/" data-title="Automatiza tu código con Copilot en IntelliJ" data-hashtags="Copilot,Intellij,Java,Productividad,Spring Boot"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/" data-hashtag="Copilot"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/" data-title="Automatiza tu código con Copilot en IntelliJ"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/" data-title="Automatiza tu código con Copilot en IntelliJ"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/" data-title="Automatiza tu código con Copilot en IntelliJ"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/intellij/">Intellij</a>,&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/productividad/">Productividad</a>,&nbsp;<a href="/tags/spring-boot/">Spring-Boot</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/lambdas/lambdas/" class="prev" rel="prev" title="🚀 Bootcamp: Lambdas en Java con JDK 17"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>🚀 Bootcamp: Lambdas en Java con JDK 17</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
