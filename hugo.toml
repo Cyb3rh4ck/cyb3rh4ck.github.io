@@ -15,6 +15,13 @@ enableGitInfo = true
 
 # Menu config
 [menu]
+ #[[menu.main]]
+ #  name = "GitHub Copilot"
+ #  url = "/ghCopilot/"
+ #  weight = 1
+ #  title = "🚀 Bienvenido al módulo de **GitHub Copilot**"
+ #  pre = "<i class='fa-solid fa-code'></i>"
+
   [[menu.main]]
     name = "VS Code"
     url = "/vscode/"
@@ -22,11 +29,11 @@ enableGitInfo = true
     title = "🚀 Bienvenido al módulo de **VS Code**"
     pre = "<i class='fa-solid fa-code'></i>"
 
-  [[menu.main]]
-    name = "CV"
-    url = "/cv/"
-    weight = 3
-    pre = "<i class='fas fa-file-alt'></i>"
+ #[[menu.main]]
+ #  name = "CV"
+ #  url = "/cv/"
+ #  weight = 3
+ #  pre = "<i class='fas fa-file-alt'></i>"
 
   [[menu.main]]
     weight = 4
@@ -36,21 +43,21 @@ enableGitInfo = true
     title = "all posts"
     pre = "<i class='fas fa-folder-open'></i>"
 
-  [[menu.main]]
-    weight = 5
-    identifier = "keycloak"
-    name = "Keycloak"
-    url = "/keycloak/"
-    title = "keycloak"
-    pre = "<i class='fas fa-folder-open'></i>"
+  #[[menu.main]]
+  #  weight = 5
+  #  identifier = "keycloak"
+  #  name = "Keycloak"
+  #  url = "/keycloak/"
+  #  title = "keycloak"
+  #  pre = "<i class='fas fa-folder-open'></i>"
 
-  [[menu.main]]
-    weight = 6
-    identifier = "Auth"
-    name = "Auth"
-    url = "/arquitectura-auth/"
-    title = "Auth"
-    pre = "<i class='fas fa-folder-open'></i>"
+  #[[menu.main]]
+  #  weight = 6
+  #  identifier = "Auth"
+  #  name = "Auth"
+  #  url = "/arquitectura-auth/"
+  #  title = "Auth"
+  #  pre = "<i class='fas fa-folder-open'></i>"
 
 [params]
   defaultTheme = "light"

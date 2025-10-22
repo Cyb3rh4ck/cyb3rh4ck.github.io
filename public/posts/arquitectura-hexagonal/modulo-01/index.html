@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> - Cyb3rh4ck´s dev life</title><meta name="Description" content="Bitácora de IA, Java y desarrollo ágil"><meta property="og:url" content="http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/">
+  <meta property="og:site_name" content="Cyb3rh4ck´s dev life">
+  <meta property="og:title" content="Cyb3rh4ck´s dev life">
+  <meta property="og:description" content="¡Excelente! Vamos a desarrollar el Módulo 1 de nuestro curso.
+Módulo 1: Introducción a la Arquitectura Hexagonal Objetivo: Comprender los fundamentos y la motivación detrás de la Arquitectura Hexagonal.
+En este módulo, sentaremos las bases para entender por qué la Arquitectura Hexagonal es tan valiosa. Comenzaremos con los problemas que intenta resolver en el desarrollo de software y luego introduciremos sus conceptos clave y los principios de diseño que la sustentan.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="og:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+  <meta name="twitter:title" content="Cyb3rh4ck´s dev life">
+  <meta name="twitter:description" content="¡Excelente! Vamos a desarrollar el Módulo 1 de nuestro curso.
+Módulo 1: Introducción a la Arquitectura Hexagonal Objetivo: Comprender los fundamentos y la motivación detrás de la Arquitectura Hexagonal.
+En este módulo, sentaremos las bases para entender por qué la Arquitectura Hexagonal es tan valiosa. Comenzaremos con los problemas que intenta resolver en el desarrollo de software y luego introduciremos sus conceptos clave y los principios de diseño que la sustentan.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/" /><link rel="prev" href="http://localhost:1313/posts/arquitectura-hexagonal/modulo-02/" /><link rel="next" href="http://localhost:1313/posts/oauth2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/arquitectura-hexagonal\/modulo-01\/"
+        },"genre": "posts","wordcount":  1883 ,
+        "url": "http:\/\/localhost:1313\/posts\/arquitectura-hexagonal\/modulo-01\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Cyb3rh4ck"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i> VS Code </a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i>VS Code</a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i>Posts</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX"></h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Cyb3rh4ck</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1883 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#módulo-1-introducción-a-la-arquitectura-hexagonal">Módulo 1: Introducción a la Arquitectura Hexagonal</a>
+      <ul>
+        <li><a href="#1-qué-es-la-arquitectura-hexagonal">1. ¿Qué es la Arquitectura Hexagonal?</a></li>
+        <li><a href="#2-principios-de-diseño-implicados">2. Principios de Diseño Implicados</a></li>
+        <li><a href="#3-beneficios">3. Beneficios</a></li>
+        <li><a href="#ejemplo-práctico-11-el-problema-del-acoplamiento-demo">Ejemplo Práctico 1.1: El Problema del Acoplamiento (Demo)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>¡Excelente! Vamos a desarrollar el Módulo 1 de nuestro curso.</p>
+<h2 id="módulo-1-introducción-a-la-arquitectura-hexagonal">Módulo 1: Introducción a la Arquitectura Hexagonal</h2>
+<p><strong>Objetivo:</strong> Comprender los fundamentos y la motivación detrás de la Arquitectura Hexagonal.</p>
+<p>En este módulo, sentaremos las bases para entender por qué la Arquitectura Hexagonal es tan valiosa. Comenzaremos con los problemas que intenta resolver en el desarrollo de software y luego introduciremos sus conceptos clave y los principios de diseño que la sustentan.</p>
+<h3 id="1-qué-es-la-arquitectura-hexagonal">1. ¿Qué es la Arquitectura Hexagonal?</h3>
+<p>Imagina tu aplicación como un castillo. En la mayoría de las arquitecturas tradicionales, el castillo está fuertemente pegado a su terreno. Si quieres mover el castillo a un terreno diferente (cambiar la base de datos, el framework web), es una tarea titánica porque los cimientos del castillo están intrínsecamente ligados al suelo.</p>
+<p>La Arquitectura Hexagonal, también conocida como <strong>Arquitectura de Puertos y Adaptadores (Ports and Adapters Architecture)</strong>, fue propuesta por Alistair Cockburn. Su objetivo principal es <strong>desacoplar el dominio (la lógica de negocio central de tu aplicación) de las preocupaciones técnicas externas</strong>, como bases de datos, interfaces de usuario, sistemas de mensajería, o frameworks web.</p>
+<p>Piensa en tu aplicación como el &ldquo;cerebro&rdquo; o el &ldquo;corazón&rdquo; de un ser vivo. Este órgano vital necesita interactuar con el mundo exterior (ojos, oídos, músculos), pero no quiere saber cómo funcionan esos sistemas externos a nivel de detalle. Solo necesita una forma estandarizada de comunicarse.</p>
+<p><strong>Problemas que resuelve:</strong></p>
+<ul>
+<li><strong>Acoplamiento Fuerte:</strong> En muchas arquitecturas, la lógica de negocio se mezcla con la implementación de la interfaz de usuario, la base de datos o los servicios externos. Esto significa que un cambio en la base de datos, por ejemplo, puede requerir cambios significativos en el código de negocio.</li>
+<li><strong>Dificultad de Testing:</strong> Cuando la lógica de negocio está fuertemente acoplada a componentes externos (como una base de datos real), escribir pruebas unitarias para esa lógica se vuelve complicado. Necesitas configurar un entorno complejo o mockear muchas dependencias.</li>
+<li><strong>Falta de Flexibilidad:</strong> Cambiar una tecnología por otra (ej. pasar de MySQL a PostgreSQL, de REST a GraphQL) es costoso y consume mucho tiempo porque el código está diseñado pensando en una tecnología específica.</li>
+<li><strong>Priorización de la Infraestructura:</strong> A menudo, comenzamos un proyecto pensando en la tecnología de la base de datos o el framework, en lugar de centrarnos en los requisitos y la lógica de negocio del dominio. La Arquitectura Hexagonal invierte esto, poniendo el dominio en el centro.</li>
+</ul>
+<p><strong>Conceptos Clave:</strong></p>
+<ol>
+<li>
+<p><strong>El Hexágono (Application Core / Domain):</strong> Es el corazón de tu aplicación. Contiene la lógica de negocio pura, las reglas de dominio, las entidades, los objetos de valor y los servicios de dominio. <strong>Es completamente agnóstico a cualquier tecnología externa.</strong> No sabe si está siendo llamado por una API REST, una línea de comandos o una cola de mensajes; ni tampoco sabe si guarda los datos en una base de datos relacional, NoSQL o en un archivo plano.</p>
+</li>
+<li>
+<p><strong>Puertos (Ports):</strong> Son las <strong>interfaces</strong> a través de las cuales el hexágono se comunica con el mundo exterior.</p>
+<ul>
+<li><strong>Puertos de Entrada (Driving Ports / Inbound Ports):</strong> Son interfaces que el dominio ofrece al mundo exterior. Definen lo que la aplicación puede hacer. Ejemplos: <code>CrearProductoUseCase</code>, <code>ConsultarPedidoService</code>. Son las &ldquo;API&rdquo; de tu dominio.</li>
+<li><strong>Puertos de Salida (Driven Ports / Outbound Ports):</strong> Son interfaces que el dominio requiere del mundo exterior. Definen las necesidades del dominio para persistir datos, enviar emails, consultar otros servicios, etc. Ejemplos: <code>ProductoRepository</code>, <code>EmailSender</code>. Son las &ldquo;dependencias&rdquo; que tu dominio necesita.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adaptadores (Adapters):</strong> Son las implementaciones concretas de los Puertos. Son los &ldquo;enchufes&rdquo; que conectan tu aplicación (el hexágono) con el mundo exterior.</p>
+<ul>
+<li><strong>Adaptadores de Entrada (Driving Adapters / Inbound Adapters):</strong> Implementan los puertos de entrada y dirigen las interacciones externas hacia el hexágono. Ejemplos: Un <code>RestController</code> (Spring), un <code>Command-line Interface (CLI)</code>, una capa de UI (Angular/React), un <code>MessageListener</code>.</li>
+<li><strong>Adaptadores de Salida (Driven Adapters / Outbound Adapters):</strong> Implementan los puertos de salida y dirigen las interacciones del hexágono hacia sistemas externos. Ejemplos: Implementación de un <code>ProductoRepository</code> usando <code>JPA</code> (Hibernate), un cliente <code>HttpClient</code> para llamar a otro microservicio, una implementación de <code>EmailSender</code> usando <code>JavaMail</code>.</li>
+</ul>
+</li>
+</ol>
+<p>La metáfora del &ldquo;Hexágono&rdquo; sugiere que la aplicación central tiene múltiples &ldquo;lados&rdquo; o &ldquo;puertos&rdquo; por los que puede ser interactuada, y a cada lado se conecta un &ldquo;adaptador&rdquo; diferente. Estos adaptadores pueden ser reemplazados sin afectar el núcleo de la aplicación.</p>
+<p><strong>Visualización del Hexágono:</strong>
+Aquí tienes una representación visual de la Arquitectura Hexagonal:
+`<insert imagen></p>
+<h3 id="2-principios-de-diseño-implicados">2. Principios de Diseño Implicados</h3>
+<p>La Arquitectura Hexagonal no es un patrón aislado; se apoya fuertemente en principios de diseño de software bien establecidos.</p>
+<ol>
+<li>
+<p><strong>Separación de Preocupaciones:</strong> Cada parte de tu sistema debe tener una única responsabilidad. El hexágono se preocupa solo por la lógica de negocio, mientras que los adaptadores se preocupan por la interacción con tecnologías específicas. Esto facilita el mantenimiento y la comprensión del código.</p>
+</li>
+<li>
+<p><strong>Inversión de Dependencias (Dependency Inversion Principle - DIP):</strong> Este es uno de los principios SOLID más cruciales para la Arquitectura Hexagonal.</p>
+<ul>
+<li><em>Principio:</em> Los módulos de alto nivel (tu dominio) no deben depender de módulos de bajo nivel (tus adaptadores/infraestructura). Ambos deben depender de abstracciones (tus puertos). Las abstracciones no deben depender de los detalles; los detalles (adaptadores) deben depender de las abstracciones (puertos).</li>
+<li>En la práctica, esto significa que tu dominio define las <strong>interfaces (Puertos)</strong> que necesita o que ofrece. Luego, la infraestructura (los <strong>Adaptadores</strong>) implementa esas interfaces. El dominio <strong>nunca</strong> conoce las implementaciones concretas de los adaptadores.</li>
+<li><strong>Ejemplo:</strong> Tu <code>CrearProductoUseCase</code> (dominio) no depende de <code>ProductoRepositoryJPA</code> (infraestructura), sino de la interfaz <code>ProductoRepository</code> (abstracción/puerto). La implementación <code>ProductoRepositoryJPA</code> depende de la interfaz <code>ProductoRepository</code>.</li>
+</ul>
+<p>`
+// Dominio (Alto Nivel)
+interface ProductoRepository {
+void save(Producto producto);
+Optional<Producto> findById(ProductoId id);
+}</p>
+<p>class DefaultCrearProductoUseCase {
+private final ProductoRepository productoRepository; // Depende de la abstracción</p>
+<pre><code>public DefaultCrearProductoUseCase(ProductoRepository productoRepository) {
+    this.productoRepository = productoRepository;
+}
+// ...
+</code></pre>
+<p>}</p>
+<p>// Infraestructura (Bajo Nivel)
+class ProductoRepositoryJPA implements ProductoRepository { // Depende de la abstracción
+// &hellip; implementación con JPA &hellip;
+}
+`</p>
+</li>
+<li>
+<p><strong>Principio de Abierto/Cerrado (Open/Closed Principle - OCP):</strong> Las entidades de software (clases, módulos, funciones, etc.) deben estar abiertas para extensión, pero cerradas para modificación.</p>
+<ul>
+<li>Esto significa que puedes añadir nuevas funcionalidades (extender) sin tener que cambiar el código existente que ya funciona (modificar).</li>
+<li>En la Arquitectura Hexagonal, si decides cambiar tu base de datos de JPA a MongoDB, no necesitas modificar el código del dominio. Simplemente creas un nuevo <strong>Adaptador de Salida</strong> para MongoDB que implemente la misma interfaz <code>ProductoRepository</code> (el Puerto) y lo &ldquo;enchufas&rdquo; en lugar del adaptador JPA. El dominio sigue funcionando sin cambios.</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-beneficios">3. Beneficios</h3>
+<p>Adoptar la Arquitectura Hexagonal conlleva varias ventajas significativas:</p>
+<ul>
+<li><strong>Mayor Testabilidad:</strong> Como la lógica de negocio (el hexágono) es independiente de cualquier detalle técnico, puedes probarla exhaustivamente con pruebas unitarias simples. Para los puertos de salida, simplemente puedes <code>mockear</code> sus implementaciones, asegurándote de que tu lógica central sea sólida y sin errores.</li>
+<li><strong>Mayor Flexibilidad y Adaptabilidad a Cambios:</strong> Cambiar la tecnología de la base de datos, el framework web, el sistema de mensajería, o incluso añadir una nueva interfaz de usuario, se vuelve mucho más sencillo. Solo necesitas reemplazar o añadir un adaptador sin tocar el núcleo de la aplicación.</li>
+<li><strong>Aislamiento de la Lógica de Negocio:</strong> El dominio permanece puro y enfocado. Es más fácil de entender, mantener y hacer evolucionar, ya que no está &ldquo;contaminado&rdquo; por detalles de infraestructura. Esto lo hace muy adecuado para el Domain-Driven Design (DDD).</li>
+<li><strong>Decisiones Tecnológicas Posteriores:</strong> No tienes que decidir todas tus tecnologías desde el primer día. Puedes empezar con una base de datos en memoria y luego cambiar a una relacional o NoSQL sin grandes refactorizaciones en el dominio.</li>
+<li><strong>Interoperabilidad:</strong> Una misma lógica de negocio puede ser expuesta a través de múltiples interfaces (ej. REST API, CLI, gRPC) simplemente añadiendo diferentes adaptadores de entrada.</li>
+</ul>
+<h3 id="ejemplo-práctico-11-el-problema-del-acoplamiento-demo">Ejemplo Práctico 1.1: El Problema del Acoplamiento (Demo)</h3>
+<p>Para ilustrar el problema que la Arquitectura Hexagonal busca resolver, vamos a crear una aplicación Java muy sencilla que <strong>mezcla la lógica de negocio con la lógica de persistencia</strong>.</p>
+<p><strong>Escenario:</strong> Una aplicación para gestionar usuarios donde un <code>UserService</code> es directamente responsable de la creación y persistencia.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Archivo: com/example/badarch/UserService.java</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.badarch</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.PreparedStatement</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.SQLException</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dbUrl</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dbUser</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dbPassword</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">UserService</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">dbUrl</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dbUser</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dbPassword</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">dbUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbUrl</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">dbUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbUser</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">dbPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbPassword</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createUser</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Lógica de negocio: Validar usuario</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">username</span><span class="p">.</span><span class="na">trim</span><span class="p">().</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&#34;Username cannot be empty.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">email</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">email</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&#34;@&#34;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&#34;Invalid email format.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Lógica de persistencia: Directamente en el servicio</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">dbUrl</span><span class="p">,</span><span class="w"> </span><span class="n">dbUser</span><span class="p">,</span><span class="w"> </span><span class="n">dbPassword</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;INSERT INTO users (username, email) VALUES (?, ?)&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">stmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">username</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">stmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="n">2</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">stmt</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;User &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; created successfully in DB.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Error saving user to database: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&#34;Failed to create user.&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Archivo: com/example/badarch/Application.java</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.badarch</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Configuración de la base de datos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">dbUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1&#34;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Base de datos en memoria H2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">dbUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;sa&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">dbPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Inicializar un servicio de usuario (en un entorno real, esto sería inyectado)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserService</span><span class="p">(</span><span class="n">dbUrl</span><span class="p">,</span><span class="w"> </span><span class="n">dbUser</span><span class="p">,</span><span class="w"> </span><span class="n">dbPassword</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Crear la tabla de usuarios (esto es para la demo, normalmente estaría en un script de migración)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="na">sql</span><span class="p">.</span><span class="na">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">dbUrl</span><span class="p">,</span><span class="w"> </span><span class="n">dbUser</span><span class="p">,</span><span class="w"> </span><span class="n">dbPassword</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="n">java</span><span class="p">.</span><span class="na">sql</span><span class="p">.</span><span class="na">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">stmt</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">&#34;CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL)&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Table &#39;users&#39; created.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Error creating table: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Usar el servicio</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userService</span><span class="p">.</span><span class="na">createUser</span><span class="p">(</span><span class="s">&#34;john_doe&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;john.doe@example.com&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userService</span><span class="p">.</span><span class="na">createUser</span><span class="p">(</span><span class="s">&#34;jane_smith&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;jane.smith@example.com&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userService</span><span class="p">.</span><span class="na">createUser</span><span class="p">(</span><span class="s">&#34;invalid_user&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Esto debería fallar por validación</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Caught expected error: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// ¿Qué pasa si queremos cambiar la persistencia a un archivo JSON?</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Tendríamos que MODIFICAR la clase UserService.java</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>Análisis del Problema (Desacoplamiento):</strong></p>
+<ul>
+<li>Observa cómo el <code>UserService</code> tiene directamente el código JDBC para conectarse y guardar en la base de datos.</li>
+<li>La lógica de negocio (<code>if (username == null...</code>) está mezclada con la lógica de persistencia (<code>DriverManager.getConnection...</code>).</li>
+<li><strong>Problema:</strong> Si decidimos cambiar de una base de datos relacional (JDBC) a una base de datos NoSQL (ej. MongoDB) o a un simple archivo JSON, tendríamos que <strong>modificar directamente la clase <code>UserService</code></strong>. Esto viola el Principio de Abierto/Cerrado y hace que la clase sea difícil de mantener y probar. La unidad de negocio <code>UserService</code> está fuertemente acoplada a la tecnología de base de datos.</li>
+<li><strong>Pruebas:</strong> ¿Cómo probarías <code>createUser</code> sin tener una conexión real a la base de datos? Es difícil sin mockear la conexión o tener un entorno de base de datos dedicado.</li>
+</ul>
+<p>Este ejemplo ilustra el tipo de acoplamiento que la Arquitectura Hexagonal busca eliminar, poniendo una capa de abstracción (los Puertos) entre el dominio y los detalles de la infraestructura (los Adaptadores).</p>
+<hr>
+<p>Con esto, hemos cubierto la introducción a la Arquitectura Hexagonal, sus conceptos clave, los principios de diseño que la sustentan y un ejemplo práctico del problema que resuelve. En el Módulo 2, nos centraremos en cómo diseñar el núcleo del hexágono: el dominio.</p>
+<p>¿Tienes alguna pregunta o te gustaría que clarifique algún punto del Módulo 1 antes de pasar al siguiente?</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/" data-title=""><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/" data-title=""><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/" data-title=""><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/" data-title=""><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/arquitectura-hexagonal/modulo-02/" class="prev" rel="prev" title=""><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i></a>
+            <a href="/posts/oauth2/" class="next" rel="next" title="🔐 OAuth 2.0: Resumen Profesional (RFC 6749)">🔐 OAuth 2.0: Resumen Profesional (RFC 6749)<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

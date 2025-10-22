@@ -66,6 +66,11 @@ categories: ["IA para desarrolladores"]
 // Mock the customer repository and return a fake customer
 // Verify that the audit event is sent when data is updated
 ```
+```java
+// inline
+// (select the code) /test
+
+```
 
 ---
 
@@ -76,6 +81,8 @@ categories: ["IA para desarrolladores"]
 // Add null checks and input validation
 // Suggest improvements for readability
 // Handle edge cases for this validation
+//(inline chat, previous code selected)improve the code according to development best practices
+//(inline chat) add javadocs
 ```
 
 ---
