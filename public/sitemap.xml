@@ -7,7 +7,6 @@
             <loc>http://localhost:1313/cv/</loc><lastmod>2025-07-28T23:28:53-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/extensiones/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/musclify/</loc><lastmod>2025-07-26T06:19:37-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/</loc></url><url>
             <loc>http://localhost:1313/javacore/exceptions/02-checked-vs-unchecked/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/spring-boot-dev/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/github-copilot/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
@@ -15,17 +14,9 @@
             <loc>http://localhost:1313/vscode/github-copilot-4s/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/github-copilot-shots/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/01-excepciones-conceptos/</loc></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/02-checked-vs-unchecked/</loc></url><url>
             <loc>http://localhost:1313/javacore/exceptions/03-try-catch-y-logging/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/03-try-catch-y-logging/</loc></url><url>
             <loc>http://localhost:1313/javacore/exceptions/04-antipatrones/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
             <loc>http://localhost:1313/javacore/exceptions/05-finally-resources-errors/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/04-antipatrones/</loc></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/05-wrapping-exceptions/</loc></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/06-finally-y-try-with-resources/</loc></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/07-errors/</loc></url><url>
-            <loc>http://localhost:1313/javacore/excepciones-java/08-debugging-vs-logging/</loc></url><url>
             <loc>http://localhost:1313/tags/aws/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/backend/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/backend/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
