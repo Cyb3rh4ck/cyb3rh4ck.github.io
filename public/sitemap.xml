@@ -2,36 +2,36 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/javacore/exceptions/01-fundamentos-copy/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/exceptions/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/exceptions/01-fundamentos-copy/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
             <loc>http://localhost:1313/cv/</loc><lastmod>2025-07-28T23:28:53-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/extensiones/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/musclify/</loc><lastmod>2025-07-26T06:19:37-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/exceptions/02-checked-vs-unchecked/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/exceptions/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/exceptions/02-checked-vs-unchecked/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/spring-boot-dev/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/github-copilot/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/github-copilot-hashtag/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/github-copilot-4s/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/github-copilot-shots/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/exceptions/03-try-catch-y-logging/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/exceptions/04-antipatrones/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/exceptions/05-finally-resources-errors/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/aws/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/backend/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/backend/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/career/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/career/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/devops/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/gamification/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/java/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/java/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/javacore/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/leetcode/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/exceptions/03-try-catch-y-logging/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/exceptions/04-antipatrones/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/exceptions/05-finally-resources-errors/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/aws/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/categories/backend/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/backend/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/categories/career/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/career/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/devops/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/gamification/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/categories/java/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/java/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/leetcode/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
             <loc>http://localhost:1313/javacore/backend-engineer-rpg/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/spring-boot/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2026-01-23T05:56:25-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/spring-boot/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2026-01-23T07:59:38-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/copilot/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/intellij/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
