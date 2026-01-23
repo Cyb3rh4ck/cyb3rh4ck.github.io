@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>01. Fundamentos: Cuando el código se rompe - Cyb3rh4ck´s dev life</title><meta name="Description" content="Un sistema tipo videojuego para subir de nivel como Backend Senior: XP, skill trees, misiones y boss fights, enfocado a entrevistas Big Tech."><meta property="og:url" content="http://localhost:1313/javacore/exceptions/01-fundamentos/">
+  <meta property="og:site_name" content="Cyb3rh4ck´s dev life">
+  <meta property="og:title" content="01. Fundamentos: Cuando el código se rompe">
+  <meta property="og:description" content="Un sistema tipo videojuego para subir de nivel como Backend Senior: XP, skill trees, misiones y boss fights, enfocado a entrevistas Big Tech.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="javacore">
+    <meta property="article:published_time" content="2026-01-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-23T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Spring-Boot">
+    <meta property="article:tag" content="Aws">
+    <meta property="article:tag" content="DevOps">
+    <meta property="article:tag" content="Leetcode">
+    <meta property="article:tag" content="Career">
+    <meta property="og:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/content/img/avatarCyb3r.png">
+  <meta name="twitter:title" content="01. Fundamentos: Cuando el código se rompe">
+  <meta name="twitter:description" content="Un sistema tipo videojuego para subir de nivel como Backend Senior: XP, skill trees, misiones y boss fights, enfocado a entrevistas Big Tech.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/javacore/exceptions/01-fundamentos/" /><link rel="next" href="http://localhost:1313/javacore/exceptions/01-fundamentos-copy/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "01. Fundamentos: Cuando el código se rompe",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/javacore\/exceptions\/01-fundamentos\/"
+        },"genre": "javacore","keywords": "java, spring-boot, aws, devops, leetcode, career, gamification, backend","wordcount":  364 ,
+        "url": "http:\/\/localhost:1313\/javacore\/exceptions\/01-fundamentos\/","datePublished": "2026-01-23T00:00:00+00:00","dateModified": "2026-01-23T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Cyb3rh4ck"
+            },"description": "Un sistema tipo videojuego para subir de nivel como Backend Senior: XP, skill trees, misiones y boss fights, enfocado a entrevistas Big Tech."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/javacore/" title="**Java Core**"><i class='fa-solid fa-code'></i> Java Core </a><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i> VS Code </a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Cyb3rh4ck´s dev life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" />Cyb3rh4ck D3v L1f3</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/javacore/" title="**Java Core**"><i class='fa-solid fa-code'></i>Java Core</a><a class="menu-item" href="/vscode/" title="🚀 Bienvenido al módulo de **VS Code**"><i class='fa-solid fa-code'></i>VS Code</a><a class="menu-item" href="/posts/" title="all posts"><i class='fas fa-folder-open'></i>Posts</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">01. Fundamentos: Cuando el código se rompe</h1><div class="content" id="content"><h2 id="-la-analogía-de-la-bañera">🛀 La analogía de la bañera</h2>
+<p>Imagínate que es martes en la noche. Estás en la bañera, cantando a todo pulmón, relajado. De repente, se abre la puerta y entra tu pareja con una visita.</p>
+<p>¡Pánico! Esto no estaba en el script. Es una excepción en tu programa personal. Si no manejas bien esa situación (handle), el resultado va a ser incómodo.</p>
+<p>En el código pasa lo mismo: si ignoras las excepciones, tu programa crashea o queda en un estado inestable (como tú, escondido bajo la espuma). Y ojo: manejarlas sin loguearlas es como gritar bajo el agua; nadie se entera de qué pasó realmente.</p>
+<h2 id="qué-es-una-excepción">¿Qué es una excepción?</h2>
+<p>Mientras que el <code>if</code> y el <code>else</code> nos dan control, las excepciones rompen el flujo normal de forma agresiva. Por eso los juniors les tienen miedo.</p>
+<p>Para entenderlas, miremos el flujo normal:</p>
+<ul>
+<li>Empieza.</li>
+<li>Ejecuta pasos.</li>
+<li>Termina feliz.</li>
+</ul>
+<div class="mermaid-diagram" style="text-align: center;">
+
+graph LR
+    A[Inicio] --> B[Paso 1]
+    B --> C[Paso 2]
+    C --> D[Fin Exitoso]
+    style A fill:#9f9,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+
+</div>
+<script>
+(function() {
+    function initMermaid() {
+        if (window.mermaid) {
+            
+            mermaid.initialize({ startOnLoad: false });
+            mermaid.run({
+                querySelector: '.mermaid-diagram'
+            });
+        } else {
+            setTimeout(initMermaid, 50);
+        }
+    }
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        initMermaid();
+    } else {
+        document.addEventListener("DOMContentLoaded", initMermaid);
+    }
+})();
+</script>
+
+<p>Una excepción es una &ldquo;condición excepcional&rdquo; (como diría Joshua Bloch). Ojo: un password incorrecto NO es una excepción, es un flujo alternativo esperado. Una excepción es algo que no debería pasar, como que se caiga la base de datos o se acabe la memoria RAM.</p>
+<h2 id="precondiciones-y-postcondiciones">Precondiciones y postcondiciones</h2>
+<p>Para saber qué es excepcional, hay que saber qué es &ldquo;normal&rdquo;.</p>
+<ul>
+<li><strong>Precondición:</strong> Lo que debe ser verdad antes de correr el método.
+<ul>
+<li>Ejemplo: Si calculas el rumbo de un avión, la entrada debe ser 0-359 grados.</li>
+</ul>
+</li>
+<li><strong>Postcondición:</strong> Lo que debe ser verdad después de correr el método.
+<ul>
+<li>Ejemplo: El resultado también debe ser 0-359 grados.</li>
+</ul>
+</li>
+</ul>
+<p>Si no puedes cumplir la postcondición (ej. otro usuario compró el boleto de avión milisegundos antes que tú), lanzar una excepción es la forma honesta de decir: &ldquo;No pude hacer mi trabajo&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calcularRumbo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">rumboActual</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">correccion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Validación de precondición</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rumboActual</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">rumboActual</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">359</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&#34;Rumbo actual invalido&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nuevoRumbo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">rumboActual</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">correccion</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">360</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Validación de postcondición</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nuevoRumbo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">nuevoRumbo</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">360</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&#34;Calculo fuera de rango&#34;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Esto no deberia pasar nunca</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">nuevoRumbo</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Cyb3rh4ck</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
