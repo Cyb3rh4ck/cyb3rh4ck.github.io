@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaCores on Cyb3rh4ck´s dev life</title>
+    <link>http://localhost:1313/javacore/</link>
+    <description>Recent content in JavaCores on Cyb3rh4ck´s dev life</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/javacore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logging en Backend Java (Guía Senior)</title>
+      <link>http://localhost:1313/javacore/backend-engineer-rpg/</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/javacore/backend-engineer-rpg/</guid>
+      <description>&lt;h2 id=&#34;logging-en-backend-java-guía-senior&#34;&gt;Logging en Backend Java (Guía Senior)&lt;/h2&gt;&#xA;&lt;p&gt;El logging &lt;strong&gt;no es imprimir texto&lt;/strong&gt;.&lt;br&gt;&#xA;Es una herramienta crítica de &lt;strong&gt;observabilidad, diagnóstico y operación en producción&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;niveles-de-logging-ordenados-por-severidad&#34;&gt;Niveles de Logging (ordenados por severidad)&lt;/h3&gt;&#xA;&lt;p&gt;De &lt;strong&gt;menor&lt;/strong&gt; a &lt;strong&gt;mayor&lt;/strong&gt; severidad:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TRACE&lt;/li&gt;&#xA;&lt;li&gt;DEBUG&lt;/li&gt;&#xA;&lt;li&gt;INFO&lt;/li&gt;&#xA;&lt;li&gt;WARN&lt;/li&gt;&#xA;&lt;li&gt;ERROR&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;En Java moderno (&lt;code&gt;SLF4J&lt;/code&gt; + &lt;code&gt;Logback&lt;/code&gt; / &lt;code&gt;Log4j2&lt;/code&gt;), el nivel &lt;code&gt;FATAL&lt;/code&gt; prácticamente no se usa y suele tratarse como &lt;code&gt;ERROR&lt;/code&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;trace--detalle-microscópico&#34;&gt;TRACE — Detalle microscópico&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Flujo interno extremadamente detallado&lt;/li&gt;&#xA;&lt;li&gt;Paso a paso de algoritmos&lt;/li&gt;&#xA;&lt;li&gt;Diagnóstico profundo&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;trace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Entering method calculatePrice with input {}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Uso real:&lt;/strong&gt;&#xA;Solo debugging profundo. Nunca activo en producción normal.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

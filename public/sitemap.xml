@@ -6,18 +6,31 @@
             <loc>http://localhost:1313/vscode/extensiones/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/musclify/</loc><lastmod>2025-07-26T06:19:37-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/spring-boot-dev/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/vscode/github-copilot/</loc><lastmod>2025-10-22T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/vscode/github-copilot-hashtag/</loc><lastmod>2025-10-22T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/vscode/github-copilot/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/vscode/github-copilot-hashtag/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/vscode/github-copilot-4s/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/vscode/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-10-22T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/vscode/github-copilot-shots/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/aws/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/categories/backend/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/backend/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/backend-engineer-rpg/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/categories/career/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/career/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/devops/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/gamification/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/categories/java/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/java/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/javacore/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/leetcode/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/spring-boot/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2026-01-23T00:00:00&#43;00:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/copilot/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/copilot/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/intellij/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/java/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/productividad/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/spring-boot/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/productividad/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/lambdas/lambdas/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/lambdas/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/arquitectura-hexagonal/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
@@ -49,7 +62,6 @@
             <loc>http://localhost:1313/tags/cloud/</loc><lastmod>2025-08-08T07:16:41-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/despliegue/</loc><lastmod>2025-08-08T07:16:41-06:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/devops/</loc><lastmod>2025-08-08T07:16:41-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/devops/</loc><lastmod>2025-08-08T07:16:41-06:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/estrategia-empresarial/</loc><lastmod>2025-09-06T19:24:48-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/futuro/</loc><lastmod>2025-08-08T07:16:41-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/grupos/</loc><lastmod>2025-08-08T07:16:41-06:00</lastmod></url><url>
@@ -100,7 +112,7 @@
             <loc>http://localhost:1313/categories/workflows/</loc><lastmod>2025-08-06T16:41:04-06:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/developers-tips/</loc><lastmod>2025-08-02T22:02:57-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/random/hackerrank_java_strategy/</loc><lastmod>2025-08-02T22:02:57-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/vs-code/</loc><lastmod>2025-08-02T22:02:57-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/vs-code/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/ia-para-desarrolladores/</loc><lastmod>2025-08-02T22:02:57-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</loc><lastmod>2025-08-02T22:02:57-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</loc><lastmod>2025-07-28T23:28:53-06:00</lastmod></url><url>
@@ -115,7 +127,7 @@
             <loc>http://localhost:1313/categories/frontend/</loc><lastmod>2025-07-28T08:34:44-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/frontend/</loc><lastmod>2025-07-28T08:34:44-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/atajos/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</loc><lastmod>2025-07-28T08:59:29-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/vscode/vscode-shortcuts/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</loc><lastmod>2025-07-28T08:34:44-06:00</lastmod></url><url>
@@ -131,8 +143,8 @@
             <loc>http://localhost:1313/tags/diagramas/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/performance/</loc><lastmod>2025-07-25T09:04:57-06:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/visual/</loc><lastmod>2025-07-25T20:34:10-06:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/</loc></url><url>
-            <loc>http://localhost:1313/posts/arquitectura-hexagonal/modulo-02/</loc></url><url>
-            <loc>http://localhost:1313/posts/arquitectura-hexagonal/temario/</loc></url><url>
+            <loc>http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/arquitectura-hexagonal/modulo-02/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/arquitectura-hexagonal/temario/</loc><lastmod>2025-10-22T08:26:16-06:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/ia-para-desarrolladores/</loc><lastmod>2025-07-27T09:29:03-06:00</lastmod></url></urlset>

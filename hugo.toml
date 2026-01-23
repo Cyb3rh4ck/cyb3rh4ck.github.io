@@ -23,6 +23,13 @@ enableGitInfo = true
  #  pre = "<i class='fa-solid fa-code'></i>"
 
   [[menu.main]]
+    name = "Java Core"
+    url = "/javaCore/"
+    weight = 1
+    title = "**Java Core**"
+    pre = "<i class='fa-solid fa-code'></i>"
+
+  [[menu.main]]
     name = "VS Code"
     url = "/vscode/"
     weight = 2
