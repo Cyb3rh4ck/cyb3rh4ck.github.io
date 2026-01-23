@@ -1,0 +1,38 @@
+{{- $type := .Get "type" | default "note" -}}
+{{- $title := .Get "title" -}}
+{{- $open := .Get "open" | default true -}}
+
+{{- $icon := "" -}}
+{{- if eq $type "note" -}}{{- $icon = "info-circle" -}}{{- end -}}
+{{- if eq $type "abstract" -}}{{- $icon = "list-ul" -}}{{- end -}}
+{{- if eq $type "info" -}}{{- $icon = "info-circle" -}}{{- end -}}
+{{- if eq $type "tip" -}}{{- $icon = "lightbulb" -}}{{- end -}}
+{{- if eq $type "success" -}}{{- $icon = "check-circle" -}}{{- end -}}
+{{- if eq $type "question" -}}{{- $icon = "question-circle" -}}{{- end -}}
+{{- if eq $type "warning" -}}{{- $icon = "exclamation-triangle" -}}{{- end -}}
+{{- if eq $type "failure" -}}{{- $icon = "times-circle" -}}{{- end -}}
+{{- if eq $type "danger" -}}{{- $icon = "bolt" -}}{{- end -}}
+{{- if eq $type "bug" -}}{{- $icon = "bug" -}}{{- end -}}
+{{- if eq $type "example" -}}{{- $icon = "list-ol" -}}{{- end -}}
+{{- if eq $type "quote" -}}{{- $icon = "quote-right" -}}{{- end -}}
+
+{{- /* Map LoveIt types to Hextra callout types */ -}}
+{{- $hextraType := "info" -}}
+{{- if eq $type "tip" -}}{{- $hextraType = "info" -}}{{- end -}}
+{{- if eq $type "success" -}}{{- $hextraType = "info" -}}{{- end -}}
+{{- if eq $type "warning" -}}{{- $hextraType = "warning" -}}{{- end -}}
+{{- if eq $type "failure" -}}{{- $hextraType = "error" -}}{{- end -}}
+{{- if eq $type "danger" -}}{{- $hextraType = "error" -}}{{- end -}}
+{{- if eq $type "bug" -}}{{- $hextraType = "error" -}}{{- end -}}
+
+{{- /* Use Hextra's native callout */ -}}
+<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-{{ $hextraType }}-500/50 hx-bg-{{ $hextraType }}-50/50 hx-my-6">
+  {{- if $title -}}
+  <div class="hx-flex hx-items-center hx-gap-2 hx-bg-{{ $hextraType }}-100/50 hx-p-4 hx-font-bold hx-text-{{ $hextraType }}-900 dark:hx-bg-{{ $hextraType }}-900/30 dark:hx-text-{{ $hextraType }}-200">
+    <span>{{ $title | markdownify }}</span>
+  </div>
+  {{- end -}}
+  <div class="hx-p-4 hx-content">
+    {{ .Inner }}
+  </div>
+</div>

@@ -1,19 +1,248 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Atajos on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/tags/atajos/</link>
-    <description>Recent content in Atajos on Cyb3rh4ck´s dev life</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 27 Jul 2025 09:29:03 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/atajos/index.xml" rel="self" type="application/rss+xml" />
+    <title>Cyb3rh4ck D3v L1f3 – Atajos</title>
+    <link>http://localhost:50181/tags/atajos/</link>
+    <description>Recent content in Atajos on Cyb3rh4ck D3v L1f3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 27 Jul 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:50181/tags/atajos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
     <item>
       <title>Guía de atajos de teclado en VS Code para desarrolladores Java</title>
-      <link>http://localhost:1313/posts/vscode/vscode-shortcuts/</link>
+      <link>http://localhost:50181/posts/vscode/vscode-shortcuts/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/vscode/vscode-shortcuts/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-comentarios&#34;&gt;🧩 Comentarios&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;          &lt;th&gt;Resultado&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentar o descomentar una línea&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Añade o quita &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentar varias líneas seleccionadas&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Comenta cada línea con &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentario multilínea&lt;/td&gt;&#xA;          &lt;td&gt;Manual&lt;/td&gt;&#xA;          &lt;td&gt;Manual&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/* ... */&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-navegación-y-edición-rápida&#34;&gt;🚀 Navegación y edición rápida&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + P&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + P&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a definición&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a símbolo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + O&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + O&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a línea específica&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + G&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + G&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a la declaración&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Click&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Click&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-refactorización-y-edición&#34;&gt;🛠️ Refactorización y edición&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Renombrar símbolo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mostrar acciones rápidas&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + .&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + .&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Copiar línea abajo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Shift + Alt + ↓&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + Shift + ↓&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Copiar línea arriba&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Shift + Alt + ↑&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + Shift + ↑&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mover línea abajo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ↓&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ↓&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mover línea arriba&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ↑&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ↑&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-terminal-y-ejecución&#34;&gt;🧪 Terminal y ejecución&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir terminal integrada&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + ñ&lt;/code&gt; o &lt;code&gt;Ctrl + `&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + `&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ejecutar archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + F5&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + F5&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ejecutar con depuración&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-productividad-y-vistas&#34;&gt;🌈 Productividad y vistas&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir paleta de comandos&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + P&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Alternar panel lateral&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + B&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + B&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Buscar archivos&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + F&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + F&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Buscar en archivo actual&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + F&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Reemplazar en archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + H&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + H&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-copilot-específico&#34;&gt;🤖 Copilot específico&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Aceptar sugerencia&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Siguiente sugerencia&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ]&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Sugerencia anterior&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + [&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + [&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir ventana Copilot&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Enter&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Enter&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;</description>
+      
+      <guid>http://localhost:50181/posts/vscode/vscode-shortcuts/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+  &lt;p&gt;⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧩 Comentarios&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-comentarios&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-comentarios&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+          &lt;th&gt;Resultado&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Comentar o descomentar una línea&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Añade o quita &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Comentar varias líneas seleccionadas&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Comenta cada línea con &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Comentario multilínea&lt;/td&gt;
+          &lt;td&gt;Manual&lt;/td&gt;
+          &lt;td&gt;Manual&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/* ... */&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚀 Navegación y edición rápida&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-navegación-y-edición-rápida&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-navegaci%c3%b3n-y-edici%c3%b3n-r%c3%a1pida&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a archivo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + P&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + P&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a definición&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a símbolo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Shift + O&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Shift + O&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a línea específica&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + G&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + G&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a la declaración&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Click&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Click&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠️ Refactorización y edición&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-refactorización-y-edición&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-refactorizaci%c3%b3n-y-edici%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Renombrar símbolo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mostrar acciones rápidas&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + .&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + .&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Copiar línea abajo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Shift + Alt + ↓&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + Shift + ↓&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Copiar línea arriba&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Shift + Alt + ↑&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + Shift + ↑&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mover línea abajo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + ↓&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + ↓&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mover línea arriba&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + ↑&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + ↑&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧪 Terminal y ejecución&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-terminal-y-ejecución&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-terminal-y-ejecuci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Abrir terminal integrada&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + ñ&lt;/code&gt; o &lt;code&gt;Ctrl + `&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + `&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ejecutar archivo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + F5&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + F5&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ejecutar con depuración&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🌈 Productividad y vistas&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-productividad-y-vistas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-productividad-y-vistas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Abrir paleta de comandos&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Shift + P&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Alternar panel lateral&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + B&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + B&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Buscar archivos&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Shift + F&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Shift + F&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Buscar en archivo actual&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + F&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Reemplazar en archivo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + H&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + H&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🤖 Copilot específico&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-copilot-específico&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-copilot-espec%c3%adfico&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Aceptar sugerencia&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Siguiente sugerencia&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + ]&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + ]&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Sugerencia anterior&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + [&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + [&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Abrir ventana Copilot&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Enter&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Enter&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+
+      </description>
     </item>
+    
   </channel>
 </rss>

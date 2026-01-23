@@ -1,19 +1,235 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Branching on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/tags/branching/</link>
-    <description>Recent content in Branching on Cyb3rh4ck´s dev life</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 06 Aug 2025 16:41:04 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/branching/index.xml" rel="self" type="application/rss+xml" />
+    <title>Cyb3rh4ck D3v L1f3 – Branching</title>
+    <link>http://localhost:50181/tags/branching/</link>
+    <description>Recent content in Branching on Cyb3rh4ck D3v L1f3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:50181/tags/branching/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
     <item>
       <title>🌿 Convenciones de Ramas en Proyectos Limpios</title>
-      <link>http://localhost:1313/posts/github/branching-conventions/</link>
+      <link>http://localhost:50181/posts/github/branching-conventions/</link>
       <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/github/branching-conventions/</guid>
-      <description>&lt;h1 id=&#34;-convenciones-de-ramas-en-proyectos-limpios&#34;&gt;🌿 Convenciones de Ramas en Proyectos Limpios&lt;/h1&gt;&#xA;&lt;p&gt;Cuando inicias un &lt;strong&gt;proyecto nuevo&lt;/strong&gt; (clean project), tener un &lt;strong&gt;flujo de ramas claro&lt;/strong&gt; facilita la colaboración y mantiene la historia del repositorio &lt;strong&gt;organizada y profesional&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;A continuación te muestro las &lt;strong&gt;convenciones más utilizadas&lt;/strong&gt; en la industria para nombrar ramas:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-tipos-de-ramas-y-su-uso&#34;&gt;&lt;strong&gt;📌 1. Tipos de ramas y su uso&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Tipo de rama&lt;/th&gt;&#xA;          &lt;th&gt;Uso principal&lt;/th&gt;&#xA;          &lt;th&gt;Ejemplo&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;feature/&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Nueva funcionalidad&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;feature/register-user&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;bugfix/&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Corrección de errores menores&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;bugfix/fix-login-nullpointer&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;hotfix/&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Corrección &lt;strong&gt;urgente&lt;/strong&gt; en producción&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;hotfix/jwt-expired-issue&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;chore/&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Configuración, refactor, CI/CD, sin cambiar lógica&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;chore/add-ci-cd&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;release/&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Preparación de una nueva versión&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;release/v1.0.0&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-2-flujo-visual-de-ramas-branch-flow&#34;&gt;&lt;strong&gt;📊 2. Flujo visual de ramas (Branch Flow)&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://raw.githubusercontent.com/github/explore/main/topics/git/git.png&#34;&#xD;&#xA;        data-srcset=&#34;https://raw.githubusercontent.com/github/explore/main/topics/git/git.png, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 1.5x, https://raw.githubusercontent.com/github/explore/main/topics/git/git.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://raw.githubusercontent.com/github/explore/main/topics/git/git.png&#34;&#xD;&#xA;        title=&#34;Branch Flow&#34; /&gt;&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/github/branching-conventions/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;🌿 Convenciones de Ramas en Proyectos Limpios&lt;/h1&gt;&lt;p&gt;Cuando inicias un &lt;strong&gt;proyecto nuevo&lt;/strong&gt; (clean project), tener un &lt;strong&gt;flujo de ramas claro&lt;/strong&gt; facilita la colaboración y mantiene la historia del repositorio &lt;strong&gt;organizada y profesional&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación te muestro las &lt;strong&gt;convenciones más utilizadas&lt;/strong&gt; en la industria para nombrar ramas:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;📌 1. Tipos de ramas y su uso&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-1-tipos-de-ramas-y-su-uso&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-tipos-de-ramas-y-su-uso&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Tipo de rama&lt;/th&gt;
+          &lt;th&gt;Uso principal&lt;/th&gt;
+          &lt;th&gt;Ejemplo&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;feature/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Nueva funcionalidad&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;feature/register-user&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;bugfix/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Corrección de errores menores&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;bugfix/fix-login-nullpointer&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;hotfix/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Corrección &lt;strong&gt;urgente&lt;/strong&gt; en producción&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;hotfix/jwt-expired-issue&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;chore/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Configuración, refactor, CI/CD, sin cambiar lógica&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;chore/add-ci-cd&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;release/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Preparación de una nueva versión&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;release/v1.0.0&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;📊 2. Flujo visual de ramas (Branch Flow)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-2-flujo-visual-de-ramas-branch-flow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-flujo-visual-de-ramas-branch-flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/github/explore/main/topics/git/git.png&#34; alt=&#34;Branch Flow&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         main
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          ├── chore/project-setup
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          ├── feature/register-user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          │        \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          │         └── bugfix/fix-email-validation
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          └── release/v1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                   \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    └── hotfix/jwt-expired-issue&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Explicación del diagrama:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;main&lt;/code&gt;&lt;/strong&gt; → rama principal siempre estable&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;chore/*&lt;/code&gt;&lt;/strong&gt; → tareas iniciales de setup o refactor&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;feature/*&lt;/code&gt;&lt;/strong&gt; → desarrollo de nuevas funcionalidades&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;bugfix/*&lt;/code&gt;&lt;/strong&gt; → pequeñas correcciones sobre features&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;release/*&lt;/code&gt;&lt;/strong&gt; → preparación de versiones estables&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;hotfix/*&lt;/code&gt;&lt;/strong&gt; → correcciones críticas directamente a producción&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;💡 Recomendaciones profesionales&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-recomendaciones-profesionales&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-recomendaciones-profesionales&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Usa nombres descriptivos:&lt;/strong&gt;&lt;br&gt;
+Evita &lt;code&gt;feature1&lt;/code&gt; o &lt;code&gt;fix2&lt;/code&gt;. Mejor:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;feature/user-authentication
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bugfix/handle-null-tokens&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Mantén ramas cortas y claras:&lt;/strong&gt;&lt;br&gt;
+Cada rama debe atacar &lt;strong&gt;un único objetivo&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ &lt;code&gt;feature/upload-profile-picture&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;❌ &lt;code&gt;feature/upload-picture-and-fix-login&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Usa commits claros y consistentes:&lt;/strong&gt;&lt;br&gt;
+Ejemplo de primer commit en un proyecto limpio:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chore: initial project setup with hexagonal structure&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;🚀 Ejemplo de inicio de proyecto limpio&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ejemplo-de-inicio-de-proyecto-limpio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ejemplo-de-inicio-de-proyecto-limpio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/github/explore/main/topics/spring-boot/spring-boot.png&#34; alt=&#34;Hexagonal Structure&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;seguro360/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; └─ src/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     └─ main/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         ├─ java/io/cyb3rh4ck/github/seguros360/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         │         ├─ application/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         │         ├─ domain/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         │         └─ infrastructure/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         └─ resources/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             ├─ application.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             └─ logback-spring.xml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Primer branch recomendado:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout -b chore/project-setup
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin chore/project-setup&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Primer commit recomendado:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chore: initial project setup with hexagonal structure&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;🎯 Beneficios de seguir esta convención&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-beneficios-de-seguir-esta-convención&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-beneficios-de-seguir-esta-convenci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Historia clara:&lt;/strong&gt; cualquiera entiende qué hace cada rama&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Facilita PRs y code reviews&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Previene conflictos&lt;/strong&gt; al tener ramas separadas por tipo&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alineado con Git Flow y GitHub Flow&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Tip extra:&lt;/strong&gt;&lt;br&gt;
+Si usas &lt;strong&gt;GitHub Projects&lt;/strong&gt; o &lt;strong&gt;Jira&lt;/strong&gt;, nombra las ramas con el ID de la tarea:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;feature/SEGUROS360-12-register-user&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Así podrás trazar commits directamente con issues o historias de usuario.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+
+      </description>
     </item>
+    
   </channel>
 </rss>

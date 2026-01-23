@@ -1,143 +1,86 @@
 baseURL = "https://cyb3rh4ck.github.io/"
-theme = "LoveIt"
-title = "Cyb3rh4ck´s dev life"
-languageCode = "en"
-languageName = "English"
-enableEmoji = true
+theme = "hextra"
+title = "Cyb3rh4ck D3v L1f3"
+languageCode = "es"
+defaultContentLanguage = "es"
+
+# Hextra requires these for proper asset handling
 enableRobotsTXT = true
 enableGitInfo = true
+enableEmoji = true
 
-# Pagination config
-[pagination]
-  disableAliases = false
-  pagerSize = 10
-  path = "page"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
 
-# Menu config
 [menu]
- #[[menu.main]]
- #  name = "GitHub Copilot"
- #  url = "/ghCopilot/"
- #  weight = 1
- #  title = "🚀 Bienvenido al módulo de **GitHub Copilot**"
- #  pre = "<i class='fa-solid fa-code'></i>"
-
   [[menu.main]]
     name = "Java Core"
     url = "/javaCore/"
     weight = 1
-    title = "**Java Core**"
-    pre = "<i class='fa-solid fa-code'></i>"
+    pre = "☕ "
 
   [[menu.main]]
     name = "VS Code"
     url = "/vscode/"
     weight = 2
-    title = "🚀 Bienvenido al módulo de **VS Code**"
-    pre = "<i class='fa-solid fa-code'></i>"
-
- #[[menu.main]]
- #  name = "CV"
- #  url = "/cv/"
- #  weight = 3
- #  pre = "<i class='fas fa-file-alt'></i>"
+    pre = "💻 "
 
   [[menu.main]]
-    weight = 4
-    identifier = "posts"
-    name = "Posts"
+    name = "Blog"
     url = "/posts/"
-    title = "all posts"
-    pre = "<i class='fas fa-folder-open'></i>"
-
-  #[[menu.main]]
-  #  weight = 5
-  #  identifier = "keycloak"
-  #  name = "Keycloak"
-  #  url = "/keycloak/"
-  #  title = "keycloak"
-  #  pre = "<i class='fas fa-folder-open'></i>"
-
-  #[[menu.main]]
-  #  weight = 6
-  #  identifier = "Auth"
-  #  name = "Auth"
-  #  url = "/arquitectura-auth/"
-  #  title = "Auth"
-  #  pre = "<i class='fas fa-folder-open'></i>"
+    weight = 3
+    pre = "📝 "
 
 [params]
-  defaultTheme = "light"
-  gitRepo = "https://github.com/Cyb3rh4ck/cyb3rh4ck.github.io"
-  fingerprint = ""
-  dateFormat = "2006-01-02"
-  title = "Cyb3rh4ck D3v L1f3"
   description = "Bitácora de IA, Java y desarrollo ágil"
-  images = ["/content/img/avatarCyb3r.png"]
-  defaultContentLanguage = "es"
-  showBreadCrumbs = true
-  enableAnchorLink = true
-  enableMermaid = true
+  
+  # Search
+  [params.search]
+    enable = true
+    type = "flexsearch"
 
-  [params.author]
-    name = "Cyb3rh4ck"
-    email = ""
-    link = ""
-    avatar = "/images/avatar_02.png"
+  # Navbar
+  [params.navbar]
+    displayTitle = true
+    displayLogo = true
+    [params.navbar.logo]
+      path = "/images/logo.png"
+      link = "/"
 
-  [params.header]
-    desktopMode = "fixed"
-    mobileMode = "auto"
-    [params.header.title]
-      logo = "/images/logo.png"
-      name = "Cyb3rh4ck D3v L1f3"
-      pre = ""
-      post = ""
-      typeit = false
-
-  [params.social]
-    GitHub = "Cyb3rh4ck"
-    Linkedin = "cyb3rh4ck"
-    X = "@Cyb3rh4ck"
-    Facebook = "codigojava"
-
-  [params.home]
-    rss = 10
-    [params.home.profile]
-      enable = true
-      gravatarEmail = ""
-      avatarURL = "/images/avatar_02.png"
-      title = "Código, Café y Caos Controlado"
-      subtitle = "Pensamientos de un desarrollador backend entre builds rotos y deploys exitosos"
-      typeit = true
-      social = true
-      disclaimer = ""
-    [params.home.posts]
-      enable = true
-      paginate = 6
-
+  # Footer
   [params.footer]
     enable = true
-    custom = ''
-    hugo = true
-    copyright = true
-    author = true
-    since = 2025
-    icp = ""
-    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    displayCopyright = true
+    copyright = "Cyb3rh4ck D3v L1f3 © 2025"
 
-  [params.page]
-    mermaid = true
+  # UI/UX
+  [params.editURL]
+    enable = true
+    base = "https://github.com/Cyb3rh4ck/cyb3rh4ck.github.io/edit/main/content"
 
-# Markup related configuration in Hugo
-[markup]
-  [markup.highlight]
-    noClasses = false
+  # Social Links (Navbar icon links)
+  [[params.navbar.extra]]
+    name = "GitHub"
+    icon = "github"
+    url = "https://github.com/Cyb3rh4ck"
 
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  [[params.navbar.extra]]
+    name = "Twitter"
+    icon = "x-twitter"
+    url = "https://twitter.com/Cyb3rh4ck"
+
+[params.blog]
+    listDesc = true
+
+# Hextra built-in mermaid support
+[params.mermaid]
+    enable = true
 
 [taxonomies]
-  category = "categories"
-  tag = "tags"
+  category = 'categories'
+  tag = 'tags'
+  series = 'series'

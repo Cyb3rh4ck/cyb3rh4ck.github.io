@@ -1,23 +1,4 @@
-<div class="mermaid-diagram" style="text-align: center;">
-{{ .Inner | htmlEscape | safeHTML }}
-</div>
-<script>
-(function() {
-    function initMermaid() {
-        if (window.mermaid) {
-            // Mermaid v10+ configuration and run
-            mermaid.initialize({ startOnLoad: false });
-            mermaid.run({
-                querySelector: '.mermaid-diagram'
-            });
-        } else {
-            setTimeout(initMermaid, 50);
-        }
-    }
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        initMermaid();
-    } else {
-        document.addEventListener("DOMContentLoaded", initMermaid);
-    }
-})();
-</script>
+<pre class="mermaid hx:mt-6">
+  {{ .Inner | htmlEscape | safeHTML }}
+</pre>
+{{- .Page.Store.Set "hasMermaid" true -}}

@@ -1,61 +1,1092 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Productividad on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/tags/productividad/</link>
-    <description>Recent content in Productividad on Cyb3rh4ck´s dev life</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 22 Oct 2025 08:26:16 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/productividad/index.xml" rel="self" type="application/rss+xml" />
+    <title>Cyb3rh4ck D3v L1f3 – Productividad</title>
+    <link>http://localhost:50181/tags/productividad/</link>
+    <description>Recent content in Productividad on Cyb3rh4ck D3v L1f3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 06 Sep 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:50181/tags/productividad/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
     <item>
       <title>Automatiza tu código con Copilot en IntelliJ</title>
-      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</link>
+      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-intellij/</link>
       <pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</guid>
-      <description>&lt;p&gt;Aquí tienes cómo exprimir &lt;strong&gt;IntelliJ IDEA Community&lt;/strong&gt; con &lt;strong&gt;GitHub Copilot&lt;/strong&gt; para Java/Spring/Kafka como un pro 👇&lt;/p&gt;&#xA;&lt;h1 id=&#34;1-deja-fino-el-setup&#34;&gt;1) Deja fino el setup&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Plugins&lt;/strong&gt;: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Keymap&lt;/strong&gt;: ve a &lt;em&gt;Settings → Keymap → GitHub Copilot&lt;/em&gt; y asigna atajos cómodos para:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Trigger Inline Suggestion&lt;/em&gt; (invocar propuesta)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Next/Previous Suggestion&lt;/em&gt; (ciclar)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Open Chat&lt;/em&gt; (abrir chat lateral)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Accept Word/Line&lt;/em&gt; (aceptar por partes)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-intellij/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Aquí tienes cómo exprimir &lt;strong&gt;IntelliJ IDEA Community&lt;/strong&gt; con &lt;strong&gt;GitHub Copilot&lt;/strong&gt; para Java/Spring/Kafka como un pro 👇&lt;/p&gt;
+&lt;h1&gt;1) Deja fino el setup&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Plugins&lt;/strong&gt;: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keymap&lt;/strong&gt;: ve a &lt;em&gt;Settings → Keymap → GitHub Copilot&lt;/em&gt; y asigna atajos cómodos para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Trigger Inline Suggestion&lt;/em&gt; (invocar propuesta)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Next/Previous Suggestion&lt;/em&gt; (ciclar)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Open Chat&lt;/em&gt; (abrir chat lateral)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Accept Word/Line&lt;/em&gt; (aceptar por partes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;2) Flujo de trabajo que rinde&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Comentario → código&lt;/strong&gt;
+Escribe el comentario exacto de lo que quieres y luego invoca Copilot:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Spring&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Boot&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;POST&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;policies&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;policy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;valida&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;guarda&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;produce&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;evento&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Kafka&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;audit.customer.updated&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;TDD rápido&lt;/strong&gt;
+Pide primero las &lt;em&gt;pruebas&lt;/em&gt; (JUnit 5 + Mockito) y luego genera la implementación. Copilot entiende muy bien los métodos esperados.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Itera en línea&lt;/strong&gt;
+Acepta por palabra o por línea, y cicla hasta ver una variante con buenas firmas y excepciones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chat &amp;gt; inline&lt;/strong&gt; cuando:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quieres &lt;em&gt;explicación&lt;/em&gt; de código legado.&lt;/li&gt;
+&lt;li&gt;Necesitas &lt;em&gt;refactor&lt;/em&gt; guiado (“extrae puerto hexagonal”, “aplica DTO y mapper”).&lt;/li&gt;
+&lt;li&gt;Pides &lt;em&gt;tests de borde&lt;/em&gt; y &lt;em&gt;propiedad parametrizada&lt;/em&gt; (ParameterizedTest).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;3) Prompts “cirujanos” para tu stack&lt;/h1&gt;&lt;p&gt;Pégalos como comentario encima del método/clase o en Copilot Chat.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hexagonal + Kafka (Seguros360)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Crea puerto &lt;code&gt;PolicyAuditPort&lt;/code&gt; y adaptador Kafka con &lt;code&gt;spring-kafka&lt;/code&gt;. Produce evento &lt;code&gt;AuditCustomerUpdated&lt;/code&gt; con headers &lt;code&gt;correlationId&lt;/code&gt;, &lt;code&gt;actor&lt;/code&gt;, &lt;code&gt;reason&lt;/code&gt;. Retrys idempotentes y DLQ.”&lt;/li&gt;
+&lt;li&gt;“Valida JWT con &lt;code&gt;kid&lt;/code&gt; firmado por AWS KMS (clave RSA). Extrae claims y roles. Maneja expiración y clockSkew.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Endpoints y validación&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Controller &lt;code&gt;PolicyController&lt;/code&gt; POST &lt;code&gt;/v1/policies&lt;/code&gt; con Bean Validation (campos obligatorios), &lt;code&gt;@ControllerAdvice&lt;/code&gt; para errores 400/422 con payload estándar.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Persistencia&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Repositorio JPA para &lt;code&gt;Policy&lt;/code&gt; con índice compuesto (customerId, productCode). Método &lt;code&gt;findActiveByCustomerId&lt;/code&gt; paginado.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Observabilidad&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Integra &lt;code&gt;micrometer-tracing&lt;/code&gt; y logs estructurados JSON (traceId, spanId, userId, route, latencyMs).”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Resiliencia&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Configura Resilience4j para el cliente externo: retry exponencial (maxAttempts=3), timeout=2s, circuit breaker.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;4) Chat rápido (atajos útiles)&lt;/h1&gt;&lt;p&gt;En Copilot Chat, pide acciones claras:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Explain this file in Spanish and list risky parts.”&lt;/li&gt;
+&lt;li&gt;“Generate edge-case tests for &lt;code&gt;PolicyService#update&lt;/code&gt;.”&lt;/li&gt;
+&lt;li&gt;“Refactor to hex architecture: extract ports, move infra into adapters.”&lt;/li&gt;
+&lt;li&gt;“Add MapStruct mapper + tests.”&lt;/li&gt;
+&lt;li&gt;“Create .http requests for the controller with sample bodies.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;5) YML, Regex, SQL y .http: oro con Community&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;application.yml&lt;/strong&gt;: “Genera config para &lt;code&gt;spring-kafka&lt;/code&gt; con SSL, timeouts y serializers.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Regex&lt;/strong&gt;: “Escribe regex para validar RFC mexicano y prueba 5 casos.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SQL&lt;/strong&gt;: “Crea migración Flyway para tabla policies con índices y &lt;code&gt;created_at&lt;/code&gt;/&lt;code&gt;updated_at&lt;/code&gt;.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTP Client&lt;/strong&gt;: crea &lt;code&gt;requests.http&lt;/code&gt; y pide a Copilot ejemplos con &lt;code&gt;GET/POST&lt;/code&gt; (ideal para probar APIs sin salir de IntelliJ).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;6) Plantillas y Live Templates (turbo)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Define &lt;strong&gt;File Templates&lt;/strong&gt; para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Controller&lt;/code&gt;, &lt;code&gt;Service&lt;/code&gt;, &lt;code&gt;Port&lt;/code&gt;, &lt;code&gt;Adapter&lt;/code&gt;, &lt;code&gt;Record DTO&lt;/code&gt;, &lt;code&gt;ErrorResponse&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Crea &lt;strong&gt;Live Templates&lt;/strong&gt; tipo &lt;code&gt;hexport&lt;/code&gt;, &lt;code&gt;hexadapter&lt;/code&gt;, &lt;code&gt;dto&lt;/code&gt;, &lt;code&gt;err&lt;/code&gt; y deja comentarios instructivos; Copilot completará el resto.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;7) Calidad y seguridad sin fricción&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SonarLint&lt;/strong&gt; en modo &lt;em&gt;Connected&lt;/em&gt; si puedes; si no, local. Pídele a Copilot:
+“Fix issues Sonar: S2095, S112, S1452 in this class.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Format &amp;amp; Inspections&lt;/strong&gt;: guarda con &lt;em&gt;Reformat + Optimize imports&lt;/em&gt; para que Copilot “aprenda” tu estilo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;8) Estrategia para respuestas mejores&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Contexto primero: di el &lt;em&gt;qué&lt;/em&gt; + &lt;em&gt;restricciones&lt;/em&gt; (versiones, librerías, patrones).&lt;/li&gt;
+&lt;li&gt;Pide &lt;em&gt;arquitectura previa&lt;/em&gt; (interfaces, excepciones, DTOs) antes que la implementación.&lt;/li&gt;
+&lt;li&gt;Da &lt;strong&gt;ejemplos de entrada/salida&lt;/strong&gt; concretos (payload JSON y respuesta esperada).&lt;/li&gt;
+&lt;li&gt;“No uses librerías X” o “Debes usar Y” para forzar el stack correcto.&lt;/li&gt;
+&lt;li&gt;Repite &lt;em&gt;nombres exactos&lt;/em&gt; (paquetes, topics, endpoints). Evita ambigüedad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;9) Recetas express (lista corta)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;“Create unit tests with Mockito and parameterized inputs for null/invalid cases.”&lt;/li&gt;
+&lt;li&gt;“Document public methods with Javadoc including examples.”&lt;/li&gt;
+&lt;li&gt;“Generate mapping between &lt;code&gt;Policy&lt;/code&gt; and &lt;code&gt;PolicyDTO&lt;/code&gt; with MapStruct and test it.”&lt;/li&gt;
+&lt;li&gt;“Produce/consume Kafka with headers and error handler to DLQ.”&lt;/li&gt;
+&lt;li&gt;“Write an exception hierarchy: domain, application, infra with &lt;code&gt;@ControllerAdvice&lt;/code&gt; mapping.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;10) Qué NO delegar ciegamente&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Seguridad (JWT/KMS), transacciones y concurrencia: usa Copilot para &lt;em&gt;borradores&lt;/em&gt;, valida tú las decisiones.&lt;/li&gt;
+&lt;li&gt;Config sensible en YAML: revísala siempre y añade tests de integración.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>Strategy to Solve HackerRank Java Problems</title>
-      <link>http://localhost:1313/posts/random/hackerrank_java_strategy/</link>
+      <link>http://localhost:50181/posts/random/hackerrank_java_strategy/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/random/hackerrank_java_strategy/</guid>
-      <description>&lt;h1 id=&#34;-strategy-to-solve-hackerrank-java-problems&#34;&gt;🏆 Strategy to Solve HackerRank Java Problems&lt;/h1&gt;&#xA;&lt;p&gt;This guide provides a &lt;strong&gt;step-by-step strategy&lt;/strong&gt; to solve Java coding challenges on &lt;strong&gt;HackerRank&lt;/strong&gt; effectively.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-read--understand-the-problem-statement&#34;&gt;1️⃣ Read &amp;amp; Understand the Problem Statement&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Know exactly what the problem is asking.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tips:&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Identify &lt;strong&gt;input format&lt;/strong&gt;, &lt;strong&gt;output format&lt;/strong&gt;, and &lt;strong&gt;constraints&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Pay attention to &lt;strong&gt;edge cases&lt;/strong&gt; mentioned in the description.&lt;/li&gt;&#xA;&lt;li&gt;Read &lt;strong&gt;sample inputs and outputs&lt;/strong&gt; to clarify the logic.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-analyze-constraints&#34;&gt;2️⃣ Analyze Constraints&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Why:&lt;/strong&gt; Constraints determine:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Which &lt;strong&gt;data types&lt;/strong&gt; to use (&lt;code&gt;int&lt;/code&gt;, &lt;code&gt;long&lt;/code&gt;, &lt;code&gt;BigInteger&lt;/code&gt; for very large numbers).&lt;/li&gt;&#xA;&lt;li&gt;Whether your &lt;strong&gt;algorithm needs optimization&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/random/hackerrank_java_strategy/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;🏆 Strategy to Solve HackerRank Java Problems&lt;/h1&gt;&lt;p&gt;This guide provides a &lt;strong&gt;step-by-step strategy&lt;/strong&gt; to solve Java coding challenges on &lt;strong&gt;HackerRank&lt;/strong&gt; effectively.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;1️⃣ Read &amp;amp; Understand the Problem Statement&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-read--understand-the-problem-statement&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-read--understand-the-problem-statement&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Know exactly what the problem is asking.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tips:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify &lt;strong&gt;input format&lt;/strong&gt;, &lt;strong&gt;output format&lt;/strong&gt;, and &lt;strong&gt;constraints&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Pay attention to &lt;strong&gt;edge cases&lt;/strong&gt; mentioned in the description.&lt;/li&gt;
+&lt;li&gt;Read &lt;strong&gt;sample inputs and outputs&lt;/strong&gt; to clarify the logic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ Analyze Constraints&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-analyze-constraints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-analyze-constraints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why:&lt;/strong&gt; Constraints determine:
+&lt;ul&gt;
+&lt;li&gt;Which &lt;strong&gt;data types&lt;/strong&gt; to use (&lt;code&gt;int&lt;/code&gt;, &lt;code&gt;long&lt;/code&gt;, &lt;code&gt;BigInteger&lt;/code&gt; for very large numbers).&lt;/li&gt;
+&lt;li&gt;Whether your &lt;strong&gt;algorithm needs optimization&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If &lt;code&gt;N ≤ 10^3&lt;/code&gt; → simple &lt;code&gt;O(n^2)&lt;/code&gt; solution is fine.&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;N ≤ 10^6&lt;/code&gt; → prefer &lt;code&gt;O(n)&lt;/code&gt; or &lt;code&gt;O(n log n)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ Break the Problem into Steps&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-break-the-problem-into-steps&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-break-the-problem-into-steps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Think in &lt;strong&gt;plain English&lt;/strong&gt; or &lt;strong&gt;pseudocode&lt;/strong&gt; before coding.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Find the maximum number in an array&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Read &lt;code&gt;N&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Read the &lt;code&gt;N&lt;/code&gt; integers into an array.&lt;/li&gt;
+&lt;li&gt;Loop through and track the maximum.&lt;/li&gt;
+&lt;li&gt;Print the result.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ Choose the Right Data Structures&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-choose-the-right-data-structures&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-choose-the-right-data-structures&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Array / ArrayList&lt;/strong&gt; → Store sequences of numbers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HashMap / HashSet&lt;/strong&gt; → Frequency counting or checking uniqueness.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PriorityQueue&lt;/strong&gt; → Min/Max problems.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BigInteger / BigDecimal&lt;/strong&gt; → Very large numbers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ Start with a Simple Solution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;5-start-with-a-simple-solution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-start-with-a-simple-solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;First, &lt;strong&gt;make it work&lt;/strong&gt;, then &lt;strong&gt;optimize&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Test with:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sample inputs&lt;/strong&gt; from the problem.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge cases&lt;/strong&gt; (smallest/largest constraints).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;6️⃣ Verify Output Format&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;6-verify-output-format&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-verify-output-format&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;HackerRank is &lt;strong&gt;strict&lt;/strong&gt; with output.&lt;/li&gt;
+&lt;li&gt;Make sure:
+&lt;ul&gt;
+&lt;li&gt;No extra spaces or newlines.&lt;/li&gt;
+&lt;li&gt;Output &lt;strong&gt;matches exactly&lt;/strong&gt; the required format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;7️⃣ Optimize &amp;amp; Clean Code&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;7-optimize--clean-code&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#7-optimize--clean-code&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Use &lt;strong&gt;Java features&lt;/strong&gt; to write clean and efficient code:
+&lt;ul&gt;
+&lt;li&gt;Streams and &lt;code&gt;Collectors&lt;/code&gt; for concise transformations.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;try-with-resources&lt;/code&gt; for input handling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;comments&lt;/strong&gt; explaining key steps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;8️⃣ Practice Pattern Recognition&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;8-practice-pattern-recognition&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#8-practice-pattern-recognition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Many HackerRank problems follow &lt;strong&gt;common patterns&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loops &amp;amp; arrays&lt;/strong&gt; → Counting, summing, searching&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Strings&lt;/strong&gt; → Palindrome, anagram, frequency counting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Math&lt;/strong&gt; → Factorials, modular arithmetic&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collections&lt;/strong&gt; → Maps &amp;amp; sets for frequency and uniqueness&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sorting &amp;amp; Searching&lt;/strong&gt; → Binary search, custom sort&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BigNumber&lt;/strong&gt; → &lt;code&gt;BigInteger&lt;/code&gt; or &lt;code&gt;BigDecimal&lt;/code&gt; for large integers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;✅ Pro Tip Workflow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-pro-tip-workflow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-pro-tip-workflow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Read&lt;/strong&gt; → Understand inputs, outputs, and constraints.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plan&lt;/strong&gt; → Write the steps in plain English or pseudocode.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code&lt;/strong&gt; → Implement the simplest correct version first.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test&lt;/strong&gt; → Sample + edge cases.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Optimize&lt;/strong&gt; → Improve efficiency if necessary.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Submit&lt;/strong&gt; → Verify all test cases pass.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;📥 Java Input/Output Snippet&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-java-inputoutput-snippet&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-java-inputoutput-snippet&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nn&#34;&gt;java.util.*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Solution&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Scanner&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sc&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Scanner&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;nextInt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Example: read integer input&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;nextInt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Example: Find max&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;MIN_VALUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;val&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;val&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Author:&lt;/strong&gt; Cyb3rh4ck&lt;/p&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>Workflow Copilot &#43; ChatGPT: Conviértete en una Bestia Ágil en VS Code</title>
-      <link>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link>
+      <link>http://localhost:50181/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link>
       <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid>
-      <description>&lt;h1 id=&#34;-workflow-copilot--chatgpt-para-vs-code&#34;&gt;🚀 Workflow Copilot + ChatGPT para VS Code&lt;/h1&gt;&#xA;&lt;p&gt;Combinar &lt;strong&gt;GitHub Copilot&lt;/strong&gt; con &lt;strong&gt;ChatGPT&lt;/strong&gt; es como tener un par de superpoderes para tu día a día como desarrollador.&lt;br&gt;&#xA;Con este workflow podrás:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Escribir código &lt;strong&gt;3x más rápido&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Refactorizar y documentar&lt;/strong&gt; sin esfuerzo.&lt;/li&gt;&#xA;&lt;li&gt;Resolver bloqueos de manera &lt;strong&gt;interactiva y creativa&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-setup-inicial&#34;&gt;1️⃣ Setup Inicial&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Instala GitHub Copilot&lt;/strong&gt; en VS Code.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Abre ChatGPT&lt;/strong&gt; (o la extensión ChatGPT para VS Code).&lt;/li&gt;&#xA;&lt;li&gt;Configura &lt;strong&gt;atajos de teclado&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;Alt+\&lt;/code&gt; → Activar Copilot suggestion&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;Ctrl+I&lt;/code&gt; → Prompt a ChatGPT sobre la selección&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;💡 &lt;em&gt;Tip:&lt;/em&gt; Si usas &lt;strong&gt;Agent Mode&lt;/strong&gt; en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;🚀 Workflow Copilot + ChatGPT para VS Code&lt;/h1&gt;&lt;p&gt;Combinar &lt;strong&gt;GitHub Copilot&lt;/strong&gt; con &lt;strong&gt;ChatGPT&lt;/strong&gt; es como tener un par de superpoderes para tu día a día como desarrollador.&lt;br&gt;
+Con este workflow podrás:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Escribir código &lt;strong&gt;3x más rápido&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Refactorizar y documentar&lt;/strong&gt; sin esfuerzo.&lt;/li&gt;
+&lt;li&gt;Resolver bloqueos de manera &lt;strong&gt;interactiva y creativa&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;1️⃣ Setup Inicial&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-setup-inicial&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-setup-inicial&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Instala GitHub Copilot&lt;/strong&gt; en VS Code.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abre ChatGPT&lt;/strong&gt; (o la extensión ChatGPT para VS Code).&lt;/li&gt;
+&lt;li&gt;Configura &lt;strong&gt;atajos de teclado&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Alt+\&lt;/code&gt; → Activar Copilot suggestion&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+I&lt;/code&gt; → Prompt a ChatGPT sobre la selección&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 &lt;em&gt;Tip:&lt;/em&gt; Si usas &lt;strong&gt;Agent Mode&lt;/strong&gt; en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ Cómo Funciona el Workflow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-cómo-funciona-el-workflow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-c%c3%b3mo-funciona-el-workflow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:50181/images/workflow-copilot-chatgpt.png&#34; alt=&#34;Workflow Visual&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Flujo recomendado:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Borrador rápido&lt;/strong&gt;: Deja que Copilot genere un snippet.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Revisión inteligente&lt;/strong&gt;: Pregunta a ChatGPT:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/explain&lt;/code&gt; → Explica el código&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/refactor&lt;/code&gt; → Simplifica o mejora&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/test&lt;/code&gt; → Sugiere pruebas unitarias&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validación&lt;/strong&gt;: Ejecuta y ajusta con Copilot en vivo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ Prompts Efectivos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-prompts-efectivos&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-prompts-efectivos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Algunos ejemplos de prompts útiles para ChatGPT dentro de VS Code:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// Refactoriza este método para hacerlo más limpio
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/explain este bloque de código
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/genera JUnit tests para esta clase
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/reduce la complejidad de este método&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ Beneficios&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-beneficios&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-beneficios&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Velocidad x3&lt;/strong&gt; en escritura de código.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mejor calidad&lt;/strong&gt; al combinar autocompletado con revisión inteligente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aprendizaje continuo&lt;/strong&gt; al entender y mejorar tu propio código.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ Conclusión&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;5-conclusión&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-conclusi%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Adoptar este workflow no solo acelera tu trabajo, sino que también te convierte en un &lt;strong&gt;desarrollador ágil&lt;/strong&gt;.&lt;br&gt;
+Empieza hoy mismo y convierte VS Code en tu &lt;strong&gt;central de productividad IA&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;¿Quieres el &lt;strong&gt;carrusel visual para Instagram&lt;/strong&gt; para anunciar este workflow? 🚀&lt;/p&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>Frases y prompts útiles para Copilot en VS Code (Java &#43; Spring Boot)</title>
-      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</link>
+      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-prompts/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</guid>
-      <description>&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;http://localhost:1313/images/post/banner-copilot-prompts.png&#34;&#xD;&#xA;        data-srcset=&#34;http://localhost:1313/images/post/banner-copilot-prompts.png, http://localhost:1313/images/post/banner-copilot-prompts.png 1.5x, http://localhost:1313/images/post/banner-copilot-prompts.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;/images/post/banner-copilot-prompts.png&#34;&#xD;&#xA;        title=&#34;Copilot Prompts&#34; /&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;🎯 Usa estos comentarios dentro de tu código en VS Code para que &lt;strong&gt;Copilot entienda lo que necesitas&lt;/strong&gt; y te sugiera código útil, limpio y contextualizado.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-frases-ideales-para-copilot-en-vs-code-como-&#34;&gt;📌 Frases ideales para Copilot en VS Code (como &lt;code&gt;//&lt;/code&gt;)&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-generación-de-código-básico&#34;&gt;🔹 Generación de código básico&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Create a method to calculate the total price with tax&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement a REST controller for customer registration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Generate a model class for CreditCard with fields: number, holderName, limit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Write a unit test for this service method&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-limpieza-y-refactorización&#34;&gt;🔹 Limpieza y refactorización&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Refactor this method to reduce complexity&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Replace System.out with Lombok logger (@Slf4j)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Convert this logic to use Java 8 streams&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Extract this logic into a separate utility class&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-lógica-de-negocio&#34;&gt;🔹 Lógica de negocio&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Validate customer age is over 18 before approving the card&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Check if the credit card limit is sufficient before proceeding&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement retry logic if the external API fails&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Add audit trail when user updates personal data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-arquitectura-hexagonal--ddd&#34;&gt;🔹 Arquitectura hexagonal / DDD&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Create a use case to handle credit card application&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Define a port interface for customer repository&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement an adapter for Oracle database using JdbcTemplate&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Map domain entity to DTO for external API&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-test-y-tdd&#34;&gt;🔹 Test y TDD&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Write a JUnit test for CreditCardService&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Mock the customer repository and return a fake customer&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Verify that the audit event is sent when data is updated&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// inline&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// (select the code) /test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-desempeño-y-calidad&#34;&gt;🔹 Desempeño y calidad&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Optimize this loop for performance&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Add null checks and input validation&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Suggest improvements for readability&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Handle edge cases for this validation&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//(inline chat, previous code selected)improve the code according to development best practices&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//(inline chat) add javadocs&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-ejemplos-prácticos-con-copilot&#34;&gt;💡 Ejemplos prácticos con Copilot&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-antes&#34;&gt;🧪 Antes:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Cliente aprobado&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-comentario-copilot&#34;&gt;✨ Comentario Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Replace System.out with Lombok logger&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-resultado-sugerido-por-copilot&#34;&gt;✅ Resultado sugerido por Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Slf4j&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ClienteService&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;notificarAprobacion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;info&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Cliente aprobado&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-antes-1&#34;&gt;🧪 Antes:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// lógica mezclada en un método gigante&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-comentario-copilot-1&#34;&gt;✨ Comentario Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Refactor this method to reduce complexity&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-resultado-sugerido-por-copilot-1&#34;&gt;✅ Resultado sugerido por Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;calcularTotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Pedido&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;subtotal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calcularSubtotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;impuestos&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calcularImpuestos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;subtotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;impuestos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;</description>
+      
+      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-prompts/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;http://localhost:50181/images/post/banner-copilot-prompts.png&#34; alt=&#34;Copilot Prompts&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;🎯 Usa estos comentarios dentro de tu código en VS Code para que &lt;strong&gt;Copilot entienda lo que necesitas&lt;/strong&gt; y te sugiera código útil, limpio y contextualizado.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;📌 Frases ideales para Copilot en VS Code (como &lt;code&gt;//&lt;/code&gt;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-frases-ideales-para-copilot-en-vs-code-como-&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-frases-ideales-para-copilot-en-vs-code-como-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;🔹 Generación de código básico&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-generación-de-código-básico&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-generaci%c3%b3n-de-c%c3%b3digo-b%c3%a1sico&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Create a method to calculate the total price with tax&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement a REST controller for customer registration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Generate a model class for CreditCard with fields: number, holderName, limit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;service&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;🔹 Limpieza y refactorización&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-limpieza-y-refactorización&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-limpieza-y-refactorizaci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Refactor this method to reduce complexity&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Replace System.out with Lombok logger (@Slf4j)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Convert this logic to use Java 8 streams&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Extract&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;logic&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;into&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;separate&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;utility&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;🔹 Lógica de negocio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-lógica-de-negocio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-l%c3%b3gica-de-negocio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Validate customer age is over 18 before approving the card&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Check if the credit card limit is sufficient before proceeding&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement retry logic if the external API fails&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Add&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;audit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trail&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;when&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;updates&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;personal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;🔹 Arquitectura hexagonal / DDD&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-arquitectura-hexagonal--ddd&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-arquitectura-hexagonal--ddd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Create a use case to handle credit card application&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Define a port interface for customer repository&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement an adapter for Oracle database using JdbcTemplate&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Map&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;entity&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;to&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DTO&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;external&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;API&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;🔹 Test y TDD&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-test-y-tdd&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-test-y-tdd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Write a JUnit test for CreditCardService&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Mock the customer repository and return a fake customer&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Verify&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;that&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;the&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;audit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;is&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sent&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;when&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;is&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;updated&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// inline&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;the&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;🔹 Desempeño y calidad&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-desempeño-y-calidad&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-desempe%c3%b1o-y-calidad&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Optimize this loop for performance&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Add null checks and input validation&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Suggest improvements for readability&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Handle edge cases for this validation&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//(inline chat, previous code selected)improve the code according to development best practices&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;inline&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;javadocs&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;💡 Ejemplos prácticos con Copilot&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ejemplos-prácticos-con-copilot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ejemplos-pr%c3%a1cticos-con-copilot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;🧪 Antes:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-antes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-antes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Cliente aprobado&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;✨ Comentario Copilot:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-comentario-copilot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-comentario-copilot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Replace&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;with&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Lombok&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;logger&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;✅ Resultado sugerido por Copilot:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-resultado-sugerido-por-copilot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-resultado-sugerido-por-copilot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Slf4j&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ClienteService&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;notificarAprobacion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;info&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Cliente aprobado&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;🧪 Antes:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-antes-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-antes-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lógica&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mezclada&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;en&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;un&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;método&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gigante&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;✨ Comentario Copilot:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-comentario-copilot-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-comentario-copilot-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Refactor&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;to&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;reduce&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;complexity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;✅ Resultado sugerido por Copilot:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-resultado-sugerido-por-copilot-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-resultado-sugerido-por-copilot-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;calcularTotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Pedido&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;subtotal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calcularSubtotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;impuestos&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calcularImpuestos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;subtotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;impuestos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>Guía de atajos de teclado en VS Code para desarrolladores Java</title>
-      <link>http://localhost:1313/posts/vscode/vscode-shortcuts/</link>
+      <link>http://localhost:50181/posts/vscode/vscode-shortcuts/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/vscode/vscode-shortcuts/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-comentarios&#34;&gt;🧩 Comentarios&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;          &lt;th&gt;Resultado&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentar o descomentar una línea&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Añade o quita &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentar varias líneas seleccionadas&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Comenta cada línea con &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentario multilínea&lt;/td&gt;&#xA;          &lt;td&gt;Manual&lt;/td&gt;&#xA;          &lt;td&gt;Manual&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/* ... */&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-navegación-y-edición-rápida&#34;&gt;🚀 Navegación y edición rápida&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + P&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + P&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a definición&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a símbolo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + O&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + O&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a línea específica&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + G&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + G&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a la declaración&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Click&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Click&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-refactorización-y-edición&#34;&gt;🛠️ Refactorización y edición&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Renombrar símbolo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mostrar acciones rápidas&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + .&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + .&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Copiar línea abajo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Shift + Alt + ↓&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + Shift + ↓&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Copiar línea arriba&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Shift + Alt + ↑&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + Shift + ↑&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mover línea abajo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ↓&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ↓&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mover línea arriba&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ↑&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ↑&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-terminal-y-ejecución&#34;&gt;🧪 Terminal y ejecución&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir terminal integrada&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + ñ&lt;/code&gt; o &lt;code&gt;Ctrl + `&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + `&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ejecutar archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + F5&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + F5&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ejecutar con depuración&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-productividad-y-vistas&#34;&gt;🌈 Productividad y vistas&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir paleta de comandos&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + P&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Alternar panel lateral&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + B&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + B&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Buscar archivos&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + F&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + F&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Buscar en archivo actual&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + F&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Reemplazar en archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + H&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + H&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-copilot-específico&#34;&gt;🤖 Copilot específico&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Aceptar sugerencia&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Siguiente sugerencia&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ]&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Sugerencia anterior&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + [&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + [&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir ventana Copilot&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Enter&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Enter&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;</description>
+      
+      <guid>http://localhost:50181/posts/vscode/vscode-shortcuts/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+  &lt;p&gt;⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧩 Comentarios&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-comentarios&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-comentarios&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+          &lt;th&gt;Resultado&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Comentar o descomentar una línea&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Añade o quita &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Comentar varias líneas seleccionadas&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Comenta cada línea con &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Comentario multilínea&lt;/td&gt;
+          &lt;td&gt;Manual&lt;/td&gt;
+          &lt;td&gt;Manual&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/* ... */&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚀 Navegación y edición rápida&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-navegación-y-edición-rápida&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-navegaci%c3%b3n-y-edici%c3%b3n-r%c3%a1pida&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a archivo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + P&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + P&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a definición&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a símbolo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Shift + O&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Shift + O&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a línea específica&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + G&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + G&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ir a la declaración&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Click&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Click&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠️ Refactorización y edición&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-refactorización-y-edición&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-refactorizaci%c3%b3n-y-edici%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Renombrar símbolo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mostrar acciones rápidas&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + .&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + .&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Copiar línea abajo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Shift + Alt + ↓&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + Shift + ↓&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Copiar línea arriba&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Shift + Alt + ↑&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + Shift + ↑&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mover línea abajo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + ↓&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + ↓&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mover línea arriba&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + ↑&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + ↑&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧪 Terminal y ejecución&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-terminal-y-ejecución&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-terminal-y-ejecuci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Abrir terminal integrada&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + ñ&lt;/code&gt; o &lt;code&gt;Ctrl + `&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + `&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ejecutar archivo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + F5&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + F5&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ejecutar con depuración&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🌈 Productividad y vistas&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-productividad-y-vistas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-productividad-y-vistas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Abrir paleta de comandos&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Shift + P&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Alternar panel lateral&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + B&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + B&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Buscar archivos&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Shift + F&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Shift + F&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Buscar en archivo actual&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + F&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Reemplazar en archivo&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + H&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + H&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🤖 Copilot específico&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-copilot-específico&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-copilot-espec%c3%adfico&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Aceptar sugerencia&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Siguiente sugerencia&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + ]&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + ]&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Sugerencia anterior&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt + [&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Option + [&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Abrir ventana Copilot&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl + Enter&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Cmd + Enter&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>Automatiza tu código con Copilot en VS Code</title>
-      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</link>
+      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-vscode/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
-      <description>&lt;h2 id=&#34;-introducción&#34;&gt;🧠 Introducción&lt;/h2&gt;&#xA;&lt;p&gt;GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-requisitos-previos&#34;&gt;🛠️ Requisitos previos&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tener una cuenta de GitHub&lt;/li&gt;&#xA;&lt;li&gt;Tener instalado &lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Tener instalado &lt;a href=&#34;https://adoptium.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Java 17&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Conexión a internet&lt;/li&gt;&#xA;&lt;li&gt;Git instalado&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-instalación-de-copilot-en-vs-code&#34;&gt;🔌 Instalación de Copilot en VS Code&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Abre VS Code&lt;/li&gt;&#xA;&lt;li&gt;Ve a la extensión &amp;ldquo;GitHub Copilot&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;Haz clic en instalar o usa el siguiente comando:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;code --install-extension GitHub.copilot&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;ol start=&#34;4&#34;&gt;&#xA;&lt;li&gt;Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.&lt;/li&gt;&#xA;&lt;li&gt;Acepta los permisos y espera la confirmación.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-configuración-básica&#34;&gt;⚙️ Configuración básica&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Asegúrate de que Copilot esté activado en la barra de estado.&lt;/li&gt;&#xA;&lt;li&gt;Configura el comportamiento de sugerencias:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Aceptar: &lt;code&gt;Tab&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Siguiente sugerencia: &lt;code&gt;Ctrl + ]&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Anterior sugerencia: &lt;code&gt;Ctrl + [&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Puedes desactivar Copilot por archivo o carpeta desde la configuración.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-cómo-utilizarlo-primeros-ejemplos&#34;&gt;🤖 Cómo utilizarlo: primeros ejemplos&lt;/h2&gt;&#xA;&lt;p&gt;Crea un archivo &lt;code&gt;Main.java&lt;/code&gt; y escribe:&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;🧠 Introducción&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-introducción&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-introducci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠️ Requisitos previos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-requisitos-previos&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-requisitos-previos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Tener una cuenta de GitHub&lt;/li&gt;
+&lt;li&gt;Tener instalado &lt;a href=&#34;https://code.visualstudio.com/&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tener instalado &lt;a href=&#34;https://adoptium.net/&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Java 17&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Conexión a internet&lt;/li&gt;
+&lt;li&gt;Git instalado&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔌 Instalación de Copilot en VS Code&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-instalación-de-copilot-en-vs-code&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-instalaci%c3%b3n-de-copilot-en-vs-code&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Abre VS Code&lt;/li&gt;
+&lt;li&gt;Ve a la extensión &amp;ldquo;GitHub Copilot&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Haz clic en instalar o usa el siguiente comando:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;code --install-extension GitHub.copilot&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.&lt;/li&gt;
+&lt;li&gt;Acepta los permisos y espera la confirmación.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚙️ Configuración básica&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-configuración-básica&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-configuraci%c3%b3n-b%c3%a1sica&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Asegúrate de que Copilot esté activado en la barra de estado.&lt;/li&gt;
+&lt;li&gt;Configura el comportamiento de sugerencias:
+&lt;ul&gt;
+&lt;li&gt;Aceptar: &lt;code&gt;Tab&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Siguiente sugerencia: &lt;code&gt;Ctrl + ]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Anterior sugerencia: &lt;code&gt;Ctrl + [&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Puedes desactivar Copilot por archivo o carpeta desde la configuración.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🤖 Cómo utilizarlo: primeros ejemplos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-cómo-utilizarlo-primeros-ejemplos&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-c%c3%b3mo-utilizarlo-primeros-ejemplos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Crea un archivo &lt;code&gt;Main.java&lt;/code&gt; y escribe:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Main&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Escribe aquí: System.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Copilot sugerirá: System.out.println(&amp;#34;Hola mundo&amp;#34;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;También puedes probar creando una clase de modelo o DTO:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Persona&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nombre&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;edad&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Copilot sugiere automáticamente constructor, getters y setters&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚀 Ejemplo completo (con Spring Boot)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ejemplo-completo-con-spring-boot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ejemplo-completo-con-spring-boot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Crear un proyecto nuevo&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;crear-un-proyecto-nuevo&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#crear-un-proyecto-nuevo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Usa Spring Initializr desde VS Code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ctrl+Shift+P &amp;gt; &amp;ldquo;Spring Initializr: Create Maven Project&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Lenguaje: Java&lt;/li&gt;
+&lt;li&gt;Versión: 17&lt;/li&gt;
+&lt;li&gt;Dependencias: Spring Web&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Clase generada con ayuda de Copilot&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;clase-generada-con-ayuda-de-copilot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#clase-generada-con-ayuda-de-copilot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@RestController&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/api&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;GreetingController&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@GetMapping&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;sayHello&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hola desde Copilot!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧪 Tips y buenas prácticas&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-tips-y-buenas-prácticas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-tips-y-buenas-pr%c3%a1cticas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Revisa siempre el código sugerido: puede tener errores o no aplicar a tu contexto.&lt;/li&gt;
+&lt;li&gt;Úsalo como apoyo, no como reemplazo.&lt;/li&gt;
+&lt;li&gt;Ideal para tareas repetitivas: getters/setters, controladores REST, tests.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📦 Recursos y documentación&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-recursos-y-documentación&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-recursos-y-documentaci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/copilot&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentación oficial de Copilot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=GitHub.copilot&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Extensión en VS Code Marketplace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://spring.io/guides&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Guía Spring Boot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📌 Conclusión&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-conclusión&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-conclusi%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Copilot puede aumentar tu productividad como desarrollador Java, especialmente en tareas repetitivas. Aprende a sacarle jugo sin perder el control del código que escribes. ¿Ya lo probaste?&lt;/p&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>Shortcuts de GitHub Copilot en VS Code</title>
-      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link>
+      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid>
-      <description>&lt;p&gt;GitHub Copilot mejora tu productividad como desarrollador, pero combinarlo con &lt;strong&gt;shortcuts&lt;/strong&gt; y &lt;strong&gt;comandos de chat&lt;/strong&gt; en VS Code lleva la experiencia a otro nivel. Aquí te dejamos los más esenciales.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-shortcuts-esenciales-de-copilot&#34;&gt;⌨️ Shortcuts esenciales de Copilot&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Windows / Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Aceptar sugerencia&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Aceptar la palabra siguiente&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;→&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;⌃&lt;/code&gt; + &lt;code&gt;→&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Aceptar la línea siguiente&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;↓&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;⌃&lt;/code&gt; + &lt;code&gt;↓&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Ver siguiente sugerencia&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;⌥&lt;/code&gt; + &lt;code&gt;]&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Ver sugerencia anterior&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;[&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;⌥&lt;/code&gt; + &lt;code&gt;[&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Abrir panel de sugerencias (Copilot)&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;Enter&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;⌘&lt;/code&gt; + &lt;code&gt;Enter&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Descartar sugerencia actual&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Esc&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Esc&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Forzar una nueva sugerencia&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;\&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;⌘&lt;/code&gt; + &lt;code&gt;⌥&lt;/code&gt; + &lt;code&gt;\&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-comandos-del-chat-de-copilot&#34;&gt;💬 Comandos del chat de Copilot&lt;/h2&gt;&#xA;&lt;p&gt;Estos comandos pueden usarse dentro del panel de &lt;strong&gt;Copilot Chat&lt;/strong&gt; (&lt;code&gt;Ctrl+I&lt;/code&gt; o ícono del robot en la barra lateral) para interactuar con el código de forma contextual:&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GitHub Copilot mejora tu productividad como desarrollador, pero combinarlo con &lt;strong&gt;shortcuts&lt;/strong&gt; y &lt;strong&gt;comandos de chat&lt;/strong&gt; en VS Code lleva la experiencia a otro nivel. Aquí te dejamos los más esenciales.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;⌨️ Shortcuts esenciales de Copilot&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-shortcuts-esenciales-de-copilot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-shortcuts-esenciales-de-copilot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Acción&lt;/th&gt;
+          &lt;th&gt;Windows / Linux&lt;/th&gt;
+          &lt;th&gt;macOS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Aceptar sugerencia&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Aceptar la palabra siguiente&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;→&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;⌃&lt;/code&gt; + &lt;code&gt;→&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Aceptar la línea siguiente&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;↓&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;⌃&lt;/code&gt; + &lt;code&gt;↓&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Ver siguiente sugerencia&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;]&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;⌥&lt;/code&gt; + &lt;code&gt;]&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Ver sugerencia anterior&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;[&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;⌥&lt;/code&gt; + &lt;code&gt;[&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Abrir panel de sugerencias (Copilot)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;Enter&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;⌘&lt;/code&gt; + &lt;code&gt;Enter&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Descartar sugerencia actual&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Esc&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Esc&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Forzar una nueva sugerencia&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;\&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;⌘&lt;/code&gt; + &lt;code&gt;⌥&lt;/code&gt; + &lt;code&gt;\&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;💬 Comandos del chat de Copilot&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-comandos-del-chat-de-copilot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-comandos-del-chat-de-copilot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Estos comandos pueden usarse dentro del panel de &lt;strong&gt;Copilot Chat&lt;/strong&gt; (&lt;code&gt;Ctrl+I&lt;/code&gt; o ícono del robot en la barra lateral) para interactuar con el código de forma contextual:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Comando&lt;/th&gt;
+          &lt;th&gt;Descripción&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/explain&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Explica el bloque de código seleccionado&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/fix&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Intenta corregir errores en el bloque de código&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/tests&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Genera pruebas unitarias para el código seleccionado&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/optimize&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Mejora el rendimiento o legibilidad del código&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/doc&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Agrega documentación (JavaDoc, comentarios, etc.)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/translate&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Traduce el código o comentario al idioma indicado&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/steps&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Describe paso a paso lo que hace el código&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;💡 Usa estos comandos luego de seleccionar un fragmento de código o posiciónate dentro del método/clase deseada.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧠 Buenas prácticas al usar Copilot&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-buenas-prácticas-al-usar-copilot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-buenas-pr%c3%a1cticas-al-usar-copilot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Escribe comentarios claros&lt;/strong&gt; para obtener mejores sugerencias.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Acepta solo lo que entiendes.&lt;/strong&gt; No confíes ciegamente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combina con testing.&lt;/strong&gt; Asegúrate de validar el código generado.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚙️ Personalización de shortcuts&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-personalización-de-shortcuts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-personalizaci%c3%b3n-de-shortcuts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Puedes personalizar los shortcuts de Copilot desde:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;File → Preferences → Keyboard Shortcuts&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Busca &lt;code&gt;copilot&lt;/code&gt; y edita los accesos directos según tu gusto.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;📌 Tip extra&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-tip-extra&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-tip-extra&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para pedirle a Copilot una función más compleja, escribe un comentario como:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Función&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;para&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;validar&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;una&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tarjeta&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;de&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;crédito&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usando&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;algoritmo&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;de&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Luhn&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Y presiona &lt;code&gt;Enter&lt;/code&gt;. Copilot generará una sugerencia basada en el comentario.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;¿Quieres aprender más? Visita la &lt;a href=&#34;https://docs.github.com/copilot&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentación oficial de GitHub Copilot&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
     </item>
+    
   </channel>
 </rss>

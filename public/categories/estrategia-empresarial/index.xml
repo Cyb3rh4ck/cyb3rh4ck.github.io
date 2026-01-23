@@ -1,26 +1,543 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Estrategia Empresarial on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/categories/estrategia-empresarial/</link>
-    <description>Recent content in Estrategia Empresarial on Cyb3rh4ck´s dev life</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 06 Sep 2025 19:24:48 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/estrategia-empresarial/index.xml" rel="self" type="application/rss+xml" />
+    <title>Cyb3rh4ck D3v L1f3 – Estrategia Empresarial</title>
+    <link>http://localhost:50181/categories/estrategia-empresarial/</link>
+    <description>Recent content in Estrategia Empresarial on Cyb3rh4ck D3v L1f3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:50181/categories/estrategia-empresarial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
     <item>
       <title>Arquitectura de Autenticación con Token Opaco, Gateway y JWT</title>
-      <link>http://localhost:1313/arquitectura-auth/arquitectura-auth/</link>
+      <link>http://localhost:50181/arquitectura-auth/arquitectura-auth/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/arquitectura-auth/arquitectura-auth/</guid>
-      <description>&lt;h1 id=&#34;arquitectura-de-autenticación-con-token-opaco-gateway-y-jwt&#34;&gt;Arquitectura de Autenticación con Token Opaco, Gateway y JWT&lt;/h1&gt;&#xA;&lt;p&gt;¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo &lt;strong&gt;diagramas&lt;/strong&gt; + &lt;strong&gt;tips prácticos&lt;/strong&gt; + &lt;strong&gt;fuentes oficiales&lt;/strong&gt; para cada punto clave.&lt;/p&gt;&#xA;&lt;h1 id=&#34;arquitectura-visión-general&#34;&gt;Arquitectura (visión general)&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;access-gateway&lt;/strong&gt; (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con &lt;em&gt;identity-service&lt;/em&gt; y reinyecta un &lt;strong&gt;JWT&lt;/strong&gt; en &lt;code&gt;Authorization: Bearer ...&lt;/code&gt; hacia los microservicios. (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34; title=&#34;Global Filters :: Spring Cloud Gateway&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;identity-service&lt;/strong&gt; (Spring Boot): valida &lt;strong&gt;token opaco&lt;/strong&gt; con el &lt;em&gt;Authorization Server&lt;/em&gt; (introspección), crea &lt;strong&gt;sesión&lt;/strong&gt; en &lt;strong&gt;ElastiCache Redis&lt;/strong&gt;, firma un &lt;strong&gt;JWT&lt;/strong&gt; y setea &lt;strong&gt;cookie&lt;/strong&gt; segura. (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34; title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;utils-service / fraud-ins-service&lt;/strong&gt; (Spring Boot 3.5.x): &lt;strong&gt;stateless&lt;/strong&gt;; validan localmente el JWT contra el &lt;strong&gt;JWKS&lt;/strong&gt; de &lt;em&gt;identity-service&lt;/em&gt; (cacheado). (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34; title=&#34;OAuth 2.0 Resource Server JWT&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com&#34; title=&#34;RFC 7517 - JSON Web Key (JWK)&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;diagrama-1--handoff-login-vía-token-opaco-desde-app&#34;&gt;Diagrama 1 — “Handoff”: login vía token opaco (desde app)&lt;/h1&gt;&#xA;&lt;div class=&#34;mermaid&#34; style=&#34;text-align: center;&#34;&gt;&#xA;sequenceDiagram&#xA;    autonumber&#xA;    participant App as App origen (ya logueada)&#xA;    participant Browser as Navegador&#xA;    participant GW as access-gateway&#xA;    participant ID as identity-service&#xA;    participant AS as Authorization Server (token opaco)&#xA;    participant Redis as ElastiCache Redis&#xA;&lt;pre&gt;&lt;code&gt;App-&amp;gt;&amp;gt;AS: (2.1) Solicita token opaco (con datos del usuario)&#xA;AS--&amp;gt;&amp;gt;App: (2.2) token_opaco&#xA;App-&amp;gt;&amp;gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco&#xA;Browser-&amp;gt;&amp;gt;GW: GET /?token=token_opaco&#xA;GW-&amp;gt;&amp;gt;ID: (3) Enruta a /exchange?token=...&#xA;ID-&amp;gt;&amp;gt;AS: (4.1) Introspección RFC 7662 (valida token opaco)&#xA;AS--&amp;gt;&amp;gt;ID: Respuesta activa + claims del usuario&#xA;ID-&amp;gt;&amp;gt;Redis: (4.3) Crea sesión (SESSION_ID -&amp;gt; atributos)&#xA;ID--&amp;gt;&amp;gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=...&#xA;Note right of ID: (4.3) También firma un JWT para uso interno&#xA;Browser-&amp;gt;&amp;gt;GW: (5) Peticiones subsecuentes (cookie incluida)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;&lt;strong&gt;Notas clave&lt;/strong&gt;&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/arquitectura-auth/arquitectura-auth/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Arquitectura de Autenticación con Token Opaco, Gateway y JWT&lt;/h1&gt;&lt;p&gt;¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo &lt;strong&gt;diagramas&lt;/strong&gt; + &lt;strong&gt;tips prácticos&lt;/strong&gt; + &lt;strong&gt;fuentes oficiales&lt;/strong&gt; para cada punto clave.&lt;/p&gt;
+&lt;h1&gt;Arquitectura (visión general)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;access-gateway&lt;/strong&gt; (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con &lt;em&gt;identity-service&lt;/em&gt; y reinyecta un &lt;strong&gt;JWT&lt;/strong&gt; en &lt;code&gt;Authorization: Bearer ...&lt;/code&gt; hacia los microservicios. (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34;title=&#34;Global Filters :: Spring Cloud Gateway&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;identity-service&lt;/strong&gt; (Spring Boot): valida &lt;strong&gt;token opaco&lt;/strong&gt; con el &lt;em&gt;Authorization Server&lt;/em&gt; (introspección), crea &lt;strong&gt;sesión&lt;/strong&gt; en &lt;strong&gt;ElastiCache Redis&lt;/strong&gt;, firma un &lt;strong&gt;JWT&lt;/strong&gt; y setea &lt;strong&gt;cookie&lt;/strong&gt; segura. (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34;title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;utils-service / fraud-ins-service&lt;/strong&gt; (Spring Boot 3.5.x): &lt;strong&gt;stateless&lt;/strong&gt;; validan localmente el JWT contra el &lt;strong&gt;JWKS&lt;/strong&gt; de &lt;em&gt;identity-service&lt;/em&gt; (cacheado). (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34;title=&#34;OAuth 2.0 Resource Server JWT&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com&#34;title=&#34;RFC 7517 - JSON Web Key (JWK)&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Diagrama 1 — “Handoff”: login vía token opaco (desde app)&lt;/h1&gt;&lt;div class=&#34;mermaid&#34; style=&#34;text-align: center;&#34;&gt;
+sequenceDiagram
+    autonumber
+    participant App as App origen (ya logueada)
+    participant Browser as Navegador
+    participant GW as access-gateway
+    participant ID as identity-service
+    participant AS as Authorization Server (token opaco)
+    participant Redis as ElastiCache Redis
+&lt;pre&gt;&lt;code&gt;App-&amp;gt;&amp;gt;AS: (2.1) Solicita token opaco (con datos del usuario)
+AS--&amp;gt;&amp;gt;App: (2.2) token_opaco
+App-&amp;gt;&amp;gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco
+Browser-&amp;gt;&amp;gt;GW: GET /?token=token_opaco
+GW-&amp;gt;&amp;gt;ID: (3) Enruta a /exchange?token=...
+ID-&amp;gt;&amp;gt;AS: (4.1) Introspección RFC 7662 (valida token opaco)
+AS--&amp;gt;&amp;gt;ID: Respuesta activa + claims del usuario
+ID-&amp;gt;&amp;gt;Redis: (4.3) Crea sesión (SESSION_ID -&amp;gt; atributos)
+ID--&amp;gt;&amp;gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=...
+Note right of ID: (4.3) También firma un JWT para uso interno
+Browser-&amp;gt;&amp;gt;GW: (5) Peticiones subsecuentes (cookie incluida)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Notas clave&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;La validación de tokens &lt;strong&gt;opacos&lt;/strong&gt; se hace con &lt;strong&gt;token introspection&lt;/strong&gt; (RFC 7662). (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34;title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;, &lt;a href=&#34;https://www.rfc-editor.org/info/rfc7662?utm_source=chatgpt.com&#34;title=&#34;Information on RFC 7662&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RFC Editor&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Evita que el &lt;code&gt;token&lt;/code&gt; viaje mucho tiempo en la URL (logs, referers, history). Si lo usas, que sea &lt;strong&gt;de un solo uso y cortísima vida&lt;/strong&gt;, y haz &lt;strong&gt;redirect&lt;/strong&gt; inmediato a una URL limpia. (Buenas prácticas OWASP sobre &lt;em&gt;query strings&lt;/em&gt; sensibles). (&lt;a href=&#34;https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com&#34;title=&#34;Information exposure through query strings in url&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OWASP Foundation&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Para cookies seguras: &lt;code&gt;Secure&lt;/code&gt;, &lt;code&gt;HttpOnly&lt;/code&gt;, &lt;code&gt;SameSite&lt;/code&gt; adecuado y &lt;strong&gt;prefijo &lt;code&gt;__Host-&lt;/code&gt;&lt;/strong&gt; (defensa contra session fixation). Si necesitas &lt;strong&gt;cross-site&lt;/strong&gt;, usa &lt;code&gt;SameSite=None; Secure&lt;/code&gt;. (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie?utm_source=chatgpt.com&#34;title=&#34;Set-Cookie header - HTTP - MDN Web Docs&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MDN Web Docs&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Diagrama 2 — Peticiones subsecuentes (propagación de identidad)&lt;/h1&gt;&lt;div class=&#34;mermaid&#34; style=&#34;text-align: center;&#34;&gt;
+sequenceDiagram
+    autonumber
+    participant Browser as Navegador
+    participant GW as access-gateway
+    participant ID as identity-service
+    participant Biz as Microservicio de negocio
+    participant Redis as ElastiCache Redis
+&lt;pre&gt;&lt;code&gt;Browser-&amp;gt;&amp;gt;GW: (5.1) GET /biz/endpoint (Cookie: __Host-SESSION_ID=...)
+GW-&amp;gt;&amp;gt;ID: (5.1.2) /validate-session (SESSION_ID)
+ID-&amp;gt;&amp;gt;Redis: (5.1.3) Consulta sesión
+Redis--&amp;gt;&amp;gt;ID: OK + info usuario
+ID--&amp;gt;&amp;gt;GW: (5.1.3) Responde con JWT firmado (roles, permisos, etc.)
+GW-&amp;gt;&amp;gt;GW: (5.1.4) Inserta header Authorization: Bearer &amp;lt;JWT&amp;gt;
+GW-&amp;gt;&amp;gt;Biz: (5.1.5) Enruta con contexto de autenticación
+Biz-&amp;gt;&amp;gt;Biz: Valida firma y claims del JWT (JWKs cacheado)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;El &lt;strong&gt;gateway&lt;/strong&gt; puede implementar un &lt;strong&gt;GlobalFilter&lt;/strong&gt; para leer la cookie, llamar a &lt;code&gt;/validate-session&lt;/code&gt; y &lt;strong&gt;añadir&lt;/strong&gt; &lt;code&gt;Authorization: Bearer &amp;lt;jwt&amp;gt;&lt;/code&gt; antes de rutear. (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34;title=&#34;Global Filters :: Spring Cloud Gateway&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com&#34;title=&#34;Writing Custom Spring Cloud Gateway Filters&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Baeldung on Kotlin&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Los &lt;strong&gt;microservicios&lt;/strong&gt; validan &lt;strong&gt;localmente&lt;/strong&gt; el JWT (firma, &lt;code&gt;exp&lt;/code&gt;, &lt;code&gt;iat&lt;/code&gt;, &lt;code&gt;iss&lt;/code&gt;, &lt;code&gt;aud&lt;/code&gt;, &lt;code&gt;scope/roles&lt;/code&gt;) apoyándose en &lt;strong&gt;Spring Security Resource Server&lt;/strong&gt; + &lt;strong&gt;JWKS&lt;/strong&gt; (cacheado). (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34;title=&#34;OAuth 2.0 Resource Server JWT&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Implementación (puntos finos)&lt;/h1&gt;&lt;h2&gt;1) Cookie de sesión (HTTP-only, Secure, SameSite)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-cookie-de-sesión-http-only-secure-samesite&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-cookie-de-sesi%c3%b3n-http-only-secure-samesite&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ejemplo de cabecera &lt;strong&gt;correcta&lt;/strong&gt; (ojo: es &lt;code&gt;HttpOnly&lt;/code&gt;, no “HTTPonly”, y conviene el prefijo &lt;code&gt;__Host-&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Set-Cookie: __Host-SESSION_ID=&amp;lt;id&amp;gt;; Path=/; Secure; HttpOnly; SameSite=Lax&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Strict&lt;/code&gt; es muy restrictivo (rompe flujos tipo link-in), &lt;code&gt;Lax&lt;/code&gt; suele ser el sweet spot; para &lt;strong&gt;cross-site&lt;/strong&gt; usa &lt;code&gt;SameSite=None; Secure&lt;/code&gt;. (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com&#34;title=&#34;Using HTTP cookies - MDN Web Docs - Mozilla&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MDN Web Docs&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prefijos&lt;/strong&gt; &lt;code&gt;__Host-&lt;/code&gt;/&lt;code&gt;__Secure-&lt;/code&gt; endurecen el setting de la cookie a nivel de navegador. (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com&#34;title=&#34;Using HTTP cookies - MDN Web Docs - Mozilla&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MDN Web Docs&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2) access-gateway (Spring Cloud Gateway)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-access-gateway-spring-cloud-gateway&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-access-gateway-spring-cloud-gateway&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;YAML&lt;/strong&gt; (ejemplo simple de ruta y filtro de cabecera):&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;cloud&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;gateway&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;routes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;biz&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http://biz-service&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;predicates&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;Path=/biz/**&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;filters&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;AddRequestHeader=X-Trace-Id, &amp;#34;#{T(java.util.UUID).randomUUID()}&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;(&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/gatewayfilter-factories/addrequestheader-factory.html?utm_source=chatgpt.com&#34;title=&#34;AddRequestHeader GatewayFilter Factory&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GlobalFilter&lt;/strong&gt; (pseudo-código) para validar sesión y añadir &lt;code&gt;Authorization&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GlobalFilter&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;sessionToJwtFilter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;WebClient&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;Builder&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;webClient&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exchange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chain&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sessionId&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extractCookie&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exchange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getRequest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;__Host-SESSION_ID&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sessionId&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chain&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exchange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;webClient&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://identity-service/validate-session&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Cookie&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;__Host-SESSION_ID=&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sessionId&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;retrieve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;bodyToMono&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// aquí recibes el JWT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;defaultIfEmpty&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;flatMap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jwt&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jwt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;isEmpty&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mutated&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exchange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;mutate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setBearerAuth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jwt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chain&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mutated&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chain&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exchange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Referencias sobre &lt;strong&gt;Global Filters&lt;/strong&gt; y filtros personalizados: (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34;title=&#34;Global Filters :: Spring Cloud Gateway&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://spring.io/blog/2022/08/26/creating-a-custom-spring-cloud-gateway-filter/?utm_source=chatgpt.com&#34;title=&#34;Creating a custom Spring Cloud Gateway Filter&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com&#34;title=&#34;Writing Custom Spring Cloud Gateway Filters&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Baeldung on Kotlin&lt;/a&gt;)&lt;/p&gt;
+&lt;h2&gt;3) identity-service&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-identity-service&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-identity-service&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Introspección&lt;/strong&gt; de token opaco (RFC 7662) contra el Authorization Server (&lt;code&gt;/introspect&lt;/code&gt;) para confirmar que está &lt;strong&gt;activo&lt;/strong&gt; y leer &lt;em&gt;claims&lt;/em&gt;. (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34;title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sesión&lt;/strong&gt; en &lt;strong&gt;ElastiCache Redis&lt;/strong&gt; (TTL acorde a riesgo; usa Spring Session Redis). (&lt;a href=&#34;https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com&#34;title=&#34;Spring Session - Spring Boot&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/BestPractices.html?utm_source=chatgpt.com&#34;title=&#34;ElastiCache best practices and caching strategies&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Documentation&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JWT&lt;/strong&gt; interno firmado (por ejemplo con RSA/ECDSA). Expón &lt;strong&gt;JWKS&lt;/strong&gt; en &lt;code&gt;GET /.well-known/jwks.json&lt;/code&gt; para validación descentralizada. (JWK/JWKS en RFC 7517; la ruta de &lt;em&gt;well-known&lt;/em&gt; es la práctica estandarizada por OIDC Discovery). (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com&#34;title=&#34;RFC 7517 - JSON Web Key (JWK)&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;, &lt;a href=&#34;https://openid.net/specs/openid-connect-discovery-1_0.html?utm_source=chatgpt.com&#34;title=&#34;OpenID Connect Discovery 1.0 incorporating errata set 2&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenID Foundation&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Spring Session Redis&lt;/strong&gt; (pom y propiedades) — guía oficial: (&lt;a href=&#34;https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com&#34;title=&#34;Spring Session - Spring Boot&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)
+&lt;strong&gt;ElastiCache prácticas&lt;/strong&gt; (tamaño/escala/cluster-mode y TLS en tránsito): (&lt;a href=&#34;https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com&#34;title=&#34;Overall best practices - Amazon ElastiCache&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Documentation&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/blogs/database/best-practices-for-sizing-your-amazon-elasticache-for-redis-clusters/?utm_source=chatgpt.com&#34;title=&#34;Best practices for sizing your Amazon ElastiCache ...&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Amazon Web Services, Inc.&lt;/a&gt;)&lt;/p&gt;
+&lt;h2&gt;4) Microservicios de negocio (validación &lt;strong&gt;stateless&lt;/strong&gt; del JWT)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-microservicios-de-negocio-validación-stateless-del-jwt&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-microservicios-de-negocio-validaci%c3%b3n-stateless-del-jwt&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Config mínima con &lt;strong&gt;Spring Security Resource Server&lt;/strong&gt; (valida firma con tu JWKS):&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;security&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;oauth2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;resourceserver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;jwt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;jwk-set-uri&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://identity-service/.well-known/jwks.json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Spring Security &lt;strong&gt;auto-configura&lt;/strong&gt; la validación de &lt;strong&gt;Bearer JWT&lt;/strong&gt; y &lt;strong&gt;cachea&lt;/strong&gt; el JWKS; puedes ajustar caché/timeout si lo necesitas. (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34;title=&#34;OAuth 2.0 Resource Server JWT&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sobre el caché del JWKS&lt;/strong&gt; (Nimbus): por defecto se cachea y se refresca si llega un &lt;code&gt;kid&lt;/code&gt; desconocido; puedes tunear TTL (ej. 5–15 min). (&lt;a href=&#34;https://www.javadoc.io/doc/com.nimbusds/nimbus-jose-jwt/latest/com/nimbusds/jose/jwk/source/RemoteJWKSet.html?utm_source=chatgpt.com&#34;title=&#34;RemoteJWKSet - nimbus-jose-jwt 10.4 javadoc&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;javadoc.io&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Verificaciones recomendadas&lt;/strong&gt; en tu filtro/interceptor o configuración:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firma (&lt;code&gt;alg&lt;/code&gt;, &lt;code&gt;kid&lt;/code&gt;) con clave pública correcto.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;exp&lt;/code&gt;, &lt;code&gt;iat&lt;/code&gt;, opcional &lt;code&gt;nbf&lt;/code&gt;; &lt;code&gt;iss&lt;/code&gt;/&lt;code&gt;aud&lt;/code&gt; esperado; scopes/roles. (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34;title=&#34;OAuth 2.0 Resource Server JWT&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;5) Seguridad del “token en query param”&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;5-seguridad-del-token-en-query-param&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-seguridad-del-token-en-query-param&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Tu flujo lo usa solo &lt;strong&gt;una vez&lt;/strong&gt; (handoff). Aun así, &lt;strong&gt;mitiga&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vida muy corta (&lt;strong&gt;segundos&lt;/strong&gt;), &lt;strong&gt;un solo uso&lt;/strong&gt;, y &lt;strong&gt;redirect&lt;/strong&gt; inmediato a URL limpia.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cache-Control: no-store&lt;/code&gt; en respuestas intermedias.&lt;/li&gt;
+&lt;li&gt;Si puedes, usa &lt;strong&gt;código de intercambio&lt;/strong&gt; en lugar de token directamente (patrones de OIDC/BCP).
+Motivo: la URL puede filtrarse por logs, histórico, &lt;em&gt;Referer&lt;/em&gt;, etc. (&lt;a href=&#34;https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com&#34;title=&#34;Information exposure through query strings in url&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OWASP Foundation&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;6) Encabezado Authorization: Bearer&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;6-encabezado-authorization-bearer&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-encabezado-authorization-bearer&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La forma estándar de portar tokens es &lt;strong&gt;Authorization: Bearer &lt;token&gt;&lt;/strong&gt; (RFC 6750). (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc6750?utm_source=chatgpt.com&#34;title=&#34;RFC 6750 - The OAuth 2.0 Authorization Framework&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;, &lt;a href=&#34;https://swagger.io/docs/specification/v3_0/authentication/bearer-authentication/?utm_source=chatgpt.com&#34;title=&#34;Bearer Authentication | Swagger Docs&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Swagger&lt;/a&gt;)&lt;/p&gt;
+&lt;h1&gt;AWS (piezas y tips)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ElastiCache for Redis&lt;/strong&gt; como &lt;em&gt;session store&lt;/em&gt; (cluster-mode enabled para escalar; definir TTL de sesión). (&lt;a href=&#34;https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com&#34;title=&#34;Overall best practices - Amazon ElastiCache&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Documentation&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Habilita &lt;strong&gt;TLS&lt;/strong&gt; en tránsito y cifrado en reposo del clúster. (Buenas prácticas generales de ElastiCache). (&lt;a href=&#34;https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/BestPractices.html?utm_source=chatgpt.com&#34;title=&#34;ElastiCache best practices and caching strategies&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Documentation&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Resumen del flujo que pediste (con ajustes recomendados)&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Usuario&lt;/strong&gt; ya autenticado en la app origen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;La app origen obtiene &lt;strong&gt;token opaco&lt;/strong&gt; (RFC 7662), redirige a la nueva app con &lt;code&gt;?token=...&lt;/code&gt; (&lt;strong&gt;one-shot, TTL corto; redirect a URL limpia&lt;/strong&gt;). (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34;title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;, &lt;a href=&#34;https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com&#34;title=&#34;Information exposure through query strings in url&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OWASP Foundation&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;access-gateway&lt;/strong&gt; detecta el &lt;code&gt;token&lt;/code&gt; y enruta a &lt;strong&gt;identity-service&lt;/strong&gt; (endpoint interno de intercambio). (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34;title=&#34;Global Filters :: Spring Cloud Gateway&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;identity-service&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Introspección&lt;/strong&gt; del token opaco.&lt;/li&gt;
+&lt;li&gt;Recupera datos de usuario.&lt;/li&gt;
+&lt;li&gt;Crea &lt;strong&gt;sesión&lt;/strong&gt; en &lt;strong&gt;Redis&lt;/strong&gt;, firma un &lt;strong&gt;JWT&lt;/strong&gt;, y setea &lt;strong&gt;cookie&lt;/strong&gt; &lt;code&gt;__Host-SESSION_ID&lt;/code&gt; (&lt;code&gt;Secure; HttpOnly; SameSite=&lt;/code&gt; adecuado). (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34;title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;, &lt;a href=&#34;https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com&#34;title=&#34;Spring Session - Spring Boot&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com&#34;title=&#34;Using HTTP cookies - MDN Web Docs - Mozilla&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MDN Web Docs&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Peticiones subsecuentes&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Gateway&lt;/strong&gt; lee cookie, llama a &lt;code&gt;/validate-session&lt;/code&gt; en &lt;strong&gt;identity-service&lt;/strong&gt;, recibe &lt;strong&gt;JWT&lt;/strong&gt; y lo &lt;strong&gt;inyecta en &lt;code&gt;Authorization: Bearer&lt;/code&gt;&lt;/strong&gt;. (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34;title=&#34;Global Filters :: Spring Cloud Gateway&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Los &lt;strong&gt;microservicios&lt;/strong&gt; validan &lt;strong&gt;localmente&lt;/strong&gt; el JWT (JWKS) y quedan &lt;strong&gt;stateless&lt;/strong&gt;. (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34;title=&#34;OAuth 2.0 Resource Server JWT&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1&gt;Enlaces/Fuentes&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;JWT / JWK / JWKS&lt;/strong&gt;: RFC 7517 (JWK); JWKS autoconsumo vía OIDC Discovery (&lt;code&gt;/.well-known/openid-configuration&lt;/code&gt; y &lt;code&gt;jwks_uri&lt;/code&gt;). (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com&#34;title=&#34;RFC 7517 - JSON Web Key (JWK)&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;, &lt;a href=&#34;https://openid.net/specs/openid-connect-discovery-1_0.html?utm_source=chatgpt.com&#34;title=&#34;OpenID Connect Discovery 1.0 incorporating errata set 2&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenID Foundation&lt;/a&gt;, &lt;a href=&#34;https://auth0.com/docs/get-started/applications/configure-applications-with-oidc-discovery?utm_source=chatgpt.com&#34;title=&#34;Configure Applications with OIDC Discovery&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Auth0&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bearer Tokens&lt;/strong&gt; (header &lt;code&gt;Authorization&lt;/code&gt;): RFC 6750. (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc6750?utm_source=chatgpt.com&#34;title=&#34;RFC 6750 - The OAuth 2.0 Authorization Framework&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;, &lt;a href=&#34;https://www.rfc-editor.org/info/rfc6750?utm_source=chatgpt.com&#34;title=&#34;Information on RFC 6750&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RFC Editor&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Token opaco / Introspección&lt;/strong&gt;: RFC 7662. (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34;title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Spring Security Resource Server (JWT + JWK)&lt;/strong&gt;: docs oficiales. (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34;title=&#34;OAuth 2.0 Resource Server JWT&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Spring Cloud Gateway (GlobalFilter / mutate headers)&lt;/strong&gt;: docs + ejemplos. (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34;title=&#34;Global Filters :: Spring Cloud Gateway&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://spring.io/blog/2022/08/26/creating-a-custom-spring-cloud-gateway-filter/?utm_source=chatgpt.com&#34;title=&#34;Creating a custom Spring Cloud Gateway Filter&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com&#34;title=&#34;Writing Custom Spring Cloud Gateway Filters&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Baeldung on Kotlin&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cookies seguras&lt;/strong&gt; (&lt;code&gt;Secure&lt;/code&gt;, &lt;code&gt;HttpOnly&lt;/code&gt;, &lt;code&gt;SameSite&lt;/code&gt;, prefijos &lt;code&gt;__Host-&lt;/code&gt;/&lt;code&gt;__Secure-&lt;/code&gt;)—MDN: guías y &lt;code&gt;Set-Cookie&lt;/code&gt;. (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com&#34;title=&#34;Using HTTP cookies - MDN Web Docs - Mozilla&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MDN Web Docs&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Riesgos de poner tokens en URL&lt;/strong&gt; (OWASP). (&lt;a href=&#34;https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com&#34;title=&#34;Information exposure through query strings in url&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OWASP Foundation&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ElastiCache Redis&lt;/strong&gt; (mejores prácticas; Spring Session Redis). (&lt;a href=&#34;https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com&#34;title=&#34;Overall best practices - Amazon ElastiCache&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Documentation&lt;/a&gt;, &lt;a href=&#34;https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com&#34;title=&#34;Spring Session - Spring Boot&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;¿Quieres que te deje un &lt;strong&gt;esqueleto de proyecto&lt;/strong&gt; (gateway + identity + dos servicios) con estas piezas (Boot 3.5.x, Java 17) y &lt;em&gt;Mermaid&lt;/em&gt; en el README? Te lo preparo y lo afinamos a tu naming de Seguros360.&lt;/p&gt;
+&lt;p&gt;Este documento describe un flujo de autenticación basado en &lt;strong&gt;token opaco&lt;/strong&gt; para intercambio inicial, &lt;strong&gt;Spring Cloud Gateway&lt;/strong&gt; como punto de entrada, &lt;strong&gt;JWT&lt;/strong&gt; para propagación de identidad y &lt;strong&gt;Redis&lt;/strong&gt; como store de sesión.&lt;/p&gt;
+&lt;h2&gt;🏗 Diagrama General&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-diagrama-general&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-diagrama-general&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;mermaid&#34; style=&#34;text-align: center;&#34;&gt;
+graph TD
+sequenceDiagram
+    autonumber
+    participant App as App origen (ya logueada)
+    participant Browser as Navegador
+    participant GW as access-gateway
+    participant ID as identity-service
+    participant AS as Authorization Server (token opaco)
+    participant Redis as ElastiCache Redis
+&lt;pre&gt;&lt;code&gt;App-&amp;gt;&amp;gt;AS: (2.1) Solicita token opaco (con datos del usuario)
+AS--&amp;gt;&amp;gt;App: (2.2) token_opaco
+App-&amp;gt;&amp;gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco
+Browser-&amp;gt;&amp;gt;GW: GET /?token=token_opaco
+GW-&amp;gt;&amp;gt;ID: (3) Enruta a /exchange?token=...
+ID-&amp;gt;&amp;gt;AS: (4.1) Introspección RFC 7662 (valida token opaco)
+AS--&amp;gt;&amp;gt;ID: Respuesta activa + claims del usuario
+ID-&amp;gt;&amp;gt;Redis: (4.3) Crea sesión (SESSION_ID -&amp;gt; atributos)
+ID--&amp;gt;&amp;gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=...
+Note right of ID: (4.3) También firma un JWT para uso interno
+Browser-&amp;gt;&amp;gt;GW: (5) Peticiones subsecuentes (cookie incluida)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2&gt;⚙ Flujo de Peticiones Subsecuentes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-flujo-de-peticiones-subsecuentes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-flujo-de-peticiones-subsecuentes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;mermaid&#34; style=&#34;text-align: center;&#34;&gt;
+graph TD
+sequenceDiagram
+    autonumber
+    participant Browser as Navegador
+    participant GW as access-gateway
+    participant ID as identity-service
+    participant Biz as Microservicio de negocio
+    participant Redis as ElastiCache Redis
+&lt;pre&gt;&lt;code&gt;Browser-&amp;gt;&amp;gt;GW: (5.1) GET /biz/endpoint (Cookie: __Host-SESSION_ID=...)
+GW-&amp;gt;&amp;gt;ID: (5.1.2) /validate-session (SESSION_ID)
+ID-&amp;gt;&amp;gt;Redis: (5.1.3) Consulta sesión
+Redis--&amp;gt;&amp;gt;ID: OK + info usuario
+ID--&amp;gt;&amp;gt;GW: (5.1.3) Responde con JWT firmado (roles, permisos, etc.)
+GW-&amp;gt;&amp;gt;GW: (5.1.4) Inserta header Authorization: Bearer &amp;lt;JWT&amp;gt;
+GW-&amp;gt;&amp;gt;Biz: (5.1.5) Enruta con contexto de autenticación
+Biz-&amp;gt;&amp;gt;Biz: Valida firma y claims del JWT (JWKs cacheado)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📂 Estructura del Proyecto&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-estructura-del-proyecto&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-estructura-del-proyecto&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;seguros360-auth-arch/
+├── access-gateway/
+│   ├── src/main/java/com/seguros360/gateway/GatewayApplication.java
+│   ├── src/main/resources/application.yml
+│   └── pom.xml
+├── identity-service/
+│   ├── src/main/java/com/seguros360/identity/IdentityApplication.java
+│   ├── src/main/resources/application.yml
+│   └── pom.xml
+├── utils-service/
+│   ├── src/main/java/com/seguros360/utils/UtilsApplication.java
+│   ├── src/main/resources/application.yml
+│   └── pom.xml
+├── fraud-ins-service/
+│   ├── src/main/java/com/seguros360/fraud/FraudApplication.java
+│   ├── src/main/resources/application.yml
+│   └── pom.xml
+└── pom.xml (padre)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📌 Dependencias Comunes (Spring Boot 3.5.x, Java 17)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-dependencias-comunes-spring-boot-35x-java-17&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-dependencias-comunes-spring-boot-35x-java-17&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;java.version&amp;gt;&lt;/span&gt;17&lt;span class=&#34;nt&#34;&gt;&amp;lt;/java.version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;spring.boot.version&amp;gt;&lt;/span&gt;3.5.0&lt;span class=&#34;nt&#34;&gt;&amp;lt;/spring.boot.version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependencyManagement&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;dependencies&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-boot-dependencies&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;${spring.boot.version}&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;pom&lt;span class=&#34;nt&#34;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;import&lt;span class=&#34;nt&#34;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependencyManagement&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠 access-gateway (Spring Cloud Gateway)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-access-gateway-spring-cloud-gateway&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-access-gateway-spring-cloud-gateway&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;application.yml&lt;/strong&gt; ejemplo:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;cloud&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;gateway&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;routes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;utils&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http://utils-service&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;predicates&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;Path=/utils/**&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;fraud&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http://fraud-ins-service&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;predicates&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;Path=/fraud/**&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔑 identity-service&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-identity-service&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-identity-service&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Valida token opaco con introspección (RFC 7662)&lt;/li&gt;
+&lt;li&gt;Crea sesión en Redis (Spring Session Redis)&lt;/li&gt;
+&lt;li&gt;Firma JWT (RSA/ECDSA) y expone JWKS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;application.yml&lt;/strong&gt; ejemplo:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;redis&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;localhost&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;6379&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;session&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;store-type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;redis&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📜 utils-service &amp;amp; fraud-ins-service&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-utils-service--fraud-ins-service&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-utils-service--fraud-ins-service&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Config para validar JWT vía JWKS:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;security&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;oauth2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;resourceserver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;jwt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;jwk-set-uri&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;http://identity-service/.well-known/jwks.json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔗 Referencias&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-referencias&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-referencias&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://spring.io/projects/spring-cloud-gateway&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Security Resource Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rfc-editor.org/rfc/rfc7662&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RFC 7662 - OAuth 2.0 Token Introspection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rfc-editor.org/rfc/rfc6750&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RFC 6750 - Bearer Tokens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MDN - Set-Cookie&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+  mermaid.initialize({ startOnLoad: true });
+&lt;/script&gt;
+
+      </description>
     </item>
+    
     <item>
       <title>ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</title>
-      <link>http://localhost:1313/posts/gpt/chatgpt-en-accion/</link>
+      <link>http://localhost:50181/posts/gpt/chatgpt-en-accion/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/gpt/chatgpt-en-accion/</guid>
-      <description>&lt;h1 id=&#34;-chatgpt-para-innovación-empresarial-guía-práctica-con-prompts&#34;&gt;🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts&lt;/h1&gt;&#xA;&lt;p&gt;Aprende a usar &lt;strong&gt;ChatGPT como socio estratégico&lt;/strong&gt; para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.&lt;/p&gt;&#xA;&lt;p&gt;En este post encontrarás &lt;strong&gt;5 fórmulas probadas&lt;/strong&gt; con prompts específicos que puedes implementar inmediatamente en diferentes áreas de tu negocio.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-uso-de-la-estructura-formulaica&#34;&gt;🛠️ Uso de la Estructura Formulaica&lt;/h2&gt;&#xA;&lt;p&gt;Las fórmulas utilizan estructuras de oración con &lt;strong&gt;variables entre corchetes&lt;/strong&gt; que deben ser reemplazadas con tu información específica.&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/gpt/chatgpt-en-accion/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts&lt;/h1&gt;&lt;p&gt;Aprende a usar &lt;strong&gt;ChatGPT como socio estratégico&lt;/strong&gt; para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.&lt;/p&gt;
+&lt;p&gt;En este post encontrarás &lt;strong&gt;5 fórmulas probadas&lt;/strong&gt; con prompts específicos que puedes implementar inmediatamente en diferentes áreas de tu negocio.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠️ Uso de la Estructura Formulaica&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-uso-de-la-estructura-formulaica&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-uso-de-la-estructura-formulaica&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las fórmulas utilizan estructuras de oración con &lt;strong&gt;variables entre corchetes&lt;/strong&gt; que deben ser reemplazadas con tu información específica.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pasos para aplicarlas:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Identifica la fórmula&lt;/strong&gt;&lt;br&gt;
+Busca oraciones con corchetes, ya que indican secciones personalizables.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Personaliza tu contenido&lt;/strong&gt;&lt;br&gt;
+Sustituye los marcadores entre corchetes por datos propios.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Expande según sea necesario&lt;/strong&gt;&lt;br&gt;
+Añade detalles, ejemplos o perspectivas relevantes a tu tema.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Verifica claridad y fluidez&lt;/strong&gt;&lt;br&gt;
+Una vez insertada tu información, asegúrate de que el texto fluya de manera natural.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1&gt;🚀 Innovación y Tecnología Empresarial con ChatGPT&lt;/h1&gt;&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;&amp;ldquo;La innovación distingue a los líderes de los seguidores.&amp;rdquo;&lt;/em&gt;&lt;br&gt;
+— Steve Jobs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;La &lt;strong&gt;innovación&lt;/strong&gt; y la &lt;strong&gt;tecnología&lt;/strong&gt; definen a las empresas exitosas del siglo XXI. ChatGPT no es solo una herramienta más: es tu &lt;strong&gt;socio estratégico&lt;/strong&gt; para transformar ideas en realidades.&lt;/p&gt;
+&lt;p&gt;Descubre cómo aplicar &lt;strong&gt;ChatGPT&lt;/strong&gt; para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fomentar innovación sistemática en tu organización&lt;/li&gt;
+&lt;li&gt;Tomar decisiones empresariales basadas en datos&lt;/li&gt;
+&lt;li&gt;Acelerar la transformación digital&lt;/li&gt;
+&lt;li&gt;Optimizar flujos de trabajo con metodologías &lt;strong&gt;Ágiles&lt;/strong&gt;# 💡 Capítulo 5 – Innovación y Tecnología&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚀 Fórmula de Innovación&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-fórmula-de-innovación&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-f%c3%b3rmula-de-innovaci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;em&gt;Innovation Formula&lt;/em&gt; explora cómo ChatGPT puede estimular el pensamiento creativo y la resolución de problemas dentro de tu organización.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplos de uso:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generar cientos de ideas únicas.&lt;/li&gt;
+&lt;li&gt;Simular sesiones de &lt;em&gt;brainstorming&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Redactar borradores de solicitudes de patentes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Gracias a su procesamiento de lenguaje natural, ChatGPT puede actuar como &lt;strong&gt;socio creativo&lt;/strong&gt; en la fase de ideación.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Toma de Decisiones Basadas en Datos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-toma-de-decisiones-basadas-en-datos&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-toma-de-decisiones-basadas-en-datos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ChatGPT puede analizar información empresarial y presentarla de forma resumida y accionable, ayudando a:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comparar alternativas.&lt;/li&gt;
+&lt;li&gt;Evaluar riesgos y beneficios.&lt;/li&gt;
+&lt;li&gt;Proporcionar escenarios &amp;ldquo;qué pasaría si&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔄 Transformación Digital&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-transformación-digital&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-transformaci%c3%b3n-digital&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Implementar ChatGPT en operaciones internas puede:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatizar tareas repetitivas.&lt;/li&gt;
+&lt;li&gt;Mejorar la comunicación interna.&lt;/li&gt;
+&lt;li&gt;Reducir cuellos de botella operativos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚡ Agilidad y Optimización de Flujos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-agilidad-y-optimización-de-flujos&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-agilidad-y-optimizaci%c3%b3n-de-flujos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Integrado con metodologías &lt;strong&gt;Agile&lt;/strong&gt;, ChatGPT:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Asiste en la redacción de &lt;em&gt;user stories&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Sugiere mejoras en sprints.&lt;/li&gt;
+&lt;li&gt;Facilita retrospectivas más productivas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧠 Prompts Recomendados para Aplicar en tu Empresa&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-prompts-recomendados-para-aplicar-en-tu-empresa&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-prompts-recomendados-para-aplicar-en-tu-empresa&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1️⃣ Generar ideas innovadoras para un nuevo producto&lt;/strong&gt;&lt;br&gt;
+Actúa como un consultor de innovación. Genera 10 ideas únicas para un [producto/servicio] dirigido a [segmento de clientes] que resuelvan el problema de [problema específico] usando tendencias actuales del mercado.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2️⃣ Mejorar un flujo de trabajo interno&lt;/strong&gt;&lt;br&gt;
+Analiza el siguiente flujo de trabajo: [descripción]. Sugiere optimizaciones usando automatización, herramientas digitales y metodologías ágiles para reducir tiempos y errores.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3️⃣ Evaluar opciones estratégicas&lt;/strong&gt;&lt;br&gt;
+Compara las ventajas y desventajas de [opción A] y [opción B] para una empresa del sector [sector]. Considera impacto en costos, tiempo de implementación y riesgos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4️⃣ Redactar un plan de transformación digital&lt;/strong&gt;&lt;br&gt;
+Crea un plan detallado para transformar digitalmente el área de [departamento] de una empresa de [sector], integrando IA, automatización y capacitación de personal.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5️⃣ Facilitar una retrospectiva ágil&lt;/strong&gt;&lt;br&gt;
+Actúa como facilitador de Scrum. Diseña una dinámica de retrospectiva para un equipo que ha tenido problemas de comunicación y retrasos en sprints anteriores.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;💡 &lt;strong&gt;Conclusión:&lt;/strong&gt;&lt;br&gt;
+El &lt;em&gt;ChatGPT Business Playbook&lt;/em&gt; ofrece un marco estructurado para aplicar la IA en la innovación y la tecnología, ayudando a las empresas a mantenerse competitivas y ágiles en un entorno cambiante.&lt;/p&gt;
+
+      </description>
     </item>
+    
   </channel>
 </rss>

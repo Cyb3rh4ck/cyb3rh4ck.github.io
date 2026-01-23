@@ -1,19 +1,155 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Intellij on Cyb3rh4ck´s dev life</title>
-    <link>http://localhost:1313/tags/intellij/</link>
-    <description>Recent content in Intellij on Cyb3rh4ck´s dev life</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 06 Sep 2025 19:24:48 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/intellij/index.xml" rel="self" type="application/rss+xml" />
+    <title>Cyb3rh4ck D3v L1f3 – Intellij</title>
+    <link>http://localhost:50181/tags/intellij/</link>
+    <description>Recent content in Intellij on Cyb3rh4ck D3v L1f3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 06 Sep 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:50181/tags/intellij/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
     <item>
       <title>Automatiza tu código con Copilot en IntelliJ</title>
-      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</link>
+      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-intellij/</link>
       <pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</guid>
-      <description>&lt;p&gt;Aquí tienes cómo exprimir &lt;strong&gt;IntelliJ IDEA Community&lt;/strong&gt; con &lt;strong&gt;GitHub Copilot&lt;/strong&gt; para Java/Spring/Kafka como un pro 👇&lt;/p&gt;&#xA;&lt;h1 id=&#34;1-deja-fino-el-setup&#34;&gt;1) Deja fino el setup&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Plugins&lt;/strong&gt;: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Keymap&lt;/strong&gt;: ve a &lt;em&gt;Settings → Keymap → GitHub Copilot&lt;/em&gt; y asigna atajos cómodos para:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Trigger Inline Suggestion&lt;/em&gt; (invocar propuesta)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Next/Previous Suggestion&lt;/em&gt; (ciclar)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Open Chat&lt;/em&gt; (abrir chat lateral)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Accept Word/Line&lt;/em&gt; (aceptar por partes)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.&lt;/p&gt;</description>
+      
+      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-intellij/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Aquí tienes cómo exprimir &lt;strong&gt;IntelliJ IDEA Community&lt;/strong&gt; con &lt;strong&gt;GitHub Copilot&lt;/strong&gt; para Java/Spring/Kafka como un pro 👇&lt;/p&gt;
+&lt;h1&gt;1) Deja fino el setup&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Plugins&lt;/strong&gt;: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keymap&lt;/strong&gt;: ve a &lt;em&gt;Settings → Keymap → GitHub Copilot&lt;/em&gt; y asigna atajos cómodos para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Trigger Inline Suggestion&lt;/em&gt; (invocar propuesta)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Next/Previous Suggestion&lt;/em&gt; (ciclar)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Open Chat&lt;/em&gt; (abrir chat lateral)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Accept Word/Line&lt;/em&gt; (aceptar por partes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;2) Flujo de trabajo que rinde&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Comentario → código&lt;/strong&gt;
+Escribe el comentario exacto de lo que quieres y luego invoca Copilot:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Spring&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Boot&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;POST&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;policies&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;policy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;valida&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;guarda&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;produce&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;evento&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Kafka&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;audit.customer.updated&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copiar código&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;TDD rápido&lt;/strong&gt;
+Pide primero las &lt;em&gt;pruebas&lt;/em&gt; (JUnit 5 + Mockito) y luego genera la implementación. Copilot entiende muy bien los métodos esperados.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Itera en línea&lt;/strong&gt;
+Acepta por palabra o por línea, y cicla hasta ver una variante con buenas firmas y excepciones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chat &amp;gt; inline&lt;/strong&gt; cuando:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quieres &lt;em&gt;explicación&lt;/em&gt; de código legado.&lt;/li&gt;
+&lt;li&gt;Necesitas &lt;em&gt;refactor&lt;/em&gt; guiado (“extrae puerto hexagonal”, “aplica DTO y mapper”).&lt;/li&gt;
+&lt;li&gt;Pides &lt;em&gt;tests de borde&lt;/em&gt; y &lt;em&gt;propiedad parametrizada&lt;/em&gt; (ParameterizedTest).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;3) Prompts “cirujanos” para tu stack&lt;/h1&gt;&lt;p&gt;Pégalos como comentario encima del método/clase o en Copilot Chat.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hexagonal + Kafka (Seguros360)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Crea puerto &lt;code&gt;PolicyAuditPort&lt;/code&gt; y adaptador Kafka con &lt;code&gt;spring-kafka&lt;/code&gt;. Produce evento &lt;code&gt;AuditCustomerUpdated&lt;/code&gt; con headers &lt;code&gt;correlationId&lt;/code&gt;, &lt;code&gt;actor&lt;/code&gt;, &lt;code&gt;reason&lt;/code&gt;. Retrys idempotentes y DLQ.”&lt;/li&gt;
+&lt;li&gt;“Valida JWT con &lt;code&gt;kid&lt;/code&gt; firmado por AWS KMS (clave RSA). Extrae claims y roles. Maneja expiración y clockSkew.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Endpoints y validación&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Controller &lt;code&gt;PolicyController&lt;/code&gt; POST &lt;code&gt;/v1/policies&lt;/code&gt; con Bean Validation (campos obligatorios), &lt;code&gt;@ControllerAdvice&lt;/code&gt; para errores 400/422 con payload estándar.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Persistencia&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Repositorio JPA para &lt;code&gt;Policy&lt;/code&gt; con índice compuesto (customerId, productCode). Método &lt;code&gt;findActiveByCustomerId&lt;/code&gt; paginado.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Observabilidad&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Integra &lt;code&gt;micrometer-tracing&lt;/code&gt; y logs estructurados JSON (traceId, spanId, userId, route, latencyMs).”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Resiliencia&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Configura Resilience4j para el cliente externo: retry exponencial (maxAttempts=3), timeout=2s, circuit breaker.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;4) Chat rápido (atajos útiles)&lt;/h1&gt;&lt;p&gt;En Copilot Chat, pide acciones claras:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Explain this file in Spanish and list risky parts.”&lt;/li&gt;
+&lt;li&gt;“Generate edge-case tests for &lt;code&gt;PolicyService#update&lt;/code&gt;.”&lt;/li&gt;
+&lt;li&gt;“Refactor to hex architecture: extract ports, move infra into adapters.”&lt;/li&gt;
+&lt;li&gt;“Add MapStruct mapper + tests.”&lt;/li&gt;
+&lt;li&gt;“Create .http requests for the controller with sample bodies.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;5) YML, Regex, SQL y .http: oro con Community&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;application.yml&lt;/strong&gt;: “Genera config para &lt;code&gt;spring-kafka&lt;/code&gt; con SSL, timeouts y serializers.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Regex&lt;/strong&gt;: “Escribe regex para validar RFC mexicano y prueba 5 casos.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SQL&lt;/strong&gt;: “Crea migración Flyway para tabla policies con índices y &lt;code&gt;created_at&lt;/code&gt;/&lt;code&gt;updated_at&lt;/code&gt;.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTP Client&lt;/strong&gt;: crea &lt;code&gt;requests.http&lt;/code&gt; y pide a Copilot ejemplos con &lt;code&gt;GET/POST&lt;/code&gt; (ideal para probar APIs sin salir de IntelliJ).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;6) Plantillas y Live Templates (turbo)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Define &lt;strong&gt;File Templates&lt;/strong&gt; para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Controller&lt;/code&gt;, &lt;code&gt;Service&lt;/code&gt;, &lt;code&gt;Port&lt;/code&gt;, &lt;code&gt;Adapter&lt;/code&gt;, &lt;code&gt;Record DTO&lt;/code&gt;, &lt;code&gt;ErrorResponse&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Crea &lt;strong&gt;Live Templates&lt;/strong&gt; tipo &lt;code&gt;hexport&lt;/code&gt;, &lt;code&gt;hexadapter&lt;/code&gt;, &lt;code&gt;dto&lt;/code&gt;, &lt;code&gt;err&lt;/code&gt; y deja comentarios instructivos; Copilot completará el resto.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;7) Calidad y seguridad sin fricción&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SonarLint&lt;/strong&gt; en modo &lt;em&gt;Connected&lt;/em&gt; si puedes; si no, local. Pídele a Copilot:
+“Fix issues Sonar: S2095, S112, S1452 in this class.”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Format &amp;amp; Inspections&lt;/strong&gt;: guarda con &lt;em&gt;Reformat + Optimize imports&lt;/em&gt; para que Copilot “aprenda” tu estilo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;8) Estrategia para respuestas mejores&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Contexto primero: di el &lt;em&gt;qué&lt;/em&gt; + &lt;em&gt;restricciones&lt;/em&gt; (versiones, librerías, patrones).&lt;/li&gt;
+&lt;li&gt;Pide &lt;em&gt;arquitectura previa&lt;/em&gt; (interfaces, excepciones, DTOs) antes que la implementación.&lt;/li&gt;
+&lt;li&gt;Da &lt;strong&gt;ejemplos de entrada/salida&lt;/strong&gt; concretos (payload JSON y respuesta esperada).&lt;/li&gt;
+&lt;li&gt;“No uses librerías X” o “Debes usar Y” para forzar el stack correcto.&lt;/li&gt;
+&lt;li&gt;Repite &lt;em&gt;nombres exactos&lt;/em&gt; (paquetes, topics, endpoints). Evita ambigüedad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;9) Recetas express (lista corta)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;“Create unit tests with Mockito and parameterized inputs for null/invalid cases.”&lt;/li&gt;
+&lt;li&gt;“Document public methods with Javadoc including examples.”&lt;/li&gt;
+&lt;li&gt;“Generate mapping between &lt;code&gt;Policy&lt;/code&gt; and &lt;code&gt;PolicyDTO&lt;/code&gt; with MapStruct and test it.”&lt;/li&gt;
+&lt;li&gt;“Produce/consume Kafka with headers and error handler to DLQ.”&lt;/li&gt;
+&lt;li&gt;“Write an exception hierarchy: domain, application, infra with &lt;code&gt;@ControllerAdvice&lt;/code&gt; mapping.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;10) Qué NO delegar ciegamente&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Seguridad (JWT/KMS), transacciones y concurrencia: usa Copilot para &lt;em&gt;borradores&lt;/em&gt;, valida tú las decisiones.&lt;/li&gt;
+&lt;li&gt;Config sensible en YAML: revísala siempre y añade tests de integración.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+      </description>
     </item>
+    
   </channel>
 </rss>
