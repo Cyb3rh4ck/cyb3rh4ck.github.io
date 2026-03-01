@@ -43,6 +43,7 @@ enableEmoji = true
   lastmod = true
   userStatusEmoji = "💻"
   avatar = "https://github.com/Cyb3rh4ck.png"
+  headerIcon = "https://github.com/Cyb3rh4ck.png"
   
   description = "Bitácora de IA, Java y desarrollo ágil"
   
