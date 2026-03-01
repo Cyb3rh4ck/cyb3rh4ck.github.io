@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='https://cyb3rh4ck.github.io/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/frameworks.min.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/github.min.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/github-style.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/light.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/dark.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/syntax.css' />
+    <title> - Cyb3rh4ck D3v L1f3</title>
+    
+    <link rel="icon" type="image/x-icon" href='https://cyb3rh4ck.github.io/images/favicon.ico'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="¡Claro! Aquí tienes un esquema de curso con ejemplos para entender la Arquitectura Hexagonal en Java.
+Curso: Entendiendo la Arquitectura Hexagonal en Java Módulo 1: Introducción a la Arquitectura Hexagonal Objetivo: Comprender los fundamentos y la motivación detrás de la Arquitectura Hexagonal.
+Temas:
+¿Qué es la Arquitectura Hexagonal? Problemas que resuelve (acoplamiento, dificultad de testing). Conceptos clave: Puertos (Ports) y Adaptadores (Adapters). La metáfora del &ldquo;Hexágono&rdquo;. Principios de Diseño Implicados: Separación de preocupaciones. Inversión de Dependencias (DIP). Principio de Abierto/Cerrado (OCP). Beneficios: Mayor testabilidad. Mayor flexibilidad y adaptabilidad a cambios. Aislamiento de la lógica de negocio. Ejemplo Práctico 1.1: El Problema del Acoplamiento (Demo)
+" />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://cyb3rh4ck.github.io/post/arquitectura-hexagonal/temario/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content=" - Cyb3rh4ck D3v L1f3" />
+<meta name="twitter:description"
+  content="¡Claro! Aquí tienes un esquema de curso con ejemplos para entender la Arquitectura Hexagonal en Java.
+Curso: Entendiendo la Arquitectura Hexagonal en Java Módulo 1: Introducción a la Arquitectura Hexagonal Objetivo: Comprender los fundamentos y la motivación detrás de la Arquitectura Hexagonal.
+Temas:
+¿Qué es la Arquitectura Hexagonal? Problemas que resuelve (acoplamiento, dificultad de testing). Conceptos clave: Puertos (Ports) y Adaptadores (Adapters). La metáfora del &ldquo;Hexágono&rdquo;. Principios de Diseño Implicados: Separación de preocupaciones. Inversión de Dependencias (DIP). Principio de Abierto/Cerrado (OCP). Beneficios: Mayor testabilidad. Mayor flexibilidad y adaptabilidad a cambios. Aislamiento de la lógica de negocio. Ejemplo Práctico 1.1: El Problema del Acoplamiento (Demo)
+" />
+<meta name="twitter:site" content="https://cyb3rh4ck.github.io/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="https://cyb3rh4ck.github.io/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content=" - Cyb3rh4ck D3v L1f3">
+<meta property="og:description"
+  content="¡Claro! Aquí tienes un esquema de curso con ejemplos para entender la Arquitectura Hexagonal en Java.
+Curso: Entendiendo la Arquitectura Hexagonal en Java Módulo 1: Introducción a la Arquitectura Hexagonal Objetivo: Comprender los fundamentos y la motivación detrás de la Arquitectura Hexagonal.
+Temas:
+¿Qué es la Arquitectura Hexagonal? Problemas que resuelve (acoplamiento, dificultad de testing). Conceptos clave: Puertos (Ports) y Adaptadores (Adapters). La metáfora del &ldquo;Hexágono&rdquo;. Principios de Diseño Implicados: Separación de preocupaciones. Inversión de Dependencias (DIP). Principio de Abierto/Cerrado (OCP). Beneficios: Mayor testabilidad. Mayor flexibilidad y adaptabilidad a cambios. Aislamiento de la lógica de negocio. Ejemplo Práctico 1.1: El Problema del Acoplamiento (Demo)
+" />
+<meta property="og:url" content="https://cyb3rh4ck.github.io/post/arquitectura-hexagonal/temario/" />
+<meta property="og:site_name" content="" />
+<meta property="og:image"
+  content="https://cyb3rh4ck.github.io/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="https://cyb3rh4ck.github.io/">
+        <img class="octicon" height="32" width="32" src="">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:https://cyb3rh4ck.github.io/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="https://cyb3rh4ck.github.io/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="https://cyb3rh4ck.github.io/">
+                  <img class=" avatar-user"
+                    src="https://github.com/Cyb3rh4ck.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="https://cyb3rh4ck.github.io/">Cyb3rh4ck</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="https://cyb3rh4ck.github.io/post/arquitectura-hexagonal/temario/"></a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Mon, 01 Jan 0001 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Mon, 01 Jan 0001 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Sun, 14 Sep 2025 13:41:40 -0600"
+                    class="no-wrap">
+                    Sun, 14 Sep 2025 13:41:40 -0600</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      999 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><p>¡Claro! Aquí tienes un esquema de curso con ejemplos para entender la Arquitectura Hexagonal en Java.</p>
+<h2 id="curso-entendiendo-la-arquitectura-hexagonal-en-java">Curso: Entendiendo la Arquitectura Hexagonal en Java</h2>
+<h3 id="módulo-1-introducción-a-la-arquitectura-hexagonal">Módulo 1: Introducción a la Arquitectura Hexagonal</h3>
+<p><strong>Objetivo:</strong> Comprender los fundamentos y la motivación detrás de la Arquitectura Hexagonal.</p>
+<p><strong>Temas:</strong></p>
+<ol>
+<li><strong>¿Qué es la Arquitectura Hexagonal?</strong>
+<ul>
+<li>Problemas que resuelve (acoplamiento, dificultad de testing).</li>
+<li>Conceptos clave: Puertos (Ports) y Adaptadores (Adapters).</li>
+<li>La metáfora del &ldquo;Hexágono&rdquo;.</li>
+</ul>
+</li>
+<li><strong>Principios de Diseño Implicados:</strong>
+<ul>
+<li>Separación de preocupaciones.</li>
+<li>Inversión de Dependencias (DIP).</li>
+<li>Principio de Abierto/Cerrado (OCP).</li>
+</ul>
+</li>
+<li><strong>Beneficios:</strong>
+<ul>
+<li>Mayor testabilidad.</li>
+<li>Mayor flexibilidad y adaptabilidad a cambios.</li>
+<li>Aislamiento de la lógica de negocio.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Ejemplo Práctico 1.1: El Problema del Acoplamiento (Demo)</strong></p>
+<ul>
+<li>Crear una aplicación Java simple sin Arquitectura Hexagonal que persista datos directamente a una base de datos y muestre cómo los cambios en la capa de persistencia afectan a la lógica de negocio.</li>
+</ul>
+<h3 id="módulo-2-diseñando-el-dominio-el-core-del-hexágono">Módulo 2: Diseñando el Dominio (El Core del Hexágono)</h3>
+<p><strong>Objetivo:</strong> Definir la lógica de negocio pura e independiente de cualquier tecnología externa.</p>
+<p><strong>Temas:</strong></p>
+<ol>
+<li><strong>Identificando el Dominio:</strong>
+<ul>
+<li>Entidades (Entities).</li>
+<li>Objetos de Valor (Value Objects).</li>
+<li>Agregados (Aggregates).</li>
+<li>Servicios de Dominio (Domain Services).</li>
+</ul>
+</li>
+<li><strong>Definiendo Puertos (Ports):</strong>
+<ul>
+<li><strong>Puertos de Entrada (Driving Ports / Inbound Ports):</strong> Interfaces que la aplicación ofrece a los adaptadores externos para interactuar con el dominio (ej. <code>CrearProductoService</code>).</li>
+<li><strong>Puertos de Salida (Driven Ports / Outbound Ports):</strong> Interfaces que el dominio requiere para interactuar con sistemas externos (ej. <code>ProductoRepository</code>, <code>EmailService</code>).</li>
+</ul>
+</li>
+<li><strong>Implementando la Lógica de Negocio:</strong>
+<ul>
+<li>Clases que implementan la lógica principal, orquestando las interacciones a través de los puertos.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Ejemplo Práctico 2.1: Diseño de Dominio para un Sistema de Gestión de Productos</strong></p>
+<ul>
+<li><strong>Dominio:</strong> <code>Producto</code> (Entity), <code>ProductoId</code> (Value Object).</li>
+<li><strong>Puerto de Entrada:</strong> <code>CrearProductoUseCase</code> (interfaz).</li>
+<li><strong>Puerto de Salida:</strong> <code>ProductoRepository</code> (interfaz).</li>
+<li><strong>Implementación de Lógica de Negocio:</strong> <code>DefaultCrearProductoUseCase</code> (implementa <code>CrearProductoUseCase</code> y usa <code>ProductoRepository</code>).</li>
+</ul>
+<h3 id="módulo-3-conectando-el-exterior-adaptadores">Módulo 3: Conectando el Exterior (Adaptadores)</h3>
+<p><strong>Objetivo:</strong> Implementar los mecanismos para que sistemas externos interactúen con el dominio y para que el dominio interactúe con sistemas externos.</p>
+<p><strong>Temas:</strong></p>
+<ol>
+<li><strong>Adaptadores de Entrada (Driving Adapters / Inbound Adapters):</strong>
+<ul>
+<li>Implementan los puertos de entrada.</li>
+<li>Ejemplos: REST Controllers, CLI, UI, Message Listeners.</li>
+<li>Traducen las peticiones externas al lenguaje del dominio.</li>
+</ul>
+</li>
+<li><strong>Adaptadores de Salida (Driven Adapters / Outbound Adapters):</strong>
+<ul>
+<li>Implementan los puertos de salida.</li>
+<li>Ejemplos: Implementaciones de bases de datos (JPA, JDBC), Clientes REST, Colas de mensajes (Kafka, RabbitMQ).</li>
+<li>Traducen las llamadas del dominio al formato del sistema externo.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Ejemplo Práctico 3.1: Implementación de Adaptadores para el Sistema de Productos</strong></p>
+<ul>
+<li><strong>Adaptador de Entrada (REST):</strong> Un <code>ProductoController</code> (Spring MVC) que expone un endpoint <code>/productos</code> para crear productos, llamando a <code>CrearProductoUseCase</code>.</li>
+<li><strong>Adaptador de Salida (JPA):</strong> Una implementación de <code>ProductoRepository</code> usando Spring Data JPA para persistir <code>Producto</code> en una base de datos.
+<ul>
+<li><em>Opcional:</em> Implementación de <code>ProductoRepository</code> con una base de datos en memoria para testing.</li>
+</ul>
+</li>
+</ul>
+<h3 id="módulo-4-estructura-de-proyectos-y-dependencias">Módulo 4: Estructura de Proyectos y Dependencias</h3>
+<p><strong>Objetivo:</strong> Organizar el código Java de forma que refleje la Arquitectura Hexagonal y gestione las dependencias correctamente.</p>
+<p><strong>Temas:</strong></p>
+<ol>
+<li><strong>Estructura de Carpetas/Módulos:</strong>
+<ul>
+<li><code>application</code> (o <code>core</code>, <code>domain</code>): Contiene el dominio y los puertos.</li>
+<li><code>adapters</code>: Contiene las implementaciones de los adaptadores, subdivididos por tipo (ej. <code>in.web</code>, <code>out.persistence</code>, <code>out.messaging</code>).</li>
+<li><code>bootstrap</code> (o <code>main</code>): El punto de entrada de la aplicación, donde se cablean los componentes.</li>
+</ul>
+</li>
+<li><strong>Gestión de Dependencias (Maven/Gradle):</strong>
+<ul>
+<li>Asegurar que el dominio no dependa de los adaptadores.</li>
+<li>Inversión de Dependencia aplicada en el &ldquo;wiring&rdquo; de la aplicación.</li>
+<li>Demostrar cómo las dependencias fluyen hacia el centro y cómo el centro define las interfaces.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Ejemplo Práctico 4.1: Organizando el Proyecto Java con Maven/Gradle</strong></p>
+<ul>
+<li>Refactorizar el proyecto anterior en módulos Maven o paquetes siguiendo la estructura hexagonal.</li>
+<li>Demostrar cómo las dependencias entre módulos/paquetes se alinean con los principios.
+<ul>
+<li><code>pom.xml</code> del módulo <code>application</code> no depende de <code>adapters</code>.</li>
+<li><code>pom.xml</code> de <code>adapters</code> sí depende de <code>application</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="módulo-5-testing-en-arquitectura-hexagonal">Módulo 5: Testing en Arquitectura Hexagonal</h3>
+<p><strong>Objetivo:</strong> Aprovechar la Arquitectura Hexagonal para realizar pruebas unitarias, de integración y end-to-end de manera efectiva.</p>
+<p><strong>Temas:</strong></p>
+<ol>
+<li><strong>Testing del Dominio (Unit Tests):</strong>
+<ul>
+<li>Probar la lógica de negocio pura sin dependencias externas.</li>
+<li>Uso de mocks para puertos de salida.</li>
+</ul>
+</li>
+<li><strong>Testing de Adaptadores de Entrada:</strong>
+<ul>
+<li>Probar el mapeo de entrada y la llamada al puerto de entrada.</li>
+<li>Ej: Tests de controladores REST con MockMvc.</li>
+</ul>
+</li>
+<li><strong>Testing de Adaptadores de Salida:</strong>
+<ul>
+<li>Probar la interacción con sistemas externos (bases de datos, otros servicios).</li>
+<li>Uso de bases de datos en memoria o Testcontainers.</li>
+</ul>
+</li>
+<li><strong>Testing de Integración/End-to-End:</strong>
+<ul>
+<li>Probar el flujo completo a través de todos los componentes.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Ejemplo Práctico 5.1: Pruebas del Sistema de Productos</strong></p>
+<ul>
+<li><strong>Test Unitario de <code>DefaultCrearProductoUseCase</code>:</strong> Mockear <code>ProductoRepository</code>.</li>
+<li><strong>Test de Integración de <code>ProductoController</code>:</strong> Usar <code>MockMvc</code> e inyectar una implementación real (o mockeada) del <code>UseCase</code>.</li>
+<li><strong>Test de Integración de <code>ProductoRepositoryJPA</code>:</strong> Usar una base de datos en memoria (H2) o Testcontainers para probar la persistencia.</li>
+</ul>
+<h3 id="módulo-6-integración-con-frameworks-modernos-spring-boot">Módulo 6: Integración con Frameworks Modernos (Spring Boot)</h3>
+<p><strong>Objetivo:</strong> Aplicar la Arquitectura Hexagonal en un proyecto real usando Spring Boot.</p>
+<p><strong>Temas:</strong></p>
+<ol>
+<li><strong>Configuración de Spring Boot:</strong>
+<ul>
+<li>Inyección de dependencias (<code>@Autowired</code>, <code>@Service</code>, <code>@Repository</code>).</li>
+<li>Cableado de Puertos y Adaptadores.</li>
+</ul>
+</li>
+<li><strong>Manejo de Transacciones.</strong></li>
+<li><strong>Manejo de Excepciones.</strong></li>
+<li><strong>Consideraciones de Rendimiento y Escalabilidad.</strong></li>
+</ol>
+<p><strong>Ejemplo Práctico 6.1: Aplicación Completa con Spring Boot y Arquitectura Hexagonal</strong></p>
+<ul>
+<li>Construir una aplicación Spring Boot con los módulos definidos, integrando JPA para la persistencia, REST para la interfaz de usuario, y siguiendo estrictamente la separación de capas.</li>
+<li>Demostrar cómo Spring facilita el &ldquo;cableado&rdquo; sin comprometer la arquitectura.</li>
+</ul>
+<h3 id="conclusiones-y-siguientes-pasos">Conclusiones y Siguientes Pasos</h3>
+<ul>
+<li>Recapitulación de los beneficios.</li>
+<li>Cuándo y cuándo no usar Arquitectura Hexagonal.</li>
+<li>Recursos adicionales y patrones relacionados (DDD, CQRS).</li>
+</ul>
+<hr>
+<h3 id="ilustraciones-a-lo-largo-del-curso">Ilustraciones (a lo largo del curso)</h3>
+<p>Puedes insertar imágenes en puntos clave para visualizar los conceptos:</p>
+<ul>
+<li><strong>El Hexágono:</strong> Una representación clara del hexágono con el dominio en el centro y los adaptadores alrededor.</li>
+<li><strong>Flujo de Peticiones:</strong> Diagrama mostrando cómo una petición externa entra por un adaptador, pasa por el puerto de entrada, llega al dominio, usa un puerto de salida y sale por un adaptador de salida.</li>
+<li><strong>Estructura de Paquetes:</strong> Un diagrama de la estructura de paquetes/módulos en un proyecto Java.</li>
+<li><strong>Diagrama de Dependencias:</strong> Flechas mostrando cómo las dependencias fluyen siempre hacia el centro del hexágono.</li>
+</ul>
+<hr>
+<p>Este esquema de curso proporciona una base sólida para entender y aplicar la Arquitectura Hexagonal en Java, con un enfoque práctico a través de ejemplos incrementales.</p>
+<p>¿Te gustaría que profundicemos en algún módulo o ejemplo en particular?</p>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='https://cyb3rh4ck.github.io/js/toc.js'></script>
+<link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://cyb3rh4ck.github.io/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="https://cyb3rh4ck.github.io/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

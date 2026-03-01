@@ -1,5 +1,5 @@
 baseURL = "https://cyb3rh4ck.github.io/"
-theme = "hextra"
+theme = "github-style"
 title = "Cyb3rh4ck D3v L1f3"
 languageCode = "es"
 defaultContentLanguage = "es"
@@ -31,11 +31,19 @@ enableEmoji = true
 
   [[menu.main]]
     name = "Blog"
-    url = "/posts/"
+    url = "/post/"
     weight = 3
     pre = "📝 "
 
 [params]
+  author = "Cyb3rh4ck"
+  github = "Cyb3rh4ck"
+  twitter = "Cyb3rh4ck"
+  rss = true
+  lastmod = true
+  userStatusEmoji = "💻"
+  avatar = "https://github.com/Cyb3rh4ck.png"
+  
   description = "Bitácora de IA, Java y desarrollo ágil"
   
   # Search
@@ -84,3 +92,6 @@ enableEmoji = true
   category = 'categories'
   tag = 'tags'
   series = 'series'
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]

@@ -1,91 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cyb3rh4ck D3v L1f3 – ABAC</title>
-    <link>http://localhost:50181/tags/abac/</link>
+    <title>ABAC on Cyb3rh4ck D3v L1f3</title>
+    <link>https://cyb3rh4ck.github.io/tags/abac/</link>
     <description>Recent content in ABAC on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:50181/tags/abac/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <lastBuildDate>Fri, 08 Aug 2025 06:38:47 -0600</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/abac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad</title>
-      <link>http://localhost:50181/keycloak/capitulo6/</link>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo6/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:50181/keycloak/capitulo6/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;🔐 Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/h1&gt;&lt;h2&gt;6.1 Flujos de Autenticación Personalizados y Acciones Requeridas&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;61-flujos-de-autenticación-personalizados-y-acciones-requeridas&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#61-flujos-de-autenticaci%c3%b3n-personalizados-y-acciones-requeridas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak permite definir &lt;strong&gt;flujos de autenticación personalizados&lt;/strong&gt; para adaptarse a requisitos específicos.&lt;br&gt;
-Esto se logra configurando pasos como:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Validación de credenciales.&lt;/li&gt;
-&lt;li&gt;Factores adicionales de autenticación.&lt;/li&gt;
-&lt;li&gt;Ejecución de verificaciones externas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Las &lt;strong&gt;acciones requeridas&lt;/strong&gt; (Required Actions) son tareas que el usuario debe completar, como cambiar contraseña o aceptar términos antes de acceder.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;6.2 Estrategias de Autenticación Multi-Factor (MFA)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;62-estrategias-de-autenticación-multi-factor-mfa&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#62-estrategias-de-autenticaci%c3%b3n-multi-factor-mfa&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El uso de &lt;strong&gt;MFA&lt;/strong&gt; agrega capas adicionales de seguridad, combinando algo que el usuario:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Sabe&lt;/strong&gt; (contraseña, PIN).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tiene&lt;/strong&gt; (token físico, app móvil, SMS).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Es&lt;/strong&gt; (huella, reconocimiento facial).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Keycloak soporta MFA mediante autenticadores integrados o desarrollados vía SPI.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;6.3 Autenticación Adaptativa y Basada en Riesgo&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;63-autenticación-adaptativa-y-basada-en-riesgo&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#63-autenticaci%c3%b3n-adaptativa-y-basada-en-riesgo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak puede implementar &lt;strong&gt;autenticación adaptativa&lt;/strong&gt;, ajustando el proceso según:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ubicación geográfica del usuario.&lt;/li&gt;
-&lt;li&gt;Dispositivo o navegador usado.&lt;/li&gt;
-&lt;li&gt;Hora de acceso.&lt;/li&gt;
-&lt;li&gt;Historial de actividad.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Esto permite endurecer o relajar requisitos en función del riesgo detectado.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;6.4 Permisos Granulares: RBAC y ABAC&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;64-permisos-granulares-rbac-y-abac&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#64-permisos-granulares-rbac-y-abac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;RBAC (Role-Based Access Control):&lt;/strong&gt; asigna permisos en función de roles predefinidos.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ABAC (Attribute-Based Access Control):&lt;/strong&gt; evalúa atributos del usuario, recurso o contexto para decidir accesos.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Keycloak soporta ambos enfoques y su combinación para mayor flexibilidad.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;6.5 Gestión de Consentimiento y Controles de Privacidad&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;65-gestión-de-consentimiento-y-controles-de-privacidad&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#65-gesti%c3%b3n-de-consentimiento-y-controles-de-privacidad&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Los usuarios pueden otorgar o revocar permisos a aplicaciones para acceder a sus datos.&lt;br&gt;
-Keycloak presenta pantallas de consentimiento y registra decisiones para cumplir regulaciones como GDPR.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;6.6 Registro de Auditoría e Integración de Flujos de Eventos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;66-registro-de-auditoría-e-integración-de-flujos-de-eventos&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#66-registro-de-auditor%c3%ada-e-integraci%c3%b3n-de-flujos-de-eventos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak genera &lt;strong&gt;eventos&lt;/strong&gt; para acciones clave (inicio de sesión, cierre, fallos de autenticación).&lt;br&gt;
-Estos pueden integrarse con sistemas externos para:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Monitoreo de seguridad.&lt;/li&gt;
-&lt;li&gt;Análisis forense.&lt;/li&gt;
-&lt;li&gt;Alertas en tiempo real.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;6.7 Extensiones de Protocolo Personalizadas (SPIs)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;67-extensiones-de-protocolo-personalizadas-spis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#67-extensiones-de-protocolo-personalizadas-spis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Mediante el uso de &lt;strong&gt;Service Provider Interfaces&lt;/strong&gt;, es posible:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Crear autenticadores propios.&lt;/li&gt;
-&lt;li&gt;Agregar pasos adicionales a flujos existentes.&lt;/li&gt;
-&lt;li&gt;Extender protocolos soportados.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;💡 &lt;strong&gt;Conclusión:&lt;/strong&gt;&lt;br&gt;
-Los flujos avanzados y las opciones de personalización en Keycloak permiten adaptar la autenticación y autorización a necesidades complejas, manteniendo un alto nivel de seguridad y control.&lt;/p&gt;
-
-      </description>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo6/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-6--flujos-de-autenticación-avanzados-y-personalizaciones-de-seguridad&#34;&gt;🔐 Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/h1&gt;&#xA;&lt;h2 id=&#34;61-flujos-de-autenticación-personalizados-y-acciones-requeridas&#34;&gt;6.1 Flujos de Autenticación Personalizados y Acciones Requeridas&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak permite definir &lt;strong&gt;flujos de autenticación personalizados&lt;/strong&gt; para adaptarse a requisitos específicos.&lt;br&gt;&#xA;Esto se logra configurando pasos como:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Validación de credenciales.&lt;/li&gt;&#xA;&lt;li&gt;Factores adicionales de autenticación.&lt;/li&gt;&#xA;&lt;li&gt;Ejecución de verificaciones externas.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Las &lt;strong&gt;acciones requeridas&lt;/strong&gt; (Required Actions) son tareas que el usuario debe completar, como cambiar contraseña o aceptar términos antes de acceder.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

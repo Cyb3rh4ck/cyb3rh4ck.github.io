@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cyb3rh4ck D3v L1f3 – Posts</title>
-    <link>http://localhost:50181/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Cyb3rh4ck D3v L1f3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sat, 06 Sep 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:50181/posts/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Automatiza tu código con Copilot en IntelliJ</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-intellij/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</link>
       <pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-intellij/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-intellij/</guid>
       <description>
         
         
@@ -153,10 +153,10 @@ Acepta por palabra o por línea, y cicla hasta ver una variante con buenas firma
     
     <item>
       <title>🚀 Bootcamp: Lambdas en Java con JDK 17</title>
-      <link>http://localhost:50181/posts/lambdas/lambdas/</link>
+      <link>http://localhost:1313/posts/lambdas/lambdas/</link>
       <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/lambdas/lambdas/</guid>
+      <guid>http://localhost:1313/posts/lambdas/lambdas/</guid>
       <description>
         
         
@@ -435,10 +435,10 @@ Una lambda &lt;strong&gt;siempre&lt;/strong&gt; se asocia a una &lt;strong&gt;in
     
     <item>
       <title>Ejemplo práctico de Arquitectura Hexagonal con Spring Boot</title>
-      <link>http://localhost:50181/posts/arquitectura-hexagonal/first_post/</link>
+      <link>http://localhost:1313/posts/arquitectura-hexagonal/first_post/</link>
       <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/arquitectura-hexagonal/first_post/</guid>
+      <guid>http://localhost:1313/posts/arquitectura-hexagonal/first_post/</guid>
       <description>
         
         
@@ -969,10 +969,10 @@ Ej: &lt;code&gt;CreatePolicyCommand { policyId, productCode, holderId }&lt;/code
     
     <item>
       <title>🚪 Spring Cloud Gateway: API Gateway Reactivo Completo</title>
-      <link>http://localhost:50181/posts/spring-boot/spring-cloud-gateway/</link>
+      <link>http://localhost:1313/posts/spring-boot/spring-cloud-gateway/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/spring-boot/spring-cloud-gateway/</guid>
+      <guid>http://localhost:1313/posts/spring-boot/spring-cloud-gateway/</guid>
       <description>
         
         
@@ -2353,10 +2353,10 @@ Petición transformada: GET /get HTTP/1.1
     
     <item>
       <title>ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</title>
-      <link>http://localhost:50181/posts/gpt/chatgpt-en-accion/</link>
+      <link>http://localhost:1313/posts/gpt/chatgpt-en-accion/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/gpt/chatgpt-en-accion/</guid>
+      <guid>http://localhost:1313/posts/gpt/chatgpt-en-accion/</guid>
       <description>
         
         
@@ -2452,10 +2452,10 @@ El &lt;em&gt;ChatGPT Business Playbook&lt;/em&gt; ofrece un marco estructurado p
     
     <item>
       <title>🚀 Novedades de ChatGPT-5</title>
-      <link>http://localhost:50181/posts/gpt/chatgpt5-overview/</link>
+      <link>http://localhost:1313/posts/gpt/chatgpt5-overview/</link>
       <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/gpt/chatgpt5-overview/</guid>
+      <guid>http://localhost:1313/posts/gpt/chatgpt5-overview/</guid>
       <description>
         
         
@@ -2552,10 +2552,10 @@ Con una mejor memoria, capacidad multimodal y personalización avanzada, redefin
     
     <item>
       <title>🌿 Convenciones de Ramas en Proyectos Limpios</title>
-      <link>http://localhost:50181/posts/github/branching-conventions/</link>
+      <link>http://localhost:1313/posts/github/branching-conventions/</link>
       <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/github/branching-conventions/</guid>
+      <guid>http://localhost:1313/posts/github/branching-conventions/</guid>
       <description>
         
         
@@ -2768,10 +2768,10 @@ Si usas &lt;strong&gt;GitHub Projects&lt;/strong&gt; o &lt;strong&gt;Jira&lt;/st
     
     <item>
       <title>Strategy to Solve HackerRank Java Problems</title>
-      <link>http://localhost:50181/posts/random/hackerrank_java_strategy/</link>
+      <link>http://localhost:1313/posts/random/hackerrank_java_strategy/</link>
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/random/hackerrank_java_strategy/</guid>
+      <guid>http://localhost:1313/posts/random/hackerrank_java_strategy/</guid>
       <description>
         
         
@@ -2918,10 +2918,10 @@ Si usas &lt;strong&gt;GitHub Projects&lt;/strong&gt; o &lt;strong&gt;Jira&lt;/st
     
     <item>
       <title>Workflow Copilot &#43; ChatGPT: Conviértete en una Bestia Ágil en VS Code</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</link>
       <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/workflow-copilot-chatgpt/</guid>
       <description>
         
         
@@ -2947,7 +2947,7 @@ Con este workflow podrás:&lt;/p&gt;
 &lt;p&gt;💡 &lt;em&gt;Tip:&lt;/em&gt; Si usas &lt;strong&gt;Agent Mode&lt;/strong&gt; en ChatGPT, puedes pedirle refactorizaciones completas y generación de tests sobre tu proyecto.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2&gt;2️⃣ Cómo Funciona el Workflow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-cómo-funciona-el-workflow&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2-c%c3%b3mo-funciona-el-workflow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:50181/images/workflow-copilot-chatgpt.png&#34; alt=&#34;Workflow Visual&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+    &lt;a href=&#34;#2-c%c3%b3mo-funciona-el-workflow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/workflow-copilot-chatgpt.png&#34; alt=&#34;Workflow Visual&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Flujo recomendado:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Borrador rápido&lt;/strong&gt;: Deja que Copilot genere un snippet.&lt;/li&gt;
@@ -2997,10 +2997,10 @@ Empieza hoy mismo y convierte VS Code en tu &lt;strong&gt;central de productivid
     
     <item>
       <title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</link>
       <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
       <description>
         
         
@@ -3586,10 +3586,10 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
     
     <item>
       <title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title>
-      <link>http://localhost:50181/posts/angular/crud-angular-vscode-copilot/</link>
+      <link>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/angular/crud-angular-vscode-copilot/</guid>
+      <guid>http://localhost:1313/posts/angular/crud-angular-vscode-copilot/</guid>
       <description>
         
         
@@ -3922,14 +3922,14 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
     
     <item>
       <title>Frases y prompts útiles para Copilot en VS Code (Java &#43; Spring Boot)</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-prompts/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-prompts/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-prompts/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;img src=&#34;http://localhost:50181/images/post/banner-copilot-prompts.png&#34; alt=&#34;Copilot Prompts&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/post/banner-copilot-prompts.png&#34; alt=&#34;Copilot Prompts&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;🎯 Usa estos comentarios dentro de tu código en VS Code para que &lt;strong&gt;Copilot entienda lo que necesitas&lt;/strong&gt; y te sugiera código útil, limpio y contextualizado.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4147,10 +4147,10 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
     
     <item>
       <title>Guía de atajos de teclado en VS Code para desarrolladores Java</title>
-      <link>http://localhost:50181/posts/vscode/vscode-shortcuts/</link>
+      <link>http://localhost:1313/posts/vscode/vscode-shortcuts/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/vscode/vscode-shortcuts/</guid>
+      <guid>http://localhost:1313/posts/vscode/vscode-shortcuts/</guid>
       <description>
         
         
@@ -4376,10 +4376,10 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
     
     <item>
       <title>Automatiza tu código con Copilot en VS Code</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-vscode/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-en-vscode/</guid>
       <description>
         
         
@@ -4478,10 +4478,10 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
     
     <item>
       <title>Cómo trabaja Copilot</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/how-copilot-works/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/how-copilot-works/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/how-copilot-works/</guid>
       <description>
         
         
@@ -4525,10 +4525,10 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
     
     <item>
       <title>Instalación de GitHub Copilot en VS Code</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/instalacion-copilot-vscode/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/instalacion-copilot-vscode/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/instalacion-copilot-vscode/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/instalacion-copilot-vscode/</guid>
       <description>
         
         
@@ -4589,10 +4589,10 @@ Esta metodología nació de mi **frustración inicial** delegando todo a Copilot
     
     <item>
       <title>Instalación de Oracle DB en Docker Desktop (desde cero)</title>
-      <link>http://localhost:50181/posts/docker/instalacion_oracle_db_docker_hugo/</link>
+      <link>http://localhost:1313/posts/docker/instalacion_oracle_db_docker_hugo/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/docker/instalacion_oracle_db_docker_hugo/</guid>
+      <guid>http://localhost:1313/posts/docker/instalacion_oracle_db_docker_hugo/</guid>
       <description>
         
         
@@ -4740,10 +4740,10 @@ abc123456789   container-registry.oracle.com/database/enterprise...  0.0.0.0:152
     
     <item>
       <title>Shortcuts de GitHub Copilot en VS Code</title>
-      <link>http://localhost:50181/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link>
+      <link>http://localhost:1313/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid>
+      <guid>http://localhost:1313/posts/copilot-for-java-devs/copilot-shortcuts-vscode/</guid>
       <description>
         
         
@@ -4892,10 +4892,10 @@ abc123456789   container-registry.oracle.com/database/enterprise...  0.0.0.0:152
     
     <item>
       <title>☕ Uso de Cache Local con Caffeine</title>
-      <link>http://localhost:50181/posts/spring-boot/cache-caffeine/</link>
+      <link>http://localhost:1313/posts/spring-boot/cache-caffeine/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/spring-boot/cache-caffeine/</guid>
+      <guid>http://localhost:1313/posts/spring-boot/cache-caffeine/</guid>
       <description>
         
         
@@ -5032,10 +5032,10 @@ abc123456789   container-registry.oracle.com/database/enterprise...  0.0.0.0:152
     
     <item>
       <title>🔐 OAuth 2.0: Resumen Profesional (RFC 6749)</title>
-      <link>http://localhost:50181/posts/oauth2/</link>
+      <link>http://localhost:1313/posts/oauth2/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/oauth2/</guid>
+      <guid>http://localhost:1313/posts/oauth2/</guid>
       <description>
         
         
@@ -5222,10 +5222,10 @@ abc123456789   container-registry.oracle.com/database/enterprise...  0.0.0.0:152
     
     <item>
       <title></title>
-      <link>http://localhost:50181/posts/arquitectura-hexagonal/modulo-01/</link>
+      <link>http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/arquitectura-hexagonal/modulo-01/</guid>
+      <guid>http://localhost:1313/posts/arquitectura-hexagonal/modulo-01/</guid>
       <description>
         
         
@@ -5441,10 +5441,10 @@ class ProductoRepositoryJPA implements ProductoRepository { // Depende de la abs
     
     <item>
       <title></title>
-      <link>http://localhost:50181/posts/arquitectura-hexagonal/modulo-02/</link>
+      <link>http://localhost:1313/posts/arquitectura-hexagonal/modulo-02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/arquitectura-hexagonal/modulo-02/</guid>
+      <guid>http://localhost:1313/posts/arquitectura-hexagonal/modulo-02/</guid>
       <description>
         
         
@@ -5858,10 +5858,10 @@ class ProductoRepositoryJPA implements ProductoRepository { // Depende de la abs
     
     <item>
       <title></title>
-      <link>http://localhost:50181/posts/arquitectura-hexagonal/temario/</link>
+      <link>http://localhost:1313/posts/arquitectura-hexagonal/temario/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50181/posts/arquitectura-hexagonal/temario/</guid>
+      <guid>http://localhost:1313/posts/arquitectura-hexagonal/temario/</guid>
       <description>
         
         

@@ -1,96 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cyb3rh4ck D3v L1f3 – Cloud</title>
-    <link>http://localhost:50181/tags/cloud/</link>
+    <title>Cloud on Cyb3rh4ck D3v L1f3</title>
+    <link>https://cyb3rh4ck.github.io/tags/cloud/</link>
     <description>Recent content in Cloud on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:50181/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <lastBuildDate>Fri, 08 Aug 2025 06:38:06 -0600</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 3 – Patrones de Despliegue e Infraestructura</title>
-      <link>http://localhost:50181/keycloak/capitulo3/</link>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo3/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:50181/keycloak/capitulo3/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;☁️ Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/h1&gt;&lt;h2&gt;3.1 Modelos de Despliegue: On-Premises, Cloud e Híbrido&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-modelos-de-despliegue-on-premises-cloud-e-híbrido&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#31-modelos-de-despliegue-on-premises-cloud-e-h%c3%adbrido&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak puede desplegarse en varios modelos de infraestructura:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;On-Premises:&lt;/strong&gt;&lt;br&gt;
-Instalación en servidores físicos o virtuales gestionados internamente.&lt;br&gt;
-Proporciona control total sobre el entorno y los datos, pero requiere más gestión operativa.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Cloud:&lt;/strong&gt;&lt;br&gt;
-Ejecución de Keycloak en plataformas de nube pública o privada.&lt;br&gt;
-Facilita la escalabilidad y reduce la carga de mantenimiento, pero implica dependencia de proveedores externos.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Híbrido:&lt;/strong&gt;&lt;br&gt;
-Combinación de infraestructura local y en la nube.&lt;br&gt;
-Permite aprovechar ventajas de ambos enfoques y distribuir cargas según necesidades de seguridad y rendimiento.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;3.2 Operaciones Nativas en Kubernetes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;32-operaciones-nativas-en-kubernetes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#32-operaciones-nativas-en-kubernetes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak puede integrarse de forma nativa con Kubernetes para lograr despliegues resilientes y escalables:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Uso de &lt;strong&gt;StatefulSets&lt;/strong&gt; para manejar almacenamiento persistente.&lt;/li&gt;
-&lt;li&gt;Configuración de &lt;strong&gt;Horizontal Pod Autoscaler (HPA)&lt;/strong&gt; para ajustar recursos según demanda.&lt;/li&gt;
-&lt;li&gt;Integración con &lt;strong&gt;Ingress Controllers&lt;/strong&gt; para gestión de tráfico HTTPS.&lt;/li&gt;
-&lt;li&gt;Uso de &lt;strong&gt;ConfigMaps&lt;/strong&gt; y &lt;strong&gt;Secrets&lt;/strong&gt; para centralizar configuración y credenciales.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Kubernetes permite automatizar la recuperación ante fallos y realizar actualizaciones sin tiempo de inactividad significativo.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;3.3 Configuración como Código y Automatización&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;33-configuración-como-código-y-automatización&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#33-configuraci%c3%b3n-como-c%c3%b3digo-y-automatizaci%c3%b3n&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La configuración de Keycloak puede gestionarse como código (Configuration as Code) para asegurar consistencia en todos los entornos:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Terraform&lt;/strong&gt; para definir y aprovisionar infraestructura.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Helm Charts&lt;/strong&gt; para instalar y actualizar Keycloak en Kubernetes.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;GitOps&lt;/strong&gt; para mantener sincronizados entornos mediante repositorios de control de versiones.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;3.4 Balanceo de Carga y Gestión de Tráfico&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;34-balanceo-de-carga-y-gestión-de-tráfico&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#34-balanceo-de-carga-y-gesti%c3%b3n-de-tr%c3%a1fico&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En despliegues con múltiples instancias de Keycloak es esencial implementar:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Balanceadores L4/L7&lt;/strong&gt; para distribuir tráfico de manera uniforme.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sticky Sessions&lt;/strong&gt; en caso de no usar almacenamiento de sesiones compartido.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rate Limiting&lt;/strong&gt; y filtrado de solicitudes para prevenir abusos y ataques.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;3.5 Respaldo, Restauración y Recuperación ante Desastres&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;35-respaldo-restauración-y-recuperación-ante-desastres&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#35-respaldo-restauraci%c3%b3n-y-recuperaci%c3%b3n-ante-desastres&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Las mejores prácticas incluyen:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Copias de seguridad periódicas&lt;/strong&gt; de la base de datos y la configuración de Keycloak.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Exportación de configuraciones&lt;/strong&gt; (realms, clientes, flujos) para restauración rápida.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Planes de recuperación ante desastres&lt;/strong&gt; (DRP) con objetivos RTO/RPO claros.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;3.6 Integración de Entrega Continua (CI/CD) para Keycloak&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;36-integración-de-entrega-continua-cicd-para-keycloak&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#36-integraci%c3%b3n-de-entrega-continua-cicd-para-keycloak&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La automatización de despliegues y actualizaciones de Keycloak mejora la seguridad y la eficiencia:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Pipelines de despliegue&lt;/strong&gt; para validar cambios antes de pasar a producción.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Pruebas automatizadas&lt;/strong&gt; para verificar autenticación, federación y emisión de tokens.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Escaneos de seguridad&lt;/strong&gt; en imágenes y dependencias.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;💡 &lt;strong&gt;Conclusión:&lt;/strong&gt;&lt;br&gt;
-La elección del modelo de despliegue de Keycloak depende de los requisitos de seguridad, escalabilidad y disponibilidad de la organización. Kubernetes y las prácticas de automatización ofrecen un camino sólido hacia operaciones eficientes y confiables.&lt;/p&gt;
-
-      </description>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo3/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-3--patrones-de-despliegue-e-infraestructura&#34;&gt;☁️ Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/h1&gt;&#xA;&lt;h2 id=&#34;31-modelos-de-despliegue-on-premises-cloud-e-híbrido&#34;&gt;3.1 Modelos de Despliegue: On-Premises, Cloud e Híbrido&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak puede desplegarse en varios modelos de infraestructura:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;On-Premises:&lt;/strong&gt;&lt;br&gt;&#xA;Instalación en servidores físicos o virtuales gestionados internamente.&lt;br&gt;&#xA;Proporciona control total sobre el entorno y los datos, pero requiere más gestión operativa.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cloud:&lt;/strong&gt;&lt;br&gt;&#xA;Ejecución de Keycloak en plataformas de nube pública o privada.&lt;br&gt;&#xA;Facilita la escalabilidad y reduce la carga de mantenimiento, pero implica dependencia de proveedores externos.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

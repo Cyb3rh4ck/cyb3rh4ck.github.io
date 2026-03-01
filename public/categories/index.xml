@@ -1,32 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cyb3rh4ck D3v L1f3 – Categories</title>
-    <link>http://localhost:50181/categories/</link>
+    <title>Categories on Cyb3rh4ck D3v L1f3</title>
+    <link>https://cyb3rh4ck.github.io/categories/</link>
     <description>Recent content in Categories on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    
-	  <atom:link href="http://localhost:50181/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <atom:link href="https://cyb3rh4ck.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>IA para desarrolladores</title>
-      <link>http://localhost:50181/categories/ia-para-desarrolladores/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:50181/categories/ia-para-desarrolladores/</guid>
-      <description>
-        
-        
-        &lt;p&gt;En esta categoría encontrarás artículos que exploran cómo usar la inteligencia artificial para mejorar tu productividad como desarrollador, incluyendo herramientas como GitHub Copilot, generación automática de código, y más.&lt;/p&gt;
-
-      </description>
+      <title>Backend</title>
+      <link>https://cyb3rh4ck.github.io/categories/backend/</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/backend/</guid>
+      <description></description>
     </item>
-    
+    <item>
+      <title>Career</title>
+      <link>https://cyb3rh4ck.github.io/categories/career/</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/career/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://cyb3rh4ck.github.io/categories/java/</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arquitectura Hexagonal</title>
+      <link>https://cyb3rh4ck.github.io/categories/arquitectura-hexagonal/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/arquitectura-hexagonal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Boot</title>
+      <link>https://cyb3rh4ck.github.io/categories/spring-boot/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arquitectura De Software</title>
+      <link>https://cyb3rh4ck.github.io/categories/arquitectura-de-software/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/arquitectura-de-software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://cyb3rh4ck.github.io/categories/devops/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estrategia Empresarial</title>
+      <link>https://cyb3rh4ck.github.io/categories/estrategia-empresarial/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/estrategia-empresarial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inteligencia Artificial</title>
+      <link>https://cyb3rh4ck.github.io/categories/inteligencia-artificial/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/inteligencia-artificial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seguridad</title>
+      <link>https://cyb3rh4ck.github.io/categories/seguridad/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/seguridad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tecnología</title>
+      <link>https://cyb3rh4ck.github.io/categories/tecnolog%C3%ADa/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/tecnolog%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workflows</title>
+      <link>https://cyb3rh4ck.github.io/categories/workflows/</link>
+      <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/workflows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Developers Tips</title>
+      <link>https://cyb3rh4ck.github.io/categories/developers-tips/</link>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/developers-tips/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mejores Prácticas</title>
+      <link>https://cyb3rh4ck.github.io/categories/mejores-pr%C3%A1cticas/</link>
+      <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/mejores-pr%C3%A1cticas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frontend</title>
+      <link>https://cyb3rh4ck.github.io/categories/frontend/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://cyb3rh4ck.github.io/categories/frontend/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

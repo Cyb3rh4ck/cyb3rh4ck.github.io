@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='https://cyb3rh4ck.github.io/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/frameworks.min.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/github.min.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/github-style.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/light.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/dark.css' />
+    <link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/syntax.css' />
+    <title>🚀 Bootcamp: Lambdas en Java con JDK 17 - Cyb3rh4ck D3v L1f3</title>
+    
+    <link rel="icon" type="image/x-icon" href='https://cyb3rh4ck.github.io/images/favicon.ico'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="bootcamp de Lambdas en Java (JDK 17) desde cero, en varias fases, para que empieces sin saber nada y termines aplicándolas en casos reales de trabajo.
+🚀 Bootcamp: Lambdas en Java con JDK 17 Módulo 1 – Fundamentos 🎯 Objetivo: Entender qué es una lambda y por qué existe.
+Teoría básica
+¿Qué es una expresión lambda? Diferencia entre clase anónima y lambda. Sintaxis y partes de una lambda. Interfaces funcionales
+" />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://cyb3rh4ck.github.io/post/lambdas/lambdas/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="🚀 Bootcamp: Lambdas en Java con JDK 17 - Cyb3rh4ck D3v L1f3" />
+<meta name="twitter:description"
+  content="bootcamp de Lambdas en Java (JDK 17) desde cero, en varias fases, para que empieces sin saber nada y termines aplicándolas en casos reales de trabajo.
+🚀 Bootcamp: Lambdas en Java con JDK 17 Módulo 1 – Fundamentos 🎯 Objetivo: Entender qué es una lambda y por qué existe.
+Teoría básica
+¿Qué es una expresión lambda? Diferencia entre clase anónima y lambda. Sintaxis y partes de una lambda. Interfaces funcionales
+" />
+<meta name="twitter:site" content="https://cyb3rh4ck.github.io/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="https://cyb3rh4ck.github.io/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="🚀 Bootcamp: Lambdas en Java con JDK 17 - Cyb3rh4ck D3v L1f3">
+<meta property="og:description"
+  content="bootcamp de Lambdas en Java (JDK 17) desde cero, en varias fases, para que empieces sin saber nada y termines aplicándolas en casos reales de trabajo.
+🚀 Bootcamp: Lambdas en Java con JDK 17 Módulo 1 – Fundamentos 🎯 Objetivo: Entender qué es una lambda y por qué existe.
+Teoría básica
+¿Qué es una expresión lambda? Diferencia entre clase anónima y lambda. Sintaxis y partes de una lambda. Interfaces funcionales
+" />
+<meta property="og:url" content="https://cyb3rh4ck.github.io/post/lambdas/lambdas/" />
+<meta property="og:site_name" content="🚀 Bootcamp: Lambdas en Java con JDK 17" />
+<meta property="og:image"
+  content="https://cyb3rh4ck.github.io/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2025-08-10 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="https://cyb3rh4ck.github.io/">
+        <img class="octicon" height="32" width="32" src="">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:https://cyb3rh4ck.github.io/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="https://cyb3rh4ck.github.io/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="https://cyb3rh4ck.github.io/">
+                  <img class=" avatar-user"
+                    src="https://github.com/Cyb3rh4ck.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="https://cyb3rh4ck.github.io/">Cyb3rh4ck</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="https://cyb3rh4ck.github.io/post/lambdas/lambdas/">🚀 Bootcamp: Lambdas en Java con JDK 17</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Sun, 10 Aug 2025 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Sun, 10 Aug 2025 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Sun, 10 Aug 2025 06:01:19 -0600"
+                    class="no-wrap">
+                    Sun, 10 Aug 2025 06:01:19 -0600</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      744 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="https://cyb3rh4ck.github.io/tags/java">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      java
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="https://cyb3rh4ck.github.io/tags/lambdas">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      lambdas
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><p><strong>bootcamp de Lambdas en Java (JDK 17)</strong> desde cero, en varias fases, para que empieces sin saber nada y termines aplicándolas en casos reales de trabajo.</p>
+<hr>
+<h2 id="-bootcamp-lambdas-en-java-con-jdk-17"><strong>🚀 Bootcamp: Lambdas en Java con JDK 17</strong></h2>
+<h3 id="módulo-1--fundamentos"><strong>Módulo 1 – Fundamentos</strong></h3>
+<p>🎯 Objetivo: Entender qué es una lambda y por qué existe.</p>
+<ol>
+<li>
+<p><strong>Teoría básica</strong></p>
+<ul>
+<li>¿Qué es una expresión lambda?</li>
+<li>Diferencia entre <em>clase anónima</em> y <em>lambda</em>.</li>
+<li>Sintaxis y partes de una lambda.</li>
+</ul>
+</li>
+<li>
+<p><strong>Interfaces funcionales</strong></p>
+<ul>
+<li><code>@FunctionalInterface</code></li>
+<li>Uso de <code>Runnable</code>, <code>Callable</code>, <code>Comparator</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Primeros pasos</strong></p>
+<ul>
+<li>Crear una interfaz funcional y pasarla como parámetro a un método.</li>
+<li>Ejercicio: Implementar un <code>Saludador</code> que imprima &ldquo;Hola, <nombre>&rdquo;.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="módulo-2--lambdas-con-api-de-java"><strong>Módulo 2 – Lambdas con API de Java</strong></h3>
+<p>🎯 Objetivo: Aprender a usar las lambdas con interfaces funcionales estándar.
+4. <strong><code>java.util.function</code></strong></p>
+<ul>
+<li><code>Predicate&lt;T&gt;</code> (filtrado)</li>
+<li><code>Function&lt;T,R&gt;</code> (transformación)</li>
+<li><code>Consumer&lt;T&gt;</code> (procesar datos)</li>
+<li><code>Supplier&lt;T&gt;</code> (proveer datos)</li>
+</ul>
+<ol start="5">
+<li>
+<p><strong>Ejercicios prácticos</strong></p>
+<ul>
+<li>Filtrar nombres que empiecen por &ldquo;A&rdquo;.</li>
+<li>Mapear enteros a su doble.</li>
+<li>Imprimir lista en mayúsculas.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="módulo-3--streams-y-programación-funcional"><strong>Módulo 3 – Streams y Programación Funcional</strong></h3>
+<p>🎯 Objetivo: Usar lambdas para manipular colecciones de forma declarativa.
+6. <strong>Operaciones intermedias</strong>: <code>map</code>, <code>filter</code>, <code>sorted</code>.
+7. <strong>Operaciones terminales</strong>: <code>collect</code>, <code>forEach</code>, <code>reduce</code>.
+8. <strong>Ejercicios</strong>:</p>
+<ul>
+<li>Multiplicar todos los números de una lista por 3.</li>
+<li>Sumar todos los elementos de una lista.</li>
+<li>Agrupar cadenas por longitud (<code>Collectors.groupingBy</code>).</li>
+</ul>
+<hr>
+<h3 id="módulo-4--casos-reales"><strong>Módulo 4 – Casos Reales</strong></h3>
+<p>🎯 Objetivo: Integrar lambdas en situaciones de backend real.
+9. <strong>Ordenamiento de objetos</strong> con <code>Comparator.comparing</code>.
+10. <strong>Procesar JSON</strong>: Filtrar, mapear y agrupar datos con streams.
+11. <strong>Ejercicio de integración</strong>:
+- Lista de <code>Persona(nombre, edad)</code> → filtrar mayores de 18, ordenar por nombre, unir en un string separado por comas.</p>
+<hr>
+<h3 id="módulo-5--avanzado-jdk-1117"><strong>Módulo 5 – Avanzado (JDK 11–17)</strong></h3>
+<p>🎯 Objetivo: Usar características modernas con lambdas.
+12. <strong><code>var</code> en parámetros de lambdas</strong>
+13. <strong>Métodos de referencia</strong> (<code>Class::method</code>)
+14. <strong>Lambdas en <code>Optional</code></strong> (<code>ifPresent</code>, <code>map</code>, <code>flatMap</code>)
+15. <strong>Parallel Streams</strong>: cuándo y cuándo no usarlos.</p>
+<hr>
+<h3 id="módulo-6--proyecto-final"><strong>Módulo 6 – Proyecto Final</strong></h3>
+<p>🎯 Objetivo: Aplicar todo en un microproyecto.</p>
+<ul>
+<li>
+<p>Crear un pequeño sistema de ventas que:</p>
+<ul>
+<li>Cargue productos en memoria.</li>
+<li>Filtre por disponibilidad.</li>
+<li>Ordene por precio.</li>
+<li>Calcule el total con <code>reduce</code>.</li>
+<li>Use <code>map</code> para aplicar descuentos.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>📌 <strong>Recomendaciones</strong>:</p>
+<ul>
+<li>Practica cada ejercicio primero con <strong>for/while</strong> y luego con <strong>lambdas</strong> para ver la diferencia.</li>
+<li>Usa <strong>IntelliJ IDEA</strong> o <strong>VS Code</strong> con Java Extension Pack para tener autocompletado y depuración.</li>
+<li>Trabaja con <strong>JUnit 5</strong> para probar tus lambdas en cada módulo.</li>
+</ul>
+<hr>
+<p>Perfecto Efren 😏
+Vamos a desmenuzar el <strong>Módulo 1 – Fundamentos</strong> para que entiendas <strong>desde cero</strong> qué es una <strong>lambda</strong> y por qué existe en Java.</p>
+<hr>
+<h2 id="módulo-1--fundamentos-1"><strong>Módulo 1 – Fundamentos</strong></h2>
+<h3 id="-objetivo">🎯 Objetivo</h3>
+<p>Que entiendas:</p>
+<ul>
+<li>Qué es una <strong>expresión lambda</strong>.</li>
+<li>En qué se diferencia de una <strong>clase anónima</strong>.</li>
+<li>Cómo se escribe y cuáles son sus partes.</li>
+</ul>
+<hr>
+<h2 id="1-qué-es-una-expresión-lambda"><strong>1️⃣ ¿Qué es una expresión lambda?</strong></h2>
+<p>En Java, una <strong>expresión lambda</strong> es una <strong>función anónima</strong> que puedes usar como si fuera un <strong>objeto</strong>.</p>
+<p>📌 Características:</p>
+<ul>
+<li><strong>No tiene nombre</strong> (es “anónima”).</li>
+<li>Se puede <strong>pasar como parámetro</strong> a un método.</li>
+<li>Se usa para <strong>implementar interfaces funcionales</strong> (interfaces con <strong>un solo método abstracto</strong>).</li>
+</ul>
+<p>Ejemplo sencillo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Interface funcional</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@FunctionalInterface</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">interface</span> <span class="nc">Saludador</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">saludar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Uso con lambda</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Saludador</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hola, &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">s</span><span class="p">.</span><span class="na">saludar</span><span class="p">(</span><span class="s">&#34;Efren&#34;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h2 id="2-diferencia-entre-clase-anónima-y-lambda"><strong>2️⃣ Diferencia entre Clase Anónima y Lambda</strong></h2>
+<p>Antes de Java 8, si querías pasar “comportamiento” como argumento, usabas <strong>clases anónimas</strong>.</p>
+<h3 id="clase-anónima"><strong>Clase anónima</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Runnable</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Runnable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hola desde clase anónima&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span></code></pre></div><h3 id="lambda"><strong>Lambda</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Runnable</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hola desde lambda&#34;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p>💡 <strong>Diferencias clave</strong>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Clase Anónima</th>
+          <th>Lambda</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Código más <strong>largo</strong> y repetitivo.</td>
+          <td>Sintaxis <strong>corta</strong> y limpia.</td>
+      </tr>
+      <tr>
+          <td>Crea una <strong>nueva clase interna</strong>.</td>
+          <td>No crea clase interna, usa <strong>invokedynamic</strong> (más eficiente).</td>
+      </tr>
+      <tr>
+          <td>Puede tener múltiples métodos (si es interfaz normal).</td>
+          <td>Solo se usa con <strong>interfaces funcionales</strong>.</td>
+      </tr>
+      <tr>
+          <td><code>this</code> hace referencia a la clase anónima.</td>
+          <td><code>this</code> hace referencia a la clase envolvente.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="3-sintaxis-y-partes-de-una-lambda"><strong>3️⃣ Sintaxis y Partes de una Lambda</strong></h2>
+<p>La forma general es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="p">(</span><span class="n">parametros</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cuerpo</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="partes"><strong>Partes</strong>:</h3>
+<ol>
+<li>
+<p><strong>Parámetros</strong> → <code>(x, y)</code></p>
+<ul>
+<li>Si solo hay 1 parámetro, puedes omitir los paréntesis: <code>x -&gt; ...</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Operador flecha</strong> → <code>-&gt;</code></p>
+<ul>
+<li>Separa parámetros y cuerpo.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cuerpo</strong> → <code>{ ... }</code></p>
+<ul>
+<li>Si es una sola línea, puedes omitir llaves y <code>return</code>.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="ejemplos-de-sintaxis-válidas"><strong>Ejemplos de sintaxis válidas</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Sin parámetros</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hola mundo&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Con un parámetro</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Con tipo explícito</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hola &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Múltiples parámetros</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Con llaves y return</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">suma</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<p>💡 <strong>Regla de oro:</strong>
+Una lambda <strong>siempre</strong> se asocia a una <strong>interface funcional</strong>, aunque sea una de las que ya trae Java (<code>Runnable</code>, <code>Predicate</code>, etc.).</p>
+<hr>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='https://cyb3rh4ck.github.io/js/toc.js'></script>
+<link rel="stylesheet" href='https://cyb3rh4ck.github.io/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://cyb3rh4ck.github.io/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="https://cyb3rh4ck.github.io/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

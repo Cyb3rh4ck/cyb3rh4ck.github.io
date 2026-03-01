@@ -1,87 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cyb3rh4ck D3v L1f3 – API Security</title>
-    <link>http://localhost:50181/tags/api-security/</link>
+    <title>API Security on Cyb3rh4ck D3v L1f3</title>
+    <link>https://cyb3rh4ck.github.io/tags/api-security/</link>
     <description>Recent content in API Security on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:50181/tags/api-security/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <lastBuildDate>Fri, 08 Aug 2025 06:38:29 -0600</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/api-security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 5 – Patrones de Integración de Keycloak</title>
-      <link>http://localhost:50181/keycloak/capitulo5/</link>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo5/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:50181/keycloak/capitulo5/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;🔗 Capítulo 5 – Patrones de Integración de Keycloak&lt;/h1&gt;&lt;h2&gt;5.1 Configuración de Clientes OAuth2 y Mejores Prácticas&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;51-configuración-de-clientes-oauth2-y-mejores-prácticas&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#51-configuraci%c3%b3n-de-clientes-oauth2-y-mejores-pr%c3%a1cticas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak permite registrar aplicaciones como &lt;strong&gt;clientes OAuth2&lt;/strong&gt; para manejar autorización de forma segura.&lt;br&gt;
-Buenas prácticas:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Utilizar &lt;strong&gt;confidenciales de cliente&lt;/strong&gt; (client secrets) robustos.&lt;/li&gt;
-&lt;li&gt;Configurar &lt;strong&gt;redirecciones&lt;/strong&gt; únicamente a URLs de confianza.&lt;/li&gt;
-&lt;li&gt;Definir &lt;strong&gt;alcances (scopes)&lt;/strong&gt; mínimos necesarios para cada cliente.&lt;/li&gt;
-&lt;li&gt;Habilitar &lt;strong&gt;rotación periódica de credenciales&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;5.2 Adaptación a OpenID Connect (OIDC)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;52-adaptación-a-openid-connect-oidc&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#52-adaptaci%c3%b3n-a-openid-connect-oidc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;OpenID Connect&lt;/strong&gt; extiende OAuth2 añadiendo autenticación de usuario.&lt;br&gt;
-Keycloak actúa como &lt;strong&gt;Proveedor de Identidad (IdP)&lt;/strong&gt; emitiendo:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ID Tokens&lt;/strong&gt; con información del usuario autenticado.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Access Tokens&lt;/strong&gt; para autorizar el acceso a recursos.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Refresh Tokens&lt;/strong&gt; para renovar sesiones sin reautenticación.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Las aplicaciones deben validar firmas y tiempos de expiración de los tokens antes de conceder acceso.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;5.3 Federación SAML e Integración con Sistemas Legados&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;53-federación-saml-e-integración-con-sistemas-legados&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#53-federaci%c3%b3n-saml-e-integraci%c3%b3n-con-sistemas-legados&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak soporta &lt;strong&gt;SAML 2.0&lt;/strong&gt; para integrarse con sistemas que aún utilizan este protocolo.&lt;br&gt;
-Esto permite:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Proveer &lt;strong&gt;SSO&lt;/strong&gt; a aplicaciones corporativas legadas.&lt;/li&gt;
-&lt;li&gt;Actuar como &lt;strong&gt;Proveedor de Servicio (SP)&lt;/strong&gt; o &lt;strong&gt;Proveedor de Identidad (IdP)&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Mapear atributos SAML a roles y permisos internos.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;5.4 Seguridad para APIs y Microservicios&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;54-seguridad-para-apis-y-microservicios&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#54-seguridad-para-apis-y-microservicios&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para proteger APIs, Keycloak emite &lt;strong&gt;JWTs&lt;/strong&gt; firmados que incluyen información de permisos.&lt;br&gt;
-Recomendaciones:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Validar tokens en cada solicitud usando bibliotecas compatibles.&lt;/li&gt;
-&lt;li&gt;Definir &lt;strong&gt;roles y permisos granulares&lt;/strong&gt; en Keycloak.&lt;/li&gt;
-&lt;li&gt;Configurar &lt;strong&gt;políticas de expiración&lt;/strong&gt; y revocación de tokens.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;5.5 Single Sign-On (SSO) y Single Log-Out (SLO)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;55-single-sign-on-sso-y-single-log-out-slo&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#55-single-sign-on-sso-y-single-log-out-slo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SSO:&lt;/strong&gt; Un usuario inicia sesión una sola vez y obtiene acceso a múltiples aplicaciones confiables.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SLO:&lt;/strong&gt; Permite cerrar sesión en todas las aplicaciones asociadas cuando el usuario lo hace en una de ellas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Keycloak coordina estos flujos usando OIDC o SAML, garantizando consistencia en la sesión.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;5.6 Autenticación Máquina a Máquina y Cuentas de Servicio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;56-autenticación-máquina-a-máquina-y-cuentas-de-servicio&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#56-autenticaci%c3%b3n-m%c3%a1quina-a-m%c3%a1quina-y-cuentas-de-servicio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para integraciones sin interacción humana, Keycloak soporta &lt;strong&gt;Machine-to-Machine Authentication&lt;/strong&gt; mediante:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Client Credentials Grant&lt;/strong&gt; de OAuth2.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Service Accounts&lt;/strong&gt; vinculadas a clientes.&lt;/li&gt;
-&lt;li&gt;Roles específicos para restringir el alcance de estas credenciales.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;💡 &lt;strong&gt;Conclusión:&lt;/strong&gt;&lt;br&gt;
-Los patrones de integración de Keycloak permiten cubrir un amplio rango de escenarios, desde aplicaciones web modernas hasta sistemas legados y microservicios. La correcta configuración de OAuth2, OIDC y SAML asegura interoperabilidad y seguridad en todo el ecosistema.&lt;/p&gt;
-
-      </description>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo5/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-5--patrones-de-integración-de-keycloak&#34;&gt;🔗 Capítulo 5 – Patrones de Integración de Keycloak&lt;/h1&gt;&#xA;&lt;h2 id=&#34;51-configuración-de-clientes-oauth2-y-mejores-prácticas&#34;&gt;5.1 Configuración de Clientes OAuth2 y Mejores Prácticas&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak permite registrar aplicaciones como &lt;strong&gt;clientes OAuth2&lt;/strong&gt; para manejar autorización de forma segura.&lt;br&gt;&#xA;Buenas prácticas:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Utilizar &lt;strong&gt;confidenciales de cliente&lt;/strong&gt; (client secrets) robustos.&lt;/li&gt;&#xA;&lt;li&gt;Configurar &lt;strong&gt;redirecciones&lt;/strong&gt; únicamente a URLs de confianza.&lt;/li&gt;&#xA;&lt;li&gt;Definir &lt;strong&gt;alcances (scopes)&lt;/strong&gt; mínimos necesarios para cada cliente.&lt;/li&gt;&#xA;&lt;li&gt;Habilitar &lt;strong&gt;rotación periódica de credenciales&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;52-adaptación-a-openid-connect-oidc&#34;&gt;5.2 Adaptación a OpenID Connect (OIDC)&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;OpenID Connect&lt;/strong&gt; extiende OAuth2 añadiendo autenticación de usuario.&lt;br&gt;&#xA;Keycloak actúa como &lt;strong&gt;Proveedor de Identidad (IdP)&lt;/strong&gt; emitiendo:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

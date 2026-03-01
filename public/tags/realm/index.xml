@@ -1,73 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cyb3rh4ck D3v L1f3 – Realm</title>
-    <link>http://localhost:50181/tags/realm/</link>
+    <title>Realm on Cyb3rh4ck D3v L1f3</title>
+    <link>https://cyb3rh4ck.github.io/tags/realm/</link>
     <description>Recent content in Realm on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:50181/tags/realm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <lastBuildDate>Fri, 08 Aug 2025 06:38:32 -0600</lastBuildDate>
+    <atom:link href="https://cyb3rh4ck.github.io/tags/realm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy</title>
-      <link>http://localhost:50181/keycloak/capitulo4/</link>
+      <link>https://cyb3rh4ck.github.io/keycloak/capitulo4/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:50181/keycloak/capitulo4/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;🏛️ Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/h1&gt;&lt;h2&gt;4.1 Diseño de Realms para Aislamiento&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;41-diseño-de-realms-para-aislamiento&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#41-dise%c3%b1o-de-realms-para-aislamiento&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un &lt;strong&gt;realm&lt;/strong&gt; en Keycloak es un espacio de nombres de seguridad que contiene usuarios, credenciales, roles y grupos.&lt;br&gt;
-El diseño correcto de realms es esencial para garantizar el aislamiento de datos y políticas de seguridad entre diferentes aplicaciones o clientes.&lt;/p&gt;
-&lt;p&gt;Buenas prácticas para el diseño de realms:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Separar entornos (desarrollo, pruebas, producción) en realms distintos.&lt;/li&gt;
-&lt;li&gt;Evitar mezclar aplicaciones con diferentes requisitos regulatorios en un mismo realm.&lt;/li&gt;
-&lt;li&gt;Usar nombres descriptivos y consistentes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;4.2 Gestión de Múltiples Realms e Inquilinos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;42-gestión-de-múltiples-realms-e-inquilinos&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#42-gesti%c3%b3n-de-m%c3%baltiples-realms-e-inquilinos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak soporta &lt;strong&gt;multi-tenancy&lt;/strong&gt;, lo que permite gestionar múltiples clientes o inquilinos dentro de una misma instancia:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Realms independientes&lt;/strong&gt;: cada inquilino tiene su propio realm y configuración.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Administración centralizada&lt;/strong&gt;: un equipo puede gestionar varios realms desde la consola de administración.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Aislamiento lógico&lt;/strong&gt;: los datos y políticas de un realm no afectan a otros.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;4.3 Administración Delegada&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;43-administración-delegada&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#43-administraci%c3%b3n-delegada&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;strong&gt;administración delegada&lt;/strong&gt; permite asignar permisos administrativos limitados a ciertos usuarios sin otorgar control total sobre el realm.&lt;br&gt;
-Esto es útil para que los administradores de un inquilino puedan gestionar sus propios usuarios, roles y clientes sin acceder a configuraciones globales.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;4.4 Federación de Usuarios e Integración con Directorios Externos&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;44-federación-de-usuarios-e-integración-con-directorios-externos&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#44-federaci%c3%b3n-de-usuarios-e-integraci%c3%b3n-con-directorios-externos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Keycloak puede federar usuarios desde fuentes externas como:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;LDAP&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Active Directory&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Bases de datos personalizadas&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;La federación permite sincronizar credenciales y atributos sin necesidad de duplicar datos. También es posible configurar reglas de mapeo para adaptar la información al esquema de Keycloak.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;4.5 Intermediación y Federación de Identidad&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;45-intermediación-y-federación-de-identidad&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#45-intermediaci%c3%b3n-y-federaci%c3%b3n-de-identidad&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La &lt;strong&gt;intermediación de identidad&lt;/strong&gt; (Identity Brokering) permite que usuarios autenticados en otros proveedores de identidad (IdP) puedan acceder a aplicaciones gestionadas por Keycloak.&lt;br&gt;
-Soporta protocolos como &lt;strong&gt;SAML&lt;/strong&gt; y &lt;strong&gt;OpenID Connect&lt;/strong&gt; para establecer confianza entre proveedores.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;4.6 Confianza y Comunicación entre Realms&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;46-confianza-y-comunicación-entre-realms&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#46-confianza-y-comunicaci%c3%b3n-entre-realms&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En entornos con múltiples realms, Keycloak puede establecer relaciones de confianza para permitir que usuarios autenticados en un realm accedan a recursos en otro.&lt;br&gt;
-Esto se logra mediante configuración de &lt;strong&gt;tokens de acceso entre realms&lt;/strong&gt; y políticas de autorización específicas.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;💡 &lt;strong&gt;Conclusión:&lt;/strong&gt;&lt;br&gt;
-El diseño de realms y la estrategia de multi-tenancy en Keycloak son elementos clave para escalar de manera segura y eficiente. La administración delegada, la federación de usuarios y la intermediación de identidad permiten flexibilidad sin comprometer el aislamiento ni la seguridad.&lt;/p&gt;
-
-      </description>
+      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo4/</guid>
+      <description>&lt;h1 id=&#34;-capítulo-4--diseño-de-realms-aislamiento-de-inquilinos-y-multi-tenancy&#34;&gt;🏛️ Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/h1&gt;&#xA;&lt;h2 id=&#34;41-diseño-de-realms-para-aislamiento&#34;&gt;4.1 Diseño de Realms para Aislamiento&lt;/h2&gt;&#xA;&lt;p&gt;Un &lt;strong&gt;realm&lt;/strong&gt; en Keycloak es un espacio de nombres de seguridad que contiene usuarios, credenciales, roles y grupos.&lt;br&gt;&#xA;El diseño correcto de realms es esencial para garantizar el aislamiento de datos y políticas de seguridad entre diferentes aplicaciones o clientes.&lt;/p&gt;&#xA;&lt;p&gt;Buenas prácticas para el diseño de realms:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Separar entornos (desarrollo, pruebas, producción) en realms distintos.&lt;/li&gt;&#xA;&lt;li&gt;Evitar mezclar aplicaciones con diferentes requisitos regulatorios en un mismo realm.&lt;/li&gt;&#xA;&lt;li&gt;Usar nombres descriptivos y consistentes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;42-gestión-de-múltiples-realms-e-inquilinos&#34;&gt;4.2 Gestión de Múltiples Realms e Inquilinos&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak soporta &lt;strong&gt;multi-tenancy&lt;/strong&gt;, lo que permite gestionar múltiples clientes o inquilinos dentro de una misma instancia:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
