@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Identidad on Cyb3rh4ck D3v L1f3</title>
-    <link>https://cyb3rh4ck.github.io/tags/identidad/</link>
+    <link>http://localhost:1313/tags/identidad/</link>
     <description>Recent content in Identidad on Cyb3rh4ck D3v L1f3</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Fri, 08 Aug 2025 06:39:19 -0600</lastBuildDate>
-    <atom:link href="https://cyb3rh4ck.github.io/tags/identidad/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/identidad/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/capitulo1/</link>
+      <link>http://localhost:1313/keycloak/capitulo1/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo1/</guid>
+      <guid>http://localhost:1313/keycloak/capitulo1/</guid>
       <description>&lt;h1 id=&#34;-capítulo-1--principios-de-autenticación-moderna-y-gestión-de-identidades&#34;&gt;📚 Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/h1&gt;&#xA;&lt;h2 id=&#34;11-evolución-de-la-autenticación-y-autorización&#34;&gt;1.1 Evolución de la Autenticación y Autorización&lt;/h2&gt;&#xA;&lt;p&gt;En sus inicios, la autenticación consistía simplemente en verificar un &lt;strong&gt;nombre de usuario&lt;/strong&gt; y &lt;strong&gt;contraseña&lt;/strong&gt; contra una base de datos local.&lt;br&gt;&#xA;A medida que las aplicaciones comenzaron a distribuirse y los usuarios accedieron desde diferentes ubicaciones y dispositivos, surgió la necesidad de &lt;strong&gt;protocolos más seguros y escalables&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;La &lt;strong&gt;autorización&lt;/strong&gt; —el proceso de determinar qué puede hacer un usuario una vez autenticado— también evolucionó.&lt;br&gt;&#xA;Se pasó de &lt;strong&gt;listas de control de acceso estáticas&lt;/strong&gt; a modelos más dinámicos como:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/capitulo4/</link>
+      <link>http://localhost:1313/keycloak/capitulo4/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo4/</guid>
+      <guid>http://localhost:1313/keycloak/capitulo4/</guid>
       <description>&lt;h1 id=&#34;-capítulo-4--diseño-de-realms-aislamiento-de-inquilinos-y-multi-tenancy&#34;&gt;🏛️ Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/h1&gt;&#xA;&lt;h2 id=&#34;41-diseño-de-realms-para-aislamiento&#34;&gt;4.1 Diseño de Realms para Aislamiento&lt;/h2&gt;&#xA;&lt;p&gt;Un &lt;strong&gt;realm&lt;/strong&gt; en Keycloak es un espacio de nombres de seguridad que contiene usuarios, credenciales, roles y grupos.&lt;br&gt;&#xA;El diseño correcto de realms es esencial para garantizar el aislamiento de datos y políticas de seguridad entre diferentes aplicaciones o clientes.&lt;/p&gt;&#xA;&lt;p&gt;Buenas prácticas para el diseño de realms:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Separar entornos (desarrollo, pruebas, producción) en realms distintos.&lt;/li&gt;&#xA;&lt;li&gt;Evitar mezclar aplicaciones con diferentes requisitos regulatorios en un mismo realm.&lt;/li&gt;&#xA;&lt;li&gt;Usar nombres descriptivos y consistentes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;42-gestión-de-múltiples-realms-e-inquilinos&#34;&gt;4.2 Gestión de Múltiples Realms e Inquilinos&lt;/h2&gt;&#xA;&lt;p&gt;Keycloak soporta &lt;strong&gt;multi-tenancy&lt;/strong&gt;, lo que permite gestionar múltiples clientes o inquilinos dentro de una misma instancia:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/capitulo7/</link>
+      <link>http://localhost:1313/keycloak/capitulo7/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo7/</guid>
+      <guid>http://localhost:1313/keycloak/capitulo7/</guid>
       <description>&lt;h1 id=&#34;-capítulo-7--gestión-de-usuarios-grupos-y-roles-a-gran-escala&#34;&gt;👥 Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala&lt;/h1&gt;&#xA;&lt;h2 id=&#34;71-aprovisionamiento-de-usuarios-y-automatización-del-ciclo-de-vida&#34;&gt;7.1 Aprovisionamiento de Usuarios y Automatización del Ciclo de Vida&lt;/h2&gt;&#xA;&lt;p&gt;El &lt;strong&gt;aprovisionamiento de usuarios&lt;/strong&gt; es el proceso de creación, actualización y desactivación de cuentas de manera controlada.&lt;br&gt;&#xA;Keycloak soporta:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Creación manual de usuarios desde la consola de administración.&lt;/li&gt;&#xA;&lt;li&gt;Aprovisionamiento automático mediante API REST.&lt;/li&gt;&#xA;&lt;li&gt;Sincronización desde directorios LDAP/AD.&lt;/li&gt;&#xA;&lt;li&gt;Automatización con herramientas de gestión de identidades externas.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La &lt;strong&gt;automatización del ciclo de vida&lt;/strong&gt; asegura que las cuentas se actualicen o desactiven cuando cambien las condiciones (por ejemplo, baja de un empleado).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/capitulo9/</link>
+      <link>http://localhost:1313/keycloak/capitulo9/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/capitulo9/</guid>
+      <guid>http://localhost:1313/keycloak/capitulo9/</guid>
       <description>&lt;h1 id=&#34;-capítulo-9--evolución-de-despliegues-de-keycloak-y-direcciones-futuras&#34;&gt;🚀 Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras&lt;/h1&gt;&#xA;&lt;h2 id=&#34;91-evolución-de-despliegues-de-keycloak&#34;&gt;9.1 Evolución de Despliegues de Keycloak&lt;/h2&gt;&#xA;&lt;p&gt;A lo largo de los años, Keycloak ha pasado de ser una herramienta de autenticación y autorización básica a una plataforma completa de gestión de identidades.&lt;br&gt;&#xA;Tendencias observadas en despliegues:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;De monolíticos a contenedorizados&lt;/strong&gt;: migración hacia Docker y Kubernetes.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;De on-premises a cloud&lt;/strong&gt;: adopción creciente de nubes públicas y privadas.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;De configuraciones manuales a automatizadas&lt;/strong&gt;: uso de Infrastructure as Code y GitOps.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;De autenticación simple a multifactor adaptativa&lt;/strong&gt;: integración de biometría y análisis de riesgo.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;92-innovaciones-técnicas-recientes&#34;&gt;9.2 Innovaciones Técnicas Recientes&lt;/h2&gt;&#xA;&lt;p&gt;Entre las mejoras recientes de Keycloak se incluyen:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Guía Completa de Keycloak – Índice de Capítulos</title>
-      <link>https://cyb3rh4ck.github.io/keycloak/indice_keycloak/</link>
+      <link>http://localhost:1313/keycloak/indice_keycloak/</link>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/keycloak/indice_keycloak/</guid>
-      <description>&lt;h1 id=&#34;-guía-completa-de-keycloak--índice-de-capítulos&#34;&gt;📖 Guía Completa de Keycloak – Índice de Capítulos&lt;/h1&gt;&#xA;&lt;p&gt;Esta serie cubre de forma detallada el uso de &lt;strong&gt;Keycloak&lt;/strong&gt; para sistemas modernos de autenticación y gestión de identidades, desde los fundamentos hasta estrategias avanzadas y tendencias futuras.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-capítulos&#34;&gt;📚 Capítulos&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo1&#34;&gt;Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo2&#34;&gt;Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo3&#34;&gt;Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo4&#34;&gt;Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo5&#34;&gt;Capítulo 5 – Patrones de Integración de Keycloak&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo6&#34;&gt;Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo7&#34;&gt;Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo8&#34;&gt;Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cyb3rh4ck.github.io/keycloak/capitulo9&#34;&gt;Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;</description>
+      <guid>http://localhost:1313/keycloak/indice_keycloak/</guid>
+      <description>&lt;h1 id=&#34;-guía-completa-de-keycloak--índice-de-capítulos&#34;&gt;📖 Guía Completa de Keycloak – Índice de Capítulos&lt;/h1&gt;&#xA;&lt;p&gt;Esta serie cubre de forma detallada el uso de &lt;strong&gt;Keycloak&lt;/strong&gt; para sistemas modernos de autenticación y gestión de identidades, desde los fundamentos hasta estrategias avanzadas y tendencias futuras.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-capítulos&#34;&gt;📚 Capítulos&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo1&#34;&gt;Capítulo 1 – Principios de Autenticación Moderna y Gestión de Identidades&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo2&#34;&gt;Capítulo 2 – Análisis Profundo de la Arquitectura de Keycloak&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo3&#34;&gt;Capítulo 3 – Patrones de Despliegue e Infraestructura&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo4&#34;&gt;Capítulo 4 – Diseño de Realms, Aislamiento de Inquilinos y Multi-Tenancy&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo5&#34;&gt;Capítulo 5 – Patrones de Integración de Keycloak&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo6&#34;&gt;Capítulo 6 – Flujos de Autenticación Avanzados y Personalizaciones de Seguridad&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo7&#34;&gt;Capítulo 7 – Gestión de Usuarios, Grupos y Roles a Gran Escala&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo8&#34;&gt;Capítulo 8 – Observabilidad, Monitoreo y Respuesta a Incidentes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/keycloak/capitulo9&#34;&gt;Capítulo 9 – Evolución de Despliegues de Keycloak y Direcciones Futuras&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;</description>
     </item>
   </channel>
 </rss>

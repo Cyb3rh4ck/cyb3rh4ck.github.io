@@ -4,7 +4,6 @@ title = "Cyb3rh4ck D3v L1f3"
 languageCode = "es"
 defaultContentLanguage = "es"
 
-# Hextra requires these for proper asset handling
 enableRobotsTXT = true
 enableGitInfo = true
 enableEmoji = true
@@ -46,6 +45,7 @@ enableEmoji = true
   headerIcon = "https://github.com/Cyb3rh4ck.png"
   
   description = "Bitácora de IA, Java y desarrollo ágil"
+  custom_css = ["css/custom.css"]
   
   # Search
   [params.search]
@@ -85,7 +85,6 @@ enableEmoji = true
 [params.blog]
     listDesc = true
 
-# Hextra built-in mermaid support
 [params.mermaid]
     enable = true
 
@@ -96,3 +95,5 @@ enableEmoji = true
 
 [frontmatter]
   lastmod = ["lastmod", ":fileModTime", ":default"]
+
+

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spring Boot on Cyb3rh4ck D3v L1f3</title>
-    <link>https://cyb3rh4ck.github.io/categories/spring-boot/</link>
+    <link>http://localhost:1313/categories/spring-boot/</link>
     <description>Recent content in Spring Boot on Cyb3rh4ck D3v L1f3</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 09 Aug 2025 21:54:23 -0600</lastBuildDate>
-    <atom:link href="https://cyb3rh4ck.github.io/categories/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/spring-boot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ejemplo práctico de Arquitectura Hexagonal con Spring Boot</title>
-      <link>https://cyb3rh4ck.github.io/post/arquitectura-hexagonal/first_post/</link>
+      <link>http://localhost:1313/post/arquitectura-hexagonal/first_post/</link>
       <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/post/arquitectura-hexagonal/first_post/</guid>
+      <guid>http://localhost:1313/post/arquitectura-hexagonal/first_post/</guid>
       <description>&lt;p&gt;Mini‑bootcamp práctico de Arquitectura Hexagonal aplicado a Spring Boot (con Commands, diseño, carpetas, y código listo para copiar/pegar). Iremos de conceptos → diseño → implementación → pruebas.&lt;/p&gt;&#xA;&lt;h1 id=&#34;1-qué-es-de-verdad-la-arquitectura-hexagonal&#34;&gt;1) Qué es (de verdad) la arquitectura hexagonal&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Hexágono = núcleo independiente&lt;/strong&gt;: tu dominio + casos de uso (application) no conocen frameworks ni detalles de I/O.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Puertos (Ports)&lt;/strong&gt;: interfaces que el núcleo expone o necesita.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Inbound ports&lt;/strong&gt;: lo que tu app ofrece (casos de uso). Ej: &lt;code&gt;CreatePolicyUseCase&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Outbound ports&lt;/strong&gt;: lo que tu app necesita del exterior. Ej: &lt;code&gt;PolicyRepository&lt;/code&gt;, &lt;code&gt;PaymentGateway&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Adaptadores (Adapters)&lt;/strong&gt;: implementaciones concretas de puertos.&lt;/p&gt;</description>
     </item>
   </channel>

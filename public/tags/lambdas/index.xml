@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lambdas on Cyb3rh4ck D3v L1f3</title>
-    <link>https://cyb3rh4ck.github.io/tags/lambdas/</link>
+    <link>http://localhost:1313/tags/lambdas/</link>
     <description>Recent content in Lambdas on Cyb3rh4ck D3v L1f3</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 10 Aug 2025 06:01:19 -0600</lastBuildDate>
-    <atom:link href="https://cyb3rh4ck.github.io/tags/lambdas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/lambdas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🚀 Bootcamp: Lambdas en Java con JDK 17</title>
-      <link>https://cyb3rh4ck.github.io/post/lambdas/lambdas/</link>
+      <link>http://localhost:1313/post/lambdas/lambdas/</link>
       <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/post/lambdas/lambdas/</guid>
+      <guid>http://localhost:1313/post/lambdas/lambdas/</guid>
       <description>&lt;p&gt;&lt;strong&gt;bootcamp de Lambdas en Java (JDK 17)&lt;/strong&gt; desde cero, en varias fases, para que empieces sin saber nada y termines aplicándolas en casos reales de trabajo.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-bootcamp-lambdas-en-java-con-jdk-17&#34;&gt;&lt;strong&gt;🚀 Bootcamp: Lambdas en Java con JDK 17&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;módulo-1--fundamentos&#34;&gt;&lt;strong&gt;Módulo 1 – Fundamentos&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;🎯 Objetivo: Entender qué es una lambda y por qué existe.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Teoría básica&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;¿Qué es una expresión lambda?&lt;/li&gt;&#xA;&lt;li&gt;Diferencia entre &lt;em&gt;clase anónima&lt;/em&gt; y &lt;em&gt;lambda&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Sintaxis y partes de una lambda.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Interfaces funcionales&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>

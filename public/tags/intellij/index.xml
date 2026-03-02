@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intellij on Cyb3rh4ck D3v L1f3</title>
-    <link>https://cyb3rh4ck.github.io/tags/intellij/</link>
+    <link>http://localhost:1313/tags/intellij/</link>
     <description>Recent content in Intellij on Cyb3rh4ck D3v L1f3</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 06 Sep 2025 19:20:58 -0600</lastBuildDate>
-    <atom:link href="https://cyb3rh4ck.github.io/tags/intellij/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/intellij/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automatiza tu código con Copilot en IntelliJ</title>
-      <link>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-en-intellij/</link>
+      <link>http://localhost:1313/post/copilot-for-java-devs/copilot-en-intellij/</link>
       <pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-en-intellij/</guid>
+      <guid>http://localhost:1313/post/copilot-for-java-devs/copilot-en-intellij/</guid>
       <description>&lt;p&gt;Aquí tienes cómo exprimir &lt;strong&gt;IntelliJ IDEA Community&lt;/strong&gt; con &lt;strong&gt;GitHub Copilot&lt;/strong&gt; para Java/Spring/Kafka como un pro 👇&lt;/p&gt;&#xA;&lt;h1 id=&#34;1-deja-fino-el-setup&#34;&gt;1) Deja fino el setup&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Plugins&lt;/strong&gt;: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Keymap&lt;/strong&gt;: ve a &lt;em&gt;Settings → Keymap → GitHub Copilot&lt;/em&gt; y asigna atajos cómodos para:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Trigger Inline Suggestion&lt;/em&gt; (invocar propuesta)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Next/Previous Suggestion&lt;/em&gt; (ciclar)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Open Chat&lt;/em&gt; (abrir chat lateral)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Accept Word/Line&lt;/em&gt; (aceptar por partes)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.&lt;/p&gt;</description>
     </item>
   </channel>
