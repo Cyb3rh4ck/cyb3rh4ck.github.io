@@ -1,54 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VS Code on Cyb3rh4ck D3v L1f3</title>
-    <link>http://localhost:1313/vscode/</link>
-    <description>Recent content in VS Code on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Wed, 22 Oct 2025 08:13:48 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/vscode/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Extensiones</title>
-      <link>http://localhost:1313/vscode/extensiones/</link>
-      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/extensiones/</guid>
-      <description>&lt;h3 id=&#34;extensiones-para-desarrollar-con-java-spring-boot-y-copilot&#34;&gt;Extensiones para desarrollar con Java, Spring Boot y Copilot&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Copilot&lt;/li&gt;&#xA;&lt;li&gt;Copilot Chat&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;java&#34;&gt;Java&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Languaje Support for Java by Red Hat&lt;/li&gt;&#xA;&lt;li&gt;Extension Pack for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Debugger for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Test Runner for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Project Manager for Java (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Maven for Java (Microsoft)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;spring-boot&#34;&gt;Spring Boot&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Spring Initalizr Java Support (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Spring Boot Dashboard (Microsoft)&lt;/li&gt;&#xA;&lt;li&gt;Spring Boot Tools (Microsoft)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>VS Code - Generar un nuevo proyecto Spring Boot</title>
-      <link>http://localhost:1313/vscode/spring-boot-dev/</link>
-      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/spring-boot-dev/</guid>
-      <description>&lt;p&gt;Opción 1: Con Spring Initializr (dentro de VS Code)&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Abre VS Code.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Presiona &lt;code&gt;Ctrl+Shift+P&lt;/code&gt; y busca &lt;code&gt;&amp;quot;Spring Initializr: Create a Maven Project&amp;quot;&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Sigue los pasos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Language: Java&lt;/li&gt;&#xA;&lt;li&gt;Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)&lt;/li&gt;&#xA;&lt;li&gt;Group Id: com.tuempresa&lt;/li&gt;&#xA;&lt;li&gt;Artifact Id: mi-app&lt;/li&gt;&#xA;&lt;li&gt;Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.&lt;/li&gt;&#xA;&lt;li&gt;Java Version: 17&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Espera que se genere el proyecto.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>GitHub Copilot Agents @</title>
-      <link>http://localhost:1313/vscode/github-copilot/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/github-copilot/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h2 id=&#34;-qué-son-los-github-copilot-agents&#34;&gt;🧠 ¿Qué son los GitHub Copilot Agents?&lt;/h2&gt;&#xA;&lt;p&gt;A partir del &lt;strong&gt;30 de noviembre de 2023&lt;/strong&gt;, GitHub introdujo un concepto llamado &lt;em&gt;&lt;strong&gt;Copilot Agents&lt;/strong&gt;&lt;/em&gt;, que son &lt;strong&gt;“mini asistentes especializados”&lt;/strong&gt; dentro del &lt;strong&gt;chat de GitHub Copilot&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;En lugar de que el chat solo responda preguntas generales, ahora puedes invocar &lt;strong&gt;agentes especializados&lt;/strong&gt; usando el símbolo &lt;strong&gt;@&lt;/strong&gt; (arroba) directamente en el cuadro de texto del chat, dentro de &lt;strong&gt;Visual Studio Code&lt;/strong&gt; o &lt;strong&gt;GitHub Copilot Chat&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GitHub Copilot #</title>
-      <link>http://localhost:1313/vscode/github-copilot-hashtag/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/github-copilot-hashtag/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;p&gt;⚡&#xA;Vamos a desmenuzar &lt;strong&gt;el uso del símbolo &lt;code&gt;#&lt;/code&gt; en GitHub Copilot Chat&lt;/strong&gt;, aplicado específicamente a un &lt;strong&gt;proyecto Java 17 con Spring Boot 3.4.x&lt;/strong&gt;, y cómo puedes aprovecharlo en tu flujo real de desarrollo.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-qué-hace-el-símbolo--en-copilot-chat&#34;&gt;🧠 ¿Qué hace el símbolo &lt;code&gt;#&lt;/code&gt; en Copilot Chat?&lt;/h2&gt;&#xA;&lt;p&gt;El &lt;strong&gt;símbolo &lt;code&gt;#&lt;/code&gt; (hash)&lt;/strong&gt; sirve para &lt;strong&gt;añadir contexto de código o archivos específicos&lt;/strong&gt; a tu conversación con Copilot Chat.&#xA;Básicamente, le estás diciendo al modelo:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;“Mira este archivo, clase o método específico, y respóndeme con base en eso.”&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GitHub Copilot 4&#39;s</title>
-      <link>http://localhost:1313/vscode/github-copilot-4s/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/github-copilot-4s/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;p&gt;✅ &lt;strong&gt;Single, Specific, Short, and Surround.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-explicación-detallada&#34;&gt;💡 Explicación detallada:&lt;/h3&gt;&#xA;&lt;p&gt;La técnica &lt;strong&gt;4S Prompt Crafting Technique&lt;/strong&gt; se enfoca en cómo escribir &lt;em&gt;prompts efectivos y eficientes&lt;/em&gt; para maximizar los resultados con &lt;strong&gt;GitHub Copilot&lt;/strong&gt; (y cualquier asistente de código impulsado por IA).&lt;/p&gt;&#xA;&lt;p&gt;Los &lt;strong&gt;4S&lt;/strong&gt; significan:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Single&lt;/strong&gt; → Un solo propósito.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Cada prompt debe centrarse en &lt;strong&gt;una tarea concreta&lt;/strong&gt;, por ejemplo:&#xA;“Genera una prueba unitaria para el método &lt;code&gt;savePolicy()&lt;/code&gt;”&#xA;y no mezclar cosas como “genera la prueba y refactoriza la clase”.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GitHub Copilot shoots</title>
-      <link>http://localhost:1313/vscode/github-copilot-shots/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vscode/github-copilot-shots/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;p&gt;Excelente, Efren ⚡&#xA;Vamos a desglosar &lt;strong&gt;cómo aplicar las técnicas de Zero-Shot, One-Shot y Few-Shot Learning&lt;/strong&gt; directamente en el contexto de &lt;strong&gt;GitHub Copilot Chat&lt;/strong&gt; con un proyecto &lt;strong&gt;Java 17 + Spring Boot 3.4.x&lt;/strong&gt;, usando ejemplos reales de prompts.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-primero-qué-significan-esos-tres-enfoques&#34;&gt;🧠 Primero: ¿qué significan esos tres enfoques?&lt;/h2&gt;&#xA;&lt;p&gt;Son &lt;strong&gt;estrategias de entrenamiento y prompting&lt;/strong&gt; que provienen del &lt;em&gt;Machine Learning&lt;/em&gt;, pero también se aplican al &lt;strong&gt;prompt engineering&lt;/strong&gt; —es decir, a &lt;em&gt;cómo le das instrucciones a Copilot&lt;/em&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on Cyb3rh4ck D3v L1f3</title><link>https://cyb3rh4ck.github.io/vscode/</link><description>Recent content in VS Code on Cyb3rh4ck D3v L1f3</description><generator>Hugo</generator><language>es</language><lastBuildDate>Wed, 22 Oct 2025 08:13:48 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/vscode/index.xml" rel="self" type="application/rss+xml"/><item><title>Extensiones</title><link>https://cyb3rh4ck.github.io/vscode/extensiones/</link><pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/extensiones/</guid><description>&lt;h3 id="extensiones-para-desarrollar-con-java-spring-boot-y-copilot">Extensiones para desarrollar con Java, Spring Boot y Copilot&lt;/h3>
+&lt;ul>
+&lt;li>Copilot&lt;/li>
+&lt;li>Copilot Chat&lt;/li>
+&lt;/ul>
+&lt;h3 id="java">Java&lt;/h3>
+&lt;ul>
+&lt;li>Languaje Support for Java by Red Hat&lt;/li>
+&lt;li>Extension Pack for Java (Microsoft)&lt;/li>
+&lt;li>Debugger for Java (Microsoft)&lt;/li>
+&lt;li>Test Runner for Java (Microsoft)&lt;/li>
+&lt;li>Project Manager for Java (Microsoft)&lt;/li>
+&lt;li>Maven for Java (Microsoft)&lt;/li>
+&lt;/ul>
+&lt;h3 id="spring-boot">Spring Boot&lt;/h3>
+&lt;ul>
+&lt;li>Spring Initalizr Java Support (Microsoft)&lt;/li>
+&lt;li>Spring Boot Dashboard (Microsoft)&lt;/li>
+&lt;li>Spring Boot Tools (Microsoft)&lt;/li>
+&lt;/ul></description></item><item><title>VS Code - Generar un nuevo proyecto Spring Boot</title><link>https://cyb3rh4ck.github.io/vscode/spring-boot-dev/</link><pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/spring-boot-dev/</guid><description>&lt;p>Opción 1: Con Spring Initializr (dentro de VS Code)&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Abre VS Code.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Presiona &lt;code>Ctrl+Shift+P&lt;/code> y busca &lt;code>&amp;quot;Spring Initializr: Create a Maven Project&amp;quot;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Sigue los pasos:&lt;/p>
+&lt;ul>
+&lt;li>Language: Java&lt;/li>
+&lt;li>Build Tool: Maven o Gradle (elige Maven si no tienes preferencia)&lt;/li>
+&lt;li>Group Id: com.tuempresa&lt;/li>
+&lt;li>Artifact Id: mi-app&lt;/li>
+&lt;li>Dependencies: Spring Web, Spring Boot DevTools, Lombok, etc.&lt;/li>
+&lt;li>Java Version: 17&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Espera que se genere el proyecto.&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>GitHub Copilot Agents @</title><link>https://cyb3rh4ck.github.io/vscode/github-copilot/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/github-copilot/</guid><description>&lt;hr>
+&lt;h2 id="-qué-son-los-github-copilot-agents">🧠 ¿Qué son los GitHub Copilot Agents?&lt;/h2>
+&lt;p>A partir del &lt;strong>30 de noviembre de 2023&lt;/strong>, GitHub introdujo un concepto llamado &lt;em>&lt;strong>Copilot Agents&lt;/strong>&lt;/em>, que son &lt;strong>“mini asistentes especializados”&lt;/strong> dentro del &lt;strong>chat de GitHub Copilot&lt;/strong>.&lt;/p>
+&lt;p>En lugar de que el chat solo responda preguntas generales, ahora puedes invocar &lt;strong>agentes especializados&lt;/strong> usando el símbolo &lt;strong>@&lt;/strong> (arroba) directamente en el cuadro de texto del chat, dentro de &lt;strong>Visual Studio Code&lt;/strong> o &lt;strong>GitHub Copilot Chat&lt;/strong>.&lt;/p></description></item><item><title>GitHub Copilot #</title><link>https://cyb3rh4ck.github.io/vscode/github-copilot-hashtag/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/github-copilot-hashtag/</guid><description>&lt;hr>
+&lt;p>⚡
+Vamos a desmenuzar &lt;strong>el uso del símbolo &lt;code>#&lt;/code> en GitHub Copilot Chat&lt;/strong>, aplicado específicamente a un &lt;strong>proyecto Java 17 con Spring Boot 3.4.x&lt;/strong>, y cómo puedes aprovecharlo en tu flujo real de desarrollo.&lt;/p>
+&lt;hr>
+&lt;h2 id="-qué-hace-el-símbolo--en-copilot-chat">🧠 ¿Qué hace el símbolo &lt;code>#&lt;/code> en Copilot Chat?&lt;/h2>
+&lt;p>El &lt;strong>símbolo &lt;code>#&lt;/code> (hash)&lt;/strong> sirve para &lt;strong>añadir contexto de código o archivos específicos&lt;/strong> a tu conversación con Copilot Chat.
+Básicamente, le estás diciendo al modelo:&lt;/p>
+&lt;blockquote>
+&lt;p>“Mira este archivo, clase o método específico, y respóndeme con base en eso.”&lt;/p></description></item><item><title>GitHub Copilot 4's</title><link>https://cyb3rh4ck.github.io/vscode/github-copilot-4s/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/github-copilot-4s/</guid><description>&lt;hr>
+&lt;p>✅ &lt;strong>Single, Specific, Short, and Surround.&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;h3 id="-explicación-detallada">💡 Explicación detallada:&lt;/h3>
+&lt;p>La técnica &lt;strong>4S Prompt Crafting Technique&lt;/strong> se enfoca en cómo escribir &lt;em>prompts efectivos y eficientes&lt;/em> para maximizar los resultados con &lt;strong>GitHub Copilot&lt;/strong> (y cualquier asistente de código impulsado por IA).&lt;/p>
+&lt;p>Los &lt;strong>4S&lt;/strong> significan:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Single&lt;/strong> → Un solo propósito.&lt;/p>
+&lt;blockquote>
+&lt;p>Cada prompt debe centrarse en &lt;strong>una tarea concreta&lt;/strong>, por ejemplo:
+“Genera una prueba unitaria para el método &lt;code>savePolicy()&lt;/code>”
+y no mezclar cosas como “genera la prueba y refactoriza la clase”.&lt;/p></description></item><item><title>GitHub Copilot shoots</title><link>https://cyb3rh4ck.github.io/vscode/github-copilot-shots/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/vscode/github-copilot-shots/</guid><description>&lt;hr>
+&lt;p>Excelente, Efren ⚡
+Vamos a desglosar &lt;strong>cómo aplicar las técnicas de Zero-Shot, One-Shot y Few-Shot Learning&lt;/strong> directamente en el contexto de &lt;strong>GitHub Copilot Chat&lt;/strong> con un proyecto &lt;strong>Java 17 + Spring Boot 3.4.x&lt;/strong>, usando ejemplos reales de prompts.&lt;/p>
+&lt;hr>
+&lt;h2 id="-primero-qué-significan-esos-tres-enfoques">🧠 Primero: ¿qué significan esos tres enfoques?&lt;/h2>
+&lt;p>Son &lt;strong>estrategias de entrenamiento y prompting&lt;/strong> que provienen del &lt;em>Machine Learning&lt;/em>, pero también se aplican al &lt;strong>prompt engineering&lt;/strong> —es decir, a &lt;em>cómo le das instrucciones a Copilot&lt;/em>.&lt;/p></description></item></channel></rss>

@@ -1,280 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
-    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
-    <title>Arquitectura de Autenticación con Token Opaco, Gateway y JWT - Cyb3rh4ck D3v L1f3</title>
-    
-    <link rel="icon" type="image/x-icon" href='http://localhost:1313/images/favicon.ico'>
-    
-    <meta name="theme-color" content="#1e2327">
-
-    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
-    
-
-    
-    <meta name="description"
-  content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT ¡Va! Te lo explico como arquitecto (AWS &#43; Java) y te dejo diagramas &#43; tips prácticos &#43; fuentes oficiales para cada punto clave.
-Arquitectura (visión general) access-gateway (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con identity-service y reinyecta un JWT en Authorization: Bearer ... hacia los microservicios. (Home) identity-service (Spring Boot): valida token opaco con el Authorization Server (introspección), crea sesión en ElastiCache Redis, firma un JWT y setea cookie segura. (IETF Datatracker) utils-service / fraud-ins-service (Spring Boot 3.5.x): stateless; validan localmente el JWT contra el JWKS de identity-service (cacheado). (Home, IETF Datatracker) Diagrama 1 — “Handoff”: login vía token opaco (desde app) sequenceDiagram autonumber participant App as App origen (ya logueada) participant Browser as Navegador participant GW as access-gateway participant ID as identity-service participant AS as Authorization Server (token opaco) participant Redis as ElastiCache Redis App-&gt;&gt;AS: (2.1) Solicita token opaco (con datos del usuario) AS--&gt;&gt;App: (2.2) token_opaco App-&gt;&gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco Browser-&gt;&gt;GW: GET /?token=token_opaco GW-&gt;&gt;ID: (3) Enruta a /exchange?token=... ID-&gt;&gt;AS: (4.1) Introspección RFC 7662 (valida token opaco) AS--&gt;&gt;ID: Respuesta activa &#43; claims del usuario ID-&gt;&gt;Redis: (4.3) Crea sesión (SESSION_ID -&gt; atributos) ID--&gt;&gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=... Note right of ID: (4.3) También firma un JWT para uso interno Browser-&gt;&gt;GW: (5) Peticiones subsecuentes (cookie incluida) Notas clave
-" />
-<meta name="keywords"
-  content='' />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="http://localhost:1313/arquitectura-auth/arquitectura-auth/" />
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT - Cyb3rh4ck D3v L1f3" />
-<meta name="twitter:description"
-  content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT ¡Va! Te lo explico como arquitecto (AWS &#43; Java) y te dejo diagramas &#43; tips prácticos &#43; fuentes oficiales para cada punto clave.
-Arquitectura (visión general) access-gateway (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con identity-service y reinyecta un JWT en Authorization: Bearer ... hacia los microservicios. (Home) identity-service (Spring Boot): valida token opaco con el Authorization Server (introspección), crea sesión en ElastiCache Redis, firma un JWT y setea cookie segura. (IETF Datatracker) utils-service / fraud-ins-service (Spring Boot 3.5.x): stateless; validan localmente el JWT contra el JWKS de identity-service (cacheado). (Home, IETF Datatracker) Diagrama 1 — “Handoff”: login vía token opaco (desde app) sequenceDiagram autonumber participant App as App origen (ya logueada) participant Browser as Navegador participant GW as access-gateway participant ID as identity-service participant AS as Authorization Server (token opaco) participant Redis as ElastiCache Redis App-&gt;&gt;AS: (2.1) Solicita token opaco (con datos del usuario) AS--&gt;&gt;App: (2.2) token_opaco App-&gt;&gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco Browser-&gt;&gt;GW: GET /?token=token_opaco GW-&gt;&gt;ID: (3) Enruta a /exchange?token=... ID-&gt;&gt;AS: (4.1) Introspección RFC 7662 (valida token opaco) AS--&gt;&gt;ID: Respuesta activa &#43; claims del usuario ID-&gt;&gt;Redis: (4.3) Crea sesión (SESSION_ID -&gt; atributos) ID--&gt;&gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=... Note right of ID: (4.3) También firma un JWT para uso interno Browser-&gt;&gt;GW: (5) Peticiones subsecuentes (cookie incluida) Notas clave
-" />
-<meta name="twitter:site" content="http://localhost:1313/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image"
-  content="http://localhost:1313/">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT - Cyb3rh4ck D3v L1f3">
-<meta property="og:description"
-  content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT ¡Va! Te lo explico como arquitecto (AWS &#43; Java) y te dejo diagramas &#43; tips prácticos &#43; fuentes oficiales para cada punto clave.
-Arquitectura (visión general) access-gateway (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con identity-service y reinyecta un JWT en Authorization: Bearer ... hacia los microservicios. (Home) identity-service (Spring Boot): valida token opaco con el Authorization Server (introspección), crea sesión en ElastiCache Redis, firma un JWT y setea cookie segura. (IETF Datatracker) utils-service / fraud-ins-service (Spring Boot 3.5.x): stateless; validan localmente el JWT contra el JWKS de identity-service (cacheado). (Home, IETF Datatracker) Diagrama 1 — “Handoff”: login vía token opaco (desde app) sequenceDiagram autonumber participant App as App origen (ya logueada) participant Browser as Navegador participant GW as access-gateway participant ID as identity-service participant AS as Authorization Server (token opaco) participant Redis as ElastiCache Redis App-&gt;&gt;AS: (2.1) Solicita token opaco (con datos del usuario) AS--&gt;&gt;App: (2.2) token_opaco App-&gt;&gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco Browser-&gt;&gt;GW: GET /?token=token_opaco GW-&gt;&gt;ID: (3) Enruta a /exchange?token=... ID-&gt;&gt;AS: (4.1) Introspección RFC 7662 (valida token opaco) AS--&gt;&gt;ID: Respuesta activa &#43; claims del usuario ID-&gt;&gt;Redis: (4.3) Crea sesión (SESSION_ID -&gt; atributos) ID--&gt;&gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=... Note right of ID: (4.3) También firma un JWT para uso interno Browser-&gt;&gt;GW: (5) Peticiones subsecuentes (cookie incluida) Notas clave
-" />
-<meta property="og:url" content="http://localhost:1313/arquitectura-auth/arquitectura-auth/" />
-<meta property="og:site_name" content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT" />
-<meta property="og:image"
-  content="http://localhost:1313/">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2025-08-08 00:00:00 &#43;0000 UTC" />
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>document.addEventListener("DOMContentLoaded", function() { if(document.querySelectorAll('.mermaid').length > 0) { mermaid.initialize({ startOnLoad: true }); } });</script>
-
-</head>
-
-
-<body>
-  <div style="position: relative">
-  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
-    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
-      <a class="Header-link" href="http://localhost:1313/">
-        <img class="octicon" height="32" width="32" src="https://github.com/Cyb3rh4ck.png">
-      </a>
-    </div>
-    <div class="Header-item d-md-none">
-      <button class="Header-link btn-link js-details-target" type="button"
-        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
-        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
-          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div style="display: none;" id="header-search"
-      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
-      <div
-        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
-        <div class="position-relative">
-          
-          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
-            autocomplete="off">
-            <label
-              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
-              <input type="text"
-                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
-                name="q" value="" placeholder="Search" autocomplete="off">
-              <input type="hidden" name="q" value="site:http://localhost:1313/">
-            </label>
-          </form>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
-      <a class="Header-link " href="http://localhost:1313/">
-        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="https://github.com/Cyb3rh4ck.png">
-      </a>
-    </div>
-    <div class="Header-item" style="margin-right: 0;">
-      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
-        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
-          version="1.1" width="16" height="16">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
-          </path>
-        </svg>
-      </a>
-    </div>
-  </header>
-</div>
-
-  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
-</div>
-
-  
-<div class="application-main">
-  <div>
-  <main>
-    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
-      <div class="px-0">
-        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
-          <div class="flex-auto min-width-0 width-fit mr-3">
-            <div class="d-flex">
-              <div class="d-none d-md-block">
-                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
-                  <img class=" avatar-user"
-                    src="https://github.com/Cyb3rh4ck.png"
-                    width="32" height="32"></a>
-              </div>
-              <div class="d-flex flex-column">
-                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
-                  <span class="author">
-                    <a href="http://localhost:1313/">Cyb3rh4ck</a>
-                  </span>
-                  <span class="path-divider">/</span>
-                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
-                    <a href="http://localhost:1313/arquitectura-auth/arquitectura-auth/">Arquitectura de Autenticación con Token Opaco, Gateway y JWT</a>
-                  </strong>
-                </h1>
-                <div class="note m-0">
-                  Created <relative-time datetime="Fri, 08 Aug 2025 00:00:00 &#43;0000"
-                    class="no-wrap">
-                    Fri, 08 Aug 2025 00:00:00 &#43;0000</relative-time>
-
-                  
-                  <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Fri, 08 Aug 2025 12:57:50 -0600"
-                    class="no-wrap">
-                    Fri, 08 Aug 2025 12:57:50 -0600</relative-time>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-lg px-3 new-discussion-timeline">
-      <div class="repository-content gist-content">
-        <div>
-          <div class="js-gist-file-update-container js-task-list-container file-box">
-            <div id="file-pytest" class="file my-2">
-              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
-                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
-                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                    
-                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
-                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
-                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
-                      </svg>
-                    </summary>
-                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
-                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
-                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
-                        </div>
-                      </div>
-                    </details-menu>
-                      1576 Words
-                    
-
-                  </div>
-                  <div class="file-actions flex-order-2 pt-0">
-                    
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/chatgpt">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      ChatGPT
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/negocios">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      Negocios
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/innovaci%C3%B3n">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      Innovación
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/tecnolog%C3%ADa">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      Tecnología
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/ia">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      IA
-                    </a>
-                    
-                    
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <article class="markdown-body entry-content container-lg"><h1 id="arquitectura-de-autenticación-con-token-opaco-gateway-y-jwt">Arquitectura de Autenticación con Token Opaco, Gateway y JWT</h1>
-<p>¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo <strong>diagramas</strong> + <strong>tips prácticos</strong> + <strong>fuentes oficiales</strong> para cada punto clave.</p>
-<h1 id="arquitectura-visión-general">Arquitectura (visión general)</h1>
-<ul>
-<li><strong>access-gateway</strong> (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con <em>identity-service</em> y reinyecta un <strong>JWT</strong> en <code>Authorization: Bearer ...</code> hacia los microservicios. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>)</li>
-<li><strong>identity-service</strong> (Spring Boot): valida <strong>token opaco</strong> con el <em>Authorization Server</em> (introspección), crea <strong>sesión</strong> en <strong>ElastiCache Redis</strong>, firma un <strong>JWT</strong> y setea <strong>cookie</strong> segura. (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>)</li>
-<li><strong>utils-service / fraud-ins-service</strong> (Spring Boot 3.5.x): <strong>stateless</strong>; validan localmente el JWT contra el <strong>JWKS</strong> de <em>identity-service</em> (cacheado). (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>, <a href="https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com" title="RFC 7517 - JSON Web Key (JWK)">IETF Datatracker</a>)</li>
-</ul>
-<h1 id="diagrama-1--handoff-login-vía-token-opaco-desde-app">Diagrama 1 — “Handoff”: login vía token opaco (desde app)</h1>
-<div class="mermaid" style="text-align: center;">
-sequenceDiagram
-    autonumber
-    participant App as App origen (ya logueada)
-    participant Browser as Navegador
-    participant GW as access-gateway
-    participant ID as identity-service
-    participant AS as Authorization Server (token opaco)
-    participant Redis as ElastiCache Redis
-<pre><code>App-&gt;&gt;AS: (2.1) Solicita token opaco (con datos del usuario)
+<!doctype html><html lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width"><script type=application/javascript src=https://cyb3rh4ck.github.io/js/theme-mode.js></script><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/frameworks.min.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/github.min.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/github-style.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/light.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/dark.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/syntax.css><title>Arquitectura de Autenticación con Token Opaco, Gateway y JWT - Cyb3rh4ck D3v L1f3</title><link rel=icon type=image/x-icon href=https://cyb3rh4ck.github.io/images/favicon.ico><meta name=theme-color content="#1e2327"><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/custom.css><meta name=description content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT ¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo diagramas + tips prácticos + fuentes oficiales para cada punto clave.
+Arquitectura (visión general) access-gateway (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con identity-service y reinyecta un JWT en Authorization: Bearer ... hacia los microservicios. (Home) identity-service (Spring Boot): valida token opaco con el Authorization Server (introspección), crea sesión en ElastiCache Redis, firma un JWT y setea cookie segura. (IETF Datatracker) utils-service / fraud-ins-service (Spring Boot 3.5.x): stateless; validan localmente el JWT contra el JWKS de identity-service (cacheado). (Home, IETF Datatracker) Diagrama 1 — “Handoff”: login vía token opaco (desde app) sequenceDiagram autonumber participant App as App origen (ya logueada) participant Browser as Navegador participant GW as access-gateway participant ID as identity-service participant AS as Authorization Server (token opaco) participant Redis as ElastiCache Redis App->>AS: (2.1) Solicita token opaco (con datos del usuario) AS-->>App: (2.2) token_opaco App->>Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco Browser->>GW: GET /?token=token_opaco GW->>ID: (3) Enruta a /exchange?token=... ID->>AS: (4.1) Introspección RFC 7662 (valida token opaco) AS-->>ID: Respuesta activa + claims del usuario ID->>Redis: (4.3) Crea sesión (SESSION_ID -> atributos) ID-->>Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=... Note right of ID: (4.3) También firma un JWT para uso interno Browser->>GW: (5) Peticiones subsecuentes (cookie incluida) Notas clave
+"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://cyb3rh4ck.github.io/arquitectura-auth/arquitectura-auth/><meta name=twitter:card content="summary"><meta name=twitter:title content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT - Cyb3rh4ck D3v L1f3"><meta name=twitter:description content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT ¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo diagramas + tips prácticos + fuentes oficiales para cada punto clave.
+Arquitectura (visión general) access-gateway (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con identity-service y reinyecta un JWT en Authorization: Bearer ... hacia los microservicios. (Home) identity-service (Spring Boot): valida token opaco con el Authorization Server (introspección), crea sesión en ElastiCache Redis, firma un JWT y setea cookie segura. (IETF Datatracker) utils-service / fraud-ins-service (Spring Boot 3.5.x): stateless; validan localmente el JWT contra el JWKS de identity-service (cacheado). (Home, IETF Datatracker) Diagrama 1 — “Handoff”: login vía token opaco (desde app) sequenceDiagram autonumber participant App as App origen (ya logueada) participant Browser as Navegador participant GW as access-gateway participant ID as identity-service participant AS as Authorization Server (token opaco) participant Redis as ElastiCache Redis App->>AS: (2.1) Solicita token opaco (con datos del usuario) AS-->>App: (2.2) token_opaco App->>Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco Browser->>GW: GET /?token=token_opaco GW->>ID: (3) Enruta a /exchange?token=... ID->>AS: (4.1) Introspección RFC 7662 (valida token opaco) AS-->>ID: Respuesta activa + claims del usuario ID->>Redis: (4.3) Crea sesión (SESSION_ID -> atributos) ID-->>Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=... Note right of ID: (4.3) También firma un JWT para uso interno Browser->>GW: (5) Peticiones subsecuentes (cookie incluida) Notas clave
+"><meta name=twitter:site content="https://cyb3rh4ck.github.io/"><meta name=twitter:creator content><meta name=twitter:image content="https://cyb3rh4ck.github.io/"><meta property="og:type" content="article"><meta property="og:title" content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT - Cyb3rh4ck D3v L1f3"><meta property="og:description" content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT ¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo diagramas + tips prácticos + fuentes oficiales para cada punto clave.
+Arquitectura (visión general) access-gateway (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con identity-service y reinyecta un JWT en Authorization: Bearer ... hacia los microservicios. (Home) identity-service (Spring Boot): valida token opaco con el Authorization Server (introspección), crea sesión en ElastiCache Redis, firma un JWT y setea cookie segura. (IETF Datatracker) utils-service / fraud-ins-service (Spring Boot 3.5.x): stateless; validan localmente el JWT contra el JWKS de identity-service (cacheado). (Home, IETF Datatracker) Diagrama 1 — “Handoff”: login vía token opaco (desde app) sequenceDiagram autonumber participant App as App origen (ya logueada) participant Browser as Navegador participant GW as access-gateway participant ID as identity-service participant AS as Authorization Server (token opaco) participant Redis as ElastiCache Redis App->>AS: (2.1) Solicita token opaco (con datos del usuario) AS-->>App: (2.2) token_opaco App->>Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco Browser->>GW: GET /?token=token_opaco GW->>ID: (3) Enruta a /exchange?token=... ID->>AS: (4.1) Introspección RFC 7662 (valida token opaco) AS-->>ID: Respuesta activa + claims del usuario ID->>Redis: (4.3) Crea sesión (SESSION_ID -> atributos) ID-->>Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=... Note right of ID: (4.3) También firma un JWT para uso interno Browser->>GW: (5) Peticiones subsecuentes (cookie incluida) Notas clave
+"><meta property="og:url" content="https://cyb3rh4ck.github.io/arquitectura-auth/arquitectura-auth/"><meta property="og:site_name" content="Arquitectura de Autenticación con Token Opaco, Gateway y JWT"><meta property="og:image" content="https://cyb3rh4ck.github.io/"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2025-08-08 00:00:00 +0000 UTC"><script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mermaid").length>0&&mermaid.initialize({startOnLoad:!0})})</script></head><body><div style=position:relative><header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"><div class="Header-item mobile-none" style=margin-top:-4px;margin-bottom:-4px><a class=Header-link href=https://cyb3rh4ck.github.io/><img class=octicon height=32 width=32 src=https://github.com/Cyb3rh4ck.png></a></div><div class="Header-item d-md-none"><button class="Header-link btn-link js-details-target" type=button onclick='document.querySelector("#header-search").style.display=document.querySelector("#header-search").style.display=="none"?"block":"none"'>
+<svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M1 2.75A.75.75.0 011.75 2h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 2.75zm0 5A.75.75.0 011.75 7h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 7.75zM1.75 12a.75.75.0 100 1.5h12.5a.75.75.0 100-1.5H1.75z"/></svg></button></div><div style=display:none id=header-search class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"><div class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"><div class=position-relative><form target=_blank action=https://www.google.com/search accept-charset=UTF-8 method=get autocomplete=off><label class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center"><input type=text class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" name=q placeholder=Search autocomplete=off>
+<input type=hidden name=q value=site:https://cyb3rh4ck.github.io/></label></form></div></div></div><div class="Header-item Header-item--full flex-justify-center d-md-none position-relative"><a class=Header-link href=https://cyb3rh4ck.github.io/><img class="octicon octicon-mark-github v-align-middle" height=32 width=32 src=https://github.com/Cyb3rh4ck.png></a></div><div class=Header-item style=margin-right:0><a href=javascript:void(0) class="Header-link no-select" onclick=switchTheme()><svg style="fill:var(--color-profile-color-modes-toggle-moon)" class="no-select" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754c3.05612.0 5.53362-2.47748 5.53362-5.5336C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961 9.95801 1.07727 10.3495.771159 10.6474.99992c1.4679 1.12724 2.4141 2.90007 2.4141 4.89391.0 3.40575-2.7609 6.16667-6.16665 6.16667-2.94151.0-5.40199-2.0595-6.018122-4.81523C.794841 6.87902 1.23668 6.65289 1.55321 6.85451 2.41106 7.40095 3.4296 7.71754 4.52208 7.71754z"/></svg></a></div></header></div><div id=search-result class="container-lg px-3 new-discussion-timeline" style=display:none></div><div class=application-main><div><main><div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4"><div class=px-0><div class="mb-3 d-flex px-3 px-md-3 px-lg-5"><div class="flex-auto min-width-0 width-fit mr-3"><div class=d-flex><div class="d-none d-md-block"><a class="avatar mr-2 flex-shrink-0" href=https://cyb3rh4ck.github.io/><img class=avatar-user src=https://github.com/Cyb3rh4ck.png width=32 height=32></a></div><div class="d-flex flex-column"><h1 class="break-word f3 text-normal mb-md-0 mb-1"><span class=author><a href=https://cyb3rh4ck.github.io/>Cyb3rh4ck</a>
+</span><span class=path-divider>/</span>
+<strong class="css-truncate css-truncate-target mr-1" style=max-width:410px><a href=https://cyb3rh4ck.github.io/arquitectura-auth/arquitectura-auth/>Arquitectura de Autenticación con Token Opaco, Gateway y JWT</a></strong></h1><div class="note m-0">Created <relative-time datetime="Fri, 08 Aug 2025 00:00:00 +0000" class=no-wrap>Fri, 08 Aug 2025 00:00:00 +0000</relative-time>
+<span class=file-info-divider></span>
+Modified <relative-time datetime="Fri, 08 Aug 2025 12:57:50 -0600" class=no-wrap>Fri, 08 Aug 2025 12:57:50 -0600</relative-time></div></div></div></div></div></div></div><div class="container-lg px-3 new-discussion-timeline"><div class="repository-content gist-content"><div><div class="js-gist-file-update-container js-task-list-container file-box"><div id=file-pytest class="file my-2"><div id=post-header class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style=z-index:2><div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto"><div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0"><summary id=toc-toggle onclick=clickToc() class="btn btn-octicon m-0 mr-2 p-2"><svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered"><path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zM3 8A1 1 0 111 8a1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"/></svg></summary><details-menu class=SelectMenu id=toc-details style="display: none;"><div class="SelectMenu-modal rounded-3 mt-1" style=max-height:340px><div class="SelectMenu-list SelectMenu-list--borderless p-2" style=overscroll-behavior:contain id=toc-list></div></div></details-menu>1576 Words</div><div class="file-actions flex-order-2 pt-0"><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/chatgpt><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+ChatGPT
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/negocios><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+Negocios
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/innovaci%C3%B3n><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+Innovación
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/tecnolog%C3%ADa><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+Tecnología
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/ia><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+IA</a></div></div></div><div class="Box-body px-5 pb-5" style=z-index:1><article class="markdown-body entry-content container-lg"><h1 id=arquitectura-de-autenticación-con-token-opaco-gateway-y-jwt>Arquitectura de Autenticación con Token Opaco, Gateway y JWT</h1><p>¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo <strong>diagramas</strong> + <strong>tips prácticos</strong> + <strong>fuentes oficiales</strong> para cada punto clave.</p><h1 id=arquitectura-visión-general>Arquitectura (visión general)</h1><ul><li><strong>access-gateway</strong> (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con <em>identity-service</em> y reinyecta un <strong>JWT</strong> en <code>Authorization: Bearer ...</code> hacia los microservicios. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>)</li><li><strong>identity-service</strong> (Spring Boot): valida <strong>token opaco</strong> con el <em>Authorization Server</em> (introspección), crea <strong>sesión</strong> en <strong>ElastiCache Redis</strong>, firma un <strong>JWT</strong> y setea <strong>cookie</strong> segura. (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>)</li><li><strong>utils-service / fraud-ins-service</strong> (Spring Boot 3.5.x): <strong>stateless</strong>; validan localmente el JWT contra el <strong>JWKS</strong> de <em>identity-service</em> (cacheado). (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>, <a href="https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com" title="RFC 7517 - JSON Web Key (JWK)">IETF Datatracker</a>)</li></ul><h1 id=diagrama-1--handoff-login-vía-token-opaco-desde-app>Diagrama 1 — “Handoff”: login vía token opaco (desde app)</h1><div class=mermaid style=text-align:center>sequenceDiagram
+autonumber
+participant App as App origen (ya logueada)
+participant Browser as Navegador
+participant GW as access-gateway
+participant ID as identity-service
+participant AS as Authorization Server (token opaco)
+participant Redis as ElastiCache Redis<pre><code>App-&gt;&gt;AS: (2.1) Solicita token opaco (con datos del usuario)
 AS--&gt;&gt;App: (2.2) token_opaco
 App-&gt;&gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco
 Browser-&gt;&gt;GW: GET /?token=token_opaco
@@ -285,24 +37,13 @@ ID-&gt;&gt;Redis: (4.3) Crea sesión (SESSION_ID -&gt; atributos)
 ID--&gt;&gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=...
 Note right of ID: (4.3) También firma un JWT para uso interno
 Browser-&gt;&gt;GW: (5) Peticiones subsecuentes (cookie incluida)
-</code></pre>
-</div>
-<p><strong>Notas clave</strong></p>
-<ul>
-<li>La validación de tokens <strong>opacos</strong> se hace con <strong>token introspection</strong> (RFC 7662). (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>, <a href="https://www.rfc-editor.org/info/rfc7662?utm_source=chatgpt.com" title="Information on RFC 7662">RFC Editor</a>)</li>
-<li>Evita que el <code>token</code> viaje mucho tiempo en la URL (logs, referers, history). Si lo usas, que sea <strong>de un solo uso y cortísima vida</strong>, y haz <strong>redirect</strong> inmediato a una URL limpia. (Buenas prácticas OWASP sobre <em>query strings</em> sensibles). (<a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</li>
-<li>Para cookies seguras: <code>Secure</code>, <code>HttpOnly</code>, <code>SameSite</code> adecuado y <strong>prefijo <code>__Host-</code></strong> (defensa contra session fixation). Si necesitas <strong>cross-site</strong>, usa <code>SameSite=None; Secure</code>. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie?utm_source=chatgpt.com" title="Set-Cookie header - HTTP - MDN Web Docs">MDN Web Docs</a>)</li>
-</ul>
-<h1 id="diagrama-2--peticiones-subsecuentes-propagación-de-identidad">Diagrama 2 — Peticiones subsecuentes (propagación de identidad)</h1>
-<div class="mermaid" style="text-align: center;">
-sequenceDiagram
-    autonumber
-    participant Browser as Navegador
-    participant GW as access-gateway
-    participant ID as identity-service
-    participant Biz as Microservicio de negocio
-    participant Redis as ElastiCache Redis
-<pre><code>Browser-&gt;&gt;GW: (5.1) GET /biz/endpoint (Cookie: __Host-SESSION_ID=...)
+</code></pre></div><p><strong>Notas clave</strong></p><ul><li>La validación de tokens <strong>opacos</strong> se hace con <strong>token introspection</strong> (RFC 7662). (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>, <a href="https://www.rfc-editor.org/info/rfc7662?utm_source=chatgpt.com" title="Information on RFC 7662">RFC Editor</a>)</li><li>Evita que el <code>token</code> viaje mucho tiempo en la URL (logs, referers, history). Si lo usas, que sea <strong>de un solo uso y cortísima vida</strong>, y haz <strong>redirect</strong> inmediato a una URL limpia. (Buenas prácticas OWASP sobre <em>query strings</em> sensibles). (<a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</li><li>Para cookies seguras: <code>Secure</code>, <code>HttpOnly</code>, <code>SameSite</code> adecuado y <strong>prefijo <code>__Host-</code></strong> (defensa contra session fixation). Si necesitas <strong>cross-site</strong>, usa <code>SameSite=None; Secure</code>. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie?utm_source=chatgpt.com" title="Set-Cookie header - HTTP - MDN Web Docs">MDN Web Docs</a>)</li></ul><h1 id=diagrama-2--peticiones-subsecuentes-propagación-de-identidad>Diagrama 2 — Peticiones subsecuentes (propagación de identidad)</h1><div class=mermaid style=text-align:center>sequenceDiagram
+autonumber
+participant Browser as Navegador
+participant GW as access-gateway
+participant ID as identity-service
+participant Biz as Microservicio de negocio
+participant Redis as ElastiCache Redis<pre><code>Browser-&gt;&gt;GW: (5.1) GET /biz/endpoint (Cookie: __Host-SESSION_ID=...)
 GW-&gt;&gt;ID: (5.1.2) /validate-session (SESSION_ID)
 ID-&gt;&gt;Redis: (5.1.3) Consulta sesión
 Redis--&gt;&gt;ID: OK + info usuario
@@ -310,152 +51,59 @@ ID--&gt;&gt;GW: (5.1.3) Responde con JWT firmado (roles, permisos, etc.)
 GW-&gt;&gt;GW: (5.1.4) Inserta header Authorization: Bearer &lt;JWT&gt;
 GW-&gt;&gt;Biz: (5.1.5) Enruta con contexto de autenticación
 Biz-&gt;&gt;Biz: Valida firma y claims del JWT (JWKs cacheado)
-</code></pre>
-</div>
-<ul>
-<li>El <strong>gateway</strong> puede implementar un <strong>GlobalFilter</strong> para leer la cookie, llamar a <code>/validate-session</code> y <strong>añadir</strong> <code>Authorization: Bearer &lt;jwt&gt;</code> antes de rutear. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>, <a href="https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com" title="Writing Custom Spring Cloud Gateway Filters">Baeldung on Kotlin</a>)</li>
-<li>Los <strong>microservicios</strong> validan <strong>localmente</strong> el JWT (firma, <code>exp</code>, <code>iat</code>, <code>iss</code>, <code>aud</code>, <code>scope/roles</code>) apoyándose en <strong>Spring Security Resource Server</strong> + <strong>JWKS</strong> (cacheado). (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li>
-</ul>
-<h1 id="implementación-puntos-finos">Implementación (puntos finos)</h1>
-<h2 id="1-cookie-de-sesión-http-only-secure-samesite">1) Cookie de sesión (HTTP-only, Secure, SameSite)</h2>
-<p>Ejemplo de cabecera <strong>correcta</strong> (ojo: es <code>HttpOnly</code>, no “HTTPonly”, y conviene el prefijo <code>__Host-</code>):</p>
-<pre tabindex="0"><code>Set-Cookie: __Host-SESSION_ID=&lt;id&gt;; Path=/; Secure; HttpOnly; SameSite=Lax
-</code></pre><ul>
-<li><code>Strict</code> es muy restrictivo (rompe flujos tipo link-in), <code>Lax</code> suele ser el sweet spot; para <strong>cross-site</strong> usa <code>SameSite=None; Secure</code>. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li>
-<li><strong>Prefijos</strong> <code>__Host-</code>/<code>__Secure-</code> endurecen el setting de la cookie a nivel de navegador. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li>
-</ul>
-<h2 id="2-access-gateway-spring-cloud-gateway">2) access-gateway (Spring Cloud Gateway)</h2>
-<p><strong>YAML</strong> (ejemplo simple de ruta y filtro de cabecera):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">gateway</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">routes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">biz</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l">http://biz-service</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">predicates</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">Path=/biz/**</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">filters</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">AddRequestHeader=X-Trace-Id, &#34;#{T(java.util.UUID).randomUUID()}&#34;</span><span class="w">
-</span></span></span></code></pre></div><p>(<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/gatewayfilter-factories/addrequestheader-factory.html?utm_source=chatgpt.com" title="AddRequestHeader GatewayFilter Factory">Home</a>)</p>
-<p><strong>GlobalFilter</strong> (pseudo-código) para validar sesión y añadir <code>Authorization</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Bean</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">GlobalFilter</span><span class="w"> </span><span class="nf">sessionToJwtFilter</span><span class="p">(</span><span class="n">WebClient</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">webClient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">exchange</span><span class="p">,</span><span class="w"> </span><span class="n">chain</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">sessionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extractCookie</span><span class="p">(</span><span class="n">exchange</span><span class="p">.</span><span class="na">getRequest</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;__Host-SESSION_ID&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sessionId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">exchange</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">webClient</span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">get</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">uri</span><span class="p">(</span><span class="s">&#34;http://identity-service/validate-session&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">&#34;Cookie&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;__Host-SESSION_ID=&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sessionId</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">retrieve</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">bodyToMono</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="c1">// aquí recibes el JWT</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">defaultIfEmpty</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">)</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">flatMap</span><span class="p">(</span><span class="n">jwt</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">jwt</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="kd">var</span><span class="w"> </span><span class="n">mutated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exchange</span><span class="p">.</span><span class="na">mutate</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="na">request</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">headers</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="na">setBearerAuth</span><span class="p">(</span><span class="n">jwt</span><span class="p">)))</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">mutated</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">exchange</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">});</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>Referencias sobre <strong>Global Filters</strong> y filtros personalizados: (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>, <a href="https://spring.io/blog/2022/08/26/creating-a-custom-spring-cloud-gateway-filter/?utm_source=chatgpt.com" title="Creating a custom Spring Cloud Gateway Filter">Home</a>, <a href="https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com" title="Writing Custom Spring Cloud Gateway Filters">Baeldung on Kotlin</a>)</p>
-<h2 id="3-identity-service">3) identity-service</h2>
-<ul>
-<li><strong>Introspección</strong> de token opaco (RFC 7662) contra el Authorization Server (<code>/introspect</code>) para confirmar que está <strong>activo</strong> y leer <em>claims</em>. (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>)</li>
-<li><strong>Sesión</strong> en <strong>ElastiCache Redis</strong> (TTL acorde a riesgo; usa Spring Session Redis). (<a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/BestPractices.html?utm_source=chatgpt.com" title="ElastiCache best practices and caching strategies">AWS Documentation</a>)</li>
-<li><strong>JWT</strong> interno firmado (por ejemplo con RSA/ECDSA). Expón <strong>JWKS</strong> en <code>GET /.well-known/jwks.json</code> para validación descentralizada. (JWK/JWKS en RFC 7517; la ruta de <em>well-known</em> es la práctica estandarizada por OIDC Discovery). (<a href="https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com" title="RFC 7517 - JSON Web Key (JWK)">IETF Datatracker</a>, <a href="https://openid.net/specs/openid-connect-discovery-1_0.html?utm_source=chatgpt.com" title="OpenID Connect Discovery 1.0 incorporating errata set 2">OpenID Foundation</a>)</li>
-</ul>
-<p><strong>Spring Session Redis</strong> (pom y propiedades) — guía oficial: (<a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>)
-<strong>ElastiCache prácticas</strong> (tamaño/escala/cluster-mode y TLS en tránsito): (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com" title="Overall best practices - Amazon ElastiCache">AWS Documentation</a>, <a href="https://aws.amazon.com/blogs/database/best-practices-for-sizing-your-amazon-elasticache-for-redis-clusters/?utm_source=chatgpt.com" title="Best practices for sizing your Amazon ElastiCache ...">Amazon Web Services, Inc.</a>)</p>
-<h2 id="4-microservicios-de-negocio-validación-stateless-del-jwt">4) Microservicios de negocio (validación <strong>stateless</strong> del JWT)</h2>
-<p>Config mínima con <strong>Spring Security Resource Server</strong> (valida firma con tu JWKS):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">security</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">oauth2</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">resourceserver</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">jwt</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">jwk-set-uri</span><span class="p">:</span><span class="w"> </span><span class="l">https://identity-service/.well-known/jwks.json</span><span class="w">
-</span></span></span></code></pre></div><p>Spring Security <strong>auto-configura</strong> la validación de <strong>Bearer JWT</strong> y <strong>cachea</strong> el JWKS; puedes ajustar caché/timeout si lo necesitas. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</p>
-<p><strong>Sobre el caché del JWKS</strong> (Nimbus): por defecto se cachea y se refresca si llega un <code>kid</code> desconocido; puedes tunear TTL (ej. 5–15 min). (<a href="https://www.javadoc.io/doc/com.nimbusds/nimbus-jose-jwt/latest/com/nimbusds/jose/jwk/source/RemoteJWKSet.html?utm_source=chatgpt.com" title="RemoteJWKSet - nimbus-jose-jwt 10.4 javadoc">javadoc.io</a>)</p>
-<p><strong>Verificaciones recomendadas</strong> en tu filtro/interceptor o configuración:</p>
-<ul>
-<li>Firma (<code>alg</code>, <code>kid</code>) con clave pública correcto.</li>
-<li><code>exp</code>, <code>iat</code>, opcional <code>nbf</code>; <code>iss</code>/<code>aud</code> esperado; scopes/roles. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li>
-</ul>
-<h2 id="5-seguridad-del-token-en-query-param">5) Seguridad del “token en query param”</h2>
-<p>Tu flujo lo usa solo <strong>una vez</strong> (handoff). Aun así, <strong>mitiga</strong>:</p>
-<ul>
-<li>Vida muy corta (<strong>segundos</strong>), <strong>un solo uso</strong>, y <strong>redirect</strong> inmediato a URL limpia.</li>
-<li><code>Cache-Control: no-store</code> en respuestas intermedias.</li>
-<li>Si puedes, usa <strong>código de intercambio</strong> en lugar de token directamente (patrones de OIDC/BCP).
-Motivo: la URL puede filtrarse por logs, histórico, <em>Referer</em>, etc. (<a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</li>
-</ul>
-<h2 id="6-encabezado-authorization-bearer">6) Encabezado Authorization: Bearer</h2>
-<p>La forma estándar de portar tokens es <strong>Authorization: Bearer <token></strong> (RFC 6750). (<a href="https://datatracker.ietf.org/doc/html/rfc6750?utm_source=chatgpt.com" title="RFC 6750 - The OAuth 2.0 Authorization Framework">IETF Datatracker</a>, <a href="https://swagger.io/docs/specification/v3_0/authentication/bearer-authentication/?utm_source=chatgpt.com" title="Bearer Authentication | Swagger Docs">Swagger</a>)</p>
-<h1 id="aws-piezas-y-tips">AWS (piezas y tips)</h1>
-<ul>
-<li><strong>ElastiCache for Redis</strong> como <em>session store</em> (cluster-mode enabled para escalar; definir TTL de sesión). (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com" title="Overall best practices - Amazon ElastiCache">AWS Documentation</a>)</li>
-<li>Habilita <strong>TLS</strong> en tránsito y cifrado en reposo del clúster. (Buenas prácticas generales de ElastiCache). (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/BestPractices.html?utm_source=chatgpt.com" title="ElastiCache best practices and caching strategies">AWS Documentation</a>)</li>
-</ul>
-<h1 id="resumen-del-flujo-que-pediste-con-ajustes-recomendados">Resumen del flujo que pediste (con ajustes recomendados)</h1>
-<ol>
-<li>
-<p><strong>Usuario</strong> ya autenticado en la app origen.</p>
-</li>
-<li>
-<p>La app origen obtiene <strong>token opaco</strong> (RFC 7662), redirige a la nueva app con <code>?token=...</code> (<strong>one-shot, TTL corto; redirect a URL limpia</strong>). (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>, <a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</p>
-</li>
-<li>
-<p><strong>access-gateway</strong> detecta el <code>token</code> y enruta a <strong>identity-service</strong> (endpoint interno de intercambio). (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>)</p>
-</li>
-<li>
-<p><strong>identity-service</strong>:</p>
-<ul>
-<li><strong>Introspección</strong> del token opaco.</li>
-<li>Recupera datos de usuario.</li>
-<li>Crea <strong>sesión</strong> en <strong>Redis</strong>, firma un <strong>JWT</strong>, y setea <strong>cookie</strong> <code>__Host-SESSION_ID</code> (<code>Secure; HttpOnly; SameSite=</code> adecuado). (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>, <a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li>
-</ul>
-</li>
-<li>
-<p><strong>Peticiones subsecuentes</strong>:</p>
-<ul>
-<li><strong>Gateway</strong> lee cookie, llama a <code>/validate-session</code> en <strong>identity-service</strong>, recibe <strong>JWT</strong> y lo <strong>inyecta en <code>Authorization: Bearer</code></strong>. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>)</li>
-<li>Los <strong>microservicios</strong> validan <strong>localmente</strong> el JWT (JWKS) y quedan <strong>stateless</strong>. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h1 id="enlacesfuentes">Enlaces/Fuentes</h1>
-<ul>
-<li><strong>JWT / JWK / JWKS</strong>: RFC 7517 (JWK); JWKS autoconsumo vía OIDC Discovery (<code>/.well-known/openid-configuration</code> y <code>jwks_uri</code>). (<a href="https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com" title="RFC 7517 - JSON Web Key (JWK)">IETF Datatracker</a>, <a href="https://openid.net/specs/openid-connect-discovery-1_0.html?utm_source=chatgpt.com" title="OpenID Connect Discovery 1.0 incorporating errata set 2">OpenID Foundation</a>, <a href="https://auth0.com/docs/get-started/applications/configure-applications-with-oidc-discovery?utm_source=chatgpt.com" title="Configure Applications with OIDC Discovery">Auth0</a>)</li>
-<li><strong>Bearer Tokens</strong> (header <code>Authorization</code>): RFC 6750. (<a href="https://datatracker.ietf.org/doc/html/rfc6750?utm_source=chatgpt.com" title="RFC 6750 - The OAuth 2.0 Authorization Framework">IETF Datatracker</a>, <a href="https://www.rfc-editor.org/info/rfc6750?utm_source=chatgpt.com" title="Information on RFC 6750">RFC Editor</a>)</li>
-<li><strong>Token opaco / Introspección</strong>: RFC 7662. (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>)</li>
-<li><strong>Spring Security Resource Server (JWT + JWK)</strong>: docs oficiales. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li>
-<li><strong>Spring Cloud Gateway (GlobalFilter / mutate headers)</strong>: docs + ejemplos. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>, <a href="https://spring.io/blog/2022/08/26/creating-a-custom-spring-cloud-gateway-filter/?utm_source=chatgpt.com" title="Creating a custom Spring Cloud Gateway Filter">Home</a>, <a href="https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com" title="Writing Custom Spring Cloud Gateway Filters">Baeldung on Kotlin</a>)</li>
-<li><strong>Cookies seguras</strong> (<code>Secure</code>, <code>HttpOnly</code>, <code>SameSite</code>, prefijos <code>__Host-</code>/<code>__Secure-</code>)—MDN: guías y <code>Set-Cookie</code>. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li>
-<li><strong>Riesgos de poner tokens en URL</strong> (OWASP). (<a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</li>
-<li><strong>ElastiCache Redis</strong> (mejores prácticas; Spring Session Redis). (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com" title="Overall best practices - Amazon ElastiCache">AWS Documentation</a>, <a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>)</li>
-</ul>
-<hr>
-<p>¿Quieres que te deje un <strong>esqueleto de proyecto</strong> (gateway + identity + dos servicios) con estas piezas (Boot 3.5.x, Java 17) y <em>Mermaid</em> en el README? Te lo preparo y lo afinamos a tu naming de Seguros360.</p>
-<p>Este documento describe un flujo de autenticación basado en <strong>token opaco</strong> para intercambio inicial, <strong>Spring Cloud Gateway</strong> como punto de entrada, <strong>JWT</strong> para propagación de identidad y <strong>Redis</strong> como store de sesión.</p>
-<h2 id="-diagrama-general">🏗 Diagrama General</h2>
-<div class="mermaid" style="text-align: center;">
-graph TD
+</code></pre></div><ul><li>El <strong>gateway</strong> puede implementar un <strong>GlobalFilter</strong> para leer la cookie, llamar a <code>/validate-session</code> y <strong>añadir</strong> <code>Authorization: Bearer &lt;jwt></code> antes de rutear. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>, <a href="https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com" title="Writing Custom Spring Cloud Gateway Filters">Baeldung on Kotlin</a>)</li><li>Los <strong>microservicios</strong> validan <strong>localmente</strong> el JWT (firma, <code>exp</code>, <code>iat</code>, <code>iss</code>, <code>aud</code>, <code>scope/roles</code>) apoyándose en <strong>Spring Security Resource Server</strong> + <strong>JWKS</strong> (cacheado). (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li></ul><h1 id=implementación-puntos-finos>Implementación (puntos finos)</h1><h2 id=1-cookie-de-sesión-http-only-secure-samesite>1) Cookie de sesión (HTTP-only, Secure, SameSite)</h2><p>Ejemplo de cabecera <strong>correcta</strong> (ojo: es <code>HttpOnly</code>, no “HTTPonly”, y conviene el prefijo <code>__Host-</code>):</p><pre tabindex=0><code>Set-Cookie: __Host-SESSION_ID=&lt;id&gt;; Path=/; Secure; HttpOnly; SameSite=Lax
+</code></pre><ul><li><code>Strict</code> es muy restrictivo (rompe flujos tipo link-in), <code>Lax</code> suele ser el sweet spot; para <strong>cross-site</strong> usa <code>SameSite=None; Secure</code>. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li><li><strong>Prefijos</strong> <code>__Host-</code>/<code>__Secure-</code> endurecen el setting de la cookie a nivel de navegador. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li></ul><h2 id=2-access-gateway-spring-cloud-gateway>2) access-gateway (Spring Cloud Gateway)</h2><p><strong>YAML</strong> (ejemplo simple de ruta y filtro de cabecera):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>gateway</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>routes</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=nt>id</span><span class=p>:</span><span class=w> </span><span class=l>biz</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>uri</span><span class=p>:</span><span class=w> </span><span class=l>http://biz-service</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>predicates</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>Path=/biz/**</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>filters</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>AddRequestHeader=X-Trace-Id, &#34;#{T(java.util.UUID).randomUUID()}&#34;</span><span class=w>
+</span></span></span></code></pre></div><p>(<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/gatewayfilter-factories/addrequestheader-factory.html?utm_source=chatgpt.com" title="AddRequestHeader GatewayFilter Factory">Home</a>)</p><p><strong>GlobalFilter</strong> (pseudo-código) para validar sesión y añadir <code>Authorization</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@Bean</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=n>GlobalFilter</span><span class=w> </span><span class=nf>sessionToJwtFilter</span><span class=p>(</span><span class=n>WebClient</span><span class=p>.</span><span class=na>Builder</span><span class=w> </span><span class=n>webClient</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>return</span><span class=w> </span><span class=p>(</span><span class=n>exchange</span><span class=p>,</span><span class=w> </span><span class=n>chain</span><span class=p>)</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>var</span><span class=w> </span><span class=n>sessionId</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>extractCookie</span><span class=p>(</span><span class=n>exchange</span><span class=p>.</span><span class=na>getRequest</span><span class=p>(),</span><span class=w> </span><span class=s>&#34;__Host-SESSION_ID&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>sessionId</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=k>return</span><span class=w> </span><span class=n>chain</span><span class=p>.</span><span class=na>filter</span><span class=p>(</span><span class=n>exchange</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>return</span><span class=w> </span><span class=n>webClient</span><span class=p>.</span><span class=na>build</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>.</span><span class=na>get</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>.</span><span class=na>uri</span><span class=p>(</span><span class=s>&#34;http://identity-service/validate-session&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>.</span><span class=na>header</span><span class=p>(</span><span class=s>&#34;Cookie&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;__Host-SESSION_ID=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>sessionId</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>.</span><span class=na>retrieve</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>.</span><span class=na>bodyToMono</span><span class=p>(</span><span class=n>String</span><span class=p>.</span><span class=na>class</span><span class=p>)</span><span class=w> </span><span class=c1>// aquí recibes el JWT</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>.</span><span class=na>defaultIfEmpty</span><span class=p>(</span><span class=s>&#34;&#34;</span><span class=p>)</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>.</span><span class=na>flatMap</span><span class=p>(</span><span class=n>jwt</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=o>!</span><span class=n>jwt</span><span class=p>.</span><span class=na>isEmpty</span><span class=p>())</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=kd>var</span><span class=w> </span><span class=n>mutated</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>exchange</span><span class=p>.</span><span class=na>mutate</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>.</span><span class=na>request</span><span class=p>(</span><span class=n>r</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=n>r</span><span class=p>.</span><span class=na>headers</span><span class=p>(</span><span class=n>h</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=n>h</span><span class=p>.</span><span class=na>setBearerAuth</span><span class=p>(</span><span class=n>jwt</span><span class=p>)))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>.</span><span class=na>build</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=k>return</span><span class=w> </span><span class=n>chain</span><span class=p>.</span><span class=na>filter</span><span class=p>(</span><span class=n>mutated</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=k>return</span><span class=w> </span><span class=n>chain</span><span class=p>.</span><span class=na>filter</span><span class=p>(</span><span class=n>exchange</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>};</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p>Referencias sobre <strong>Global Filters</strong> y filtros personalizados: (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>, <a href="https://spring.io/blog/2022/08/26/creating-a-custom-spring-cloud-gateway-filter/?utm_source=chatgpt.com" title="Creating a custom Spring Cloud Gateway Filter">Home</a>, <a href="https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com" title="Writing Custom Spring Cloud Gateway Filters">Baeldung on Kotlin</a>)</p><h2 id=3-identity-service>3) identity-service</h2><ul><li><strong>Introspección</strong> de token opaco (RFC 7662) contra el Authorization Server (<code>/introspect</code>) para confirmar que está <strong>activo</strong> y leer <em>claims</em>. (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>)</li><li><strong>Sesión</strong> en <strong>ElastiCache Redis</strong> (TTL acorde a riesgo; usa Spring Session Redis). (<a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/BestPractices.html?utm_source=chatgpt.com" title="ElastiCache best practices and caching strategies">AWS Documentation</a>)</li><li><strong>JWT</strong> interno firmado (por ejemplo con RSA/ECDSA). Expón <strong>JWKS</strong> en <code>GET /.well-known/jwks.json</code> para validación descentralizada. (JWK/JWKS en RFC 7517; la ruta de <em>well-known</em> es la práctica estandarizada por OIDC Discovery). (<a href="https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com" title="RFC 7517 - JSON Web Key (JWK)">IETF Datatracker</a>, <a href="https://openid.net/specs/openid-connect-discovery-1_0.html?utm_source=chatgpt.com" title="OpenID Connect Discovery 1.0 incorporating errata set 2">OpenID Foundation</a>)</li></ul><p><strong>Spring Session Redis</strong> (pom y propiedades) — guía oficial: (<a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>)
+<strong>ElastiCache prácticas</strong> (tamaño/escala/cluster-mode y TLS en tránsito): (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com" title="Overall best practices - Amazon ElastiCache">AWS Documentation</a>, <a href="https://aws.amazon.com/blogs/database/best-practices-for-sizing-your-amazon-elasticache-for-redis-clusters/?utm_source=chatgpt.com" title="Best practices for sizing your Amazon ElastiCache ...">Amazon Web Services, Inc.</a>)</p><h2 id=4-microservicios-de-negocio-validación-stateless-del-jwt>4) Microservicios de negocio (validación <strong>stateless</strong> del JWT)</h2><p>Config mínima con <strong>Spring Security Resource Server</strong> (valida firma con tu JWKS):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>security</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>oauth2</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>resourceserver</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>jwt</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>jwk-set-uri</span><span class=p>:</span><span class=w> </span><span class=l>https://identity-service/.well-known/jwks.json</span><span class=w>
+</span></span></span></code></pre></div><p>Spring Security <strong>auto-configura</strong> la validación de <strong>Bearer JWT</strong> y <strong>cachea</strong> el JWKS; puedes ajustar caché/timeout si lo necesitas. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</p><p><strong>Sobre el caché del JWKS</strong> (Nimbus): por defecto se cachea y se refresca si llega un <code>kid</code> desconocido; puedes tunear TTL (ej. 5–15 min). (<a href="https://www.javadoc.io/doc/com.nimbusds/nimbus-jose-jwt/latest/com/nimbusds/jose/jwk/source/RemoteJWKSet.html?utm_source=chatgpt.com" title="RemoteJWKSet - nimbus-jose-jwt 10.4 javadoc">javadoc.io</a>)</p><p><strong>Verificaciones recomendadas</strong> en tu filtro/interceptor o configuración:</p><ul><li>Firma (<code>alg</code>, <code>kid</code>) con clave pública correcto.</li><li><code>exp</code>, <code>iat</code>, opcional <code>nbf</code>; <code>iss</code>/<code>aud</code> esperado; scopes/roles. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li></ul><h2 id=5-seguridad-del-token-en-query-param>5) Seguridad del “token en query param”</h2><p>Tu flujo lo usa solo <strong>una vez</strong> (handoff). Aun así, <strong>mitiga</strong>:</p><ul><li>Vida muy corta (<strong>segundos</strong>), <strong>un solo uso</strong>, y <strong>redirect</strong> inmediato a URL limpia.</li><li><code>Cache-Control: no-store</code> en respuestas intermedias.</li><li>Si puedes, usa <strong>código de intercambio</strong> en lugar de token directamente (patrones de OIDC/BCP).
+Motivo: la URL puede filtrarse por logs, histórico, <em>Referer</em>, etc. (<a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</li></ul><h2 id=6-encabezado-authorization-bearer>6) Encabezado Authorization: Bearer</h2><p>La forma estándar de portar tokens es <strong>Authorization: Bearer <token></strong>(RFC 6750). (<a href="https://datatracker.ietf.org/doc/html/rfc6750?utm_source=chatgpt.com" title="RFC 6750 - The OAuth 2.0 Authorization Framework">IETF Datatracker</a>, <a href="https://swagger.io/docs/specification/v3_0/authentication/bearer-authentication/?utm_source=chatgpt.com" title="Bearer Authentication | Swagger Docs">Swagger</a>)</p><h1 id=aws-piezas-y-tips>AWS (piezas y tips)</h1><ul><li><strong>ElastiCache for Redis</strong> como <em>session store</em> (cluster-mode enabled para escalar; definir TTL de sesión). (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com" title="Overall best practices - Amazon ElastiCache">AWS Documentation</a>)</li><li>Habilita <strong>TLS</strong> en tránsito y cifrado en reposo del clúster. (Buenas prácticas generales de ElastiCache). (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/BestPractices.html?utm_source=chatgpt.com" title="ElastiCache best practices and caching strategies">AWS Documentation</a>)</li></ul><h1 id=resumen-del-flujo-que-pediste-con-ajustes-recomendados>Resumen del flujo que pediste (con ajustes recomendados)</h1><ol><li><p><strong>Usuario</strong> ya autenticado en la app origen.</p></li><li><p>La app origen obtiene <strong>token opaco</strong> (RFC 7662), redirige a la nueva app con <code>?token=...</code> (<strong>one-shot, TTL corto; redirect a URL limpia</strong>). (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>, <a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</p></li><li><p><strong>access-gateway</strong> detecta el <code>token</code> y enruta a <strong>identity-service</strong> (endpoint interno de intercambio). (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>)</p></li><li><p><strong>identity-service</strong>:</p><ul><li><strong>Introspección</strong> del token opaco.</li><li>Recupera datos de usuario.</li><li>Crea <strong>sesión</strong> en <strong>Redis</strong>, firma un <strong>JWT</strong>, y setea <strong>cookie</strong> <code>__Host-SESSION_ID</code> (<code>Secure; HttpOnly; SameSite=</code> adecuado). (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>, <a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li></ul></li><li><p><strong>Peticiones subsecuentes</strong>:</p><ul><li><strong>Gateway</strong> lee cookie, llama a <code>/validate-session</code> en <strong>identity-service</strong>, recibe <strong>JWT</strong> y lo <strong>inyecta en <code>Authorization: Bearer</code></strong>. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>)</li><li>Los <strong>microservicios</strong> validan <strong>localmente</strong> el JWT (JWKS) y quedan <strong>stateless</strong>. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li></ul></li></ol><hr><h1 id=enlacesfuentes>Enlaces/Fuentes</h1><ul><li><strong>JWT / JWK / JWKS</strong>: RFC 7517 (JWK); JWKS autoconsumo vía OIDC Discovery (<code>/.well-known/openid-configuration</code> y <code>jwks_uri</code>). (<a href="https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com" title="RFC 7517 - JSON Web Key (JWK)">IETF Datatracker</a>, <a href="https://openid.net/specs/openid-connect-discovery-1_0.html?utm_source=chatgpt.com" title="OpenID Connect Discovery 1.0 incorporating errata set 2">OpenID Foundation</a>, <a href="https://auth0.com/docs/get-started/applications/configure-applications-with-oidc-discovery?utm_source=chatgpt.com" title="Configure Applications with OIDC Discovery">Auth0</a>)</li><li><strong>Bearer Tokens</strong> (header <code>Authorization</code>): RFC 6750. (<a href="https://datatracker.ietf.org/doc/html/rfc6750?utm_source=chatgpt.com" title="RFC 6750 - The OAuth 2.0 Authorization Framework">IETF Datatracker</a>, <a href="https://www.rfc-editor.org/info/rfc6750?utm_source=chatgpt.com" title="Information on RFC 6750">RFC Editor</a>)</li><li><strong>Token opaco / Introspección</strong>: RFC 7662. (<a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker</a>)</li><li><strong>Spring Security Resource Server (JWT + JWK)</strong>: docs oficiales. (<a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home</a>)</li><li><strong>Spring Cloud Gateway (GlobalFilter / mutate headers)</strong>: docs + ejemplos. (<a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home</a>, <a href="https://spring.io/blog/2022/08/26/creating-a-custom-spring-cloud-gateway-filter/?utm_source=chatgpt.com" title="Creating a custom Spring Cloud Gateway Filter">Home</a>, <a href="https://www.baeldung.com/spring-cloud-custom-gateway-filters?utm_source=chatgpt.com" title="Writing Custom Spring Cloud Gateway Filters">Baeldung on Kotlin</a>)</li><li><strong>Cookies seguras</strong> (<code>Secure</code>, <code>HttpOnly</code>, <code>SameSite</code>, prefijos <code>__Host-</code>/<code>__Secure-</code>)—MDN: guías y <code>Set-Cookie</code>. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies?utm_source=chatgpt.com" title="Using HTTP cookies - MDN Web Docs - Mozilla">MDN Web Docs</a>)</li><li><strong>Riesgos de poner tokens en URL</strong> (OWASP). (<a href="https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url?utm_source=chatgpt.com" title="Information exposure through query strings in url">OWASP Foundation</a>)</li><li><strong>ElastiCache Redis</strong> (mejores prácticas; Spring Session Redis). (<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WorkingWithRedis.html?utm_source=chatgpt.com" title="Overall best practices - Amazon ElastiCache">AWS Documentation</a>, <a href="https://docs.spring.io/spring-session/reference/guides/boot-redis.html?utm_source=chatgpt.com" title="Spring Session - Spring Boot">Home</a>)</li></ul><hr><p>¿Quieres que te deje un <strong>esqueleto de proyecto</strong> (gateway + identity + dos servicios) con estas piezas (Boot 3.5.x, Java 17) y <em>Mermaid</em> en el README? Te lo preparo y lo afinamos a tu naming de Seguros360.</p><p>Este documento describe un flujo de autenticación basado en <strong>token opaco</strong> para intercambio inicial, <strong>Spring Cloud Gateway</strong> como punto de entrada, <strong>JWT</strong> para propagación de identidad y <strong>Redis</strong> como store de sesión.</p><h2 id=-diagrama-general>🏗 Diagrama General</h2><div class=mermaid style=text-align:center>graph TD
 sequenceDiagram
-    autonumber
-    participant App as App origen (ya logueada)
-    participant Browser as Navegador
-    participant GW as access-gateway
-    participant ID as identity-service
-    participant AS as Authorization Server (token opaco)
-    participant Redis as ElastiCache Redis
-<pre><code>App-&gt;&gt;AS: (2.1) Solicita token opaco (con datos del usuario)
+autonumber
+participant App as App origen (ya logueada)
+participant Browser as Navegador
+participant GW as access-gateway
+participant ID as identity-service
+participant AS as Authorization Server (token opaco)
+participant Redis as ElastiCache Redis<pre><code>App-&gt;&gt;AS: (2.1) Solicita token opaco (con datos del usuario)
 AS--&gt;&gt;App: (2.2) token_opaco
 App-&gt;&gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco
 Browser-&gt;&gt;GW: GET /?token=token_opaco
@@ -466,19 +114,14 @@ ID-&gt;&gt;Redis: (4.3) Crea sesión (SESSION_ID -&gt; atributos)
 ID--&gt;&gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=...
 Note right of ID: (4.3) También firma un JWT para uso interno
 Browser-&gt;&gt;GW: (5) Peticiones subsecuentes (cookie incluida)
-</code></pre>
-</div>
-<h2 id="-flujo-de-peticiones-subsecuentes">⚙ Flujo de Peticiones Subsecuentes</h2>
-<div class="mermaid" style="text-align: center;">
-graph TD
+</code></pre></div><h2 id=-flujo-de-peticiones-subsecuentes>⚙ Flujo de Peticiones Subsecuentes</h2><div class=mermaid style=text-align:center>graph TD
 sequenceDiagram
-    autonumber
-    participant Browser as Navegador
-    participant GW as access-gateway
-    participant ID as identity-service
-    participant Biz as Microservicio de negocio
-    participant Redis as ElastiCache Redis
-<pre><code>Browser-&gt;&gt;GW: (5.1) GET /biz/endpoint (Cookie: __Host-SESSION_ID=...)
+autonumber
+participant Browser as Navegador
+participant GW as access-gateway
+participant ID as identity-service
+participant Biz as Microservicio de negocio
+participant Redis as ElastiCache Redis<pre><code>Browser-&gt;&gt;GW: (5.1) GET /biz/endpoint (Cookie: __Host-SESSION_ID=...)
 GW-&gt;&gt;ID: (5.1.2) /validate-session (SESSION_ID)
 ID-&gt;&gt;Redis: (5.1.3) Consulta sesión
 Redis--&gt;&gt;ID: OK + info usuario
@@ -486,11 +129,7 @@ ID--&gt;&gt;GW: (5.1.3) Responde con JWT firmado (roles, permisos, etc.)
 GW-&gt;&gt;GW: (5.1.4) Inserta header Authorization: Bearer &lt;JWT&gt;
 GW-&gt;&gt;Biz: (5.1.5) Enruta con contexto de autenticación
 Biz-&gt;&gt;Biz: Valida firma y claims del JWT (JWKs cacheado)
-</code></pre>
-</div>
-<hr>
-<h2 id="-estructura-del-proyecto">📂 Estructura del Proyecto</h2>
-<pre tabindex="0"><code>seguros360-auth-arch/
+</code></pre></div><hr><h2 id=-estructura-del-proyecto>📂 Estructura del Proyecto</h2><pre tabindex=0><code>seguros360-auth-arch/
 ├── access-gateway/
 │   ├── src/main/java/com/seguros360/gateway/GatewayApplication.java
 │   ├── src/main/resources/application.yml
@@ -508,122 +147,44 @@ Biz-&gt;&gt;Biz: Valida firma y claims del JWT (JWKs cacheado)
 │   ├── src/main/resources/application.yml
 │   └── pom.xml
 └── pom.xml (padre)
-</code></pre><hr>
-<h2 id="-dependencias-comunes-spring-boot-35x-java-17">📌 Dependencias Comunes (Spring Boot 3.5.x, Java 17)</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;properties&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;java.version&gt;</span>17<span class="nt">&lt;/java.version&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;spring.boot.version&gt;</span>3.5.0<span class="nt">&lt;/spring.boot.version&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependencyManagement&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependencies&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>spring-boot-dependencies<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;version&gt;</span>${spring.boot.version}<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencies&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependencyManagement&gt;</span>
-</span></span></code></pre></div><hr>
-<h2 id="-access-gateway-spring-cloud-gateway">🛠 access-gateway (Spring Cloud Gateway)</h2>
-<p><strong>application.yml</strong> ejemplo:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">gateway</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">routes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">utils</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l">http://utils-service</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">predicates</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">Path=/utils/**</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">fraud</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l">http://fraud-ins-service</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">predicates</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">Path=/fraud/**</span><span class="w">
-</span></span></span></code></pre></div><hr>
-<h2 id="-identity-service">🔑 identity-service</h2>
-<ul>
-<li>Valida token opaco con introspección (RFC 7662)</li>
-<li>Crea sesión en Redis (Spring Session Redis)</li>
-<li>Firma JWT (RSA/ECDSA) y expone JWKS</li>
-</ul>
-<p><strong>application.yml</strong> ejemplo:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">redis</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l">localhost</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">6379</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">session</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">store-type</span><span class="p">:</span><span class="w"> </span><span class="l">redis</span><span class="w">
-</span></span></span></code></pre></div><hr>
-<h2 id="-utils-service--fraud-ins-service">📜 utils-service &amp; fraud-ins-service</h2>
-<p>Config para validar JWT vía JWKS:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">security</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">oauth2</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">resourceserver</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">jwt</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">jwk-set-uri</span><span class="p">:</span><span class="w"> </span><span class="l">http://identity-service/.well-known/jwks.json</span><span class="w">
-</span></span></span></code></pre></div><hr>
-<h2 id="-referencias">🔗 Referencias</h2>
-<ul>
-<li><a href="https://spring.io/projects/spring-cloud-gateway">Spring Cloud Gateway</a></li>
-<li><a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html">Spring Security Resource Server</a></li>
-<li><a href="https://www.rfc-editor.org/rfc/rfc7662">RFC 7662 - OAuth 2.0 Token Introspection</a></li>
-<li><a href="https://www.rfc-editor.org/rfc/rfc6750">RFC 6750 - Bearer Tokens</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">MDN - Set-Cookie</a></li>
-</ul>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({ startOnLoad: true });
-</script>
-</article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
-<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
-
-  
-</div>
-
-  <div class="footer container-xl width-full p-responsive">
-  <div
-    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
-    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
-      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
-        <path fill-rule="evenodd"
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-        </path>
-      </svg>
-    </a>
-    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      
-      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
-      
-      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
-    </ul>
-  </div>
-  <div class="d-flex flex-justify-center pb-6">
-    <span class="f6 text-gray-light"></span>
-  </div>
-
-
-</div>
-
-</body>
-
-<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
-
-
-
-
-
-
-
-</html>
+</code></pre><hr><h2 id=-dependencias-comunes-spring-boot-35x-java-17>📌 Dependencias Comunes (Spring Boot 3.5.x, Java 17)</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;properties&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;java.version&gt;</span>17<span class=nt>&lt;/java.version&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;spring.boot.version&gt;</span>3.5.0<span class=nt>&lt;/spring.boot.version&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/properties&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>&lt;dependencyManagement&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>spring-boot-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>${spring.boot.version}<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/dependencies&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependencyManagement&gt;</span>
+</span></span></code></pre></div><hr><h2 id=-access-gateway-spring-cloud-gateway>🛠 access-gateway (Spring Cloud Gateway)</h2><p><strong>application.yml</strong> ejemplo:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>gateway</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>routes</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=nt>id</span><span class=p>:</span><span class=w> </span><span class=l>utils</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>uri</span><span class=p>:</span><span class=w> </span><span class=l>http://utils-service</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>predicates</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>Path=/utils/**</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=nt>id</span><span class=p>:</span><span class=w> </span><span class=l>fraud</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>uri</span><span class=p>:</span><span class=w> </span><span class=l>http://fraud-ins-service</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>predicates</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>Path=/fraud/**</span><span class=w>
+</span></span></span></code></pre></div><hr><h2 id=-identity-service>🔑 identity-service</h2><ul><li>Valida token opaco con introspección (RFC 7662)</li><li>Crea sesión en Redis (Spring Session Redis)</li><li>Firma JWT (RSA/ECDSA) y expone JWKS</li></ul><p><strong>application.yml</strong> ejemplo:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>redis</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>host</span><span class=p>:</span><span class=w> </span><span class=l>localhost</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>6379</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>session</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>store-type</span><span class=p>:</span><span class=w> </span><span class=l>redis</span><span class=w>
+</span></span></span></code></pre></div><hr><h2 id=-utils-service--fraud-ins-service>📜 utils-service & fraud-ins-service</h2><p>Config para validar JWT vía JWKS:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>security</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>oauth2</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>resourceserver</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>jwt</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>jwk-set-uri</span><span class=p>:</span><span class=w> </span><span class=l>http://identity-service/.well-known/jwks.json</span><span class=w>
+</span></span></span></code></pre></div><hr><h2 id=-referencias>🔗 Referencias</h2><ul><li><a href=https://spring.io/projects/spring-cloud-gateway>Spring Cloud Gateway</a></li><li><a href=https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html>Spring Security Resource Server</a></li><li><a href=https://www.rfc-editor.org/rfc/rfc7662>RFC 7662 - OAuth 2.0 Token Introspection</a></li><li><a href=https://www.rfc-editor.org/rfc/rfc6750>RFC 6750 - Bearer Tokens</a></li><li><a href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie>MDN - Set-Cookie</a></li></ul><script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script><script>mermaid.initialize({startOnLoad:!0})</script></article></div></div></div></div></div></div></main></div><script type=application/javascript src=https://cyb3rh4ck.github.io/js/toc.js></script><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/toc.css></div><div class="footer container-xl width-full p-responsive"><div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light"><a aria-label=Homepage title=GitHub class="footer-octicon d-none d-lg-block mr-lg-4" href=https://cyb3rh4ck.github.io/><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a><ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0"><li class="mr-3 mr-lg-0">Theme by <a href=https://github.com/MeiK2333/github-style>github-style</a></li><li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href=https://github.com/>GitHub, Inc.</a></li></ul></div><div class="d-flex flex-justify-center pb-6"><span class="f6 text-gray-light"></span></div></div></body><script type=application/javascript src=https://cyb3rh4ck.github.io/js/github-style.js></script></html>

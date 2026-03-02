@@ -1,19 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hexagonal on Cyb3rh4ck D3v L1f3</title>
-    <link>http://localhost:1313/tags/hexagonal/</link>
-    <description>Recent content in Hexagonal on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Mon, 28 Jul 2025 17:20:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hexagonal/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title>
-      <link>http://localhost:1313/post/copilot-for-java-devs/desarrollo-incremental-guia/</link>
-      <pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate>
-      <guid>http://localhost:1313/post/copilot-for-java-devs/desarrollo-incremental-guia/</guid>
-      <description>&lt;div class=&#34;hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6&#34;&gt;&lt;div class=&#34;hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200&#34;&gt;&#xD;&#xA;    &lt;span&gt;💡 TL;DR&lt;/span&gt;&#xD;&#xA;  &lt;/div&gt;&lt;div class=&#34;hx-p-4 hx-content&#34;&gt;&#xD;&#xA;    &#xD;&#xA;**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.&#xD;&#xA;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;h2 id=&#34;-el-problema-real-con-copilot-que-nadie-te-cuenta&#34;&gt;🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)&lt;/h2&gt;&#xA;&lt;div class=&#34;hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6&#34;&gt;&lt;div class=&#34;hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200&#34;&gt;&#xD;&#xA;    &lt;span&gt;❌ Escenario Típico con Copilot&lt;/span&gt;&#xD;&#xA;  &lt;/div&gt;&lt;div class=&#34;hx-p-4 hx-content&#34;&gt;&#xD;&#xA;    &#xD;&#xA;1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)&#xD;&#xA;2. **Copilot genera todo de una vez** - 50+ archivos, configuraciones, dependencias&#xD;&#xA;3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱&#xD;&#xA;4. **No entiendes el código generado** para poder arreglarlo&#xD;&#xA;5. **Dependes completamente de Copilot** para cada fix, creando más problemas&#xD;&#xA;6. **Frustración total** - el &#34;asistente inteligente&#34; se volvió tu enemigo&#xD;&#xA;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;💭 &lt;strong&gt;Mi experiencia usando Copilot&lt;/strong&gt;: &lt;em&gt;Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hexagonal on Cyb3rh4ck D3v L1f3</title><link>https://cyb3rh4ck.github.io/tags/hexagonal/</link><description>Recent content in Hexagonal on Cyb3rh4ck D3v L1f3</description><generator>Hugo</generator><language>es</language><lastBuildDate>Mon, 28 Jul 2025 17:20:00 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/hexagonal/index.xml" rel="self" type="application/rss+xml"/><item><title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</title><link>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/desarrollo-incremental-guia/</link><pubDate>Mon, 28 Jul 2025 17:20:00 -0600</pubDate><guid>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/desarrollo-incremental-guia/</guid><description>&lt;div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6">&lt;div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
+ &lt;span>💡 TL;DR&lt;/span>
+ &lt;/div>&lt;div class="hx-p-4 hx-content">
+ 
+**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.
+
+ &lt;/div>
+&lt;/div>
+
+&lt;h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)&lt;/h2>
+&lt;div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6">&lt;div class="hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200">
+ &lt;span>❌ Escenario Típico con Copilot&lt;/span>
+ &lt;/div>&lt;div class="hx-p-4 hx-content">
+ 
+1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)
+2. **Copilot genera todo de una vez** - 50+ archivos, configuraciones, dependencias
+3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱
+4. **No entiendes el código generado** para poder arreglarlo
+5. **Dependes completamente de Copilot** para cada fix, creando más problemas
+6. **Frustración total** - el "asistente inteligente" se volvió tu enemigo
+
+ &lt;/div>
+&lt;/div>
+
+&lt;blockquote>
+&lt;p>💭 &lt;strong>Mi experiencia usando Copilot&lt;/strong>: &lt;em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.&lt;/em>&lt;/p></description></item></channel></rss>

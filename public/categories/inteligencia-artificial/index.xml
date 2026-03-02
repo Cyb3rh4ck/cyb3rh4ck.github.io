@@ -1,33 +1,114 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Inteligencia Artificial on Cyb3rh4ck D3v L1f3</title>
-    <link>http://localhost:1313/categories/inteligencia-artificial/</link>
-    <description>Recent content in Inteligencia Artificial on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Fri, 08 Aug 2025 12:57:50 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/inteligencia-artificial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Arquitectura de Autenticación con Token Opaco, Gateway y JWT</title>
-      <link>http://localhost:1313/arquitectura-auth/arquitectura-auth/</link>
-      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/arquitectura-auth/arquitectura-auth/</guid>
-      <description>&lt;h1 id=&#34;arquitectura-de-autenticación-con-token-opaco-gateway-y-jwt&#34;&gt;Arquitectura de Autenticación con Token Opaco, Gateway y JWT&lt;/h1&gt;&#xA;&lt;p&gt;¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo &lt;strong&gt;diagramas&lt;/strong&gt; + &lt;strong&gt;tips prácticos&lt;/strong&gt; + &lt;strong&gt;fuentes oficiales&lt;/strong&gt; para cada punto clave.&lt;/p&gt;&#xA;&lt;h1 id=&#34;arquitectura-visión-general&#34;&gt;Arquitectura (visión general)&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;access-gateway&lt;/strong&gt; (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con &lt;em&gt;identity-service&lt;/em&gt; y reinyecta un &lt;strong&gt;JWT&lt;/strong&gt; en &lt;code&gt;Authorization: Bearer ...&lt;/code&gt; hacia los microservicios. (&lt;a href=&#34;https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com&#34; title=&#34;Global Filters :: Spring Cloud Gateway&#34;&gt;Home&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;identity-service&lt;/strong&gt; (Spring Boot): valida &lt;strong&gt;token opaco&lt;/strong&gt; con el &lt;em&gt;Authorization Server&lt;/em&gt; (introspección), crea &lt;strong&gt;sesión&lt;/strong&gt; en &lt;strong&gt;ElastiCache Redis&lt;/strong&gt;, firma un &lt;strong&gt;JWT&lt;/strong&gt; y setea &lt;strong&gt;cookie&lt;/strong&gt; segura. (&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com&#34; title=&#34;RFC 7662 - OAuth 2.0 Token Introspection&#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;utils-service / fraud-ins-service&lt;/strong&gt; (Spring Boot 3.5.x): &lt;strong&gt;stateless&lt;/strong&gt;; validan localmente el JWT contra el &lt;strong&gt;JWKS&lt;/strong&gt; de &lt;em&gt;identity-service&lt;/em&gt; (cacheado). (&lt;a href=&#34;https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com&#34; title=&#34;OAuth 2.0 Resource Server JWT&#34;&gt;Home&lt;/a&gt;, &lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com&#34; title=&#34;RFC 7517 - JSON Web Key (JWK)&#34;&gt;IETF Datatracker&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;diagrama-1--handoff-login-vía-token-opaco-desde-app&#34;&gt;Diagrama 1 — “Handoff”: login vía token opaco (desde app)&lt;/h1&gt;&#xA;&lt;div class=&#34;mermaid&#34; style=&#34;text-align: center;&#34;&gt;&#xA;sequenceDiagram&#xA;    autonumber&#xA;    participant App as App origen (ya logueada)&#xA;    participant Browser as Navegador&#xA;    participant GW as access-gateway&#xA;    participant ID as identity-service&#xA;    participant AS as Authorization Server (token opaco)&#xA;    participant Redis as ElastiCache Redis&#xA;&lt;pre&gt;&lt;code&gt;App-&amp;gt;&amp;gt;AS: (2.1) Solicita token opaco (con datos del usuario)&#xA;AS--&amp;gt;&amp;gt;App: (2.2) token_opaco&#xA;App-&amp;gt;&amp;gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco&#xA;Browser-&amp;gt;&amp;gt;GW: GET /?token=token_opaco&#xA;GW-&amp;gt;&amp;gt;ID: (3) Enruta a /exchange?token=...&#xA;ID-&amp;gt;&amp;gt;AS: (4.1) Introspección RFC 7662 (valida token opaco)&#xA;AS--&amp;gt;&amp;gt;ID: Respuesta activa + claims del usuario&#xA;ID-&amp;gt;&amp;gt;Redis: (4.3) Crea sesión (SESSION_ID -&amp;gt; atributos)&#xA;ID--&amp;gt;&amp;gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=...&#xA;Note right of ID: (4.3) También firma un JWT para uso interno&#xA;Browser-&amp;gt;&amp;gt;GW: (5) Peticiones subsecuentes (cookie incluida)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;&lt;strong&gt;Notas clave&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</title>
-      <link>http://localhost:1313/post/gpt/chatgpt-en-accion/</link>
-      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/gpt/chatgpt-en-accion/</guid>
-      <description>&lt;h1 id=&#34;-chatgpt-para-innovación-empresarial-guía-práctica-con-prompts&#34;&gt;🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts&lt;/h1&gt;&#xA;&lt;p&gt;Aprende a usar &lt;strong&gt;ChatGPT como socio estratégico&lt;/strong&gt; para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.&lt;/p&gt;&#xA;&lt;p&gt;En este post encontrarás &lt;strong&gt;5 fórmulas probadas&lt;/strong&gt; con prompts específicos que puedes implementar inmediatamente en diferentes áreas de tu negocio.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-uso-de-la-estructura-formulaica&#34;&gt;🛠️ Uso de la Estructura Formulaica&lt;/h2&gt;&#xA;&lt;p&gt;Las fórmulas utilizan estructuras de oración con &lt;strong&gt;variables entre corchetes&lt;/strong&gt; que deben ser reemplazadas con tu información específica.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>🚀 Novedades de ChatGPT-5</title>
-      <link>http://localhost:1313/post/gpt/chatgpt5-overview/</link>
-      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/gpt/chatgpt5-overview/</guid>
-      <description>&lt;h1 id=&#34;-chatgpt-5-la-nueva-generación-de-ia-conversacional&#34;&gt;🤖 ChatGPT-5: La nueva generación de IA conversacional&lt;/h1&gt;&#xA;&lt;p&gt;OpenAI ha lanzado &lt;strong&gt;ChatGPT-5&lt;/strong&gt;, un modelo más avanzado, preciso y versátil que su predecesor &lt;strong&gt;GPT-4&lt;/strong&gt;.&lt;br&gt;&#xA;Este artículo te mostrará sus mejoras clave, un cuadro comparativo y diagramas para entender sus capacidades.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-mejoras-clave-en-gpt-5&#34;&gt;📌 Mejoras Clave en GPT-5&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Razonamiento Avanzado&lt;/strong&gt; 🧠: Mejor comprensión y resolución de problemas complejos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Memoria Extendida&lt;/strong&gt; 📚: Capacidad de recordar interacciones pasadas por más tiempo.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Respuestas Multimodales&lt;/strong&gt; 🎨: Procesa texto, imágenes, audio y video en una misma conversación.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Velocidad de Respuesta&lt;/strong&gt; ⚡: Latencia reducida gracias a optimizaciones de inferencia.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Personalización&lt;/strong&gt; 🎯: Ajusta el tono y estilo de las respuestas según el usuario.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-comparativa-gpt-4-vs-gpt-5&#34;&gt;📊 Comparativa GPT-4 vs GPT-5&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Característica&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: center&#34;&gt;GPT-4&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: center&#34;&gt;GPT-5&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comprensión Contextual&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐⭐⭐&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐⭐⭐⭐&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Razonamiento Lógico&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐⭐⭐&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐⭐⭐⭐&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Memoria de Conversación&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;8K tokens&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;128K tokens&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Multimodalidad&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;Limitada&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;Texto, Imagen, Audio, Video&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Velocidad de Respuesta&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;Media&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;Alta&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Personalización&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;Básica&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: center&#34;&gt;Avanzada&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-diagrama-de-arquitectura-gpt-5&#34;&gt;📈 Diagrama de Arquitectura GPT-5&lt;/h2&gt;&#xA;&lt;div class=&#34;mermaid&#34; style=&#34;text-align: center;&#34;&gt;&#xA;graph TD&#xA;    A[Entrada del Usuario] --&gt; B[Procesamiento Multimodal]&#xA;    B --&gt; C[Módulo de Comprensión Contextual]&#xA;    C --&gt; D[Motor de Razonamiento Avanzado]&#xA;    D --&gt; E[Generación de Respuesta]&#xA;    E --&gt; F[Salida Personalizada]&#xA;&lt;/div&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-íconos-representativos&#34;&gt;🖼 Íconos Representativos&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;🧠 Inteligencia&lt;/li&gt;&#xA;&lt;li&gt;📚 Conocimiento&lt;/li&gt;&#xA;&lt;li&gt;🎨 Creatividad&lt;/li&gt;&#xA;&lt;li&gt;⚡ Velocidad&lt;/li&gt;&#xA;&lt;li&gt;🤝 Interacción&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-conclusión&#34;&gt;💡 Conclusión&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;ChatGPT-5&lt;/strong&gt; no solo es más rápido y preciso, sino que también es &lt;strong&gt;más humano&lt;/strong&gt; en sus interacciones.&lt;br&gt;&#xA;Con una mejor memoria, capacidad multimodal y personalización avanzada, redefine la experiencia conversacional.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inteligencia Artificial on Cyb3rh4ck D3v L1f3</title><link>https://cyb3rh4ck.github.io/categories/inteligencia-artificial/</link><description>Recent content in Inteligencia Artificial on Cyb3rh4ck D3v L1f3</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 08 Aug 2025 12:57:50 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/categories/inteligencia-artificial/index.xml" rel="self" type="application/rss+xml"/><item><title>Arquitectura de Autenticación con Token Opaco, Gateway y JWT</title><link>https://cyb3rh4ck.github.io/arquitectura-auth/arquitectura-auth/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/arquitectura-auth/arquitectura-auth/</guid><description>&lt;h1 id="arquitectura-de-autenticación-con-token-opaco-gateway-y-jwt">Arquitectura de Autenticación con Token Opaco, Gateway y JWT&lt;/h1>
+&lt;p>¡Va! Te lo explico como arquitecto (AWS + Java) y te dejo &lt;strong>diagramas&lt;/strong> + &lt;strong>tips prácticos&lt;/strong> + &lt;strong>fuentes oficiales&lt;/strong> para cada punto clave.&lt;/p>
+&lt;h1 id="arquitectura-visión-general">Arquitectura (visión general)&lt;/h1>
+&lt;ul>
+&lt;li>&lt;strong>access-gateway&lt;/strong> (Spring Cloud Gateway): entrada única; lee la cookie de sesión, valida con &lt;em>identity-service&lt;/em> y reinyecta un &lt;strong>JWT&lt;/strong> en &lt;code>Authorization: Bearer ...&lt;/code> hacia los microservicios. (&lt;a href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html?utm_source=chatgpt.com" title="Global Filters :: Spring Cloud Gateway">Home&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>identity-service&lt;/strong> (Spring Boot): valida &lt;strong>token opaco&lt;/strong> con el &lt;em>Authorization Server&lt;/em> (introspección), crea &lt;strong>sesión&lt;/strong> en &lt;strong>ElastiCache Redis&lt;/strong>, firma un &lt;strong>JWT&lt;/strong> y setea &lt;strong>cookie&lt;/strong> segura. (&lt;a href="https://datatracker.ietf.org/doc/html/rfc7662?utm_source=chatgpt.com" title="RFC 7662 - OAuth 2.0 Token Introspection">IETF Datatracker&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>utils-service / fraud-ins-service&lt;/strong> (Spring Boot 3.5.x): &lt;strong>stateless&lt;/strong>; validan localmente el JWT contra el &lt;strong>JWKS&lt;/strong> de &lt;em>identity-service&lt;/em> (cacheado). (&lt;a href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html?utm_source=chatgpt.com" title="OAuth 2.0 Resource Server JWT">Home&lt;/a>, &lt;a href="https://datatracker.ietf.org/doc/html/rfc7517?utm_source=chatgpt.com" title="RFC 7517 - JSON Web Key (JWK)">IETF Datatracker&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h1 id="diagrama-1--handoff-login-vía-token-opaco-desde-app">Diagrama 1 — “Handoff”: login vía token opaco (desde app)&lt;/h1>
+&lt;div class="mermaid" style="text-align: center;">
+sequenceDiagram
+ autonumber
+ participant App as App origen (ya logueada)
+ participant Browser as Navegador
+ participant GW as access-gateway
+ participant ID as identity-service
+ participant AS as Authorization Server (token opaco)
+ participant Redis as ElastiCache Redis
+&lt;pre>&lt;code>App-&amp;gt;&amp;gt;AS: (2.1) Solicita token opaco (con datos del usuario)
+AS--&amp;gt;&amp;gt;App: (2.2) token_opaco
+App-&amp;gt;&amp;gt;Browser: (2.3) Redirige a nueva app: https://newapp/...?token=token_opaco
+Browser-&amp;gt;&amp;gt;GW: GET /?token=token_opaco
+GW-&amp;gt;&amp;gt;ID: (3) Enruta a /exchange?token=...
+ID-&amp;gt;&amp;gt;AS: (4.1) Introspección RFC 7662 (valida token opaco)
+AS--&amp;gt;&amp;gt;ID: Respuesta activa + claims del usuario
+ID-&amp;gt;&amp;gt;Redis: (4.3) Crea sesión (SESSION_ID -&amp;gt; atributos)
+ID--&amp;gt;&amp;gt;Browser: (4.4) Set-Cookie: __Host-SESSION_ID=...; HttpOnly; Secure; SameSite=...
+Note right of ID: (4.3) También firma un JWT para uso interno
+Browser-&amp;gt;&amp;gt;GW: (5) Peticiones subsecuentes (cookie incluida)
+&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;p>&lt;strong>Notas clave&lt;/strong>&lt;/p></description></item><item><title>ChatGPT en Acción: Fórmulas, Innovación y Tecnología para Empresas Modernas</title><link>https://cyb3rh4ck.github.io/post/gpt/chatgpt-en-accion/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/gpt/chatgpt-en-accion/</guid><description>&lt;h1 id="-chatgpt-para-innovación-empresarial-guía-práctica-con-prompts">🤖 ChatGPT para Innovación Empresarial: Guía Práctica con Prompts&lt;/h1>
+&lt;p>Aprende a usar &lt;strong>ChatGPT como socio estratégico&lt;/strong> para impulsar la innovación, tomar decisiones basadas en datos y transformar digitalmente tu empresa.&lt;/p>
+&lt;p>En este post encontrarás &lt;strong>5 fórmulas probadas&lt;/strong> con prompts específicos que puedes implementar inmediatamente en diferentes áreas de tu negocio.&lt;/p>
+&lt;hr>
+&lt;h2 id="-uso-de-la-estructura-formulaica">🛠️ Uso de la Estructura Formulaica&lt;/h2>
+&lt;p>Las fórmulas utilizan estructuras de oración con &lt;strong>variables entre corchetes&lt;/strong> que deben ser reemplazadas con tu información específica.&lt;/p></description></item><item><title>🚀 Novedades de ChatGPT-5</title><link>https://cyb3rh4ck.github.io/post/gpt/chatgpt5-overview/</link><pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/gpt/chatgpt5-overview/</guid><description>&lt;h1 id="-chatgpt-5-la-nueva-generación-de-ia-conversacional">🤖 ChatGPT-5: La nueva generación de IA conversacional&lt;/h1>
+&lt;p>OpenAI ha lanzado &lt;strong>ChatGPT-5&lt;/strong>, un modelo más avanzado, preciso y versátil que su predecesor &lt;strong>GPT-4&lt;/strong>.&lt;br>
+Este artículo te mostrará sus mejoras clave, un cuadro comparativo y diagramas para entender sus capacidades.&lt;/p>
+&lt;hr>
+&lt;h2 id="-mejoras-clave-en-gpt-5">📌 Mejoras Clave en GPT-5&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Razonamiento Avanzado&lt;/strong> 🧠: Mejor comprensión y resolución de problemas complejos.&lt;/li>
+&lt;li>&lt;strong>Memoria Extendida&lt;/strong> 📚: Capacidad de recordar interacciones pasadas por más tiempo.&lt;/li>
+&lt;li>&lt;strong>Respuestas Multimodales&lt;/strong> 🎨: Procesa texto, imágenes, audio y video en una misma conversación.&lt;/li>
+&lt;li>&lt;strong>Velocidad de Respuesta&lt;/strong> ⚡: Latencia reducida gracias a optimizaciones de inferencia.&lt;/li>
+&lt;li>&lt;strong>Personalización&lt;/strong> 🎯: Ajusta el tono y estilo de las respuestas según el usuario.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-comparativa-gpt-4-vs-gpt-5">📊 Comparativa GPT-4 vs GPT-5&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Característica&lt;/th>
+ &lt;th style="text-align: center">GPT-4&lt;/th>
+ &lt;th style="text-align: center">GPT-5&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Comprensión Contextual&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐⭐&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Razonamiento Lógico&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐&lt;/td>
+ &lt;td style="text-align: center">⭐⭐⭐⭐⭐&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Memoria de Conversación&lt;/td>
+ &lt;td style="text-align: center">8K tokens&lt;/td>
+ &lt;td style="text-align: center">128K tokens&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Multimodalidad&lt;/td>
+ &lt;td style="text-align: center">Limitada&lt;/td>
+ &lt;td style="text-align: center">Texto, Imagen, Audio, Video&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Velocidad de Respuesta&lt;/td>
+ &lt;td style="text-align: center">Media&lt;/td>
+ &lt;td style="text-align: center">Alta&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Personalización&lt;/td>
+ &lt;td style="text-align: center">Básica&lt;/td>
+ &lt;td style="text-align: center">Avanzada&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-diagrama-de-arquitectura-gpt-5">📈 Diagrama de Arquitectura GPT-5&lt;/h2>
+&lt;div class="mermaid" style="text-align: center;">
+graph TD
+ A[Entrada del Usuario] --> B[Procesamiento Multimodal]
+ B --> C[Módulo de Comprensión Contextual]
+ C --> D[Motor de Razonamiento Avanzado]
+ D --> E[Generación de Respuesta]
+ E --> F[Salida Personalizada]
+&lt;/div>
+&lt;hr>
+&lt;h2 id="-íconos-representativos">🖼 Íconos Representativos&lt;/h2>
+&lt;ul>
+&lt;li>🧠 Inteligencia&lt;/li>
+&lt;li>📚 Conocimiento&lt;/li>
+&lt;li>🎨 Creatividad&lt;/li>
+&lt;li>⚡ Velocidad&lt;/li>
+&lt;li>🤝 Interacción&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-conclusión">💡 Conclusión&lt;/h2>
+&lt;p>&lt;strong>ChatGPT-5&lt;/strong> no solo es más rápido y preciso, sino que también es &lt;strong>más humano&lt;/strong> en sus interacciones.&lt;br>
+Con una mejor memoria, capacidad multimodal y personalización avanzada, redefine la experiencia conversacional.&lt;/p></description></item></channel></rss>

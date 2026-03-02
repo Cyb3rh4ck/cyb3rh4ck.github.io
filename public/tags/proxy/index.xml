@@ -1,19 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Proxy on Cyb3rh4ck D3v L1f3</title>
-    <link>http://localhost:1313/tags/proxy/</link>
-    <description>Recent content in Proxy on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Fri, 08 Aug 2025 11:45:56 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>🚪 Spring Cloud Gateway: API Gateway Reactivo Completo</title>
-      <link>http://localhost:1313/post/spring-boot/spring-cloud-gateway/</link>
-      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/spring-boot/spring-cloud-gateway/</guid>
-      <description>&lt;h1 id=&#34;spring-cloud-gateway-demo&#34;&gt;Spring Cloud Gateway Demo&lt;/h1&gt;&#xA;&lt;p&gt;Este proyecto demuestra el uso de &lt;strong&gt;Spring Cloud Gateway&lt;/strong&gt; como un API Gateway reactivo usando WebFlux.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-arquitectura&#34;&gt;🏗️ Arquitectura&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Cliente/Navegador&#xD;&#xA;       ↓&#xD;&#xA;Spring Cloud Gateway (Puerto 8080)&#xD;&#xA;       ↓&#xD;&#xA;httpbin.org (Servicio destino)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-cómo-ejecutar&#34;&gt;🚀 Cómo ejecutar&lt;/h2&gt;&#xA;&lt;h3 id=&#34;prerrequisitos&#34;&gt;Prerrequisitos&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Java 17+&lt;/li&gt;&#xA;&lt;li&gt;Maven 3.6+&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;ejecutar-la-aplicación&#34;&gt;Ejecutar la aplicación&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Usando Maven Wrapper (recomendado)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./mvnw spring-boot:run&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# En Windows&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvnw.cmd spring-boot:run&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# O ejecutando el JAR&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn clean package&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;java -jar target/spring-cloud-gateway-0.0.1-SNAPSHOT.jar&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La aplicación se ejecutará en &lt;code&gt;http://localhost:8080&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Proxy on Cyb3rh4ck D3v L1f3</title><link>https://cyb3rh4ck.github.io/tags/proxy/</link><description>Recent content in Proxy on Cyb3rh4ck D3v L1f3</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 08 Aug 2025 11:45:56 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml"/><item><title>🚪 Spring Cloud Gateway: API Gateway Reactivo Completo</title><link>https://cyb3rh4ck.github.io/post/spring-boot/spring-cloud-gateway/</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/spring-boot/spring-cloud-gateway/</guid><description>&lt;h1 id="spring-cloud-gateway-demo">Spring Cloud Gateway Demo&lt;/h1>
+&lt;p>Este proyecto demuestra el uso de &lt;strong>Spring Cloud Gateway&lt;/strong> como un API Gateway reactivo usando WebFlux.&lt;/p>
+&lt;h2 id="-arquitectura">🏗️ Arquitectura&lt;/h2>
+&lt;pre tabindex="0">&lt;code>Cliente/Navegador
+ ↓
+Spring Cloud Gateway (Puerto 8080)
+ ↓
+httpbin.org (Servicio destino)
+&lt;/code>&lt;/pre>&lt;h2 id="-cómo-ejecutar">🚀 Cómo ejecutar&lt;/h2>
+&lt;h3 id="prerrequisitos">Prerrequisitos&lt;/h3>
+&lt;ul>
+&lt;li>Java 17+&lt;/li>
+&lt;li>Maven 3.6+&lt;/li>
+&lt;/ul>
+&lt;h3 id="ejecutar-la-aplicación">Ejecutar la aplicación&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Usando Maven Wrapper (recomendado)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./mvnw spring-boot:run
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># En Windows&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mvnw.cmd spring-boot:run
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># O ejecutando el JAR&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mvn clean package
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">java -jar target/spring-cloud-gateway-0.0.1-SNAPSHOT.jar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>La aplicación se ejecutará en &lt;code>http://localhost:8080&lt;/code>&lt;/p></description></item></channel></rss>

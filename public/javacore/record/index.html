@@ -1,304 +1,59 @@
-<!DOCTYPE html>
-<html lang="es">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
-    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
-    <title>Uso de Records en Java y Spring Boot - Cyb3rh4ck D3v L1f3</title>
-    
-    <link rel="icon" type="image/x-icon" href='http://localhost:1313/images/favicon.ico'>
-    
-    <meta name="theme-color" content="#1e2327">
-
-    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
-    
-
-    
-    <meta name="description"
-  content="Uso de Records en Java y Spring Boot En Java 16 se introdujeron de forma oficial los Records, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).
+<!doctype html><html lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width"><script type=application/javascript src=https://cyb3rh4ck.github.io/js/theme-mode.js></script><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/frameworks.min.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/github.min.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/github-style.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/light.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/dark.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/syntax.css><title>Uso de Records en Java y Spring Boot - Cyb3rh4ck D3v L1f3</title><link rel=icon type=image/x-icon href=https://cyb3rh4ck.github.io/images/favicon.ico><meta name=theme-color content="#1e2327"><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/custom.css><meta name=description content='Uso de Records en Java y Spring Boot En Java 16 se introdujeron de forma oficial los Records, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).
 El escenario: Mapear un JSON anidado Supongamos que estamos construyendo un endpoint de registro en Spring Boot. El cliente nos envía el siguiente payload JSON:
-{ &#34;user&#34;: { &#34;name&#34;: { &#34;name&#34;: &#34;Evan&#34;, &#34;firstName&#34;: &#34;Hernandez&#34;, &#34;secondName&#34;: &#34;Angeles&#34; } }, &#34;login&#34;: { &#34;email&#34;: &#34;myemail@codigojava.net&#34;, &#34;password&#34;: &#34;mypassword&#34; } } Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de getters, setters, constructores por defecto, equals(), y hashCode(). Con los Records, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.
-" />
-<meta name="keywords"
-  content='' />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="http://localhost:1313/javacore/record/" />
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Uso de Records en Java y Spring Boot - Cyb3rh4ck D3v L1f3" />
-<meta name="twitter:description"
-  content="Uso de Records en Java y Spring Boot En Java 16 se introdujeron de forma oficial los Records, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).
+{ "user": { "name": { "name": "Evan", "firstName": "Hernandez", "secondName": "Angeles" } }, "login": { "email": "myemail@codigojava.net", "password": "mypassword" } } Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de getters, setters, constructores por defecto, equals(), y hashCode(). Con los Records, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.
+'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://cyb3rh4ck.github.io/javacore/record/><meta name=twitter:card content="summary"><meta name=twitter:title content="Uso de Records en Java y Spring Boot - Cyb3rh4ck D3v L1f3"><meta name=twitter:description content='Uso de Records en Java y Spring Boot En Java 16 se introdujeron de forma oficial los Records, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).
 El escenario: Mapear un JSON anidado Supongamos que estamos construyendo un endpoint de registro en Spring Boot. El cliente nos envía el siguiente payload JSON:
-{ &#34;user&#34;: { &#34;name&#34;: { &#34;name&#34;: &#34;Evan&#34;, &#34;firstName&#34;: &#34;Hernandez&#34;, &#34;secondName&#34;: &#34;Angeles&#34; } }, &#34;login&#34;: { &#34;email&#34;: &#34;myemail@codigojava.net&#34;, &#34;password&#34;: &#34;mypassword&#34; } } Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de getters, setters, constructores por defecto, equals(), y hashCode(). Con los Records, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.
-" />
-<meta name="twitter:site" content="http://localhost:1313/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image"
-  content="http://localhost:1313/">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Uso de Records en Java y Spring Boot - Cyb3rh4ck D3v L1f3">
-<meta property="og:description"
-  content="Uso de Records en Java y Spring Boot En Java 16 se introdujeron de forma oficial los Records, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).
+{ "user": { "name": { "name": "Evan", "firstName": "Hernandez", "secondName": "Angeles" } }, "login": { "email": "myemail@codigojava.net", "password": "mypassword" } } Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de getters, setters, constructores por defecto, equals(), y hashCode(). Con los Records, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.
+'><meta name=twitter:site content="https://cyb3rh4ck.github.io/"><meta name=twitter:creator content><meta name=twitter:image content="https://cyb3rh4ck.github.io/"><meta property="og:type" content="article"><meta property="og:title" content="Uso de Records en Java y Spring Boot - Cyb3rh4ck D3v L1f3"><meta property="og:description" content='Uso de Records en Java y Spring Boot En Java 16 se introdujeron de forma oficial los Records, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).
 El escenario: Mapear un JSON anidado Supongamos que estamos construyendo un endpoint de registro en Spring Boot. El cliente nos envía el siguiente payload JSON:
-{ &#34;user&#34;: { &#34;name&#34;: { &#34;name&#34;: &#34;Evan&#34;, &#34;firstName&#34;: &#34;Hernandez&#34;, &#34;secondName&#34;: &#34;Angeles&#34; } }, &#34;login&#34;: { &#34;email&#34;: &#34;myemail@codigojava.net&#34;, &#34;password&#34;: &#34;mypassword&#34; } } Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de getters, setters, constructores por defecto, equals(), y hashCode(). Con los Records, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.
-" />
-<meta property="og:url" content="http://localhost:1313/javacore/record/" />
-<meta property="og:site_name" content="Uso de Records en Java y Spring Boot" />
-<meta property="og:image"
-  content="http://localhost:1313/">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2026-03-01 12:00:00 &#43;0000 UTC" />
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>document.addEventListener("DOMContentLoaded", function() { if(document.querySelectorAll('.mermaid').length > 0) { mermaid.initialize({ startOnLoad: true }); } });</script>
-
-</head>
-
-
-<body>
-  <div style="position: relative">
-  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
-    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
-      <a class="Header-link" href="http://localhost:1313/">
-        <img class="octicon" height="32" width="32" src="https://github.com/Cyb3rh4ck.png">
-      </a>
-    </div>
-    <div class="Header-item d-md-none">
-      <button class="Header-link btn-link js-details-target" type="button"
-        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
-        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
-          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div style="display: none;" id="header-search"
-      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
-      <div
-        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
-        <div class="position-relative">
-          
-          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
-            autocomplete="off">
-            <label
-              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
-              <input type="text"
-                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
-                name="q" value="" placeholder="Search" autocomplete="off">
-              <input type="hidden" name="q" value="site:http://localhost:1313/">
-            </label>
-          </form>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
-      <a class="Header-link " href="http://localhost:1313/">
-        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="https://github.com/Cyb3rh4ck.png">
-      </a>
-    </div>
-    <div class="Header-item" style="margin-right: 0;">
-      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
-        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
-          version="1.1" width="16" height="16">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
-          </path>
-        </svg>
-      </a>
-    </div>
-  </header>
-</div>
-
-  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
-</div>
-
-  
-<div class="application-main">
-  <div>
-  <main>
-    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
-      <div class="px-0">
-        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
-          <div class="flex-auto min-width-0 width-fit mr-3">
-            <div class="d-flex">
-              <div class="d-none d-md-block">
-                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
-                  <img class=" avatar-user"
-                    src="https://github.com/Cyb3rh4ck.png"
-                    width="32" height="32"></a>
-              </div>
-              <div class="d-flex flex-column">
-                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
-                  <span class="author">
-                    <a href="http://localhost:1313/">Cyb3rh4ck</a>
-                  </span>
-                  <span class="path-divider">/</span>
-                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
-                    <a href="http://localhost:1313/javacore/record/">Uso de Records en Java y Spring Boot</a>
-                  </strong>
-                </h1>
-                <div class="note m-0">
-                  Created <relative-time datetime="Sun, 01 Mar 2026 12:00:00 &#43;0000"
-                    class="no-wrap">
-                    Sun, 01 Mar 2026 12:00:00 &#43;0000</relative-time>
-
-                  
-                  <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sun, 01 Mar 2026 19:52:36 -0600"
-                    class="no-wrap">
-                    Sun, 01 Mar 2026 19:52:36 -0600</relative-time>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-lg px-3 new-discussion-timeline">
-      <div class="repository-content gist-content">
-        <div>
-          <div class="js-gist-file-update-container js-task-list-container file-box">
-            <div id="file-pytest" class="file my-2">
-              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
-                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
-                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                    
-                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
-                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
-                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
-                      </svg>
-                    </summary>
-                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
-                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
-                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
-                        </div>
-                      </div>
-                    </details-menu>
-                      1089 Words
-                    
-
-                  </div>
-                  <div class="file-actions flex-order-2 pt-0">
-                    
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/java">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      java
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/spring-boot">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      spring-boot
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/records">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      records
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/dto">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      dto
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/backend">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      backend
-                    </a>
-                    
-                    
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <article class="markdown-body entry-content container-lg"><h1 id="uso-de-records-en-java-y-spring-boot">Uso de Records en Java y Spring Boot</h1>
-<p>En Java 16 se introdujeron de forma oficial los <strong>Records</strong>, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).</p>
-<h2 id="el-escenario-mapear-un-json-anidado">El escenario: Mapear un JSON anidado</h2>
-<p>Supongamos que estamos construyendo un endpoint de registro en Spring Boot. El cliente nos envía el siguiente <em>payload</em> JSON:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Evan&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Hernandez&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;secondName&#34;</span><span class="p">:</span> <span class="s2">&#34;Angeles&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;login&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;myemail@codigojava.net&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;mypassword&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de <em>getters</em>, <em>setters</em>, constructores por defecto, <code>equals()</code>, y <code>hashCode()</code>. Con los <strong>Records</strong>, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.</p>
-<h2 id="arquitectura-hexagonal-dónde-ubicamos-los-records">Arquitectura Hexagonal: ¿Dónde ubicamos los Records?</h2>
-<p>En una <strong>Arquitectura Hexagonal</strong> (Ports and Adapters), nuestros <code>Records</code> actúan como <strong>DTOs</strong> (Data Transfer Objects) que viven única y exclusivamente en la capa de adaptadores de entrada (<em>Inbound Adapters</em> / <em>Driving Adapters</em>). Su propósito es recibir la petición, validarla en la entrada y mapearla hacia un objeto puro en la capa de dominio.</p>
-<p>Aquí tienes un vistazo de la estructura de directorios y el flujo de los componentes:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">src/main/java/com/codigojava/
-</span></span><span class="line"><span class="cl">├── domain/                      # Capa de Dominio (Core)
-</span></span><span class="line"><span class="cl">│   └── User.java                # Entidad de negocio
-</span></span><span class="line"><span class="cl">├── application/                 # Capa de Aplicación (Ports)
-</span></span><span class="line"><span class="cl">│   └── port/in/
-</span></span><span class="line"><span class="cl">│       └── RegisterUserUseCase.java
-</span></span><span class="line"><span class="cl">└── infrastructure/              # Capa de Infraestructura (Adapters)
-</span></span><span class="line"><span class="cl">    ├── input/
-</span></span><span class="line"><span class="cl">    │   └── rest/
-</span></span><span class="line"><span class="cl">    │       ├── RegistrationController.java
-</span></span><span class="line"><span class="cl">    │       ├── exception/
-</span></span><span class="line"><span class="cl">    │       │   └── GlobalExceptionHandler.java
-</span></span><span class="line"><span class="cl">    │       └── dto/             # ¡Aquí viven nuestros Records!
-</span></span><span class="line"><span class="cl">    │           ├── NameRequest.java
-</span></span><span class="line"><span class="cl">    │           ├── UserRequest.java
-</span></span><span class="line"><span class="cl">    │           ├── LoginRequest.java
-</span></span><span class="line"><span class="cl">    │           └── UserRegistrationRequest.java
-</span></span><span class="line"><span class="cl">    └── validation/              # Validaciones personalizadas
-</span></span><span class="line"><span class="cl">        └── EmpresarialEmail.java
+{ "user": { "name": { "name": "Evan", "firstName": "Hernandez", "secondName": "Angeles" } }, "login": { "email": "myemail@codigojava.net", "password": "mypassword" } } Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de getters, setters, constructores por defecto, equals(), y hashCode(). Con los Records, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.
+'><meta property="og:url" content="https://cyb3rh4ck.github.io/javacore/record/"><meta property="og:site_name" content="Uso de Records en Java y Spring Boot"><meta property="og:image" content="https://cyb3rh4ck.github.io/"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2026-03-01 12:00:00 +0000 UTC"><script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mermaid").length>0&&mermaid.initialize({startOnLoad:!0})})</script></head><body><div style=position:relative><header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"><div class="Header-item mobile-none" style=margin-top:-4px;margin-bottom:-4px><a class=Header-link href=https://cyb3rh4ck.github.io/><img class=octicon height=32 width=32 src=https://github.com/Cyb3rh4ck.png></a></div><div class="Header-item d-md-none"><button class="Header-link btn-link js-details-target" type=button onclick='document.querySelector("#header-search").style.display=document.querySelector("#header-search").style.display=="none"?"block":"none"'>
+<svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M1 2.75A.75.75.0 011.75 2h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 2.75zm0 5A.75.75.0 011.75 7h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 7.75zM1.75 12a.75.75.0 100 1.5h12.5a.75.75.0 100-1.5H1.75z"/></svg></button></div><div style=display:none id=header-search class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"><div class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"><div class=position-relative><form target=_blank action=https://www.google.com/search accept-charset=UTF-8 method=get autocomplete=off><label class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center"><input type=text class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" name=q placeholder=Search autocomplete=off>
+<input type=hidden name=q value=site:https://cyb3rh4ck.github.io/></label></form></div></div></div><div class="Header-item Header-item--full flex-justify-center d-md-none position-relative"><a class=Header-link href=https://cyb3rh4ck.github.io/><img class="octicon octicon-mark-github v-align-middle" height=32 width=32 src=https://github.com/Cyb3rh4ck.png></a></div><div class=Header-item style=margin-right:0><a href=javascript:void(0) class="Header-link no-select" onclick=switchTheme()><svg style="fill:var(--color-profile-color-modes-toggle-moon)" class="no-select" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754c3.05612.0 5.53362-2.47748 5.53362-5.5336C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961 9.95801 1.07727 10.3495.771159 10.6474.99992c1.4679 1.12724 2.4141 2.90007 2.4141 4.89391.0 3.40575-2.7609 6.16667-6.16665 6.16667-2.94151.0-5.40199-2.0595-6.018122-4.81523C.794841 6.87902 1.23668 6.65289 1.55321 6.85451 2.41106 7.40095 3.4296 7.71754 4.52208 7.71754z"/></svg></a></div></header></div><div id=search-result class="container-lg px-3 new-discussion-timeline" style=display:none></div><div class=application-main><div><main><div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4"><div class=px-0><div class="mb-3 d-flex px-3 px-md-3 px-lg-5"><div class="flex-auto min-width-0 width-fit mr-3"><div class=d-flex><div class="d-none d-md-block"><a class="avatar mr-2 flex-shrink-0" href=https://cyb3rh4ck.github.io/><img class=avatar-user src=https://github.com/Cyb3rh4ck.png width=32 height=32></a></div><div class="d-flex flex-column"><h1 class="break-word f3 text-normal mb-md-0 mb-1"><span class=author><a href=https://cyb3rh4ck.github.io/>Cyb3rh4ck</a>
+</span><span class=path-divider>/</span>
+<strong class="css-truncate css-truncate-target mr-1" style=max-width:410px><a href=https://cyb3rh4ck.github.io/javacore/record/>Uso de Records en Java y Spring Boot</a></strong></h1><div class="note m-0">Created <relative-time datetime="Sun, 01 Mar 2026 12:00:00 +0000" class=no-wrap>Sun, 01 Mar 2026 12:00:00 +0000</relative-time>
+<span class=file-info-divider></span>
+Modified <relative-time datetime="Sun, 01 Mar 2026 19:52:36 -0600" class=no-wrap>Sun, 01 Mar 2026 19:52:36 -0600</relative-time></div></div></div></div></div></div></div><div class="container-lg px-3 new-discussion-timeline"><div class="repository-content gist-content"><div><div class="js-gist-file-update-container js-task-list-container file-box"><div id=file-pytest class="file my-2"><div id=post-header class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style=z-index:2><div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto"><div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0"><summary id=toc-toggle onclick=clickToc() class="btn btn-octicon m-0 mr-2 p-2"><svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered"><path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zM3 8A1 1 0 111 8a1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"/></svg></summary><details-menu class=SelectMenu id=toc-details style="display: none;"><div class="SelectMenu-modal rounded-3 mt-1" style=max-height:340px><div class="SelectMenu-list SelectMenu-list--borderless p-2" style=overscroll-behavior:contain id=toc-list></div></div></details-menu>1089 Words</div><div class="file-actions flex-order-2 pt-0"><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/java><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+java
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/spring-boot><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+spring-boot
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/records><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+records
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/dto><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+dto
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/backend><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+backend</a></div></div></div><div class="Box-body px-5 pb-5" style=z-index:1><article class="markdown-body entry-content container-lg"><h1 id=uso-de-records-en-java-y-spring-boot>Uso de Records en Java y Spring Boot</h1><p>En Java 16 se introdujeron de forma oficial los <strong>Records</strong>, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&ldquo;data carriers&rdquo;).</p><h2 id=el-escenario-mapear-un-json-anidado>El escenario: Mapear un JSON anidado</h2><p>Supongamos que estamos construyendo un endpoint de registro en Spring Boot. El cliente nos envía el siguiente <em>payload</em> JSON:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;user&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Evan&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;firstName&#34;</span><span class=p>:</span> <span class=s2>&#34;Hernandez&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;secondName&#34;</span><span class=p>:</span> <span class=s2>&#34;Angeles&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;login&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;email&#34;</span><span class=p>:</span> <span class=s2>&#34;myemail@codigojava.net&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&#34;password&#34;</span><span class=p>:</span> <span class=s2>&#34;mypassword&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de <em>getters</em>, <em>setters</em>, constructores por defecto, <code>equals()</code>, y <code>hashCode()</code>. Con los <strong>Records</strong>, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.</p><h2 id=arquitectura-hexagonal-dónde-ubicamos-los-records>Arquitectura Hexagonal: ¿Dónde ubicamos los Records?</h2><p>En una <strong>Arquitectura Hexagonal</strong> (Ports and Adapters), nuestros <code>Records</code> actúan como <strong>DTOs</strong> (Data Transfer Objects) que viven única y exclusivamente en la capa de adaptadores de entrada (<em>Inbound Adapters</em> / <em>Driving Adapters</em>). Su propósito es recibir la petición, validarla en la entrada y mapearla hacia un objeto puro en la capa de dominio.</p><p>Aquí tienes un vistazo de la estructura de directorios y el flujo de los componentes:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>src/main/java/com/codigojava/
+</span></span><span class=line><span class=cl>├── domain/                      # Capa de Dominio (Core)
+</span></span><span class=line><span class=cl>│   └── User.java                # Entidad de negocio
+</span></span><span class=line><span class=cl>├── application/                 # Capa de Aplicación (Ports)
+</span></span><span class=line><span class=cl>│   └── port/in/
+</span></span><span class=line><span class=cl>│       └── RegisterUserUseCase.java
+</span></span><span class=line><span class=cl>└── infrastructure/              # Capa de Infraestructura (Adapters)
+</span></span><span class=line><span class=cl>    ├── input/
+</span></span><span class=line><span class=cl>    │   └── rest/
+</span></span><span class=line><span class=cl>    │       ├── RegistrationController.java
+</span></span><span class=line><span class=cl>    │       ├── exception/
+</span></span><span class=line><span class=cl>    │       │   └── GlobalExceptionHandler.java
+</span></span><span class=line><span class=cl>    │       └── dto/             # ¡Aquí viven nuestros Records!
+</span></span><span class=line><span class=cl>    │           ├── NameRequest.java
+</span></span><span class=line><span class=cl>    │           ├── UserRequest.java
+</span></span><span class=line><span class=cl>    │           ├── LoginRequest.java
+</span></span><span class=line><span class=cl>    │           └── UserRegistrationRequest.java
+</span></span><span class=line><span class=cl>    └── validation/              # Validaciones personalizadas
+</span></span><span class=line><span class=cl>        └── EmpresarialEmail.java
 </span></span></code></pre></div><pre class="mermaid hx:mt-6">
   
 flowchart LR
@@ -313,200 +68,129 @@ flowchart LR
     class B,D adapter;
     class E,F domain;
 
-</pre>
-<hr>
-<h2 id="validación-personalizada-email-empresarial">Validación Personalizada: Email Empresarial</h2>
-<p>Antes de definir nuestros records, queremos añadir una regla de negocio estricta en nuestro Entrypoint: <strong>el correo electrónico debe ser empresarial (<code>@codigojava.io</code>)</strong>. Para esto, creamos una anotación de validación personalizada.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.Constraint</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.Payload</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.*</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Target</span><span class="p">({</span><span class="n">ElementType</span><span class="p">.</span><span class="na">FIELD</span><span class="p">})</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Constraint</span><span class="p">(</span><span class="n">validatedBy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EmpresarialEmailValidator</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Documented</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">EmpresarialEmail</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">message</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s">&#34;El correo debe ser empresarial y terminar en @codigojava.io&#34;</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Class</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="n">groups</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Class</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Payload</span><span class="o">&gt;[]</span><span class="w"> </span><span class="nf">payload</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>Y su respectivo validador:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.ConstraintValidator</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.ConstraintValidatorContext</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EmpresarialEmailValidator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ConstraintValidator</span><span class="o">&lt;</span><span class="n">EmpresarialEmail</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">DOMAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;@codigojava.io&#34;</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValid</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">ConstraintValidatorContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">email</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">isBlank</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="n">DOMAIN</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h2 id="definiendo-los-records-con-validaciones-jakarta-validation">Definiendo los Records con Validaciones (Jakarta Validation)</h2>
-<p>Para asegurarnos de que los datos de entrada son correctos, combinaremos los <code>record</code> con las anotaciones estándar de Jakarta y nuestra nueva anotación personalizada.</p>
-<p>Podemos definir estos componentes por separado para inyectar validaciones estructuradas a cada capa de nuestro JSON:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.Valid</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.constraints.Email</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.constraints.NotBlank</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.constraints.NotNull</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.constraints.Size</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 1. Record para el Nombre</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">NameRequest</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@NotBlank</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;El nombre es obligatorio&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@NotBlank</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;El apellido paterno es obligatorio&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">secondName</span><span class="w"> </span><span class="c1">// Opcional, sin validación estricta</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 2. Record para el Usuario</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">UserRequest</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@NotNull</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Los datos del nombre son requeridos&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Valid</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">NameRequest</span><span class="w"> </span><span class="n">name</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 3. Record para el Login</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">LoginRequest</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@NotBlank</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;El email no puede estar vacío&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Email</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Formato de email inválido&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@EmpresarialEmail</span><span class="w"> </span><span class="c1">// Nuestra validación personalizada</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@NotBlank</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;La contraseña es obligatoria&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Size</span><span class="p">(</span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">8</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;La contraseña debe tener al menos 8 caracteres&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 4. Record Raíz (El Payload Completo evaluado en el Endpoint)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">UserRegistrationRequest</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@NotNull</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;El objeto user es obligatorio&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Valid</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">UserRequest</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@NotNull</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;El objeto login es obligatorio&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Valid</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">LoginRequest</span><span class="w"> </span><span class="n">login</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span></span></span></code></pre></div><blockquote>
-<p><strong>Nota sobre <code>@Valid</code></strong>: Es crucial añadir la anotación <code>@Valid</code> dentro de los registros padre (<code>UserRegistrationRequest</code> y <code>UserRequest</code>) para que Spring propague la validación en cascada a todos los objetos anidados. Sin esto, sólo validaría si el objeto padre existe, ignorando el contenido interno.</p></blockquote>
-<h2 id="uso-en-un-restcontroller-de-spring-boot">Uso en un RestController de Spring Boot</h2>
-<p>Ahora que tenemos nuestros modelos inmutables validados, podemos utilizarlos en nuestro controlador usando la anotación <code>@RequestBody</code> y detonando el proceso de validación en la firma del método con <code>@Valid</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.http.ResponseEntity</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.*</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.validation.Valid</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@RestController</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&#34;/api/v1/users&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RegistrationController</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/register&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">registerUser</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nd">@Valid</span><span class="w"> </span><span class="nd">@RequestBody</span><span class="w"> </span><span class="n">UserRegistrationRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Accediendo a los datos del Record</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Nota: Los records exponen métodos con el mismo nombre que sus atributos (no hay prefijos &#34;get&#34; o &#34;set&#34;)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">userEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">login</span><span class="p">().</span><span class="na">email</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">user</span><span class="p">().</span><span class="na">name</span><span class="p">().</span><span class="na">firstName</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Lógica de registro...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="p">.</span><span class="na">ok</span><span class="p">(</span><span class="s">&#34;Usuario &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; registrado exitosamente con el email &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userEmail</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h2 id="manejo-global-de-excepciones-controlleradvice">Manejo Global de Excepciones (@ControllerAdvice)</h2>
-<p>Cuando una validación falla en nuestro controlador (porque un campo es nulo o el correo no cumple con <code>@EmpresarialEmail</code>), Spring internamente rechaza la petición y lanza una excepción <code>MethodArgumentNotValidException</code>.</p>
-<p>Dentro de nuestra capa de infraestructura REST, podemos implementar un manejador global de excepciones para atrapar automáticamente estos errores y devolverle al cliente una respuesta limpia (por ejemplo, los puristas del clean code suelen mapearlo a un estándar como <a href="https://www.rfc-editor.org/rfc/rfc7807">Problem Details para HTTP APIs - RFC 7807</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.http.HttpStatus</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.http.ResponseEntity</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.MethodArgumentNotValidException</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.ExceptionHandler</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RestControllerAdvice</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@RestControllerAdvice</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GlobalExceptionHandler</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@ExceptionHandler</span><span class="p">(</span><span class="n">MethodArgumentNotValidException</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">handleValidationExceptions</span><span class="p">(</span><span class="n">MethodArgumentNotValidException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ex</span><span class="p">.</span><span class="na">getBindingResult</span><span class="p">().</span><span class="na">getFieldErrors</span><span class="p">().</span><span class="na">forEach</span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">fieldName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">error</span><span class="p">.</span><span class="na">getField</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">errorMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">error</span><span class="p">.</span><span class="na">getDefaultMessage</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">errors</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">fieldName</span><span class="p">,</span><span class="w"> </span><span class="n">errorMessage</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">});</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Retorna un objeto JSON con los errores mapeados por campo</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="p">.</span><span class="na">status</span><span class="p">(</span><span class="n">HttpStatus</span><span class="p">.</span><span class="na">BAD_REQUEST</span><span class="p">).</span><span class="na">body</span><span class="p">(</span><span class="n">errors</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>Si el cliente consume el endpoint enviando el correo <code>evan@gmail.com</code> y dejando la contraseña de 3 digitos, nuestro <code>ControllerAdvice</code> interceptará el objeto y responderá con algo asÍ:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;login.email&#34;</span><span class="p">:</span> <span class="s2">&#34;El correo debe ser empresarial y terminar en @codigojava.io&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;login.password&#34;</span><span class="p">:</span> <span class="s2">&#34;La contraseña debe tener al menos 8 caracteres&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 id="por-qué-esto-es-mejor-que-una-clase-normal-class-en-java">¿Por qué esto es mejor que una Clase normal (<code>class</code>) en Java?</h2>
-<ol>
-<li><strong>Inmutabilidad por defecto</strong>: Una vez que Spring Boot deserializa el JSON y crea el Record, los campos no pueden ser alterados (<code>final</code> por defecto). Esto resulta perfecto para la capa Web ya que un Request enviado al Backend no debería cambiar en medio del proceso (previene mutaciones accidentales en los controladores o servicios).</li>
-<li><strong>Cero Boilerplate</strong>: Nos libramos de abusar de la anotación <code>@Data</code> de Lombok o de teclear a mano constructores, <em>getters</em> y <code>toString()</code>. El código es más legible y puro Java.</li>
-<li><strong>Lectura directa</strong>: El acceso a los datos se hace llamando al nombre de la propiedad en sí (<code>request.login().email()</code>), una sintaxis más limpia y directa.</li>
-</ol>
-</article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
-<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
-
-  
-</div>
-
-  <div class="footer container-xl width-full p-responsive">
-  <div
-    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
-    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
-      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
-        <path fill-rule="evenodd"
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-        </path>
-      </svg>
-    </a>
-    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      
-      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
-      
-      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
-    </ul>
-  </div>
-  <div class="d-flex flex-justify-center pb-6">
-    <span class="f6 text-gray-light"></span>
-  </div>
-
-
-</div>
-
-</body>
-
-<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
-
-
-
-
-
-
-
-</html>
+</pre><hr><h2 id=validación-personalizada-email-empresarial>Validación Personalizada: Email Empresarial</h2><p>Antes de definir nuestros records, queremos añadir una regla de negocio estricta en nuestro Entrypoint: <strong>el correo electrónico debe ser empresarial (<code>@codigojava.io</code>)</strong>. Para esto, creamos una anotación de validación personalizada.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.Constraint</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.Payload</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>java.lang.annotation.*</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Target</span><span class=p>({</span><span class=n>ElementType</span><span class=p>.</span><span class=na>FIELD</span><span class=p>})</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Retention</span><span class=p>(</span><span class=n>RetentionPolicy</span><span class=p>.</span><span class=na>RUNTIME</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Constraint</span><span class=p>(</span><span class=n>validatedBy</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>EmpresarialEmailValidator</span><span class=p>.</span><span class=na>class</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Documented</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=nd>@interface</span><span class=w> </span><span class=n>EmpresarialEmail</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=nf>message</span><span class=p>()</span><span class=w> </span><span class=k>default</span><span class=w> </span><span class=s>&#34;El correo debe ser empresarial y terminar en @codigojava.io&#34;</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Class</span><span class=o>&lt;?&gt;[]</span><span class=w> </span><span class=n>groups</span><span class=p>()</span><span class=w> </span><span class=k>default</span><span class=w> </span><span class=p>{};</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Class</span><span class=o>&lt;?</span><span class=w> </span><span class=kd>extends</span><span class=w> </span><span class=n>Payload</span><span class=o>&gt;[]</span><span class=w> </span><span class=nf>payload</span><span class=p>()</span><span class=w> </span><span class=k>default</span><span class=w> </span><span class=p>{};</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p>Y su respectivo validador:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.ConstraintValidator</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.ConstraintValidatorContext</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>EmpresarialEmailValidator</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>ConstraintValidator</span><span class=o>&lt;</span><span class=n>EmpresarialEmail</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kd>final</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>DOMAIN</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;@codigojava.io&#34;</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>boolean</span><span class=w> </span><span class=nf>isValid</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>email</span><span class=p>,</span><span class=w> </span><span class=n>ConstraintValidatorContext</span><span class=w> </span><span class=n>context</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>email</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=w> </span><span class=o>||</span><span class=w> </span><span class=n>email</span><span class=p>.</span><span class=na>isBlank</span><span class=p>())</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=kc>false</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>email</span><span class=p>.</span><span class=na>endsWith</span><span class=p>(</span><span class=n>DOMAIN</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h2 id=definiendo-los-records-con-validaciones-jakarta-validation>Definiendo los Records con Validaciones (Jakarta Validation)</h2><p>Para asegurarnos de que los datos de entrada son correctos, combinaremos los <code>record</code> con las anotaciones estándar de Jakarta y nuestra nueva anotación personalizada.</p><p>Podemos definir estos componentes por separado para inyectar validaciones estructuradas a cada capa de nuestro JSON:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.Valid</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.constraints.Email</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.constraints.NotBlank</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.constraints.NotNull</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.constraints.Size</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 1. Record para el Nombre</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>record</span> <span class=nc>NameRequest</span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@NotBlank</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;El nombre es obligatorio&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@NotBlank</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;El apellido paterno es obligatorio&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=n>firstName</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=n>secondName</span><span class=w> </span><span class=c1>// Opcional, sin validación estricta</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>)</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 2. Record para el Usuario</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>record</span> <span class=nc>UserRequest</span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@NotNull</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;Los datos del nombre son requeridos&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Valid</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>NameRequest</span><span class=w> </span><span class=n>name</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>)</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 3. Record para el Login</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>record</span> <span class=nc>LoginRequest</span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@NotBlank</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;El email no puede estar vacío&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Email</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;Formato de email inválido&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@EmpresarialEmail</span><span class=w> </span><span class=c1>// Nuestra validación personalizada</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=n>email</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@NotBlank</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;La contraseña es obligatoria&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Size</span><span class=p>(</span><span class=n>min</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>8</span><span class=p>,</span><span class=w> </span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;La contraseña debe tener al menos 8 caracteres&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=n>password</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>)</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 4. Record Raíz (El Payload Completo evaluado en el Endpoint)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>record</span> <span class=nc>UserRegistrationRequest</span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@NotNull</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;El objeto user es obligatorio&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Valid</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>UserRequest</span><span class=w> </span><span class=n>user</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@NotNull</span><span class=p>(</span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;El objeto login es obligatorio&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Valid</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>LoginRequest</span><span class=w> </span><span class=n>login</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>)</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span></code></pre></div><blockquote><p><strong>Nota sobre <code>@Valid</code></strong>: Es crucial añadir la anotación <code>@Valid</code> dentro de los registros padre (<code>UserRegistrationRequest</code> y <code>UserRequest</code>) para que Spring propague la validación en cascada a todos los objetos anidados. Sin esto, sólo validaría si el objeto padre existe, ignorando el contenido interno.</p></blockquote><h2 id=uso-en-un-restcontroller-de-spring-boot>Uso en un RestController de Spring Boot</h2><p>Ahora que tenemos nuestros modelos inmutables validados, podemos utilizarlos en nuestro controlador usando la anotación <code>@RequestBody</code> y detonando el proceso de validación en la firma del método con <code>@Valid</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.http.ResponseEntity</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.web.bind.annotation.*</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>jakarta.validation.Valid</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@RestController</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@RequestMapping</span><span class=p>(</span><span class=s>&#34;/api/v1/users&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>RegistrationController</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@PostMapping</span><span class=p>(</span><span class=s>&#34;/register&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>ResponseEntity</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span><span class=w> </span><span class=nf>registerUser</span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nd>@Valid</span><span class=w> </span><span class=nd>@RequestBody</span><span class=w> </span><span class=n>UserRegistrationRequest</span><span class=w> </span><span class=n>request</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// Accediendo a los datos del Record</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// Nota: Los records exponen métodos con el mismo nombre que sus atributos (no hay prefijos &#34;get&#34; o &#34;set&#34;)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>String</span><span class=w> </span><span class=n>userEmail</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>request</span><span class=p>.</span><span class=na>login</span><span class=p>().</span><span class=na>email</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>String</span><span class=w> </span><span class=n>firstName</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>request</span><span class=p>.</span><span class=na>user</span><span class=p>().</span><span class=na>name</span><span class=p>().</span><span class=na>firstName</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// Lógica de registro...</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>ResponseEntity</span><span class=p>.</span><span class=na>ok</span><span class=p>(</span><span class=s>&#34;Usuario &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>firstName</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34; registrado exitosamente con el email &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>userEmail</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h2 id=manejo-global-de-excepciones-controlleradvice>Manejo Global de Excepciones (@ControllerAdvice)</h2><p>Cuando una validación falla en nuestro controlador (porque un campo es nulo o el correo no cumple con <code>@EmpresarialEmail</code>), Spring internamente rechaza la petición y lanza una excepción <code>MethodArgumentNotValidException</code>.</p><p>Dentro de nuestra capa de infraestructura REST, podemos implementar un manejador global de excepciones para atrapar automáticamente estos errores y devolverle al cliente una respuesta limpia (por ejemplo, los puristas del clean code suelen mapearlo a un estándar como <a href=https://www.rfc-editor.org/rfc/rfc7807>Problem Details para HTTP APIs - RFC 7807</a>):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.http.HttpStatus</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.http.ResponseEntity</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.web.bind.MethodArgumentNotValidException</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.web.bind.annotation.ExceptionHandler</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.web.bind.annotation.RestControllerAdvice</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>java.util.HashMap</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>java.util.Map</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@RestControllerAdvice</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>GlobalExceptionHandler</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@ExceptionHandler</span><span class=p>(</span><span class=n>MethodArgumentNotValidException</span><span class=p>.</span><span class=na>class</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>ResponseEntity</span><span class=o>&lt;</span><span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=o>&gt;&gt;</span><span class=w> </span><span class=nf>handleValidationExceptions</span><span class=p>(</span><span class=n>MethodArgumentNotValidException</span><span class=w> </span><span class=n>ex</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=o>&gt;</span><span class=w> </span><span class=n>errors</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>HashMap</span><span class=o>&lt;&gt;</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>ex</span><span class=p>.</span><span class=na>getBindingResult</span><span class=p>().</span><span class=na>getFieldErrors</span><span class=p>().</span><span class=na>forEach</span><span class=p>(</span><span class=n>error</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>String</span><span class=w> </span><span class=n>fieldName</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>error</span><span class=p>.</span><span class=na>getField</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>String</span><span class=w> </span><span class=n>errorMessage</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>error</span><span class=p>.</span><span class=na>getDefaultMessage</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>errors</span><span class=p>.</span><span class=na>put</span><span class=p>(</span><span class=n>fieldName</span><span class=p>,</span><span class=w> </span><span class=n>errorMessage</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// Retorna un objeto JSON con los errores mapeados por campo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>ResponseEntity</span><span class=p>.</span><span class=na>status</span><span class=p>(</span><span class=n>HttpStatus</span><span class=p>.</span><span class=na>BAD_REQUEST</span><span class=p>).</span><span class=na>body</span><span class=p>(</span><span class=n>errors</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p>Si el cliente consume el endpoint enviando el correo <code>evan@gmail.com</code> y dejando la contraseña de 3 digitos, nuestro <code>ControllerAdvice</code> interceptará el objeto y responderá con algo asÍ:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;login.email&#34;</span><span class=p>:</span> <span class=s2>&#34;El correo debe ser empresarial y terminar en @codigojava.io&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;login.password&#34;</span><span class=p>:</span> <span class=s2>&#34;La contraseña debe tener al menos 8 caracteres&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h2 id=por-qué-esto-es-mejor-que-una-clase-normal-class-en-java>¿Por qué esto es mejor que una Clase normal (<code>class</code>) en Java?</h2><ol><li><strong>Inmutabilidad por defecto</strong>: Una vez que Spring Boot deserializa el JSON y crea el Record, los campos no pueden ser alterados (<code>final</code> por defecto). Esto resulta perfecto para la capa Web ya que un Request enviado al Backend no debería cambiar en medio del proceso (previene mutaciones accidentales en los controladores o servicios).</li><li><strong>Cero Boilerplate</strong>: Nos libramos de abusar de la anotación <code>@Data</code> de Lombok o de teclear a mano constructores, <em>getters</em> y <code>toString()</code>. El código es más legible y puro Java.</li><li><strong>Lectura directa</strong>: El acceso a los datos se hace llamando al nombre de la propiedad en sí (<code>request.login().email()</code>), una sintaxis más limpia y directa.</li></ol></article></div></div></div></div></div></div></main></div><script type=application/javascript src=https://cyb3rh4ck.github.io/js/toc.js></script><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/toc.css></div><div class="footer container-xl width-full p-responsive"><div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light"><a aria-label=Homepage title=GitHub class="footer-octicon d-none d-lg-block mr-lg-4" href=https://cyb3rh4ck.github.io/><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a><ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0"><li class="mr-3 mr-lg-0">Theme by <a href=https://github.com/MeiK2333/github-style>github-style</a></li><li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href=https://github.com/>GitHub, Inc.</a></li></ul></div><div class="d-flex flex-justify-center pb-6"><span class="f6 text-gray-light"></span></div></div></body><script type=application/javascript src=https://cyb3rh4ck.github.io/js/github-style.js></script></html>

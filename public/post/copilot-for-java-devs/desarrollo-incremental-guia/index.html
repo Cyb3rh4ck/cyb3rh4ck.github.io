@@ -1,904 +1,157 @@
-<!DOCTYPE html>
-<html lang="es">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
-    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
-    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
-    <title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores - Cyb3rh4ck D3v L1f3</title>
-    
-    <link rel="icon" type="image/x-icon" href='http://localhost:1313/images/favicon.ico'>
-    
-    <meta name="theme-color" content="#1e2327">
-
-    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
-    
-
-    
-    <meta name="description"
-  content="💡 TL;DR**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.🎯 El Problema Real con Copilot (Que Nadie Te Cuenta) ❌ Escenario Típico con Copilot1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 &#43; JWT &#43; Arquitectura Hexagonal)2. **Copilot genera todo de una vez** - 50&#43; archivos, configuraciones, dependencias3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱4. **No entiendes el código generado** para poder arreglarlo5. **Dependes completamente de Copilot** para cada fix, creando más problemas6. **Frustración total** - el &#34;asistente inteligente&#34; se volvió tu enemigo💭 Mi experiencia usando Copilot: Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.
-" />
-<meta name="keywords"
-  content='' />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="http://localhost:1313/post/copilot-for-java-devs/desarrollo-incremental-guia/" />
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores - Cyb3rh4ck D3v L1f3" />
-<meta name="twitter:description"
-  content="💡 TL;DR**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.🎯 El Problema Real con Copilot (Que Nadie Te Cuenta) ❌ Escenario Típico con Copilot1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 &#43; JWT &#43; Arquitectura Hexagonal)2. **Copilot genera todo de una vez** - 50&#43; archivos, configuraciones, dependencias3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱4. **No entiendes el código generado** para poder arreglarlo5. **Dependes completamente de Copilot** para cada fix, creando más problemas6. **Frustración total** - el &#34;asistente inteligente&#34; se volvió tu enemigo💭 Mi experiencia usando Copilot: Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.
-" />
-<meta name="twitter:site" content="http://localhost:1313/" />
-<meta name="twitter:creator" content="Cyb3rh4ck" />
-<meta name="twitter:image"
-  content="http://localhost:1313/">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:title" content="🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores - Cyb3rh4ck D3v L1f3">
-<meta property="og:description"
-  content="💡 TL;DR**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.🎯 El Problema Real con Copilot (Que Nadie Te Cuenta) ❌ Escenario Típico con Copilot1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 &#43; JWT &#43; Arquitectura Hexagonal)2. **Copilot genera todo de una vez** - 50&#43; archivos, configuraciones, dependencias3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱4. **No entiendes el código generado** para poder arreglarlo5. **Dependes completamente de Copilot** para cada fix, creando más problemas6. **Frustración total** - el &#34;asistente inteligente&#34; se volvió tu enemigo💭 Mi experiencia usando Copilot: Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.
-" />
-<meta property="og:url" content="http://localhost:1313/post/copilot-for-java-devs/desarrollo-incremental-guia/" />
-<meta property="og:site_name" content="🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores" />
-<meta property="og:image"
-  content="http://localhost:1313/">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2025-07-28 17:20:00 -0600 CST" />
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>document.addEventListener("DOMContentLoaded", function() { if(document.querySelectorAll('.mermaid').length > 0) { mermaid.initialize({ startOnLoad: true }); } });</script>
-
-</head>
-
-
-<body>
-  <div style="position: relative">
-  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
-    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
-      <a class="Header-link" href="http://localhost:1313/">
-        <img class="octicon" height="32" width="32" src="https://github.com/Cyb3rh4ck.png">
-      </a>
-    </div>
-    <div class="Header-item d-md-none">
-      <button class="Header-link btn-link js-details-target" type="button"
-        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
-        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
-          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
-          </path>
-        </svg>
-      </button>
-    </div>
-    <div style="display: none;" id="header-search"
-      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
-      <div
-        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
-        <div class="position-relative">
-          
-          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
-            autocomplete="off">
-            <label
-              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
-              <input type="text"
-                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
-                name="q" value="" placeholder="Search" autocomplete="off">
-              <input type="hidden" name="q" value="site:http://localhost:1313/">
-            </label>
-          </form>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
-      <a class="Header-link " href="http://localhost:1313/">
-        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="https://github.com/Cyb3rh4ck.png">
-      </a>
-    </div>
-    <div class="Header-item" style="margin-right: 0;">
-      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
-        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
-          version="1.1" width="16" height="16">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
-          </path>
-        </svg>
-      </a>
-    </div>
-  </header>
-</div>
-
-  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
-</div>
-
-  
-<div class="application-main">
-  <div>
-  <main>
-    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
-      <div class="px-0">
-        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
-          <div class="flex-auto min-width-0 width-fit mr-3">
-            <div class="d-flex">
-              <div class="d-none d-md-block">
-                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
-                  <img class=" avatar-user"
-                    src="https://github.com/Cyb3rh4ck.png"
-                    width="32" height="32"></a>
-              </div>
-              <div class="d-flex flex-column">
-                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
-                  <span class="author">
-                    <a href="http://localhost:1313/">Cyb3rh4ck</a>
-                  </span>
-                  <span class="path-divider">/</span>
-                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
-                    <a href="http://localhost:1313/post/copilot-for-java-devs/desarrollo-incremental-guia/">🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</a>
-                  </strong>
-                </h1>
-                <div class="note m-0">
-                  Created <relative-time datetime="Mon, 28 Jul 2025 17:20:00 -0600"
-                    class="no-wrap">
-                    Mon, 28 Jul 2025 17:20:00 -0600</relative-time>
-
-                  
-                  <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Mon, 28 Jul 2025 17:20:00 -0600"
-                    class="no-wrap">
-                    Mon, 28 Jul 2025 17:20:00 -0600</relative-time>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-lg px-3 new-discussion-timeline">
-      <div class="repository-content gist-content">
-        <div>
-          <div class="js-gist-file-update-container js-task-list-container file-box">
-            <div id="file-pytest" class="file my-2">
-              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
-                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
-                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                    
-                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
-                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
-                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
-                      </svg>
-                    </summary>
-                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
-                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
-                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
-                        </div>
-                      </div>
-                    </details-menu>
-                      2052 Words
-                    
-
-                  </div>
-                  <div class="file-actions flex-order-2 pt-0">
-                    
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/copilot">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      copilot
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/desarrollo">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      desarrollo
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/arquitectura">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      arquitectura
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/metodolog%C3%ADa">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      metodología
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/spring-boot">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      spring-boot
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/oauth2">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      oauth2
-                    </a>
-                    
-                    <a class="muted-link mr-3" href="http://localhost:1313/tags/hexagonal">
-                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd"
-                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                        </path>
-                      </svg>
-                      hexagonal
-                    </a>
-                    
-                    
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <article class="markdown-body entry-content container-lg"><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>💡 TL;DR</span>
-  </div><div class="hx-p-4 hx-content">
-    
-**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.
-
-  </div>
-</div>
-
-<h2 id="-el-problema-real-con-copilot-que-nadie-te-cuenta">🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)</h2>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200">
-    <span>❌ Escenario Típico con Copilot</span>
-  </div><div class="hx-p-4 hx-content">
-    
-1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)
+<!doctype html><html lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width"><script type=application/javascript src=https://cyb3rh4ck.github.io/js/theme-mode.js></script><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/frameworks.min.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/github.min.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/github-style.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/light.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/dark.css><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/syntax.css><title>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores - Cyb3rh4ck D3v L1f3</title><link rel=icon type=image/x-icon href=https://cyb3rh4ck.github.io/images/favicon.ico><meta name=theme-color content="#1e2327"><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/custom.css><meta name=description content='💡 TL;DR**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.🎯 El Problema Real con Copilot (Que Nadie Te Cuenta) ❌ Escenario Típico con Copilot1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)2. **Copilot genera todo de una vez** - 50+ archivos, configuraciones, dependencias3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱4. **No entiendes el código generado** para poder arreglarlo5. **Dependes completamente de Copilot** para cada fix, creando más problemas6. **Frustración total** - el "asistente inteligente" se volvió tu enemigo💭 Mi experiencia usando Copilot: Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.
+'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://cyb3rh4ck.github.io/post/copilot-for-java-devs/desarrollo-incremental-guia/><meta name=twitter:card content="summary"><meta name=twitter:title content="🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores - Cyb3rh4ck D3v L1f3"><meta name=twitter:description content='💡 TL;DR**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.🎯 El Problema Real con Copilot (Que Nadie Te Cuenta) ❌ Escenario Típico con Copilot1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)2. **Copilot genera todo de una vez** - 50+ archivos, configuraciones, dependencias3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱4. **No entiendes el código generado** para poder arreglarlo5. **Dependes completamente de Copilot** para cada fix, creando más problemas6. **Frustración total** - el "asistente inteligente" se volvió tu enemigo💭 Mi experiencia usando Copilot: Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.
+'><meta name=twitter:site content="https://cyb3rh4ck.github.io/"><meta name=twitter:creator content="Cyb3rh4ck"><meta name=twitter:image content="https://cyb3rh4ck.github.io/"><meta property="og:type" content="article"><meta property="og:title" content="🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores - Cyb3rh4ck D3v L1f3"><meta property="og:description" content='💡 TL;DR**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.🎯 El Problema Real con Copilot (Que Nadie Te Cuenta) ❌ Escenario Típico con Copilot1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)2. **Copilot genera todo de una vez** - 50+ archivos, configuraciones, dependencias3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱4. **No entiendes el código generado** para poder arreglarlo5. **Dependes completamente de Copilot** para cada fix, creando más problemas6. **Frustración total** - el "asistente inteligente" se volvió tu enemigo💭 Mi experiencia usando Copilot: Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.
+'><meta property="og:url" content="https://cyb3rh4ck.github.io/post/copilot-for-java-devs/desarrollo-incremental-guia/"><meta property="og:site_name" content="🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores"><meta property="og:image" content="https://cyb3rh4ck.github.io/"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2025-07-28 17:20:00 -0600 CST"><script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".mermaid").length>0&&mermaid.initialize({startOnLoad:!0})})</script></head><body><div style=position:relative><header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"><div class="Header-item mobile-none" style=margin-top:-4px;margin-bottom:-4px><a class=Header-link href=https://cyb3rh4ck.github.io/><img class=octicon height=32 width=32 src=https://github.com/Cyb3rh4ck.png></a></div><div class="Header-item d-md-none"><button class="Header-link btn-link js-details-target" type=button onclick='document.querySelector("#header-search").style.display=document.querySelector("#header-search").style.display=="none"?"block":"none"'>
+<svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M1 2.75A.75.75.0 011.75 2h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 2.75zm0 5A.75.75.0 011.75 7h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 7.75zM1.75 12a.75.75.0 100 1.5h12.5a.75.75.0 100-1.5H1.75z"/></svg></button></div><div style=display:none id=header-search class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"><div class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"><div class=position-relative><form target=_blank action=https://www.google.com/search accept-charset=UTF-8 method=get autocomplete=off><label class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center"><input type=text class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" name=q placeholder=Search autocomplete=off>
+<input type=hidden name=q value=site:https://cyb3rh4ck.github.io/></label></form></div></div></div><div class="Header-item Header-item--full flex-justify-center d-md-none position-relative"><a class=Header-link href=https://cyb3rh4ck.github.io/><img class="octicon octicon-mark-github v-align-middle" height=32 width=32 src=https://github.com/Cyb3rh4ck.png></a></div><div class=Header-item style=margin-right:0><a href=javascript:void(0) class="Header-link no-select" onclick=switchTheme()><svg style="fill:var(--color-profile-color-modes-toggle-moon)" class="no-select" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754c3.05612.0 5.53362-2.47748 5.53362-5.5336C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961 9.95801 1.07727 10.3495.771159 10.6474.99992c1.4679 1.12724 2.4141 2.90007 2.4141 4.89391.0 3.40575-2.7609 6.16667-6.16665 6.16667-2.94151.0-5.40199-2.0595-6.018122-4.81523C.794841 6.87902 1.23668 6.65289 1.55321 6.85451 2.41106 7.40095 3.4296 7.71754 4.52208 7.71754z"/></svg></a></div></header></div><div id=search-result class="container-lg px-3 new-discussion-timeline" style=display:none></div><div class=application-main><div><main><div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4"><div class=px-0><div class="mb-3 d-flex px-3 px-md-3 px-lg-5"><div class="flex-auto min-width-0 width-fit mr-3"><div class=d-flex><div class="d-none d-md-block"><a class="avatar mr-2 flex-shrink-0" href=https://cyb3rh4ck.github.io/><img class=avatar-user src=https://github.com/Cyb3rh4ck.png width=32 height=32></a></div><div class="d-flex flex-column"><h1 class="break-word f3 text-normal mb-md-0 mb-1"><span class=author><a href=https://cyb3rh4ck.github.io/>Cyb3rh4ck</a>
+</span><span class=path-divider>/</span>
+<strong class="css-truncate css-truncate-target mr-1" style=max-width:410px><a href=https://cyb3rh4ck.github.io/post/copilot-for-java-devs/desarrollo-incremental-guia/>🚀 Desarrollo Incremental con Copilot: Cómo Construir Proyectos Complejos Sin Errores</a></strong></h1><div class="note m-0">Created <relative-time datetime="Mon, 28 Jul 2025 17:20:00 -0600" class=no-wrap>Mon, 28 Jul 2025 17:20:00 -0600</relative-time>
+<span class=file-info-divider></span>
+Modified <relative-time datetime="Mon, 28 Jul 2025 17:20:00 -0600" class=no-wrap>Mon, 28 Jul 2025 17:20:00 -0600</relative-time></div></div></div></div></div></div></div><div class="container-lg px-3 new-discussion-timeline"><div class="repository-content gist-content"><div><div class="js-gist-file-update-container js-task-list-container file-box"><div id=file-pytest class="file my-2"><div id=post-header class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style=z-index:2><div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto"><div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0"><summary id=toc-toggle onclick=clickToc() class="btn btn-octicon m-0 mr-2 p-2"><svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered"><path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zM3 8A1 1 0 111 8a1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"/></svg></summary><details-menu class=SelectMenu id=toc-details style="display: none;"><div class="SelectMenu-modal rounded-3 mt-1" style=max-height:340px><div class="SelectMenu-list SelectMenu-list--borderless p-2" style=overscroll-behavior:contain id=toc-list></div></div></details-menu>2052 Words</div><div class="file-actions flex-order-2 pt-0"><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/copilot><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+copilot
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/desarrollo><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+desarrollo
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/arquitectura><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+arquitectura
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/metodolog%C3%ADa><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+metodología
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/spring-boot><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+spring-boot
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/oauth2><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+oauth2
+</a><a class="muted-link mr-3" href=https://cyb3rh4ck.github.io/tags/hexagonal><svg class="octicon octicon-tag" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25.0 01.25-.25h5.025a.25.25.0 01.177.073l6.25 6.25a.25.25.0 010 .354l-5.025 5.025a.25.25.0 01-.354.0l-6.25-6.25A.25.25.0 012.5 7.775zm-1.5.0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464.0.91.184 1.238.513l6.25 6.25a1.75 1.75.0 010 2.474l-5.026 5.026a1.75 1.75.0 01-2.474.0l-6.25-6.25A1.75 1.75.0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+hexagonal</a></div></div></div><div class="Box-body px-5 pb-5" style=z-index:1><article class="markdown-body entry-content container-lg"><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>💡 TL;DR</span></div><div class="hx-p-4 hx-content">**¿Usas Copilot para generar proyectos complejos y terminas con código que no entiendes lleno de errores?** Esta guía te enseña cómo usar **GitHub Copilot efectivamente** con metodología incremental para construir aplicaciones robustas que realmente comprendas.</div></div><h2 id=-el-problema-real-con-copilot-que-nadie-te-cuenta>🎯 El Problema Real con Copilot (Que Nadie Te Cuenta)</h2><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200"><span>❌ Escenario Típico con Copilot</span></div><div class="hx-p-4 hx-content">1. **Le pides a Copilot** que genere un proyecto complejo (OAuth2 + JWT + Arquitectura Hexagonal)
 2. **Copilot genera todo de una vez** - 50+ archivos, configuraciones, dependencias
 3. **Aparecen 78 errores** de compilación porque las piezas no encajan 😱
 4. **No entiendes el código generado** para poder arreglarlo
 5. **Dependes completamente de Copilot** para cada fix, creando más problemas
-6. **Frustración total** - el "asistente inteligente" se volvió tu enemigo
-
-  </div>
-</div>
-
-<blockquote>
-<p>💭 <strong>Mi experiencia usando Copilot</strong>: <em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.</em></p></blockquote>
-<h2 id="-la-mentalidad-correcta-para-usar-copilot">🧠 La Mentalidad Correcta para Usar Copilot</h2>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>✅ Cambio de Paradigma</span>
-  </div><div class="hx-p-4 hx-content">
-    
-**Copilot no es un reemplazo de tu cerebro**, es una herramienta que amplifica tu metodología. En lugar de pedirle que construya una **catedral** completa, úsalo para perfeccionar **ladrillos** uno por uno.
-
-  </div>
-</div>
-
-<h3 id="-por-qué-copilot-falla-en-proyectos-complejos">🔥 <strong>Por Qué Copilot Falla en Proyectos Complejos</strong></h3>
-<ol>
-<li><strong>Contexto limitado</strong>: Copilot no ve tu arquitectura completa</li>
-<li><strong>Coherencia fragmentada</strong>: Cada sugerencia es independiente</li>
-<li><strong>Dependencias ocultas</strong>: No entiende cómo las piezas se conectan</li>
-<li><strong>Patrones inconsistentes</strong>: Mezcla estilos de código diferentes</li>
-<li><strong>Testing débil</strong>: Genera código sin cobertura de pruebas</li>
-</ol>
-<h3 id="-la-solución-desarrollo-incremental--copilot">💡 <strong>La Solución: Desarrollo Incremental + Copilot</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🎯 Nueva Estrategia</span>
-  </div><div class="hx-p-4 hx-content">
-    
-**Tú diriges la arquitectura**, Copilot acelera la implementación. Divides en fases pequeñas y usas Copilot para cada pieza específica que ya entiendes.
-
-  </div>
-</div>
-
-<h3 id="-principios-fundamentales-tú--copilot">🔄 Principios Fundamentales: Tú + Copilot</h3>
-<div class="mermaid" style="text-align: center;">
-graph TD
-    A[🎯 Tú defines el Objetivo] --> B[📋 Tú divides en Fases]
-    B --> C[🧱 Copilot ayuda a Implementar]
-    C --> D[✅ Tú pruebas y Validas]
-    D --> E{¿Entiendes y funciona?}
-    E -->|Sí| F[📈 Siguiente Fase]
-    E -->|No| G[🔧 Tú corriges/refactorizas]
-    G --> C
-    F --> H[🧱 Copilot ayuda con Fase N]
-    H --> I[✅ Tú pruebas y Validas]
-    I --> J{¿Última Fase?}
-    J -->|No| F
-    J -->|Sí| K[🎉 ¡Proyecto que ENTIENDES!]
-</div>
-<h2 id="-las-4-fases-del-éxito-con-copilot">🏗️ Las 4 Fases del Éxito con Copilot</h2>
-<blockquote>
-<p>🚀 <strong>Regla de oro</strong>: En cada fase, <strong>primero planeas tú</strong>, <strong>luego Copilot te ayuda</strong>, <strong>finalmente tú validas</strong>.</p></blockquote>
-<h3 id="-fase-1-fundación-sólida-tú-diseñas-copilot-acelera">🏗️ <strong>Fase 1: Fundación Sólida (Tú Diseñas, Copilot Acelera)</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🎯 Objetivo</span>
-  </div><div class="hx-p-4 hx-content">
-    
-Crear la **base conceptual** que tú entiendes completamente. Copilot solo ayuda con la sintaxis.
-
-  </div>
-</div>
-
-<h4 id="-checklist-de-fundación">✅ Checklist de Fundación</h4>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>Tú diseñas</strong> los modelos de dominio (<code>User</code>, <code>AuthToken</code>)</li>
-<li><input disabled="" type="checkbox"> <strong>Tú defines</strong> las excepciones personalizadas del dominio</li>
-<li><input disabled="" type="checkbox"> <strong>Tú planeas</strong> las interfaces (puertos) principales</li>
-<li><input disabled="" type="checkbox"> <strong>Copilot ayuda</strong> con boilerplate y sintaxis</li>
-<li><input disabled="" type="checkbox"> <strong>Tú escribes</strong> el test básico que demuestre que funciona</li>
-</ul>
-<h4 id="-cómo-usar-copilot-en-esta-fase">💻 <strong>Cómo usar Copilot en esta fase:</strong></h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ✅ TÚ escribes el comentario específico:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Create a User domain model with id, email, name, and provider fields</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 🤖 COPILOT sugiere la implementación:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Data</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Builder</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">provider</span><span class="p">;</span><span class="w"> </span><span class="c1">// google, github, azure</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="n">TÚ</span><span class="w"> </span><span class="n">revisas</span><span class="p">,</span><span class="w"> </span><span class="n">modificas</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">es</span><span class="w"> </span><span class="n">necesario</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">validas</span></span></span></code></pre></div>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-warning-500/50 hx-bg-warning-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-warning-100/50 hx-p-4 hx-font-bold hx-text-warning-900 dark:hx-bg-warning-900/30 dark:hx-text-warning-200">
-    <span>⚠️ Error Común</span>
-  </div><div class="hx-p-4 hx-content">
-    
-**NO hagas esto**: "// Generate complete OAuth2 authentication system"  
-**SÍ haz esto**: "// Create User model with email and provider fields"
-
-  </div>
-</div>
-
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🏆 Resultado Esperado</span>
-  </div><div class="hx-p-4 hx-content">
-    
-Al final de esta fase deberías poder **compilar y ejecutar** un test simple. Nada fancy, pero **funciona**.
-
-  </div>
-</div>
-
-<hr>
-<h3 id="-fase-2-infraestructura-mínima-copilot-acelera-la-conexión">🔧 <strong>Fase 2: Infraestructura Mínima (Copilot Acelera la Conexión)</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🎯 Objetivo</span>
-  </div><div class="hx-p-4 hx-content">
-    
-Conectar el dominio con **infraestructura básica**. Copilot ayuda con configuraciones estándar.
-
-  </div>
-</div>
-
-<h4 id="-checklist-de-infraestructura">✅ Checklist de Infraestructura</h4>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>Tú decides</strong> la configuración Spring Boot mínima</li>
-<li><input disabled="" type="checkbox"> <strong>Copilot genera</strong> el repositorio en memoria (sin BD aún)</li>
-<li><input disabled="" type="checkbox"> <strong>Tú defines</strong> el contrato del controlador REST</li>
-<li><input disabled="" type="checkbox"> <strong>Copilot implementa</strong> endpoint simple (<code>/api/health</code>)</li>
-<li><input disabled="" type="checkbox"> <strong>Tú verificas</strong> que la aplicación arranque en el puerto 8080</li>
-</ul>
-<h4 id="-prompts-efectivos-para-copilot">💻 <strong>Prompts efectivos para Copilot:</strong></h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ✅ Prompt específico y claro:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Create in-memory implementation of UserRepositoryPort using ConcurrentHashMap</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 🤖 Copilot sugiere:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Component</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InMemoryUserRepository</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">UserRepositoryPort</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">users</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">getEmail</span><span class="p">(),</span><span class="w"> </span><span class="n">user</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">user</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">ofNullable</span><span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">email</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="n">TÚ</span><span class="w"> </span><span class="n">revisas</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">lógica</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">mejoras</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">es</span><span class="w"> </span><span class="n">necesario</span></span></span></code></pre></div>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>💡 Pro Tip con Copilot</span>
-  </div><div class="hx-p-4 hx-content">
-    
-En esta fase, usa **prompts específicos** para cada pieza. Copilot es excelente para generar implementaciones estándar cuando tú defines el contrato.
-
-  </div>
-</div>
-
-<hr>
-<h3 id="-fase-3-funcionalidad-core-donde-copilot-brilla-más">🧩 <strong>Fase 3: Funcionalidad Core (Donde Copilot Brilla Más)</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🎯 Objetivo</span>
-  </div><div class="hx-p-4 hx-content">
-    
-Implementar la **lógica de negocio principal** con Copilot como tu pareja de programación experta.
-
-  </div>
-</div>
-
-<h4 id="-checklist-de-funcionalidad">✅ Checklist de Funcionalidad</h4>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>Tú planeas</strong> la estrategia de persistencia (H2 Database)</li>
-<li><input disabled="" type="checkbox"> <strong>Copilot implementa</strong> el servicio JWT básico (generar/validar)</li>
-<li><input disabled="" type="checkbox"> <strong>Tú eliges</strong> UN proveedor OAuth2 (solo Google primero)</li>
-<li><input disabled="" type="checkbox"> <strong>Copilot ayuda</strong> con el flujo OAuth2 específico</li>
-<li><input disabled="" type="checkbox"> <strong>Tú escribes</strong> tests de integración para validar</li>
-</ul>
-<h4 id="-ejemplo-de-colaboración-efectiva">💻 <strong>Ejemplo de colaboración efectiva:</strong></h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># ✅ TÚ defines la configuración incremental:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># application.yml - Solo lo necesario para esta fase</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">jdbc:h2:mem:testdb</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l">org.h2.Driver</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">h2</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">console</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Solo Google por ahora (TÚ decides la prioridad)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">oauth2</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">google</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">client-id</span><span class="p">:</span><span class="w"> </span><span class="l">${GOOGLE_CLIENT_ID:test}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">client-secret</span><span class="p">:</span><span class="w"> </span><span class="l">${GOOGLE_CLIENT_SECRET:test}</span></span></span></code></pre></div>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-warning-500/50 hx-bg-warning-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-warning-100/50 hx-p-4 hx-font-bold hx-text-warning-900 dark:hx-bg-warning-900/30 dark:hx-text-warning-200">
-    <span>⚠️ Una Cosa a la Vez (Crítico con Copilot)</span>
-  </div><div class="hx-p-4 hx-content">
-    
-**No le pidas a Copilot**: "Generate OAuth2 for Google, GitHub and Azure"  
+6. **Frustración total** - el "asistente inteligente" se volvió tu enemigo</div></div><blockquote><p>💭 <strong>Mi experiencia usando Copilot</strong>: <em>Cuando le delegas todo sin metodología, Copilot se convierte en un generador de deuda técnica en lugar de un acelerador de productividad.</em></p></blockquote><h2 id=-la-mentalidad-correcta-para-usar-copilot>🧠 La Mentalidad Correcta para Usar Copilot</h2><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>✅ Cambio de Paradigma</span></div><div class="hx-p-4 hx-content">**Copilot no es un reemplazo de tu cerebro**, es una herramienta que amplifica tu metodología. En lugar de pedirle que construya una **catedral** completa, úsalo para perfeccionar **ladrillos** uno por uno.</div></div><h3 id=-por-qué-copilot-falla-en-proyectos-complejos>🔥 <strong>Por Qué Copilot Falla en Proyectos Complejos</strong></h3><ol><li><strong>Contexto limitado</strong>: Copilot no ve tu arquitectura completa</li><li><strong>Coherencia fragmentada</strong>: Cada sugerencia es independiente</li><li><strong>Dependencias ocultas</strong>: No entiende cómo las piezas se conectan</li><li><strong>Patrones inconsistentes</strong>: Mezcla estilos de código diferentes</li><li><strong>Testing débil</strong>: Genera código sin cobertura de pruebas</li></ol><h3 id=-la-solución-desarrollo-incremental--copilot>💡 <strong>La Solución: Desarrollo Incremental + Copilot</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🎯 Nueva Estrategia</span></div><div class="hx-p-4 hx-content">**Tú diriges la arquitectura**, Copilot acelera la implementación. Divides en fases pequeñas y usas Copilot para cada pieza específica que ya entiendes.</div></div><h3 id=-principios-fundamentales-tú--copilot>🔄 Principios Fundamentales: Tú + Copilot</h3><div class=mermaid style=text-align:center>graph TD
+A[🎯 Tú defines el Objetivo] --> B[📋 Tú divides en Fases]
+B --> C[🧱 Copilot ayuda a Implementar]
+C --> D[✅ Tú pruebas y Validas]
+D --> E{¿Entiendes y funciona?}
+E -->|Sí| F[📈 Siguiente Fase]
+E -->|No| G[🔧 Tú corriges/refactorizas]
+G --> C
+F --> H[🧱 Copilot ayuda con Fase N]
+H --> I[✅ Tú pruebas y Validas]
+I --> J{¿Última Fase?}
+J -->|No| F
+J -->|Sí| K[🎉 ¡Proyecto que ENTIENDES!]</div><h2 id=-las-4-fases-del-éxito-con-copilot>🏗️ Las 4 Fases del Éxito con Copilot</h2><blockquote><p>🚀 <strong>Regla de oro</strong>: En cada fase, <strong>primero planeas tú</strong>, <strong>luego Copilot te ayuda</strong>, <strong>finalmente tú validas</strong>.</p></blockquote><h3 id=-fase-1-fundación-sólida-tú-diseñas-copilot-acelera>🏗️ <strong>Fase 1: Fundación Sólida (Tú Diseñas, Copilot Acelera)</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🎯 Objetivo</span></div><div class="hx-p-4 hx-content">Crear la **base conceptual** que tú entiendes completamente. Copilot solo ayuda con la sintaxis.</div></div><h4 id=-checklist-de-fundación>✅ Checklist de Fundación</h4><ul><li><input disabled type=checkbox> <strong>Tú diseñas</strong> los modelos de dominio (<code>User</code>, <code>AuthToken</code>)</li><li><input disabled type=checkbox> <strong>Tú defines</strong> las excepciones personalizadas del dominio</li><li><input disabled type=checkbox> <strong>Tú planeas</strong> las interfaces (puertos) principales</li><li><input disabled type=checkbox> <strong>Copilot ayuda</strong> con boilerplate y sintaxis</li><li><input disabled type=checkbox> <strong>Tú escribes</strong> el test básico que demuestre que funciona</li></ul><h4 id=-cómo-usar-copilot-en-esta-fase>💻 <strong>Cómo usar Copilot en esta fase:</strong></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// ✅ TÚ escribes el comentario específico:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// Create a User domain model with id, email, name, and provider fields</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 🤖 COPILOT sugiere la implementación:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Data</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Builder</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>User</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>id</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>email</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>provider</span><span class=p>;</span><span class=w> </span><span class=c1>// google, github, azure</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=o>//</span><span class=w> </span><span class=err>✅</span><span class=w> </span><span class=n>TÚ</span><span class=w> </span><span class=n>revisas</span><span class=p>,</span><span class=w> </span><span class=n>modificas</span><span class=w> </span><span class=n>si</span><span class=w> </span><span class=n>es</span><span class=w> </span><span class=n>necesario</span><span class=p>,</span><span class=w> </span><span class=n>y</span><span class=w> </span><span class=n>validas</span></span></span></code></pre></div><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-warning-500/50 hx-bg-warning-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-warning-100/50 hx-p-4 hx-font-bold hx-text-warning-900 dark:hx-bg-warning-900/30 dark:hx-text-warning-200"><span>⚠️ Error Común</span></div><div class="hx-p-4 hx-content">**NO hagas esto**: "// Generate complete OAuth2 authentication system"
+**SÍ haz esto**: "// Create User model with email and provider fields"</div></div><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🏆 Resultado Esperado</span></div><div class="hx-p-4 hx-content">Al final de esta fase deberías poder **compilar y ejecutar** un test simple. Nada fancy, pero **funciona**.</div></div><hr><h3 id=-fase-2-infraestructura-mínima-copilot-acelera-la-conexión>🔧 <strong>Fase 2: Infraestructura Mínima (Copilot Acelera la Conexión)</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🎯 Objetivo</span></div><div class="hx-p-4 hx-content">Conectar el dominio con **infraestructura básica**. Copilot ayuda con configuraciones estándar.</div></div><h4 id=-checklist-de-infraestructura>✅ Checklist de Infraestructura</h4><ul><li><input disabled type=checkbox> <strong>Tú decides</strong> la configuración Spring Boot mínima</li><li><input disabled type=checkbox> <strong>Copilot genera</strong> el repositorio en memoria (sin BD aún)</li><li><input disabled type=checkbox> <strong>Tú defines</strong> el contrato del controlador REST</li><li><input disabled type=checkbox> <strong>Copilot implementa</strong> endpoint simple (<code>/api/health</code>)</li><li><input disabled type=checkbox> <strong>Tú verificas</strong> que la aplicación arranque en el puerto 8080</li></ul><h4 id=-prompts-efectivos-para-copilot>💻 <strong>Prompts efectivos para Copilot:</strong></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// ✅ Prompt específico y claro:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// Create in-memory implementation of UserRepositoryPort using ConcurrentHashMap</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 🤖 Copilot sugiere:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Component</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>InMemoryUserRepository</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>UserRepositoryPort</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=kd>final</span><span class=w> </span><span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=p>,</span><span class=w> </span><span class=n>User</span><span class=o>&gt;</span><span class=w> </span><span class=n>users</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ConcurrentHashMap</span><span class=o>&lt;&gt;</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>User</span><span class=w> </span><span class=nf>save</span><span class=p>(</span><span class=n>User</span><span class=w> </span><span class=n>user</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>users</span><span class=p>.</span><span class=na>put</span><span class=p>(</span><span class=n>user</span><span class=p>.</span><span class=na>getEmail</span><span class=p>(),</span><span class=w> </span><span class=n>user</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>user</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>Optional</span><span class=o>&lt;</span><span class=n>User</span><span class=o>&gt;</span><span class=w> </span><span class=nf>findByEmail</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>email</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>Optional</span><span class=p>.</span><span class=na>ofNullable</span><span class=p>(</span><span class=n>users</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>email</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=o>//</span><span class=w> </span><span class=err>✅</span><span class=w> </span><span class=n>TÚ</span><span class=w> </span><span class=n>revisas</span><span class=w> </span><span class=n>la</span><span class=w> </span><span class=n>lógica</span><span class=w> </span><span class=n>y</span><span class=w> </span><span class=n>la</span><span class=w> </span><span class=n>mejoras</span><span class=w> </span><span class=n>si</span><span class=w> </span><span class=n>es</span><span class=w> </span><span class=n>necesario</span></span></span></code></pre></div><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>💡 Pro Tip con Copilot</span></div><div class="hx-p-4 hx-content">En esta fase, usa **prompts específicos** para cada pieza. Copilot es excelente para generar implementaciones estándar cuando tú defines el contrato.</div></div><hr><h3 id=-fase-3-funcionalidad-core-donde-copilot-brilla-más>🧩 <strong>Fase 3: Funcionalidad Core (Donde Copilot Brilla Más)</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🎯 Objetivo</span></div><div class="hx-p-4 hx-content">Implementar la **lógica de negocio principal** con Copilot como tu pareja de programación experta.</div></div><h4 id=-checklist-de-funcionalidad>✅ Checklist de Funcionalidad</h4><ul><li><input disabled type=checkbox> <strong>Tú planeas</strong> la estrategia de persistencia (H2 Database)</li><li><input disabled type=checkbox> <strong>Copilot implementa</strong> el servicio JWT básico (generar/validar)</li><li><input disabled type=checkbox> <strong>Tú eliges</strong> UN proveedor OAuth2 (solo Google primero)</li><li><input disabled type=checkbox> <strong>Copilot ayuda</strong> con el flujo OAuth2 específico</li><li><input disabled type=checkbox> <strong>Tú escribes</strong> tests de integración para validar</li></ul><h4 id=-ejemplo-de-colaboración-efectiva>💻 <strong>Ejemplo de colaboración efectiva:</strong></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># ✅ TÚ defines la configuración incremental:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># application.yml - Solo lo necesario para esta fase</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>datasource</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>jdbc:h2:mem:testdb</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>driver-class-name</span><span class=p>:</span><span class=w> </span><span class=l>org.h2.Driver</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>h2</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>console</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Solo Google por ahora (TÚ decides la prioridad)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>app</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>oauth2</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>google</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>client-id</span><span class=p>:</span><span class=w> </span><span class=l>${GOOGLE_CLIENT_ID:test}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>client-secret</span><span class=p>:</span><span class=w> </span><span class=l>${GOOGLE_CLIENT_SECRET:test}</span></span></span></code></pre></div><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-warning-500/50 hx-bg-warning-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-warning-100/50 hx-p-4 hx-font-bold hx-text-warning-900 dark:hx-bg-warning-900/30 dark:hx-text-warning-200"><span>⚠️ Una Cosa a la Vez (Crítico con Copilot)</span></div><div class="hx-p-4 hx-content">**No le pidas a Copilot**: "Generate OAuth2 for Google, GitHub and Azure"
 **Sí le pides**: "Generate Google OAuth2 client configuration for Spring Security"
-
-**¿Por qué?** Copilot generará código inconsistente mezclando los tres proveedores.
-
-  </div>
-</div>
-
-<hr>
-<h3 id="-fase-4-expansión-y-pulido-copilot-escala-tu-solución">🚀 <strong>Fase 4: Expansión y Pulido (Copilot Escala tu Solución)</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🎯 Objetivo</span>
-  </div><div class="hx-p-4 hx-content">
-    
-Completar todas las funcionalidades usando Copilot para **replicar patrones exitosos**.
-
-  </div>
-</div>
-
-<h4 id="-checklist-de-expansión">✅ Checklist de Expansión</h4>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>Copilot replica</strong> más proveedores OAuth2 (GitHub, Azure) basado en Google</li>
-<li><input disabled="" type="checkbox"> <strong>Tú implementas</strong> seguridad completa (CORS, validaciones)</li>
-<li><input disabled="" type="checkbox"> <strong>Copilot ayuda</strong> con interfaz web usando patrones establecidos</li>
-<li><input disabled="" type="checkbox"> <strong>Tú defines</strong> documentación API (Swagger)</li>
-<li><input disabled="" type="checkbox"> <strong>Copilot genera</strong> tests basados en tus patrones existentes</li>
-<li><input disabled="" type="checkbox"> <strong>Tú aseguras</strong> manejo de errores robusto</li>
-</ul>
-<h4 id="-usando-copilot-para-escalar">💻 <strong>Usando Copilot para escalar:</strong></h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ✅ Ahora que Google funciona, usa Copilot para replicar:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// &#34;Create GitHub OAuth2 configuration similar to Google implementation&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 🤖 Copilot entiende el patrón y sugiere:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Configuration</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GitHubOAuth2Config</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Similar structure to GoogleOAuth2Config</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Copilot mantiene consistencia</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="n">TÚ</span><span class="w"> </span><span class="n">validas</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">siga</span><span class="w"> </span><span class="n">los</span><span class="w"> </span><span class="n">mismos</span><span class="w"> </span><span class="n">patrones</span><span class="w"> </span><span class="n">establecidos</span></span></span></code></pre></div>
-<h2 id="-herramientas-maximizando-copilot-en-desarrollo-incremental">🛠️ Herramientas: Maximizando Copilot en Desarrollo Incremental</h2>
-<h3 id="-git--copilot-tu-combo-perfecto">🔧 <strong>Git + Copilot: Tu Combo Perfecto</strong></h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Cada fase = una rama + prompt específico para Copilot</span>
-</span></span><span class="line"><span class="cl">git checkout -b fase-1-fundacion
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># En VS Code con Copilot:</span>
-</span></span><span class="line"><span class="cl">// Create User domain model with validation annotations
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Cuando funciona:</span>
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;✅ Fase 1: Fundación completa y probada con Copilot&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">git checkout -b fase-2-infrastructura  
-</span></span><span class="line"><span class="cl"><span class="c1"># Prompt específico: &#34;Create Spring Boot controller for user management&#34;</span>
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;✅ Fase 2: Infraestructura básica funcionando&#34;</span></span></span></code></pre></div>
-<h3 id="-testing-continuo--copilot">✅ <strong>Testing Continuo + Copilot</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🧪 Test Pyramid con Copilot</span>
-  </div><div class="hx-p-4 hx-content">
-    
-- **Fase 1**: "// Create unit test for User domain model" 
+**¿Por qué?** Copilot generará código inconsistente mezclando los tres proveedores.</div></div><hr><h3 id=-fase-4-expansión-y-pulido-copilot-escala-tu-solución>🚀 <strong>Fase 4: Expansión y Pulido (Copilot Escala tu Solución)</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🎯 Objetivo</span></div><div class="hx-p-4 hx-content">Completar todas las funcionalidades usando Copilot para **replicar patrones exitosos**.</div></div><h4 id=-checklist-de-expansión>✅ Checklist de Expansión</h4><ul><li><input disabled type=checkbox> <strong>Copilot replica</strong> más proveedores OAuth2 (GitHub, Azure) basado en Google</li><li><input disabled type=checkbox> <strong>Tú implementas</strong> seguridad completa (CORS, validaciones)</li><li><input disabled type=checkbox> <strong>Copilot ayuda</strong> con interfaz web usando patrones establecidos</li><li><input disabled type=checkbox> <strong>Tú defines</strong> documentación API (Swagger)</li><li><input disabled type=checkbox> <strong>Copilot genera</strong> tests basados en tus patrones existentes</li><li><input disabled type=checkbox> <strong>Tú aseguras</strong> manejo de errores robusto</li></ul><h4 id=-usando-copilot-para-escalar>💻 <strong>Usando Copilot para escalar:</strong></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// ✅ Ahora que Google funciona, usa Copilot para replicar:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// &#34;Create GitHub OAuth2 configuration similar to Google implementation&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 🤖 Copilot entiende el patrón y sugiere:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Configuration</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>GitHubOAuth2Config</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Similar structure to GoogleOAuth2Config</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Copilot mantiene consistencia</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=o>//</span><span class=w> </span><span class=err>✅</span><span class=w> </span><span class=n>TÚ</span><span class=w> </span><span class=n>validas</span><span class=w> </span><span class=n>que</span><span class=w> </span><span class=n>siga</span><span class=w> </span><span class=n>los</span><span class=w> </span><span class=n>mismos</span><span class=w> </span><span class=n>patrones</span><span class=w> </span><span class=n>establecidos</span></span></span></code></pre></div><h2 id=-herramientas-maximizando-copilot-en-desarrollo-incremental>🛠️ Herramientas: Maximizando Copilot en Desarrollo Incremental</h2><h3 id=-git--copilot-tu-combo-perfecto>🔧 <strong>Git + Copilot: Tu Combo Perfecto</strong></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Cada fase = una rama + prompt específico para Copilot</span>
+</span></span><span class=line><span class=cl>git checkout -b fase-1-fundacion
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># En VS Code con Copilot:</span>
+</span></span><span class=line><span class=cl>// Create User domain model with validation annotations
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Cuando funciona:</span>
+</span></span><span class=line><span class=cl>git commit -m <span class=s2>&#34;✅ Fase 1: Fundación completa y probada con Copilot&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git checkout -b fase-2-infrastructura  
+</span></span><span class=line><span class=cl><span class=c1># Prompt específico: &#34;Create Spring Boot controller for user management&#34;</span>
+</span></span><span class=line><span class=cl>git commit -m <span class=s2>&#34;✅ Fase 2: Infraestructura básica funcionando&#34;</span></span></span></code></pre></div><h3 id=-testing-continuo--copilot>✅ <strong>Testing Continuo + Copilot</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🧪 Test Pyramid con Copilot</span></div><div class="hx-p-4 hx-content">- **Fase 1**: "// Create unit test for User domain model"
 - **Fase 2**: "// Create integration test for UserController health endpoint"
 - **Fase 3**: "// Create test for Google OAuth2 flow"
-- **Fase 4**: "// Create comprehensive test suite following existing patterns"
-
-  </div>
-</div>
-
-<h3 id="-métricas-de-progreso-copilot--tu-revisión">📊 <strong>Métricas de Progreso (Copilot + Tu Revisión)</strong></h3>
-<table>
-  <thead>
-      <tr>
-          <th>Fase</th>
-          <th>Líneas de Código</th>
-          <th>% Copilot</th>
-          <th>% Tú Revisas</th>
-          <th>Tests</th>
-          <th>Comprensión</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>~200</td>
-          <td>60%</td>
-          <td>100%</td>
-          <td>5</td>
-          <td>100% ✅</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>~500</td>
-          <td>70%</td>
-          <td>100%</td>
-          <td>10</td>
-          <td>95% ✅</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>~1000</td>
-          <td>75%</td>
-          <td>100%</td>
-          <td>20</td>
-          <td>90% ✅</td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>~1500</td>
-          <td>80%</td>
-          <td>100%</td>
-          <td>40</td>
-          <td>85% ✅</td>
-      </tr>
-  </tbody>
-</table>
-<blockquote>
-<p>📈 <strong>Observación clave</strong>: Conforme Copilot acelera más, <strong>tú debes revisar más</strong> para mantener comprensión.</p></blockquote>
-<h2 id="-caso-práctico-oauth2--arquitectura-hexagonal-con-copilot">🎯 Caso Práctico: OAuth2 + Arquitectura Hexagonal con Copilot</h2>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>📋 Plan de Desarrollo Real (Mi Experiencia 2 Semanas)</span>
-  </div><div class="hx-p-4 hx-content">
-    
-Así es como apliqué esta metodología con Copilot en un proyecto JWT + OAuth2:
-
-  </div>
-</div>
-
-<h3 id="-cronograma-real-con-copilot">🗓️ <strong>Cronograma Real con Copilot</strong></h3>
-<p><strong>Día 1-2: Fundación (Copilot 60% / Yo 40%)</strong></p>
-<ul>
-<li>✅ Yo diseño modelos <code>User</code> y <code>AuthToken</code></li>
-<li>✅ Copilot genera el boilerplate (getters, setters, builders)</li>
-<li>✅ Yo defino puertos principales (interfaces)</li>
-<li>✅ Copilot ayuda con excepciones del dominio</li>
-<li>✅ Yo escribo y valido tests</li>
-</ul>
-<p><strong>Día 3-4: Infraestructura (Copilot 70% / Yo 30%)</strong></p>
-<ul>
-<li>✅ Yo planificó configuración Spring Boot</li>
-<li>✅ Copilot genera repositorio en memoria</li>
-<li>✅ Copilot implementa controller básico con <code>/health</code></li>
-<li>✅ Yo verifico que aplicación arranque correctamente</li>
-</ul>
-<p><strong>Día 5-7: OAuth2 Google (Copilot 75% / Yo 25%)</strong></p>
-<ul>
-<li>✅ Yo elijo H2 Database como estrategia</li>
-<li>✅ Copilot implementa JWT service siguiendo mis prompts</li>
-<li>✅ Copilot genera configuración OAuth2 para Google solamente</li>
-<li>✅ Yo valido y pruebo flujo completo end-to-end</li>
-</ul>
-<p><strong>Día 8-10: Expansión (Copilot 80% / Yo 20%)</strong></p>
-<ul>
-<li>✅ Copilot replica GitHub OAuth2 basado en patrón de Google</li>
-<li>✅ Copilot genera Azure OAuth2 manteniendo consistencia</li>
-<li>✅ Yo dirijo interfaz web y documentación</li>
-<li>✅ Copilot acelera tests comprehensivos basados en patrones existentes</li>
-</ul>
-<h3 id="-lecciones-aprendidas-usando-copilot">💡 <strong>Lecciones Aprendidas Usando Copilot</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>✅ Lo que SÍ funcionó</span>
-  </div><div class="hx-p-4 hx-content">
-    
-- **Prompts específicos y granulares** en lugar de "genérame todo"
+- **Fase 4**: "// Create comprehensive test suite following existing patterns"</div></div><h3 id=-métricas-de-progreso-copilot--tu-revisión>📊 <strong>Métricas de Progreso (Copilot + Tu Revisión)</strong></h3><table><thead><tr><th>Fase</th><th>Líneas de Código</th><th>% Copilot</th><th>% Tú Revisas</th><th>Tests</th><th>Comprensión</th></tr></thead><tbody><tr><td>1</td><td>~200</td><td>60%</td><td>100%</td><td>5</td><td>100% ✅</td></tr><tr><td>2</td><td>~500</td><td>70%</td><td>100%</td><td>10</td><td>95% ✅</td></tr><tr><td>3</td><td>~1000</td><td>75%</td><td>100%</td><td>20</td><td>90% ✅</td></tr><tr><td>4</td><td>~1500</td><td>80%</td><td>100%</td><td>40</td><td>85% ✅</td></tr></tbody></table><blockquote><p>📈 <strong>Observación clave</strong>: Conforme Copilot acelera más, <strong>tú debes revisar más</strong> para mantener comprensión.</p></blockquote><h2 id=-caso-práctico-oauth2--arquitectura-hexagonal-con-copilot>🎯 Caso Práctico: OAuth2 + Arquitectura Hexagonal con Copilot</h2><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>📋 Plan de Desarrollo Real (Mi Experiencia 2 Semanas)</span></div><div class="hx-p-4 hx-content">Así es como apliqué esta metodología con Copilot en un proyecto JWT + OAuth2:</div></div><h3 id=-cronograma-real-con-copilot>🗓️ <strong>Cronograma Real con Copilot</strong></h3><p><strong>Día 1-2: Fundación (Copilot 60% / Yo 40%)</strong></p><ul><li>✅ Yo diseño modelos <code>User</code> y <code>AuthToken</code></li><li>✅ Copilot genera el boilerplate (getters, setters, builders)</li><li>✅ Yo defino puertos principales (interfaces)</li><li>✅ Copilot ayuda con excepciones del dominio</li><li>✅ Yo escribo y valido tests</li></ul><p><strong>Día 3-4: Infraestructura (Copilot 70% / Yo 30%)</strong></p><ul><li>✅ Yo planificó configuración Spring Boot</li><li>✅ Copilot genera repositorio en memoria</li><li>✅ Copilot implementa controller básico con <code>/health</code></li><li>✅ Yo verifico que aplicación arranque correctamente</li></ul><p><strong>Día 5-7: OAuth2 Google (Copilot 75% / Yo 25%)</strong></p><ul><li>✅ Yo elijo H2 Database como estrategia</li><li>✅ Copilot implementa JWT service siguiendo mis prompts</li><li>✅ Copilot genera configuración OAuth2 para Google solamente</li><li>✅ Yo valido y pruebo flujo completo end-to-end</li></ul><p><strong>Día 8-10: Expansión (Copilot 80% / Yo 20%)</strong></p><ul><li>✅ Copilot replica GitHub OAuth2 basado en patrón de Google</li><li>✅ Copilot genera Azure OAuth2 manteniendo consistencia</li><li>✅ Yo dirijo interfaz web y documentación</li><li>✅ Copilot acelera tests comprehensivos basados en patrones existentes</li></ul><h3 id=-lecciones-aprendidas-usando-copilot>💡 <strong>Lecciones Aprendidas Usando Copilot</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>✅ Lo que SÍ funcionó</span></div><div class="hx-p-4 hx-content">- **Prompts específicos y granulares** en lugar de "genérame todo"
 - **Revisar cada sugerencia** antes de aceptar
 - **Usar Copilot para acelerar patrones**, no para diseñar arquitectura
-- **Mantener tests como prioridad** - Copilot ayuda pero yo valido
-
-  </div>
-</div>
-
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200">
-    <span>❌ Errores que cometí inicialmente</span>
-  </div><div class="hx-p-4 hx-content">
-    
-- **Confiar ciegamente** en código generado sin entenderlo
+- **Mantener tests como prioridad** - Copilot ayuda pero yo valido</div></div><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200"><span>❌ Errores que cometí inicialmente</span></div><div class="hx-p-4 hx-content">- **Confiar ciegamente** en código generado sin entenderlo
 - **Pedir todo junto** - "Create complete OAuth2 system"
 - **No revisar imports** - Copilot a veces usa librerías inconsistentes
-- **Saltar tests** - pensando que el código de Copilot "seguro funciona"
-
-  </div>
-</div>
-
-<h2 id="-consejos-de-oro-para-usar-copilot-efectivamente">💡 Consejos de Oro para Usar Copilot Efectivamente</h2>
-<h3 id="-mindset-correcto-tú-lideras-copilot-acelera">💡 <strong>Mindset Correcto: Tú Lideras, Copilot Acelera</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>✅ Hacer con Copilot</span>
-  </div><div class="hx-p-4 hx-content">
-    
-- **Escribir prompts específicos** antes de cada implementación
+- **Saltar tests** - pensando que el código de Copilot "seguro funciona"</div></div><h2 id=-consejos-de-oro-para-usar-copilot-efectivamente>💡 Consejos de Oro para Usar Copilot Efectivamente</h2><h3 id=-mindset-correcto-tú-lideras-copilot-acelera>💡 <strong>Mindset Correcto: Tú Lideras, Copilot Acelera</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>✅ Hacer con Copilot</span></div><div class="hx-p-4 hx-content">- **Escribir prompts específicos** antes de cada implementación
 - **Revisar y entender** cada línea sugerida
 - **Refactorizar sugerencias** para mantener consistencia
 - **Usar Copilot para acelerar**, no para tomar decisiones arquitectónicas
-- **Testear inmediatamente** cada pieza generada
-
-  </div>
-</div>
-
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200">
-    <span>❌ Evitar con Copilot</span>
-  </div><div class="hx-p-4 hx-content">
-    
-- **No delegar diseño** a Copilot - él genera código, tú diseñas
+- **Testear inmediatamente** cada pieza generada</div></div><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-error-500/50 hx-bg-error-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-error-100/50 hx-p-4 hx-font-bold hx-text-error-900 dark:hx-bg-error-900/30 dark:hx-text-error-200"><span>❌ Evitar con Copilot</span></div><div class="hx-p-4 hx-content">- **No delegar diseño** a Copilot - él genera código, tú diseñas
 - **No aceptar todo automáticamente** - review cada sugerencia
 - **No generar funcionalidades masivas** de una vez
-- **No ignorar inconsistencias** en el código generado  
-- **No procrastinar la comprensión** del código sugerido
-
-  </div>
-</div>
-
-<h3 id="-técnicas-de-prompting-efectivo">💻 <strong>Técnicas de Prompting Efectivo</strong></h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ✅ PROMPT ESPECÍFICO Y CLARO:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Create JWT utility class with generateToken and validateToken methods using io.jsonwebtoken</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 🤖 Copilot genera código enfocado y correcto</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ❌ PROMPT VAGO Y AMPLIO:  </span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Create authentication system</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="err">🤖</span><span class="w"> </span><span class="n">Copilot</span><span class="w"> </span><span class="n">genera</span><span class="w"> </span><span class="n">código</span><span class="w"> </span><span class="n">inconsistente</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">probablemente</span><span class="w"> </span><span class="n">con</span><span class="w"> </span><span class="n">errores</span></span></span></code></pre></div>
-<h3 id="-patrones-de-colaboración-humano-ia">🎯 <strong>Patrones de Colaboración Humano-IA</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🤝 División de Responsabilidades</span>
-  </div><div class="hx-p-4 hx-content">
-    
-**Tú decides**: Arquitectura, flujo de datos, reglas de negocio, tests
+- **No ignorar inconsistencias** en el código generado
+- **No procrastinar la comprensión** del código sugerido</div></div><h3 id=-técnicas-de-prompting-efectivo>💻 <strong>Técnicas de Prompting Efectivo</strong></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// ✅ PROMPT ESPECÍFICO Y CLARO:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// Create JWT utility class with generateToken and validateToken methods using io.jsonwebtoken</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 🤖 Copilot genera código enfocado y correcto</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// ❌ PROMPT VAGO Y AMPLIO:  </span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// Create authentication system</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=o>//</span><span class=w> </span><span class=err>🤖</span><span class=w> </span><span class=n>Copilot</span><span class=w> </span><span class=n>genera</span><span class=w> </span><span class=n>código</span><span class=w> </span><span class=n>inconsistente</span><span class=w> </span><span class=n>y</span><span class=w> </span><span class=n>probablemente</span><span class=w> </span><span class=n>con</span><span class=w> </span><span class=n>errores</span></span></span></code></pre></div><h3 id=-patrones-de-colaboración-humano-ia>🎯 <strong>Patrones de Colaboración Humano-IA</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🤝 División de Responsabilidades</span></div><div class="hx-p-4 hx-content">**Tú decides**: Arquitectura, flujo de datos, reglas de negocio, tests
 **Copilot acelera**: Implementación, boilerplate, configuraciones estándar, sintaxis
-**Ambos**: Revisión continua y mejora iterativa
-
-  </div>
-</div>
-
-<h2 id="-resultados-esperados-copilot-como-multiplicador-de-productividad">🏆 Resultados Esperados: Copilot Como Multiplicador de Productividad</h2>
-<h3 id="-beneficios-inmediatos-con-este-enfoque">🏆 <strong>Beneficios Inmediatos con Este Enfoque</strong></h3>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🎯 Lo que Vas a Lograr</span>
-  </div><div class="hx-p-4 hx-content">
-    
-- ✅ **Menos errores**: Detectas problemas antes de que se acumulen
-- ✅ **Mejor comprensión**: Entiendes cada pieza que Copilot genera  
+**Ambos**: Revisión continua y mejora iterativa</div></div><h2 id=-resultados-esperados-copilot-como-multiplicador-de-productividad>🏆 Resultados Esperados: Copilot Como Multiplicador de Productividad</h2><h3 id=-beneficios-inmediatos-con-este-enfoque>🏆 <strong>Beneficios Inmediatos con Este Enfoque</strong></h3><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🎯 Lo que Vas a Lograr</span></div><div class="hx-p-4 hx-content">- ✅ **Menos errores**: Detectas problemas antes de que se acumulen
+- ✅ **Mejor comprensión**: Entiendes cada pieza que Copilot genera
 - ✅ **Código más limpio**: Refactorizas sugerencias para mantener consistencia
 - ✅ **Velocidad + Control**: Aceleras desarrollo sin perder el control
 - ✅ **Mejor testing**: Cada fase está probada antes de avanzar
-- ✅ **Confianza real**: Sabes exactamente cómo funciona tu sistema
-
-  </div>
-</div>
-
-<h3 id="-aprendizaje-profundo-con-ia-como-compañera">🎓 <strong>Aprendizaje Profundo con IA Como Compañera</strong></h3>
-<p>Con este enfoque, <strong>no solo código más rápido</strong>, sino que:</p>
-<ul>
-<li>Aprendes <strong>por qué</strong> Copilot sugiere ciertos patrones</li>
-<li>Desarrollas <strong>intuición</strong> sobre cuándo aceptar o rechazar sugerencias</li>
-<li>Mejoras en <strong>prompting</strong> para obtener mejor código</li>
-<li>Mantienes <strong>comprensión arquitectónica</strong> completa</li>
-<li>Puedes <strong>debug efectivamente</strong> cuando algo falla</li>
-</ul>
-<h3 id="-métricas-de-mejora-mi-experiencia-real">📈 <strong>Métricas de Mejora (Mi Experiencia Real)</strong></h3>
-<table>
-  <thead>
-      <tr>
-          <th>Métrica</th>
-          <th>Sin Metodología</th>
-          <th>Con Metodología Incremental</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Tiempo Debug</td>
-          <td>60% del tiempo</td>
-          <td>15% del tiempo ✅</td>
-      </tr>
-      <tr>
-          <td>Comprensión Código</td>
-          <td>30%</td>
-          <td>90% ✅</td>
-      </tr>
-      <tr>
-          <td>Errores de Integración</td>
-          <td>15-20 por día</td>
-          <td>2-3 por día ✅</td>
-      </tr>
-      <tr>
-          <td>Confianza en Deploy</td>
-          <td>Baja 😰</td>
-          <td>Alta 🚀</td>
-      </tr>
-      <tr>
-          <td>Velocidad Real</td>
-          <td>Lento (muchos retrabados)</td>
-          <td>Rápido y sostenible ✅</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="-próximos-pasos">🚀 Próximos Pasos</h2>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🎯 Plan de Acción</span>
-  </div><div class="hx-p-4 hx-content">
-    
-1. **Elige un proyecto** que quieras desarrollar
+- ✅ **Confianza real**: Sabes exactamente cómo funciona tu sistema</div></div><h3 id=-aprendizaje-profundo-con-ia-como-compañera>🎓 <strong>Aprendizaje Profundo con IA Como Compañera</strong></h3><p>Con este enfoque, <strong>no solo código más rápido</strong>, sino que:</p><ul><li>Aprendes <strong>por qué</strong> Copilot sugiere ciertos patrones</li><li>Desarrollas <strong>intuición</strong> sobre cuándo aceptar o rechazar sugerencias</li><li>Mejoras en <strong>prompting</strong> para obtener mejor código</li><li>Mantienes <strong>comprensión arquitectónica</strong> completa</li><li>Puedes <strong>debug efectivamente</strong> cuando algo falla</li></ul><h3 id=-métricas-de-mejora-mi-experiencia-real>📈 <strong>Métricas de Mejora (Mi Experiencia Real)</strong></h3><table><thead><tr><th>Métrica</th><th>Sin Metodología</th><th>Con Metodología Incremental</th></tr></thead><tbody><tr><td>Tiempo Debug</td><td>60% del tiempo</td><td>15% del tiempo ✅</td></tr><tr><td>Comprensión Código</td><td>30%</td><td>90% ✅</td></tr><tr><td>Errores de Integración</td><td>15-20 por día</td><td>2-3 por día ✅</td></tr><tr><td>Confianza en Deploy</td><td>Baja 😰</td><td>Alta 🚀</td></tr><tr><td>Velocidad Real</td><td>Lento (muchos retrabados)</td><td>Rápido y sostenible ✅</td></tr></tbody></table><h2 id=-próximos-pasos>🚀 Próximos Pasos</h2><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🎯 Plan de Acción</span></div><div class="hx-p-4 hx-content">1. **Elige un proyecto** que quieras desarrollar
 2. **Divídelo en 4 fases** siguiendo esta metodología
 3. **Crea un cronograma** realista
 4. **Empieza con la Fase 1** ¡hoy mismo!
-5. **Documenta tu progreso** en un blog/GitHub
-
-  </div>
-</div>
-
-<h3 id="-recursos-adicionales">📚 <strong>Recursos Adicionales</strong></h3>
-<ul>
-<li><a href="https://github.com/tu-usuario/jwt-demo">🔗 Proyecto de Ejemplo</a></li>
-<li><a href="https://hexagonal-architecture.com">� Arquitectura Hexagonal</a></li>
-<li><a href="https://oauth.net/2/">� OAuth2 Specification</a></li>
-</ul>
-<h2 id="-tu-experiencia-con-copilot">💬 ¿Tu Experiencia con Copilot?</h2>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>🤔 Reflexión y Compartir</span>
-  </div><div class="hx-p-4 hx-content">
-    
-**¿Has intentado usar Copilot para proyectos complejos?** ¿Qué errores has cometido? ¿Qué estrategias te han funcionado mejor? 
-
-**¿Vas a probar esta metodología incremental?** ¡Comparte tus resultados en los comentarios!
-
-  </div>
-</div>
-
-<hr>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>👨‍💻 Sobre el Autor</span>
-  </div><div class="hx-p-4 hx-content">
-    
-Desarrollador con **2 semanas intensivas** experimentando con GitHub Copilot en proyectos reales. He cometido todos los errores posibles para que tú no tengas que repetirlos 😄
-
+5. **Documenta tu progreso** en un blog/GitHub</div></div><h3 id=-recursos-adicionales>📚 <strong>Recursos Adicionales</strong></h3><ul><li><a href=https://github.com/tu-usuario/jwt-demo>🔗 Proyecto de Ejemplo</a></li><li><a href=https://hexagonal-architecture.com>� Arquitectura Hexagonal</a></li><li><a href=https://oauth.net/2/>� OAuth2 Specification</a></li></ul><h2 id=-tu-experiencia-con-copilot>💬 ¿Tu Experiencia con Copilot?</h2><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>🤔 Reflexión y Compartir</span></div><div class="hx-p-4 hx-content">**¿Has intentado usar Copilot para proyectos complejos?** ¿Qué errores has cometido? ¿Qué estrategias te han funcionado mejor?
+**¿Vas a probar esta metodología incremental?** ¡Comparte tus resultados en los comentarios!</div></div><hr><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>👨‍💻 Sobre el Autor</span></div><div class="hx-p-4 hx-content">Desarrollador con **2 semanas intensivas** experimentando con GitHub Copilot en proyectos reales. He cometido todos los errores posibles para que tú no tengas que repetirlos 😄
 Esta metodología nació de mi **frustración inicial** delegando todo a Copilot y mi **descubrimiento** de cómo usarlo efectivamente.
-
 **Sígueme para más contenido sobre desarrollo con IA:**
 - [GitHub](https://github.com/Cyb3rh4ck) - Proyectos y experimentos
-- [LinkedIn](https://linkedin.com/in/cyb3rh4ck) - Reflexiones profesionales  
-- [Twitter](https://twitter.com/cyb3rh4ck) - Updates rápidos y tips
-
-  </div>
-</div>
-
-<hr>
-<div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200">
-    <span>📚 Más Contenido sobre Copilot y Desarrollo con IA</span>
-  </div><div class="hx-p-4 hx-content">
-    
-- [🤖 Frases y Prompts Útiles para Copilot](/posts/copilot-for-java-devs/copilot-prompts)
+- [LinkedIn](https://linkedin.com/in/cyb3rh4ck) - Reflexiones profesionales
+- [Twitter](https://twitter.com/cyb3rh4ck) - Updates rápidos y tips</div></div><hr><div class="hx-overflow-hidden hx-rounded-lg hx-border hx-border-info-500/50 hx-bg-info-50/50 hx-my-6"><div class="hx-flex hx-items-center hx-gap-2 hx-bg-info-100/50 hx-p-4 hx-font-bold hx-text-info-900 dark:hx-bg-info-900/30 dark:hx-text-info-200"><span>📚 Más Contenido sobre Copilot y Desarrollo con IA</span></div><div class="hx-p-4 hx-content">- [🤖 Frases y Prompts Útiles para Copilot](/posts/copilot-for-java-devs/copilot-prompts)
 - [🏗️ Arquitectura Hexagonal con Spring Boot](/posts/arquitectura-hexagonal-spring-boot)
 - [🔐 OAuth2: Mejores Prácticas de Seguridad](/posts/oauth2-security-best-practices)
-- [🧪 Testing con GitHub Copilot: Estrategias Efectivas](/posts/testing-strategies-copilot)
-
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({ startOnLoad: true });
-</script></article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
-<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
-
-  
-</div>
-
-  <div class="footer container-xl width-full p-responsive">
-  <div
-    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
-    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
-      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
-        <path fill-rule="evenodd"
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-        </path>
-      </svg>
-    </a>
-    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      
-      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
-      
-      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
-    </ul>
-  </div>
-  <div class="d-flex flex-justify-center pb-6">
-    <span class="f6 text-gray-light"></span>
-  </div>
-
-
-</div>
-
-</body>
-
-<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
-  integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"
-  integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
-  integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"></script>
-
-
-
-
-
-
-
-</html>
+- [🧪 Testing con GitHub Copilot: Estrategias Efectivas](/posts/testing-strategies-copilot)</div></div><script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script><script>mermaid.initialize({startOnLoad:!0})</script></article></div></div></div></div></div></div></main></div><script type=application/javascript src=https://cyb3rh4ck.github.io/js/toc.js></script><link rel=stylesheet href=https://cyb3rh4ck.github.io/css/toc.css></div><div class="footer container-xl width-full p-responsive"><div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light"><a aria-label=Homepage title=GitHub class="footer-octicon d-none d-lg-block mr-lg-4" href=https://cyb3rh4ck.github.io/><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a><ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0"><li class="mr-3 mr-lg-0">Theme by <a href=https://github.com/MeiK2333/github-style>github-style</a></li><li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href=https://github.com/>GitHub, Inc.</a></li></ul></div><div class="d-flex flex-justify-center pb-6"><span class="f6 text-gray-light"></span></div></div></body><script type=application/javascript src=https://cyb3rh4ck.github.io/js/github-style.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css integrity=sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js integrity=sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js integrity=sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk crossorigin=anonymous onload=renderMathInElement(document.body)></script></html>

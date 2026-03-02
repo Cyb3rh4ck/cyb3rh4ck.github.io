@@ -1,110 +1,493 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Java on Cyb3rh4ck D3v L1f3</title>
-    <link>http://localhost:1313/tags/java/</link>
-    <description>Recent content in Java on Cyb3rh4ck D3v L1f3</description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Sun, 01 Mar 2026 18:22:36 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>01. Fundamentos: Cuando el código se rompe</title>
-      <link>http://localhost:1313/javacore/exceptions/01-fundamentos/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/javacore/exceptions/01-fundamentos/</guid>
-      <description>&lt;h2 id=&#34;-la-analogía-de-la-bañera&#34;&gt;🛀 La analogía de la bañera&lt;/h2&gt;&#xA;&lt;p&gt;Imagínate que es martes en la noche. Estás en la bañera, cantando a todo pulmón, relajado. De repente, se abre la puerta y entra tu pareja con una visita.&lt;/p&gt;&#xA;&lt;p&gt;¡Pánico! Esto no estaba en el script. Es una excepción en tu programa personal. Si no manejas bien esa situación (handle), el resultado va a ser incómodo.&lt;/p&gt;&#xA;&lt;p&gt;En el código pasa lo mismo: si ignoras las excepciones, tu programa crashea o queda en un estado inestable (como tú, escondido bajo la espuma). Y ojo: manejarlas sin loguearlas es como gritar bajo el agua; nadie se entera de qué pasó realmente.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>02. Checked vs Unchecked Exceptions</title>
-      <link>http://localhost:1313/javacore/exceptions/02-checked-vs-unchecked/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/javacore/exceptions/02-checked-vs-unchecked/</guid>
-      <description>&lt;h2 id=&#34;la-gran-division&#34;&gt;La gran division&lt;/h2&gt;&#xA;&lt;p&gt;En Java, todas las excepciones heredan de &lt;code&gt;java.lang.Exception&lt;/code&gt;, pero existen dos ramas que dictan como reacciona el compilador. Conocerlas evita sorpresas.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Checked exceptions:&lt;/strong&gt; Heredan directamente de &lt;code&gt;Exception&lt;/code&gt;. El compilador exige que las manejes o declares.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Unchecked exceptions:&lt;/strong&gt; Heredan de &lt;code&gt;RuntimeException&lt;/code&gt;. El compilador te deja continuar sin try-catch ni &lt;code&gt;throws&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si dudas, abre la clase en el IDE: si sube hasta &lt;code&gt;RuntimeException&lt;/code&gt; es unchecked; de lo contrario, es checked.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>03. Try/Catch y Logging correcto</title>
-      <link>http://localhost:1313/javacore/exceptions/03-try-catch-y-logging/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/javacore/exceptions/03-try-catch-y-logging/</guid>
-      <description>&lt;h2 id=&#34;try-catch-el-portero&#34;&gt;Try-catch: el portero&lt;/h2&gt;&#xA;&lt;p&gt;Si decidimos manejar el error en lugar de dejar morir el programa, usamos &lt;code&gt;try-catch&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;pre class=&#34;mermaid hx:mt-6&#34;&gt;&#xD;&#xA;  &#xA;flowchart TD&#xA;    A[Inicio try] --&amp;gt; B{¿Ocurrió Excepción?}&#xA;    B -- No --&amp;gt; C[Fin try → sigue normal]&#xA;    B -- Sí --&amp;gt; D[Bloque catch]&#xA;    D --&amp;gt; E[Loguear y recuperar]&#xA;    E --&amp;gt; F[Continuar ejecución]&#xA;&#xD;&#xA;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;logging-lo-que-no-debes-hacer&#34;&gt;Logging: lo que no debes hacer&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;try&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basedatos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SQLException&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;logger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;info&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Catch&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// ❌ Pésimo: no hay contexto ni stack trace&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Loguear &amp;ldquo;Catch&amp;rdquo; no sirve: no dice qué pasó, ni dónde, ni por qué.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>04. Throwing y Antipatrones Comunes</title>
-      <link>http://localhost:1313/javacore/exceptions/04-antipatrones/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/javacore/exceptions/04-antipatrones/</guid>
-      <description>&lt;h2 id=&#34;programación-defensiva-fail-fast&#34;&gt;Programación defensiva (fail fast)&lt;/h2&gt;&#xA;&lt;p&gt;A veces debes detener el tren: si te pasan basura, no la proceses. Falla rápido.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Usa &lt;code&gt;throw&lt;/code&gt; para disparar excepciones y reutiliza las estándar:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;IllegalArgumentException&lt;/code&gt;: argumentos inválidos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;NullPointerException&lt;/code&gt;: &lt;code&gt;null&lt;/code&gt; donde no debe (sí, puedes lanzarla explícitamente; Effective Java lo avala).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;escribirRegistro&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Validar primero&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;NullPointerException&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Input no puede ser null&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IllegalArgumentException&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Input muy largo: &amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// ... procesar&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-antipatrón-1-log-everything-el-chismoso&#34;&gt;🚫 Antipatrón 1: log everything (el chismoso)&lt;/h2&gt;&#xA;&lt;p&gt;Nunca loguees los datos de entrada antes de validarlos.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>05. Finally, Resources y Errores Fatales</title>
-      <link>http://localhost:1313/javacore/exceptions/05-finally-resources-errors/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/javacore/exceptions/05-finally-resources-errors/</guid>
-      <description>&lt;h2 id=&#34;el-bloque-finally&#34;&gt;El bloque finally&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;finally&lt;/code&gt; siempre se ejecuta, haya error o no. Se usaba para cerrar conexiones o archivos.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Problema: loguear en &lt;code&gt;finally&lt;/code&gt; puede mentir (&amp;ldquo;Conexión cerrada&amp;rdquo;) aunque nunca se abrió.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;la-evolución-try-with-resources&#34;&gt;La evolución: try-with-resources&lt;/h2&gt;&#xA;&lt;p&gt;Desde Java 7, si el recurso implementa &lt;code&gt;AutoCloseable&lt;/code&gt;, colócalo en el paréntesis del &lt;code&gt;try&lt;/code&gt; y Java lo cerrará solo.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// ✅ Forma moderna y limpia&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;try&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Connection&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;conn&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;obtenerConexion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Usa la conexión&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Java la cerrará automáticamente al salir, pase lo que pase.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SQLException&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;logger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Error&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Menos código y logs más honestos.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Uso de Records en Java y Spring Boot</title>
-      <link>http://localhost:1313/javacore/record/</link>
-      <pubDate>Sun, 01 Mar 2026 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/javacore/record/</guid>
-      <description>&lt;h1 id=&#34;uso-de-records-en-java-y-spring-boot&#34;&gt;Uso de Records en Java y Spring Boot&lt;/h1&gt;&#xA;&lt;p&gt;En Java 16 se introdujeron de forma oficial los &lt;strong&gt;Records&lt;/strong&gt;, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&amp;ldquo;data carriers&amp;rdquo;).&lt;/p&gt;&#xA;&lt;h2 id=&#34;el-escenario-mapear-un-json-anidado&#34;&gt;El escenario: Mapear un JSON anidado&lt;/h2&gt;&#xA;&lt;p&gt;Supongamos que estamos construyendo un endpoint de registro en Spring Boot. El cliente nos envía el siguiente &lt;em&gt;payload&lt;/em&gt; JSON:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Evan&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;firstName&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Hernandez&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;secondName&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Angeles&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;login&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;email&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;myemail@codigojava.net&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;mypassword&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de &lt;em&gt;getters&lt;/em&gt;, &lt;em&gt;setters&lt;/em&gt;, constructores por defecto, &lt;code&gt;equals()&lt;/code&gt;, y &lt;code&gt;hashCode()&lt;/code&gt;. Con los &lt;strong&gt;Records&lt;/strong&gt;, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Logging en Backend Java (Guía Senior)</title>
-      <link>http://localhost:1313/javacore/backend-engineer-rpg/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/javacore/backend-engineer-rpg/</guid>
-      <description>&lt;h2 id=&#34;logging-en-backend-java-guía-senior&#34;&gt;Logging en Backend Java (Guía Senior)&lt;/h2&gt;&#xA;&lt;p&gt;El logging &lt;strong&gt;no es imprimir texto&lt;/strong&gt;.&lt;br&gt;&#xA;Es una herramienta crítica de &lt;strong&gt;observabilidad, diagnóstico y operación en producción&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;niveles-de-logging-ordenados-por-severidad&#34;&gt;Niveles de Logging (ordenados por severidad)&lt;/h3&gt;&#xA;&lt;p&gt;De &lt;strong&gt;menor&lt;/strong&gt; a &lt;strong&gt;mayor&lt;/strong&gt; severidad:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TRACE&lt;/li&gt;&#xA;&lt;li&gt;DEBUG&lt;/li&gt;&#xA;&lt;li&gt;INFO&lt;/li&gt;&#xA;&lt;li&gt;WARN&lt;/li&gt;&#xA;&lt;li&gt;ERROR&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;En Java moderno (&lt;code&gt;SLF4J&lt;/code&gt; + &lt;code&gt;Logback&lt;/code&gt; / &lt;code&gt;Log4j2&lt;/code&gt;), el nivel &lt;code&gt;FATAL&lt;/code&gt; prácticamente no se usa y suele tratarse como &lt;code&gt;ERROR&lt;/code&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;trace--detalle-microscópico&#34;&gt;TRACE — Detalle microscópico&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Flujo interno extremadamente detallado&lt;/li&gt;&#xA;&lt;li&gt;Paso a paso de algoritmos&lt;/li&gt;&#xA;&lt;li&gt;Diagnóstico profundo&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;trace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Entering method calculatePrice with input {}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Uso real:&lt;/strong&gt;&#xA;Solo debugging profundo. Nunca activo en producción normal.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Automatiza tu código con Copilot en IntelliJ</title>
-      <link>http://localhost:1313/post/copilot-for-java-devs/copilot-en-intellij/</link>
-      <pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/copilot-for-java-devs/copilot-en-intellij/</guid>
-      <description>&lt;p&gt;Aquí tienes cómo exprimir &lt;strong&gt;IntelliJ IDEA Community&lt;/strong&gt; con &lt;strong&gt;GitHub Copilot&lt;/strong&gt; para Java/Spring/Kafka como un pro 👇&lt;/p&gt;&#xA;&lt;h1 id=&#34;1-deja-fino-el-setup&#34;&gt;1) Deja fino el setup&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Plugins&lt;/strong&gt;: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Keymap&lt;/strong&gt;: ve a &lt;em&gt;Settings → Keymap → GitHub Copilot&lt;/em&gt; y asigna atajos cómodos para:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Trigger Inline Suggestion&lt;/em&gt; (invocar propuesta)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Next/Previous Suggestion&lt;/em&gt; (ciclar)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Open Chat&lt;/em&gt; (abrir chat lateral)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Accept Word/Line&lt;/em&gt; (aceptar por partes)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>🚀 Bootcamp: Lambdas en Java con JDK 17</title>
-      <link>http://localhost:1313/post/lambdas/lambdas/</link>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/lambdas/lambdas/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;bootcamp de Lambdas en Java (JDK 17)&lt;/strong&gt; desde cero, en varias fases, para que empieces sin saber nada y termines aplicándolas en casos reales de trabajo.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-bootcamp-lambdas-en-java-con-jdk-17&#34;&gt;&lt;strong&gt;🚀 Bootcamp: Lambdas en Java con JDK 17&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;módulo-1--fundamentos&#34;&gt;&lt;strong&gt;Módulo 1 – Fundamentos&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;🎯 Objetivo: Entender qué es una lambda y por qué existe.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Teoría básica&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;¿Qué es una expresión lambda?&lt;/li&gt;&#xA;&lt;li&gt;Diferencia entre &lt;em&gt;clase anónima&lt;/em&gt; y &lt;em&gt;lambda&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Sintaxis y partes de una lambda.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Interfaces funcionales&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Strategy to Solve HackerRank Java Problems</title>
-      <link>http://localhost:1313/post/random/hackerrank_java_strategy/</link>
-      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/random/hackerrank_java_strategy/</guid>
-      <description>&lt;h1 id=&#34;-strategy-to-solve-hackerrank-java-problems&#34;&gt;🏆 Strategy to Solve HackerRank Java Problems&lt;/h1&gt;&#xA;&lt;p&gt;This guide provides a &lt;strong&gt;step-by-step strategy&lt;/strong&gt; to solve Java coding challenges on &lt;strong&gt;HackerRank&lt;/strong&gt; effectively.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-read--understand-the-problem-statement&#34;&gt;1️⃣ Read &amp;amp; Understand the Problem Statement&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Know exactly what the problem is asking.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tips:&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Identify &lt;strong&gt;input format&lt;/strong&gt;, &lt;strong&gt;output format&lt;/strong&gt;, and &lt;strong&gt;constraints&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Pay attention to &lt;strong&gt;edge cases&lt;/strong&gt; mentioned in the description.&lt;/li&gt;&#xA;&lt;li&gt;Read &lt;strong&gt;sample inputs and outputs&lt;/strong&gt; to clarify the logic.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-analyze-constraints&#34;&gt;2️⃣ Analyze Constraints&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Why:&lt;/strong&gt; Constraints determine:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Which &lt;strong&gt;data types&lt;/strong&gt; to use (&lt;code&gt;int&lt;/code&gt;, &lt;code&gt;long&lt;/code&gt;, &lt;code&gt;BigInteger&lt;/code&gt; for very large numbers).&lt;/li&gt;&#xA;&lt;li&gt;Whether your &lt;strong&gt;algorithm needs optimization&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title>
-      <link>http://localhost:1313/post/angular/crud-angular-vscode-copilot/</link>
-      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/angular/crud-angular-vscode-copilot/</guid>
-      <description>&lt;h2 id=&#34;-introducción&#34;&gt;🧠 Introducción&lt;/h2&gt;&#xA;&lt;p&gt;Crear una aplicación Angular (versión recomendada: &lt;strong&gt;18.x&lt;/strong&gt;) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: &lt;code&gt;Cliente&lt;/code&gt; o &lt;code&gt;Producto&lt;/code&gt;). Se aplicará una estructura inspirada en &lt;strong&gt;arquitectura hexagonal&lt;/strong&gt; para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-requisitos-del-entorno&#34;&gt;🔧 Requisitos del entorno&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Node.js v20.19 o superior (&lt;code&gt;node -v&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Angular CLI (&lt;code&gt;npm install -g @angular/cli&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Angular v18.x (&lt;code&gt;ng version&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Un backend REST disponible (puerto, endpoints y CORS habilitado)&lt;/li&gt;&#xA;&lt;li&gt;Editor recomendado: &lt;strong&gt;Visual Studio Code&lt;/strong&gt; con extensión GitHub Copilot&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-paso-1-crear-la-aplicación-angular&#34;&gt;🏁 Paso 1: Crear la aplicación Angular&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ng new frontend-crud-app&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; frontend-crud-app&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ng serve --open&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Selecciona &lt;strong&gt;Routing = Yes&lt;/strong&gt;, &lt;strong&gt;Estilo = CSS o SCSS&lt;/strong&gt; según tu preferencia.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Frases y prompts útiles para Copilot en VS Code (Java &#43; Spring Boot)</title>
-      <link>http://localhost:1313/post/copilot-for-java-devs/copilot-prompts/</link>
-      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/copilot-for-java-devs/copilot-prompts/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/post/banner-copilot-prompts.png&#34; alt=&#34;Copilot Prompts&#34;&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;🎯 Usa estos comentarios dentro de tu código en VS Code para que &lt;strong&gt;Copilot entienda lo que necesitas&lt;/strong&gt; y te sugiera código útil, limpio y contextualizado.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-frases-ideales-para-copilot-en-vs-code-como-&#34;&gt;📌 Frases ideales para Copilot en VS Code (como &lt;code&gt;//&lt;/code&gt;)&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-generación-de-código-básico&#34;&gt;🔹 Generación de código básico&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Create a method to calculate the total price with tax&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement a REST controller for customer registration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Generate a model class for CreditCard with fields: number, holderName, limit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Write a unit test for this service method&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-limpieza-y-refactorización&#34;&gt;🔹 Limpieza y refactorización&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Refactor this method to reduce complexity&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Replace System.out with Lombok logger (@Slf4j)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Convert this logic to use Java 8 streams&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Extract this logic into a separate utility class&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-lógica-de-negocio&#34;&gt;🔹 Lógica de negocio&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Validate customer age is over 18 before approving the card&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Check if the credit card limit is sufficient before proceeding&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement retry logic if the external API fails&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Add audit trail when user updates personal data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-arquitectura-hexagonal--ddd&#34;&gt;🔹 Arquitectura hexagonal / DDD&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Create a use case to handle credit card application&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Define a port interface for customer repository&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Implement an adapter for Oracle database using JdbcTemplate&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Map domain entity to DTO for external API&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-test-y-tdd&#34;&gt;🔹 Test y TDD&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Write a JUnit test for CreditCardService&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Mock the customer repository and return a fake customer&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Verify that the audit event is sent when data is updated&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// inline&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// (select the code) /test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-desempeño-y-calidad&#34;&gt;🔹 Desempeño y calidad&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Optimize this loop for performance&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Add null checks and input validation&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Suggest improvements for readability&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Handle edge cases for this validation&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//(inline chat, previous code selected)improve the code according to development best practices&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//(inline chat) add javadocs&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-ejemplos-prácticos-con-copilot&#34;&gt;💡 Ejemplos prácticos con Copilot&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-antes&#34;&gt;🧪 Antes:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Cliente aprobado&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-comentario-copilot&#34;&gt;✨ Comentario Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Replace System.out with Lombok logger&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-resultado-sugerido-por-copilot&#34;&gt;✅ Resultado sugerido por Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Slf4j&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ClienteService&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;notificarAprobacion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;info&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Cliente aprobado&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-antes-1&#34;&gt;🧪 Antes:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// lógica mezclada en un método gigante&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-comentario-copilot-1&#34;&gt;✨ Comentario Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Refactor this method to reduce complexity&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-resultado-sugerido-por-copilot-1&#34;&gt;✅ Resultado sugerido por Copilot:&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;calcularTotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Pedido&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;subtotal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calcularSubtotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BigDecimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;impuestos&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calcularImpuestos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pedido&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;subtotal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;impuestos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;</description>
-    </item>
-    <item>
-      <title>Guía de atajos de teclado en VS Code para desarrolladores Java</title>
-      <link>http://localhost:1313/post/vscode/vscode-shortcuts/</link>
-      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/vscode/vscode-shortcuts/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-comentarios&#34;&gt;🧩 Comentarios&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;          &lt;th&gt;Resultado&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentar o descomentar una línea&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Añade o quita &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentar varias líneas seleccionadas&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + /&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Comenta cada línea con &lt;code&gt;//&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Comentario multilínea&lt;/td&gt;&#xA;          &lt;td&gt;Manual&lt;/td&gt;&#xA;          &lt;td&gt;Manual&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/* ... */&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-navegación-y-edición-rápida&#34;&gt;🚀 Navegación y edición rápida&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + P&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + P&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a definición&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F12&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a símbolo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + O&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + O&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a línea específica&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + G&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + G&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ir a la declaración&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Click&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Click&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-refactorización-y-edición&#34;&gt;🛠️ Refactorización y edición&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Renombrar símbolo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F2&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mostrar acciones rápidas&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + .&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + .&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Copiar línea abajo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Shift + Alt + ↓&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + Shift + ↓&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Copiar línea arriba&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Shift + Alt + ↑&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + Shift + ↑&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mover línea abajo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ↓&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ↓&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Mover línea arriba&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ↑&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ↑&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-terminal-y-ejecución&#34;&gt;🧪 Terminal y ejecución&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir terminal integrada&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + ñ&lt;/code&gt; o &lt;code&gt;Ctrl + `&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + `&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ejecutar archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + F5&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + F5&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ejecutar con depuración&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;F5&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-productividad-y-vistas&#34;&gt;🌈 Productividad y vistas&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir paleta de comandos&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + P&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Alternar panel lateral&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + B&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + B&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Buscar archivos&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Shift + F&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Shift + F&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Buscar en archivo actual&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + F&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Reemplazar en archivo&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + H&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + H&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-copilot-específico&#34;&gt;🤖 Copilot específico&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Acción&lt;/th&gt;&#xA;          &lt;th&gt;Atajo Windows/Linux&lt;/th&gt;&#xA;          &lt;th&gt;macOS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Aceptar sugerencia&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Siguiente sugerencia&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + ]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + ]&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Sugerencia anterior&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Alt + [&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Option + [&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Abrir ventana Copilot&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl + Enter&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;Cmd + Enter&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;</description>
-    </item>
-    <item>
-      <title>Automatiza tu código con Copilot en VS Code</title>
-      <link>http://localhost:1313/post/copilot-for-java-devs/copilot-en-vscode/</link>
-      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/copilot-for-java-devs/copilot-en-vscode/</guid>
-      <description>&lt;h2 id=&#34;-introducción&#34;&gt;🧠 Introducción&lt;/h2&gt;&#xA;&lt;p&gt;GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-requisitos-previos&#34;&gt;🛠️ Requisitos previos&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tener una cuenta de GitHub&lt;/li&gt;&#xA;&lt;li&gt;Tener instalado &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Tener instalado &lt;a href=&#34;https://adoptium.net/&#34;&gt;Java 17&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Conexión a internet&lt;/li&gt;&#xA;&lt;li&gt;Git instalado&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-instalación-de-copilot-en-vs-code&#34;&gt;🔌 Instalación de Copilot en VS Code&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Abre VS Code&lt;/li&gt;&#xA;&lt;li&gt;Ve a la extensión &amp;ldquo;GitHub Copilot&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;Haz clic en instalar o usa el siguiente comando:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;code --install-extension GitHub.copilot&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;ol start=&#34;4&#34;&gt;&#xA;&lt;li&gt;Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.&lt;/li&gt;&#xA;&lt;li&gt;Acepta los permisos y espera la confirmación.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-configuración-básica&#34;&gt;⚙️ Configuración básica&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Asegúrate de que Copilot esté activado en la barra de estado.&lt;/li&gt;&#xA;&lt;li&gt;Configura el comportamiento de sugerencias:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Aceptar: &lt;code&gt;Tab&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Siguiente sugerencia: &lt;code&gt;Ctrl + ]&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Anterior sugerencia: &lt;code&gt;Ctrl + [&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Puedes desactivar Copilot por archivo o carpeta desde la configuración.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-cómo-utilizarlo-primeros-ejemplos&#34;&gt;🤖 Cómo utilizarlo: primeros ejemplos&lt;/h2&gt;&#xA;&lt;p&gt;Crea un archivo &lt;code&gt;Main.java&lt;/code&gt; y escribe:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Cyb3rh4ck D3v L1f3</title><link>https://cyb3rh4ck.github.io/tags/java/</link><description>Recent content in Java on Cyb3rh4ck D3v L1f3</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sun, 01 Mar 2026 19:52:36 -0600</lastBuildDate><atom:link href="https://cyb3rh4ck.github.io/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>01. Fundamentos: Cuando el código se rompe</title><link>https://cyb3rh4ck.github.io/javacore/exceptions/01-fundamentos/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/javacore/exceptions/01-fundamentos/</guid><description>&lt;h2 id="-la-analogía-de-la-bañera">🛀 La analogía de la bañera&lt;/h2>
+&lt;p>Imagínate que es martes en la noche. Estás en la bañera, cantando a todo pulmón, relajado. De repente, se abre la puerta y entra tu pareja con una visita.&lt;/p>
+&lt;p>¡Pánico! Esto no estaba en el script. Es una excepción en tu programa personal. Si no manejas bien esa situación (handle), el resultado va a ser incómodo.&lt;/p>
+&lt;p>En el código pasa lo mismo: si ignoras las excepciones, tu programa crashea o queda en un estado inestable (como tú, escondido bajo la espuma). Y ojo: manejarlas sin loguearlas es como gritar bajo el agua; nadie se entera de qué pasó realmente.&lt;/p></description></item><item><title>02. Checked vs Unchecked Exceptions</title><link>https://cyb3rh4ck.github.io/javacore/exceptions/02-checked-vs-unchecked/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/javacore/exceptions/02-checked-vs-unchecked/</guid><description>&lt;h2 id="la-gran-division">La gran division&lt;/h2>
+&lt;p>En Java, todas las excepciones heredan de &lt;code>java.lang.Exception&lt;/code>, pero existen dos ramas que dictan como reacciona el compilador. Conocerlas evita sorpresas.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Checked exceptions:&lt;/strong> Heredan directamente de &lt;code>Exception&lt;/code>. El compilador exige que las manejes o declares.&lt;/li>
+&lt;li>&lt;strong>Unchecked exceptions:&lt;/strong> Heredan de &lt;code>RuntimeException&lt;/code>. El compilador te deja continuar sin try-catch ni &lt;code>throws&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>Si dudas, abre la clase en el IDE: si sube hasta &lt;code>RuntimeException&lt;/code> es unchecked; de lo contrario, es checked.&lt;/p></description></item><item><title>03. Try/Catch y Logging correcto</title><link>https://cyb3rh4ck.github.io/javacore/exceptions/03-try-catch-y-logging/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/javacore/exceptions/03-try-catch-y-logging/</guid><description>&lt;h2 id="try-catch-el-portero">Try-catch: el portero&lt;/h2>
+&lt;p>Si decidimos manejar el error en lugar de dejar morir el programa, usamos &lt;code>try-catch&lt;/code>.&lt;/p>
+&lt;pre class="mermaid hx:mt-6">
+ 
+flowchart TD
+ A[Inicio try] --&amp;gt; B{¿Ocurrió Excepción?}
+ B -- No --&amp;gt; C[Fin try → sigue normal]
+ B -- Sí --&amp;gt; D[Bloque catch]
+ D --&amp;gt; E[Loguear y recuperar]
+ E --&amp;gt; F[Continuar ejecución]
+
+&lt;/pre>
+&lt;h2 id="logging-lo-que-no-debes-hacer">Logging: lo que no debes hacer&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="k">try&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">basedatos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">query&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">SQLException&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">logger&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Catch&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c1">// ❌ Pésimo: no hay contexto ni stack trace&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Loguear &amp;ldquo;Catch&amp;rdquo; no sirve: no dice qué pasó, ni dónde, ni por qué.&lt;/p></description></item><item><title>04. Throwing y Antipatrones Comunes</title><link>https://cyb3rh4ck.github.io/javacore/exceptions/04-antipatrones/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/javacore/exceptions/04-antipatrones/</guid><description>&lt;h2 id="programación-defensiva-fail-fast">Programación defensiva (fail fast)&lt;/h2>
+&lt;p>A veces debes detener el tren: si te pasan basura, no la proceses. Falla rápido.&lt;/p>
+&lt;ul>
+&lt;li>Usa &lt;code>throw&lt;/code> para disparar excepciones y reutiliza las estándar:
+&lt;ul>
+&lt;li>&lt;code>IllegalArgumentException&lt;/code>: argumentos inválidos.&lt;/li>
+&lt;li>&lt;code>NullPointerException&lt;/code>: &lt;code>null&lt;/code> donde no debe (sí, puedes lanzarla explícitamente; Effective Java lo avala).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">void&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">escribirRegistro&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">input&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// Validar primero&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">input&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">==&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">throw&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">NullPointerException&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Input no puede ser null&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">input&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">length&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">34&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">throw&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">IllegalArgumentException&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Input muy largo: &amp;#34;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">input&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">length&lt;/span>&lt;span class="p">());&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// ... procesar&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-antipatrón-1-log-everything-el-chismoso">🚫 Antipatrón 1: log everything (el chismoso)&lt;/h2>
+&lt;p>Nunca loguees los datos de entrada antes de validarlos.&lt;/p></description></item><item><title>05. Finally, Resources y Errores Fatales</title><link>https://cyb3rh4ck.github.io/javacore/exceptions/05-finally-resources-errors/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/javacore/exceptions/05-finally-resources-errors/</guid><description>&lt;h2 id="el-bloque-finally">El bloque finally&lt;/h2>
+&lt;p>&lt;code>finally&lt;/code> siempre se ejecuta, haya error o no. Se usaba para cerrar conexiones o archivos.&lt;/p>
+&lt;ul>
+&lt;li>Problema: loguear en &lt;code>finally&lt;/code> puede mentir (&amp;ldquo;Conexión cerrada&amp;rdquo;) aunque nunca se abrió.&lt;/li>
+&lt;/ul>
+&lt;h2 id="la-evolución-try-with-resources">La evolución: try-with-resources&lt;/h2>
+&lt;p>Desde Java 7, si el recurso implementa &lt;code>AutoCloseable&lt;/code>, colócalo en el paréntesis del &lt;code>try&lt;/code> y Java lo cerrará solo.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// ✅ Forma moderna y limpia&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">try&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Connection&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">conn&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">obtenerConexion&lt;/span>&lt;span class="p">())&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// Usa la conexión&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// Java la cerrará automáticamente al salir, pase lo que pase.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">SQLException&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">logger&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Error&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Menos código y logs más honestos.&lt;/p></description></item><item><title>Uso de Records en Java y Spring Boot</title><link>https://cyb3rh4ck.github.io/javacore/record/</link><pubDate>Sun, 01 Mar 2026 12:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/javacore/record/</guid><description>&lt;h1 id="uso-de-records-en-java-y-spring-boot">Uso de Records en Java y Spring Boot&lt;/h1>
+&lt;p>En Java 16 se introdujeron de forma oficial los &lt;strong>Records&lt;/strong>, una característica del lenguaje diseñada para crear clases inmutables que actúan principalmente como portadores de datos (&amp;ldquo;data carriers&amp;rdquo;).&lt;/p>
+&lt;h2 id="el-escenario-mapear-un-json-anidado">El escenario: Mapear un JSON anidado&lt;/h2>
+&lt;p>Supongamos que estamos construyendo un endpoint de registro en Spring Boot. El cliente nos envía el siguiente &lt;em>payload&lt;/em> JSON:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;user&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Evan&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;firstName&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Hernandez&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;secondName&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Angeles&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;login&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;email&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;myemail@codigojava.net&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;password&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;mypassword&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Históricamente, para mapear este objeto anidado crearíamos múltiples clases (DTOs) llenas de &lt;em>getters&lt;/em>, &lt;em>setters&lt;/em>, constructores por defecto, &lt;code>equals()&lt;/code>, y &lt;code>hashCode()&lt;/code>. Con los &lt;strong>Records&lt;/strong>, podemos hacerlo en unas pocas líneas, de manera inmutable y muy expresiva.&lt;/p></description></item><item><title>Logging en Backend Java (Guía Senior)</title><link>https://cyb3rh4ck.github.io/javacore/backend-engineer-rpg/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/javacore/backend-engineer-rpg/</guid><description>&lt;h2 id="logging-en-backend-java-guía-senior">Logging en Backend Java (Guía Senior)&lt;/h2>
+&lt;p>El logging &lt;strong>no es imprimir texto&lt;/strong>.&lt;br>
+Es una herramienta crítica de &lt;strong>observabilidad, diagnóstico y operación en producción&lt;/strong>.&lt;/p>
+&lt;h3 id="niveles-de-logging-ordenados-por-severidad">Niveles de Logging (ordenados por severidad)&lt;/h3>
+&lt;p>De &lt;strong>menor&lt;/strong> a &lt;strong>mayor&lt;/strong> severidad:&lt;/p>
+&lt;ul>
+&lt;li>TRACE&lt;/li>
+&lt;li>DEBUG&lt;/li>
+&lt;li>INFO&lt;/li>
+&lt;li>WARN&lt;/li>
+&lt;li>ERROR&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>En Java moderno (&lt;code>SLF4J&lt;/code> + &lt;code>Logback&lt;/code> / &lt;code>Log4j2&lt;/code>), el nivel &lt;code>FATAL&lt;/code> prácticamente no se usa y suele tratarse como &lt;code>ERROR&lt;/code>.&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="trace--detalle-microscópico">TRACE — Detalle microscópico&lt;/h3>
+&lt;ul>
+&lt;li>Flujo interno extremadamente detallado&lt;/li>
+&lt;li>Paso a paso de algoritmos&lt;/li>
+&lt;li>Diagnóstico profundo&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">trace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Entering method calculatePrice with input {}&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">input&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Uso real:&lt;/strong>
+Solo debugging profundo. Nunca activo en producción normal.&lt;/p></description></item><item><title>Automatiza tu código con Copilot en IntelliJ</title><link>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-en-intellij/</link><pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-en-intellij/</guid><description>&lt;p>Aquí tienes cómo exprimir &lt;strong>IntelliJ IDEA Community&lt;/strong> con &lt;strong>GitHub Copilot&lt;/strong> para Java/Spring/Kafka como un pro 👇&lt;/p>
+&lt;h1 id="1-deja-fino-el-setup">1) Deja fino el setup&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Plugins&lt;/strong>: GitHub Copilot + Copilot Chat + SonarLint + Lombok + Maven Helper.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Keymap&lt;/strong>: ve a &lt;em>Settings → Keymap → GitHub Copilot&lt;/em> y asigna atajos cómodos para:&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Trigger Inline Suggestion&lt;/em> (invocar propuesta)&lt;/li>
+&lt;li>&lt;em>Next/Previous Suggestion&lt;/em> (ciclar)&lt;/li>
+&lt;li>&lt;em>Open Chat&lt;/em> (abrir chat lateral)&lt;/li>
+&lt;li>&lt;em>Accept Word/Line&lt;/em> (aceptar por partes)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Scope&lt;/strong>: activa Copilot sólo en los lenguajes que usas (Java, YAML, Markdown) para reducir ruido.&lt;/p></description></item><item><title>🚀 Bootcamp: Lambdas en Java con JDK 17</title><link>https://cyb3rh4ck.github.io/post/lambdas/lambdas/</link><pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/lambdas/lambdas/</guid><description>&lt;p>&lt;strong>bootcamp de Lambdas en Java (JDK 17)&lt;/strong> desde cero, en varias fases, para que empieces sin saber nada y termines aplicándolas en casos reales de trabajo.&lt;/p>
+&lt;hr>
+&lt;h2 id="-bootcamp-lambdas-en-java-con-jdk-17">&lt;strong>🚀 Bootcamp: Lambdas en Java con JDK 17&lt;/strong>&lt;/h2>
+&lt;h3 id="módulo-1--fundamentos">&lt;strong>Módulo 1 – Fundamentos&lt;/strong>&lt;/h3>
+&lt;p>🎯 Objetivo: Entender qué es una lambda y por qué existe.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Teoría básica&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>¿Qué es una expresión lambda?&lt;/li>
+&lt;li>Diferencia entre &lt;em>clase anónima&lt;/em> y &lt;em>lambda&lt;/em>.&lt;/li>
+&lt;li>Sintaxis y partes de una lambda.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Interfaces funcionales&lt;/strong>&lt;/p></description></item><item><title>Strategy to Solve HackerRank Java Problems</title><link>https://cyb3rh4ck.github.io/post/random/hackerrank_java_strategy/</link><pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/random/hackerrank_java_strategy/</guid><description>&lt;h1 id="-strategy-to-solve-hackerrank-java-problems">🏆 Strategy to Solve HackerRank Java Problems&lt;/h1>
+&lt;p>This guide provides a &lt;strong>step-by-step strategy&lt;/strong> to solve Java coding challenges on &lt;strong>HackerRank&lt;/strong> effectively.&lt;/p>
+&lt;hr>
+&lt;h2 id="1-read--understand-the-problem-statement">1️⃣ Read &amp;amp; Understand the Problem Statement&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Goal:&lt;/strong> Know exactly what the problem is asking.&lt;/li>
+&lt;li>&lt;strong>Tips:&lt;/strong>
+&lt;ul>
+&lt;li>Identify &lt;strong>input format&lt;/strong>, &lt;strong>output format&lt;/strong>, and &lt;strong>constraints&lt;/strong>.&lt;/li>
+&lt;li>Pay attention to &lt;strong>edge cases&lt;/strong> mentioned in the description.&lt;/li>
+&lt;li>Read &lt;strong>sample inputs and outputs&lt;/strong> to clarify the logic.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="2-analyze-constraints">2️⃣ Analyze Constraints&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Why:&lt;/strong> Constraints determine:
+&lt;ul>
+&lt;li>Which &lt;strong>data types&lt;/strong> to use (&lt;code>int&lt;/code>, &lt;code>long&lt;/code>, &lt;code>BigInteger&lt;/code> for very large numbers).&lt;/li>
+&lt;li>Whether your &lt;strong>algorithm needs optimization&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p></description></item><item><title>Crear un CRUD en Angular con VS Code y Copilot (Arquitectura Hexagonal)</title><link>https://cyb3rh4ck.github.io/post/angular/crud-angular-vscode-copilot/</link><pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/angular/crud-angular-vscode-copilot/</guid><description>&lt;h2 id="-introducción">🧠 Introducción&lt;/h2>
+&lt;p>Crear una aplicación Angular (versión recomendada: &lt;strong>18.x&lt;/strong>) que consuma un API REST con operaciones CRUD para una entidad (por ejemplo: &lt;code>Cliente&lt;/code> o &lt;code>Producto&lt;/code>). Se aplicará una estructura inspirada en &lt;strong>arquitectura hexagonal&lt;/strong> para mejorar la mantenibilidad del frontend. El backend puede estar hecho en Java + Spring Boot, pero esta guía se centra en el frontend.&lt;/p>
+&lt;hr>
+&lt;h2 id="-requisitos-del-entorno">🔧 Requisitos del entorno&lt;/h2>
+&lt;ul>
+&lt;li>Node.js v20.19 o superior (&lt;code>node -v&lt;/code>)&lt;/li>
+&lt;li>Angular CLI (&lt;code>npm install -g @angular/cli&lt;/code>)&lt;/li>
+&lt;li>Angular v18.x (&lt;code>ng version&lt;/code>)&lt;/li>
+&lt;li>Un backend REST disponible (puerto, endpoints y CORS habilitado)&lt;/li>
+&lt;li>Editor recomendado: &lt;strong>Visual Studio Code&lt;/strong> con extensión GitHub Copilot&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-paso-1-crear-la-aplicación-angular">🏁 Paso 1: Crear la aplicación Angular&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ng new frontend-crud-app
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> frontend-crud-app
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ng serve --open
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Selecciona &lt;strong>Routing = Yes&lt;/strong>, &lt;strong>Estilo = CSS o SCSS&lt;/strong> según tu preferencia.&lt;/p></description></item><item><title>Frases y prompts útiles para Copilot en VS Code (Java + Spring Boot)</title><link>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-prompts/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-prompts/</guid><description>&lt;p>&lt;img src="https://cyb3rh4ck.github.io/images/post/banner-copilot-prompts.png" alt="Copilot Prompts">&lt;/p>
+&lt;blockquote>
+&lt;p>🎯 Usa estos comentarios dentro de tu código en VS Code para que &lt;strong>Copilot entienda lo que necesitas&lt;/strong> y te sugiera código útil, limpio y contextualizado.&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-frases-ideales-para-copilot-en-vs-code-como-">📌 Frases ideales para Copilot en VS Code (como &lt;code>//&lt;/code>)&lt;/h2>
+&lt;h3 id="-generación-de-código-básico">🔹 Generación de código básico&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Create a method to calculate the total price with tax&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement a REST controller for customer registration&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Generate a model class for CreditCard with fields: number, holderName, limit&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Write a unit test for this service method&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-limpieza-y-refactorización">🔹 Limpieza y refactorización&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Refactor this method to reduce complexity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Replace System.out with Lombok logger (@Slf4j)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Convert this logic to use Java 8 streams&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Extract this logic into a separate utility class&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-lógica-de-negocio">🔹 Lógica de negocio&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Validate customer age is over 18 before approving the card&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Check if the credit card limit is sufficient before proceeding&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement retry logic if the external API fails&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Add audit trail when user updates personal data&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-arquitectura-hexagonal--ddd">🔹 Arquitectura hexagonal / DDD&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Create a use case to handle credit card application&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Define a port interface for customer repository&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Implement an adapter for Oracle database using JdbcTemplate&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Map domain entity to DTO for external API&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-test-y-tdd">🔹 Test y TDD&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Write a JUnit test for CreditCardService&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Mock the customer repository and return a fake customer&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Verify that the audit event is sent when data is updated&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// inline&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// (select the code) /test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-desempeño-y-calidad">🔹 Desempeño y calidad&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Optimize this loop for performance&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Add null checks and input validation&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Suggest improvements for readability&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">// Handle edge cases for this validation&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">//(inline chat, previous code selected)improve the code according to development best practices&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">//(inline chat) add javadocs&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="-ejemplos-prácticos-con-copilot">💡 Ejemplos prácticos con Copilot&lt;/h2>
+&lt;h3 id="-antes">🧪 Antes:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Cliente aprobado&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-comentario-copilot">✨ Comentario Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Replace System.out with Lombok logger&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-resultado-sugerido-por-copilot">✅ Resultado sugerido por Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Slf4j&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">ClienteService&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">void&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">notificarAprobacion&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Cliente aprobado&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="-antes-1">🧪 Antes:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// lógica mezclada en un método gigante&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-comentario-copilot-1">✨ Comentario Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Refactor this method to reduce complexity&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="-resultado-sugerido-por-copilot-1">✅ Resultado sugerido por Copilot:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">calcularTotal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Pedido&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">subtotal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">calcularSubtotal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">BigDecimal&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">impuestos&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">calcularImpuestos&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pedido&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">subtotal&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">impuestos&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr></description></item><item><title>Guía de atajos de teclado en VS Code para desarrolladores Java</title><link>https://cyb3rh4ck.github.io/post/vscode/vscode-shortcuts/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/vscode/vscode-shortcuts/</guid><description>&lt;blockquote>
+&lt;p>⚡ Mejora tu flujo de trabajo en Visual Studio Code dominando estos atajos. Funcionan en Windows y Linux (agrego variaciones para macOS).&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-comentarios">🧩 Comentarios&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;th>Resultado&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Comentar o descomentar una línea&lt;/td>
+ &lt;td>&lt;code>Ctrl + /&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + /&lt;/code>&lt;/td>
+ &lt;td>Añade o quita &lt;code>//&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Comentar varias líneas seleccionadas&lt;/td>
+ &lt;td>&lt;code>Ctrl + /&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + /&lt;/code>&lt;/td>
+ &lt;td>Comenta cada línea con &lt;code>//&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Comentario multilínea&lt;/td>
+ &lt;td>Manual&lt;/td>
+ &lt;td>Manual&lt;/td>
+ &lt;td>&lt;code>/* ... */&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-navegación-y-edición-rápida">🚀 Navegación y edición rápida&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Ir a archivo&lt;/td>
+ &lt;td>&lt;code>Ctrl + P&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + P&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a definición&lt;/td>
+ &lt;td>&lt;code>F12&lt;/code>&lt;/td>
+ &lt;td>&lt;code>F12&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a símbolo&lt;/td>
+ &lt;td>&lt;code>Ctrl + Shift + O&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Shift + O&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a línea específica&lt;/td>
+ &lt;td>&lt;code>Ctrl + G&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + G&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ir a la declaración&lt;/td>
+ &lt;td>&lt;code>Ctrl + Click&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Click&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-refactorización-y-edición">🛠️ Refactorización y edición&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Renombrar símbolo&lt;/td>
+ &lt;td>&lt;code>F2&lt;/code>&lt;/td>
+ &lt;td>&lt;code>F2&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mostrar acciones rápidas&lt;/td>
+ &lt;td>&lt;code>Ctrl + .&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + .&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Copiar línea abajo&lt;/td>
+ &lt;td>&lt;code>Shift + Alt + ↓&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + Shift + ↓&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Copiar línea arriba&lt;/td>
+ &lt;td>&lt;code>Shift + Alt + ↑&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + Shift + ↑&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mover línea abajo&lt;/td>
+ &lt;td>&lt;code>Alt + ↓&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + ↓&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mover línea arriba&lt;/td>
+ &lt;td>&lt;code>Alt + ↑&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + ↑&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-terminal-y-ejecución">🧪 Terminal y ejecución&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Abrir terminal integrada&lt;/td>
+ &lt;td>&lt;code>Ctrl + ñ&lt;/code> o &lt;code>Ctrl + `&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + `&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ejecutar archivo&lt;/td>
+ &lt;td>&lt;code>Ctrl + F5&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + F5&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ejecutar con depuración&lt;/td>
+ &lt;td>&lt;code>F5&lt;/code>&lt;/td>
+ &lt;td>&lt;code>F5&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-productividad-y-vistas">🌈 Productividad y vistas&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Abrir paleta de comandos&lt;/td>
+ &lt;td>&lt;code>Ctrl + Shift + P&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Shift + P&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Alternar panel lateral&lt;/td>
+ &lt;td>&lt;code>Ctrl + B&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + B&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Buscar archivos&lt;/td>
+ &lt;td>&lt;code>Ctrl + Shift + F&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Shift + F&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Buscar en archivo actual&lt;/td>
+ &lt;td>&lt;code>Ctrl + F&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + F&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Reemplazar en archivo&lt;/td>
+ &lt;td>&lt;code>Ctrl + H&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + H&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-copilot-específico">🤖 Copilot específico&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Acción&lt;/th>
+ &lt;th>Atajo Windows/Linux&lt;/th>
+ &lt;th>macOS&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Aceptar sugerencia&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Tab&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Siguiente sugerencia&lt;/td>
+ &lt;td>&lt;code>Alt + ]&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + ]&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Sugerencia anterior&lt;/td>
+ &lt;td>&lt;code>Alt + [&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Option + [&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Abrir ventana Copilot&lt;/td>
+ &lt;td>&lt;code>Ctrl + Enter&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Cmd + Enter&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr></description></item><item><title>Automatiza tu código con Copilot en VS Code</title><link>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-en-vscode/</link><pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate><guid>https://cyb3rh4ck.github.io/post/copilot-for-java-devs/copilot-en-vscode/</guid><description>&lt;h2 id="-introducción">🧠 Introducción&lt;/h2>
+&lt;p>GitHub Copilot es un asistente de programación impulsado por IA que sugiere código y funciones completas directamente desde tu editor. Esta guía te enseñará cómo instalarlo, configurarlo y sacarle el máximo provecho dentro de Visual Studio Code con un ejemplo práctico en Java y Spring Boot.&lt;/p>
+&lt;hr>
+&lt;h2 id="-requisitos-previos">🛠️ Requisitos previos&lt;/h2>
+&lt;ul>
+&lt;li>Tener una cuenta de GitHub&lt;/li>
+&lt;li>Tener instalado &lt;a href="https://code.visualstudio.com/">Visual Studio Code&lt;/a>&lt;/li>
+&lt;li>Tener instalado &lt;a href="https://adoptium.net/">Java 17&lt;/a>&lt;/li>
+&lt;li>Conexión a internet&lt;/li>
+&lt;li>Git instalado&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-instalación-de-copilot-en-vs-code">🔌 Instalación de Copilot en VS Code&lt;/h2>
+&lt;ol>
+&lt;li>Abre VS Code&lt;/li>
+&lt;li>Ve a la extensión &amp;ldquo;GitHub Copilot&amp;rdquo;&lt;/li>
+&lt;li>Haz clic en instalar o usa el siguiente comando:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">code --install-extension GitHub.copilot&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;ol start="4">
+&lt;li>Una vez instalado, VS Code te pedirá iniciar sesión con GitHub.&lt;/li>
+&lt;li>Acepta los permisos y espera la confirmación.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="-configuración-básica">⚙️ Configuración básica&lt;/h2>
+&lt;ul>
+&lt;li>Asegúrate de que Copilot esté activado en la barra de estado.&lt;/li>
+&lt;li>Configura el comportamiento de sugerencias:
+&lt;ul>
+&lt;li>Aceptar: &lt;code>Tab&lt;/code>&lt;/li>
+&lt;li>Siguiente sugerencia: &lt;code>Ctrl + ]&lt;/code>&lt;/li>
+&lt;li>Anterior sugerencia: &lt;code>Ctrl + [&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Puedes desactivar Copilot por archivo o carpeta desde la configuración.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-cómo-utilizarlo-primeros-ejemplos">🤖 Cómo utilizarlo: primeros ejemplos&lt;/h2>
+&lt;p>Crea un archivo &lt;code>Main.java&lt;/code> y escribe:&lt;/p></description></item></channel></rss>
