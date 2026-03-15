@@ -6,7 +6,7 @@ theme = 'github-style'
 [params]
   author = 'Cyb3rh4ck'
   github = 'Cyb3rh4ck'
-  description = 'Instalación limpia'
+  description = 'Café, Código y Spring Boot'
   avatar = 'https://github.com/Cyb3rh4ck.png'
   headerIcon = 'https://github.com/Cyb3rh4ck.png'
 
