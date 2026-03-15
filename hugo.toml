@@ -1,3 +1,15 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://cyb3rh4ck.github.io/'
+languageCode = 'es'
+title = 'Cyb3rh4ck D3v L1f3'
+theme = 'github-style'
+
+[params]
+  author = 'Cyb3rh4ck'
+  github = 'Cyb3rh4ck'
+  description = 'Instalación limpia'
+  avatar = 'https://github.com/Cyb3rh4ck.png'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
