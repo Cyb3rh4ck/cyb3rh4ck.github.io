@@ -9,13 +9,12 @@ theme = 'github-style'
   description = 'Café, Código y Spring Boot'
   avatar = 'https://github.com/Cyb3rh4ck.png'
   headerIcon = 'https://github.com/Cyb3rh4ck.png'
+  enableGitalk = true
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
-enableGitalk = true
 
   [params.gitalk]
     clientID = "Ov23lizvEX2mDJe9frz6"
