@@ -6,10 +6,11 @@ draft = true
 # ================================
 # SEO y Metadatos
 # ================================
-description = "Descripción de máximo 160 caracteres sobre el tema de Java tratado. ¡Clave para SEO!"
-summary = "Un breve resumen del artículo para mostrar en la lista de entradas y potenciar el CTR."
+description = "Descripción de máximo 160 caracteres sobre el tema de Java tratado en el post. ¡Clave para SEO!"
+summary = "Un breve resumen del artículo para mostrar en la lista de posts y potenciar el CTR."
 images = ["/images/default-java-cover.jpg"] # Imagen atractiva para mostrar al compartir en redes sociales (OpenGraph y Twitter)
 author = "Efren" 
+type = "post"
 
 # ================================
 # Taxonomías
@@ -24,7 +25,7 @@ categories = ["Desarrollo", "Java"]
 
 ## 🚀 Introducción
 
-En este artículo, vamos a profundizar en... <!-- describe el objetivo de tu artículo -->
+En este post, vamos a profundizar en... <!-- describe el objetivo de tu artículo -->
 
 ## 💡 Conceptos Clave
 

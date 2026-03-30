@@ -14,3 +14,18 @@ theme = 'github-style'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+enableGitalk = true
+
+  [params.gitalk]
+    clientID = "Ov23lizvEX2mDJe9frz6"
+    clientSecret = "80b7996e26b5152797ef715ce13e07052cf2c826"
+    repo = "cyb3rh4ck.github.io"
+    owner = "Cyb3rh4ck"
+    admin = "Cyb3rh4ck"
+    id = "location.pathname"
+    labels = "gitalk"
+    perPage = 30
+    pagerDirection = "last"
+    createIssueManually = true
+    distractionFreeMode = false
