@@ -8,7 +8,8 @@ draft = true
 # ================================
 description = "Descripción de máximo 160 caracteres sobre el tema de Java tratado en el post. ¡Clave para SEO!"
 summary = "Un breve resumen del artículo para mostrar en la lista de posts y potenciar el CTR."
-images = ["/images/default-java-cover.jpg"] # Imagen atractiva para mostrar al compartir en redes sociales (OpenGraph y Twitter)
+cover = "/images/default-java-cover.jpg" # Imagen portada para OpenGraph (Facebook, Twitter, LinkedIn)
+keywords = ["Java", "Tutorial", "Ejemplo"] # Clave para que Google identifique de qué trata el post
 author = "Efren" 
 type = "post"
 

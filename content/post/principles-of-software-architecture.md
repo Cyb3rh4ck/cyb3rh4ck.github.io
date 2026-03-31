@@ -18,6 +18,7 @@ type = "post"
 # Etiquetas de Java pre-configuradas para indexar correctamente los temas
 tags = ["Java", "Programación Orientada a Objetos", "Design Patterns", "Backend", "Arquitectura De Software", "Coupling", "Cohesion"]
 categories = ["Desarrollo", "Java", "Arquitectura"]
+keywords = ["Coupling", "Arquitectura de Software", "Software Architecture", "Mantenibilidad", "Programación Orientada a Objetos"]
 
 +++
 

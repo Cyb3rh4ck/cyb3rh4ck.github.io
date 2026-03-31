@@ -1,9 +1,14 @@
 baseURL = 'https://cyb3rh4ck.github.io/'
 languageCode = 'es'
+DefaultContentLanguage = "es"
+hasCJKLanguage = false
 title = 'Cyb3rh4ck D3v L1f3'
 theme = 'github-style'
+enableRobotsTXT = true
+googleAnalytics = "G-E4FGN4JJGQ"
 
 [params]
+  Keywords = ["Java", "Spring Boot", "Software Architecture", "Blog", "Backend", "Desarrollo", "Cyb3rh4ck"]
   author = 'Cyb3rh4ck'
   github = 'Cyb3rh4ck'
   description = 'Café, Código y Spring Boot'

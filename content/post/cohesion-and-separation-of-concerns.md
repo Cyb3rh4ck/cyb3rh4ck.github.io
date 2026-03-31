@@ -17,6 +17,7 @@ type = "post"
 # ================================
 tags = ["Java", "Programación Orientada a Objetos", "Design Patterns", "Backend", "Arquitectura De Software", "Cohesion", "Separation of Concerns"]
 categories = ["Desarrollo", "Java", "Arquitectura"]
+keywords = ["Cohesión", "Cohesion", "Separation of Concerns", "SoC", "Arquitectura", "Java"]
 
 +++
 

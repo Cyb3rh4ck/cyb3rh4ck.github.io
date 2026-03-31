@@ -5,6 +5,8 @@ draft = false
 description = "Una traducción fiel del artículo 'Solid Relevance' de Uncle Bob sobre la vigencia de los principios SOLID."
 tags = ["SOLID", "Diseño de Software", "Traducción", "Uncle Bob"]
 categories = ["Programación"]
+cover = "/images/default-java-cover.jpg"
+keywords = ["SOLID", "Uncle Bob", "Clean Architecture", "Programación Orientada a Objetos", "Desarrollo"]
 +++
 
 > **Nota:** Esta es una traducción fiel al español (latino) del artículo original ["Solid Relevance"](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html) escrito por Robert C. Martin (Uncle Bob).
