@@ -4,7 +4,7 @@
 />
 <meta
   name="keywords"
-  content='{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else if $.Site.Params.Keywords }}{{ delimit $.Site.Params.Keywords ", " }}{{ end }}'
+  content="{{ if .Params.Keywords }}{{ delimit .Params.Keywords ", " }}{{ else if $.Site.Params.Keywords }}{{ delimit $.Site.Params.Keywords ", " }}{{ end }}"
 />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="{{ .Permalink }}" />
