@@ -149,23 +149,6 @@ classDiagram
     Payment <|.. BankTransferPayment : Realization
 ```
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: false, theme: 'default' });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const mermaidBlocks = document.querySelectorAll("code.language-mermaid");
-    mermaidBlocks.forEach((block) => {
-      const mermaidDiv = document.createElement("div");
-      mermaidDiv.className = "mermaid";
-      // block.textContent is the unescaped raw text, perfect for Mermaid
-      mermaidDiv.textContent = block.textContent; 
-      block.parentNode.replaceWith(mermaidDiv);
-    });
-    mermaid.run({ querySelector: '.mermaid' });
-  });
-</script>
-
 > *El diagrama de bajo coupling resalta que para añadir una nueva forma de pago solo necesitamos crear una clase que implemente la interfaz `Payment` —en este caso particular, la clase teórica `BankTransferPayment`— y no necesitamos cambiar ningún código en la clase `ShoppingCart`.*
 
 ## 🎓 Conclusión
