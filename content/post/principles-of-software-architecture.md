@@ -8,8 +8,8 @@ draft = false
 # ================================
 description = "Una explicación detallada sobre los principios de arquitectura de software, enfocándose en la importancia de un bajo coupling (acoplamiento) en Java."
 summary = "Aprende qué es el coupling, por qué es crucial mantenerlo bajo y cómo implementarlo utilizando interfaces en Java para mejorar el diseño de tu sistema."
-images = ["/images/default-java-cover.jpg"] # Imagen atractiva para mostrar al compartir en redes sociales (OpenGraph y Twitter)
-author = "Efren" 
+cover = "/images/coupling-cover.png" # Imagen portada para OpenGraph (Facebook, Twitter, LinkedIn)
+author = "Cyb3rh4ck" 
 type = "post"
 
 # ================================
