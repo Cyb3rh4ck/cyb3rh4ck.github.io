@@ -5,7 +5,7 @@ draft = false
 description = "Una traducción fiel del artículo 'Solid Relevance' de Uncle Bob sobre la vigencia de los principios SOLID."
 tags = ["SOLID", "Diseño de Software", "Traducción", "Uncle Bob"]
 categories = ["Programación"]
-cover = "/images/default-java-cover.jpg"
+cover = "/images/solid-relevance-cover.png"
 keywords = ["SOLID", "Uncle Bob", "Clean Architecture", "Programación Orientada a Objetos", "Desarrollo"]
 +++
 
